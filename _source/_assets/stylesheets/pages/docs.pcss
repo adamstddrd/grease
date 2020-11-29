@@ -1,0 +1,42 @@
+/* ----------------------------------------------------------------------------
+styles for /docs
+---------------------------------------------------------------------------- */
+
+.docs-grid-demo {
+  margin-bottom: 2em;
+
+  & p {
+    margin: var(--space-m) 0;
+    padding: 0.25em 0.5em;
+    color: var(--color-sheet);
+    background-color: var(--color-text);
+  }
+}
+
+.docs-inverted {
+  --color-text: var(--color-white);
+  --color-sheet: var(--color-black);
+  padding: var(--space-l) 0;
+  color: var(--color-text);
+  background-color: var(--color-sheet);
+}
+
+.docs-box {
+  display: block;
+  margin: var(--space-m) 0;
+  height: 10em;
+  background-color: var(--color-text);
+}
+
+.docs-space-demo {
+  min-height: 2em;
+  margin: var(--space-m) 0;
+  padding: 0;
+  border: 0.2rem solid var(--color-accent);
+
+  & p {
+    padding: var(--space-xs);
+    color: var(--color-sheet);
+    background-color: var(--color-text);
+  }
+}

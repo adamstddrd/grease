@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------------------------
+custom media queries
+---------------------------------------------------------------------------- */
+@custom-media --viewport-small (max-width: 44.9em);
+@custom-media --viewport-medium (min-width: 45em);
+@custom-media --viewport-large (min-width: 90em);
+@custom-media --viewport-retina (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi);
+
+/* ----------------------------------------------------------------------------
+custom properties
+---------------------------------------------------------------------------- */
+:root {
+
+  /* colors */
+  --color-white: #fff;
+  --color-black: #191919;
+  --color-grey: #263340;
+  --color-teal: #5fddc5;
+
+  /* semantic colors */
+  --color-text: var(--color-black);
+  --color-sheet: var(--color-white);
+  --color-neutral: var(--color-grey);
+  --color-link: var(--color-white);
+  --color-accent: var(--color-teal);
+  --color-icon: var(--color-white);
+
+  /* spacing presets */
+  --space-xs: 0.25em;
+  --space-s: 0.5em;
+  --space-m: 1em;
+  --space-l: 1.5em;
+  --space-xl: 3em;
+  --space-xxl: 4em;
+  --space-xxxl: 6em;
+
+  /* font stacks */
+  --font-main: 'Inter', 'Helvetica Neue', helvetica, 'Apple Color Emoji', arial, sans-serif;
+
+  /* default type size */
+  --type-base: max(1.8em, min(calc(0.8em + 1vw), 2.4em));
+
+  /* type scales */
+  --type-xxxs: 55%;
+  --type-xxs: 65%;
+  --type-xs: 75%;
+  --type-s: 85%;
+  --type-m: 100%;
+  --type-l: 125%;
+  --type-xl: 150%;
+  --type-xxl: 200%;
+  --type-xxxl: 300%;
+  --type-xxxxl: 600%;
+  
+  /* line heights */
+  --leading-s: 1.1;
+  --leading-m: 1.4;
+  --leading-l: 1.7;
+}
+
+@media (--viewport-medium) {
+  :root {
+    --type-xxxl: 390%;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+custom fonts
+---------------------------------------------------------------------------- */
+
+@font-face{
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-stretch: normal;
+  font-named-instance: 'Regular';
+  src: url('/assets/fonts/Inter-roman-subset.var.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face{
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url('/assets/fonts/Inter-italic-subset.var.woff2') format('woff2');
+  font-display: swap;
+}

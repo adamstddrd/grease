@@ -1,0 +1,20 @@
+/* ----------------------------------------------------------------------------
+simple centered layout
+---------------------------------------------------------------------------- */
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 96vh;
+  margin: 0;
+  padding: 2vh;
+
+  &.--fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+  }
+}

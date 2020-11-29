@@ -1,0 +1,121 @@
+---
+title: Space
+order: 03
+---
+
+<h1>.space</h1>
+
+<p>Where <code>.grid</code> is mostly concerned about horizontal layout, <code>.space</code> deals with vertical layout; albeit in a simpler way. <code>.space</code> doesn’t apply any default on its own, so you’ll always use it with a modifier class.</p>
+
+<p>Most of the modifiers are self-explanatory, but the <code>--top-flush-soft</code> and <code>--bottom-flush-soft</code> are worth calling out. Unlike the regular flush modifiers, these only apply to the medium and large breakpoints. They’re for those times when you want elements flush when they’re sitting side by side, but not when they’re stacked (which is always the case in the small breakpoint).</p>
+
+<section class="grid__item --span-5 --start-2">
+  <h2>--top modifiers</h2>
+  <p>These modifier all adjust the top margin in various ways; push an element further from it’s neighbor, pull it closer, or just remove the margin all together.</p>
+
+  <div class="docs-space-demo">
+    <p class="space --top-s --bottom-flush">space --top-s</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-m --bottom-flush">space --top-m</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-l --bottom-flush">space --top-l</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-xl --bottom-flush">space --top-xl</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-xxl --bottom-flush">space --top-xxl</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush --bottom-flush">space --top-flush</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush-soft --bottom-flush">space --top-flush-soft</p>
+  </div>
+
+  <div class="docs-space-demo space --top-s">
+    <p class="space --top-pull-s --bottom-flush">space --top-pull-s</p>
+  </div>
+
+  <div class="docs-space-demo space --top-m">
+    <p class="space --top-pull-m --bottom-flush">space --top-pull-m</p>
+  </div>
+
+  <div class="docs-space-demo space --top-l">
+    <p class="space --top-pull-l --bottom-flush">space --top-pull-l</p>
+  </div>
+
+  <div class="docs-space-demo space --top-xl">
+    <p class="space --top-pull-xl --bottom-flush">space --top-pull-xl</p>
+  </div>
+
+  <div class="docs-space-demo space --top-xxl">
+    <p class="space --top-pull-xxl --bottom-flush">space --top-pull-xxl</p>
+  </div>
+</section>
+
+<section class="grid__item --span-5 --start-7">
+  <h2>--bottom modifiers</h2>
+  <p>These modifier all adjust the bottom margin in various ways; push an element further from it’s neighbor, pull it closer, or just remove the margin all together.</p>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush --bottom-s">space --bottom-s</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush --bottom-m">space --bottom-m</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush --bottom-l">space --bottom-l</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush --bottom-xl">space --bottom-xl</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush --bottom-xxl">space --bottom-xxl</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush --bottom-flush">space --bottom-flush</p>
+  </div>
+
+  <div class="docs-space-demo">
+    <p class="space --top-flush --bottom-flush-soft">space --bottom-flush-soft</p>
+  </div>
+
+  <div class="docs-space-demo space --bottom-s">
+    <p class="space --top-flush --bottom-pull-s">space --bottom-pull-s</p>
+    <div class="docs-space-demo space --top-flush --bottom-flush"></div>
+  </div>
+
+  <div class="docs-space-demo space --bottom-m">
+    <p class="space --top-flush --bottom-pull-m">space --bottom-pull-m</p>
+    <div class="docs-space-demo space --top-flush --bottom-flush"></div>
+  </div>
+
+  <div class="docs-space-demo space --bottom-l">
+    <p class="space --top-flush --bottom-pull-l">space --bottom-pull-l</p>
+    <div class="docs-space-demo space --top-flush --bottom-flush"></div>
+  </div>
+
+  <div class="docs-space-demo space --bottom-xl">
+    <p class="space --top-flush --bottom-pull-xl">space --bottom-pull-xl</p>
+    <div class="docs-space-demo space --top-flush --bottom-flush"></div>
+  </div>
+
+  <div class="docs-space-demo space --bottom-xxl">
+    <p class="space --top-flush --bottom-pull-xxl">space --bottom-pull-xxl</p>
+    <div class="docs-space-demo space --top-flush --bottom-flush"></div>
+  </div>
+</section>

@@ -1,0 +1,170 @@
+/* ----------------------------------------------------------------------------
+element styles
+---------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection,
+::-moz-selection {
+  color: var(--color-sheet);
+  background-color: var(--color-text);
+}
+
+html {
+  font-size: 10px;
+  background-color: var(--color-sheet);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  font-size: var(--type-base);
+  color: var(--color-text);
+  background-color: var(--color-sheet);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--leading-m);
+}
+
+h1 {
+  margin: max(var(--space-xl), 30vmin) 0 var(--space-xs) 0;
+  font-size: var(--type-xxxl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: var(--leading-s);
+  transition: font-weight 0.2s ease;
+}
+
+h2 {
+  margin: var(--space-xl) 0 0.25em 0;
+  font-size: var(--type-xl);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: var(--space-l) 0 var(--space-xs) 0;
+  font-size: var(--type-l);
+  font-weight: 900;
+}
+
+h4,
+h5,
+h6 {
+  margin: var(--space-m) 0 0 0;
+  font-size: var(--type-m);
+  font-weight: 600;
+}
+
+p,
+ul,
+ol,
+dl {
+  margin: var(--space-m) 0;
+  font-size: var(--type-s);
+  line-height: var(--leading-l);
+  font-weight: 350;
+}
+
+code {
+  margin-right: 0.1rem;
+  padding: 0.2em 0.3em;
+  color: var(--color-text);
+  background-color: var(--color-sheet);
+  border: 0.1rem solid var(--color-text);
+  box-shadow: 0.1rem 0.1rem 0 var(--color-text);
+}
+
+blockquote {
+  position: relative;
+  margin: var(--space-l) 0;
+  padding: 0;
+  quotes: "\201C""\201D""\2018""\2019";
+  text-transform: uppercase;
+  font-size: var(--type-m);
+  letter-spacing: 0.1em;
+  font-weight: 200;
+  font-style: italic;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style-position: outside;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ul li,
+ol li {
+  margin-left: 0;
+  margin-bottom: var(--space-xs);
+  position: relative;
+}
+
+ul li ul,
+ul li ol,
+ol li ol,
+ol li ul {
+  margin-left: 1.25em;
+  margin-bottom: 0;
+  font-size: var(--type-m);
+}
+
+b,
+strong {
+  font-weight: 800;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--type-s);
+}
+
+a,
+a:visited {
+  color: var(--color-text);
+  text-decoration-thickness: 0.1em;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+img, embed, object, video {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  width: 100%;
+  margin: var(--space-xl) 0;
+  border: 0;
+  border-top: 0.1rem solid var(--color-text);
+}

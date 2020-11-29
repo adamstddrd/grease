@@ -1,0 +1,50 @@
+/* ----------------------------------------------------------------------------
+text: masquerade text... as other text
+---------------------------------------------------------------------------- */
+
+.text {
+
+  &.--size-xxxs { font-size: var(--type-xxxs); }
+  &.--size-xxs { font-size: var(--type-xxs); }
+  &.--size-xs { font-size: var(--type-xs); }
+  &.--size-s { font-size: var(--type-s); }
+  &.--size-m { font-size: var(--type-m); }
+  &.--size-l { font-size: var(--type-l); }
+
+  &.--size-xl {
+    font-size: var(--type-xl);
+    line-height: var(--leading-m);
+  }
+
+  &.--size-xxl {
+    font-size: var(--type-xxl);
+    line-height: var(--leading-m);
+  }
+
+  &.--size-xxxl {
+    font-size: var(--type-xxxl);
+    line-height: var(--leading-s);
+  }
+
+  &.--size-xxxxl {
+    font-size: var(--type-xxxxl);
+    line-height: var(--leading-s); 
+    letter-spacing: -0.02em;
+  }
+
+  &.--weight-200 { font-weight: 200; }
+  &.--weight-300 { font-weight: 300; }
+  &.--weight-400 { font-weight: 400; }
+  &.--weight-500 { font-weight: 500; }
+  &.--weight-600 { font-weight: 600; }
+  &.--weight-700 { font-weight: 700; }
+  &.--weight-800 { font-weight: 800; }
+
+  &.--align-left { text-align: left; }
+  &.--align-center { text-align: center; }
+  &.--align-right { text-align: right; }
+
+  &.--leading-s { line-height: var(--leading-s); }
+  &.--leading-m { line-height: var(--leading-m); }
+  &.--leading-l { line-height: var(--leading-l); }
+}

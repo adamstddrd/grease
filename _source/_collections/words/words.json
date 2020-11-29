@@ -1,0 +1,7 @@
+{
+  "tags": [
+    "words"
+  ],
+  "layout": "page.html",
+  "permalink": "/words/{{ page.fileSlug }}/"
+}

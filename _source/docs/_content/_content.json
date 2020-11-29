@@ -1,0 +1,8 @@
+{
+  "tags": [
+    "docs"
+  ],
+  "layout": "page.html",
+  "stylesheet": "docs.css",
+  "permalink": "/docs/{{ page.fileSlug }}/"
+}
