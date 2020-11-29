@@ -36,9 +36,9 @@ grid: a simple grid system for page composition
   grid-column-start: 2;
 
   &.--bleed-left { grid-column: 1 / span 2; }
-  &.--bleed-right { grid-column-end: -1 }
+  &.--bleed-right { grid-column-end: -1; }
   &.--bleed-full { grid-column: 1 / -1; }
-  
+
   @media (--viewport-medium) {
     grid-column: 3 / span 6;
 
@@ -53,7 +53,6 @@ grid: a simple grid system for page composition
     &.--span-11 { grid-column-end: span 11; }
     &.--span-12 { grid-column: 2 / span 12; }
 
-    
     &.--start-1 { grid-column-start: 2; }
     &.--start-2 { grid-column-start: 3; }
     &.--start-3 { grid-column-start: 4; }
@@ -68,6 +67,6 @@ grid: a simple grid system for page composition
 
     &.--place-start { place-self: start; }
     &.--place-center { place-self: center; }
-    &.--place-end {place-self: end; }
+    &.--place-end { place-self: end; }
   }
 }

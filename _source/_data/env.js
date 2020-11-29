@@ -8,8 +8,15 @@ const prodUrl = process.env.URL;
 const stageUrl = process.env.DEPLOY_PRIME_URL;
 const devUrl = '';
 
-// set a base URL variable based on the current environment
-const baseUrl = environment === PROD_ENV ? prodUrl : STAGE_ENV ? stageUrl : devUrl
+// set the baseUrl according to the environment
+let baseUrl;
+if (environment === PROD_ENV) {
+  baseUrl = prodUrl;
+} else if (environment === STAGE_ENV) {
+  baseUrl = stageUrl;
+} else {
+  baseUrl = devUrl;
+}
 
 // useful for env-specific template conditionals
 const isProduction = environment === PROD_ENV;
@@ -25,5 +32,5 @@ module.exports = {
   isStaging,
   baseUrl,
   branch,
-  context
+  context,
 };

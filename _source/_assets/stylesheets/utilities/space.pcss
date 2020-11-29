@@ -5,6 +5,7 @@ space: manipulate the vertical space between elements
 .space {
 
   &.--top-flush { margin-top: 0; }
+
   &.--top-flush-soft {
     @media (--viewport-medium) {
       margin-top: 0;
@@ -17,13 +18,14 @@ space: manipulate the vertical space between elements
   &.--top-xl { margin-top: var(--space-xl); }
   &.--top-xxl { margin-top: var(--space-xxl); }
 
-  &.--top-pull-s { margin-top: calc(var(--space-s)*-1); }
-  &.--top-pull-m { margin-top: calc(var(--space-m)*-1); }
-  &.--top-pull-l { margin-top: calc(var(--space-l)*-1); }
-  &.--top-pull-xl { margin-top: calc(var(--space-xl)*-1); }
-  &.--top-pull-xxl { margin-top: calc(var(--space-xxl)*-1); }
+  &.--top-pull-s { margin-top: calc(var(--space-s) * -1); }
+  &.--top-pull-m { margin-top: calc(var(--space-m) * -1); }
+  &.--top-pull-l { margin-top: calc(var(--space-l) * -1); }
+  &.--top-pull-xl { margin-top: calc(var(--space-xl) * -1); }
+  &.--top-pull-xxl { margin-top: calc(var(--space-xxl) * -1); }
 
   &.--bottom-flush { margin-bottom: 0; }
+
   &.--bottom-flush-soft {
     @media (--viewport-medium) {
       margin-bottom: 0;
@@ -36,9 +38,9 @@ space: manipulate the vertical space between elements
   &.--bottom-xl { margin-bottom: var(--space-xl); }
   &.--bottom-xxl { margin-bottom: var(--space-xxl); }
 
-  &.--bottom-pull-s { margin-bottom: calc(var(--space-s)*-1); }
-  &.--bottom-pull-m { margin-bottom: calc(var(--space-m)*-1); }
-  &.--bottom-pull-l { margin-bottom: calc(var(--space-l)*-1); }
-  &.--bottom-pull-xl { margin-bottom: calc(var(--space-xl)*-1); }
-  &.--bottom-pull-xxl { margin-bottom: calc(var(--space-xxl)*-1); }
+  &.--bottom-pull-s { margin-bottom: calc(var(--space-s) * -1); }
+  &.--bottom-pull-m { margin-bottom: calc(var(--space-m) * -1); }
+  &.--bottom-pull-l { margin-bottom: calc(var(--space-l) * -1); }
+  &.--bottom-pull-xl { margin-bottom: calc(var(--space-xl) * -1); }
+  &.--bottom-pull-xxl { margin-bottom: calc(var(--space-xxl) * -1); }
 }
