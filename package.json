@@ -40,10 +40,10 @@
     }
   },
   "lint-staged": {
-    "_source/*.pcss*": [
+    "_source/**/*.pcss": [
       "stylelint --fix"
     ],
-    "_source/*.js*": [
+    "_source/**/*.js": [
       "eslint --fix"
     ]
   },
