@@ -11,5 +11,5 @@ module.exports = function prettyDate(value) {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const dayWithSuffix = appendSuffix(dateObject.getDate());
 
-  return `${dayWithSuffix} ${months[dateObject.getMonth()]} ${dateObject.getFullYear()}`;
+  return `${months[dateObject.getMonth()]} ${dayWithSuffix} ${dateObject.getFullYear()}`;
 };
