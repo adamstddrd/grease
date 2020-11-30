@@ -1,9 +1,53 @@
 ---
 title: Text
-order: 04
+order: 03
 ---
 
 <h1>.text</h1>
 
-<p>Where <code>.grid</code> is mostly concerned about horizontal layout, <code>.space</code> deals with vertical layout; albeit in a simpler way. <code>.space</code> doesn’t apply any default on its own, so you’ll always use it with a modifier class.</p>
+<p><strong><code>.text</code> helps you masquerade text elements as other elements.</strong> Perfect for those times where you need to maintain semantic structure but want the appearance to be something other than the default element style provides. Make a H2 look like a H3, etc. It’s also useful for applying a scale factor to components as well as art directed text.</p>
+
+<h2>--size modifiers</h2>
+
+<p><code>--size</code> modifies the text size of elements, using the same custom properties that are directly used by text elements and headings. <code>--xl</code> and up also modify line heights, as you <em>almost always</em> want less leading with larger type.</p>
+
+<p class="text --size-xxs">text --size-xxs</p>
+<p class="text --size-xs">text --size-xs</p>
+<p class="text --size-s">text --size-s</p>
+<p class="text --size-m">text --size-m</p>
+<p class="text --size-l">text --size-l</p>
+<p class="text --size-xl">text --size-xl</p>
+<p class="text --size-xxl">text --size-xxl</p>
+<p class="grid__item --span-10 text --size-xxxl space --top-s --bottom-s">text --size-xxxl</p>
+<p class="grid__item --span-10 text --size-xxxxl space --top-s --bottom-s">text --size-xxxxl</p>
+
+<h2>--weight modifiers</h2>
+
+<p><code>--weight</code> modifiers control the weight of the text. Out of the can, these expect a variable font. Adjust to the weights provided by your custom font as need be.</p>
+
+<p class="text --weight-200">text --weight-200</p>
+<p class="text --weight-300">text --weight-300</p>
+<p class="text --weight-400">text --weight-400</p>
+<p class="text --weight-500">text --weight-500</p>
+<p class="text --weight-600">text --weight-600</p>
+<p class="text --weight-700">text --weight-700</p>
+<p class="text --weight-800">text --weight-800</p>
+
+<h2>--align modifiers</h2>
+
+<p>Use <code>--align</code> modifiers to manipulate an element’s alignment.</p>
+
+<p class="text --align-left">text --align-left</p>
+<p class="text --align-center">text --align-center</p>
+<p class="text --align-right">text --align-right</p>
+
+<h2>--leading modifiers</h2>
+
+<p>Give an element more or less leading with the <code>--align</code> modifiers.</p>
+
+<p class="text --leading-s"><code>text --leading-s</code> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<p class="text --leading-m"><code>text --leading-m</code> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<p class="text --leading-l"><code>text --leading-l</code> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
