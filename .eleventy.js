@@ -33,6 +33,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary('md', markdownIt(markdownItOptions));
   eleventyConfig.addPassthroughCopy('_redirects');
   eleventyConfig.addPassthroughCopy({ '_source/_assets/fonts': 'assets/fonts' });
+  eleventyConfig.addPassthroughCopy({ '_source/_assets/images': 'assets' });
   eleventyConfig.setDataDeepMerge(true);
 
   return {
