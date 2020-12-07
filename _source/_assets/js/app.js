@@ -1,8 +1,8 @@
 /* ----------------------------------------------------------------------------
 js entry point
 ---------------------------------------------------------------------------- */
-import * as scroll from './scroll.js';
-// import * as netlify from "./netlify.js"
+import * as scroll from './utilities/scroll.js';
+// import * as netlify from "./utilities/netlify.js"
 
 document.addEventListener('DOMContentLoaded', () => {
   scroll.animateOnScroll();
