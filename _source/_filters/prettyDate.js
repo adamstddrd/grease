@@ -1,4 +1,6 @@
-// Stolen from https://stackoverflow.com/a/31615643
+/* ----------------------------------------------------------------------------
+returns a formatted date - via https://stackoverflow.com/a/31615643
+---------------------------------------------------------------------------- */
 const appendSuffix = (n) => {
   const s = ['th', 'st', 'nd', 'rd'];
   const v = n % 100;
