@@ -34,7 +34,7 @@ function buildCss() {
 }
 
 function watchCss(){
-  return watch(source+'/css/**/*.pcss', css);
+  return watch(source+'/css/**/*.pcss', buildCss);
 }
 
 /* ----------------------------------------------------------------------------
@@ -55,7 +55,7 @@ function buildCssPages() {
 }
 
 function watchCssPages(){
-  return watch(source+'/css-pages/**/*.pcss', cssPages);
+  return watch(source+'/css-pages/**/*.pcss', buildCssPages);
 }
 
 /* ----------------------------------------------------------------------------
@@ -75,7 +75,7 @@ function buildJs() {
 }
 
 function watchJs(){
-  return watch(source+'/js/**/*.js', js);
+  return watch(source+'/js/**/*.js', buildJs);
 }
 
 /* ----------------------------------------------------------------------------
@@ -96,7 +96,7 @@ function buildImg() {
 }
 
 function watchImg(){
-  return watch(imgPath, img);
+  return watch(imgPath, buildImg);
 }
 
 /* ----------------------------------------------------------------------------
@@ -119,7 +119,7 @@ exports
 
 exports.default = buildAll;
 exports.css = buildAllCss;
-exports.js = js;
-exports.img = img;
+exports.js = buildJs;
+exports.img = buildImg;
 exports.clean = clean;
 exports.watch = series(buildAll, watchAll);

@@ -1,14 +1,14 @@
 // docs: https://www.11ty.io/docs/config/
 
 // Import filters
-const sortByOrder = require('./_source/_filters/sortByOrder.js');
+const sortBy = require('./_source/_filters/sortBy.js');
 const slayWidows = require('./_source/_filters/slayWidows.js');
 const prettyDate = require('./_source/_filters/prettyDate.js');
 
 module.exports = function(eleventyConfig) {
 
   // filters
-  eleventyConfig.addFilter('sortByOrder', sortByOrder);
+  eleventyConfig.addFilter('sortBy', sortBy);
   eleventyConfig.addFilter('slayWidows', slayWidows);
   eleventyConfig.addFilter('prettyDate', prettyDate);
 

@@ -1,5 +1,5 @@
 <ul class="text --size-xl">
-  {% assign sortedDocs = collections.docs | sortByOrder %}
+  {% assign sortedDocs = collections.docs | sortBy: "order" %}
   {%- for entry in sortedDocs -%}
   <li>
     <a href="{{ entry.url }}">{{ entry.data.title }}</a>
