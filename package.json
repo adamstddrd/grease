@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "turn your web projects up to 11",
-  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "cssnano": "^4.1.10",
@@ -14,14 +13,13 @@
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.2",
     "gulp-concat": "^2.6.1",
+    "gulp-esbuild": "^0.3.4",
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-terser": "^2.0.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.5.2",
-    "merge-stream": "^2.0.0",
     "postcss-preset-env": "^6.7.0",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0"
