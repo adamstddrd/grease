@@ -12,7 +12,6 @@
     "eslint-plugin-import": "^2.22.1",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.2",
-    "gulp-concat": "^2.6.1",
     "gulp-esbuild": "^0.3.4",
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": "^9.0.0",
@@ -20,6 +19,9 @@
     "gulp-sourcemaps": "^3.0.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.5.2",
+    "postcss": "^8.2.1",
+    "postcss-import": "^13.0.0",
+    "postcss-import-ext-glob": "^1.1.0",
     "postcss-preset-env": "^6.7.0",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0"
@@ -30,7 +32,8 @@
     "build:stage": "gulp && ELEVENTY_ENV=stage npx eleventy",
     "build:prod": "gulp && ELEVENTY_ENV=prod npx eleventy",
     "lint:css": "stylelint _source/**/*.pcss --fix",
-    "lint:js": "eslint _source/**/*.js --fix"
+    "lint:js": "eslint _source/**/*.js --fix",
+    "clean": "trash _public"
   },
   "husky": {
     "hooks": {

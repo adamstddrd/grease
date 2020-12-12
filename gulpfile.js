@@ -1,7 +1,6 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
-const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
@@ -9,117 +8,118 @@ const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
 const postcssPresetEnv = require('postcss-preset-env');
 const gulpEsbuild = require('gulp-esbuild');
+const postcssImport = require('postcss-import');
+const postcssImportGlob = require('postcss-import-ext-glob');
 
-// file paths
-const paths = {
-  output: '_public',
-  assets: '_public/assets',
-  js: {
-    source: '_source/_assets/js/app.js',
-    fileName: 'app.js'
-  },
-  css: {
-    source: [
-      '_source/_assets/css/base/**/*.pcss',  // 'base' directory
-      '_source/_assets/css/**/*.pcss',       // then everything else
-      '!_source/_assets/css/pages/**/*.pcss' // except page-specific css
-    ],
-    fileName: 'main.css'
-  },
-  cssPages: {
-    source: '_source/_assets/css/pages/**/*.pcss',
-    root: '_source/_assets/css/base/@root.pcss'
-  },
-  img: {
-    source: [
-      '_source/_assets/images/**/*',  // grab everything
-      '!_source/_assets/images/**/.*' // except hidden files
-    ]
-  }
-};
+const source = '_source/_assets';
+const output = '_public/assets';
 
-// main css bundle
-function css() {
-  return src(paths.css.source)
-    .pipe(sourcemaps.init())
-    .pipe(concat(paths.css.fileName))
-    .pipe(postcss([
-      postcssPresetEnv({stage: 1}),
-      cssnano()
-    ]))
-    .pipe(sourcemaps.write('.'))
-    .pipe(dest(paths.assets)
-  );
-}
+/* ----------------------------------------------------------------------------
+main css file
+---------------------------------------------------------------------------- */
 
-// page-specific css files
-function cssPages() {
-  return src(paths.cssPages.source)
+function buildCss() {
+  return src(source+'/css/main.pcss')
     .pipe(sourcemaps.init())
     .pipe(postcss([
-      postcssPresetEnv({stage: 1, importFrom: paths.cssPages.root}),
+      postcssImportGlob(),
+      postcssImport(),
+      postcssPresetEnv({stage: 1, exportTo: output+'vars.css'}),
       cssnano()
     ]))
     .pipe(rename({ extname: '.css' }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest(paths.assets)
+    .pipe(dest(output)
   );
 }
 
-// javascript
-function js() {
-  return src(paths.js.source)
+function watchCss(){
+  return watch(source+'/css/**/*.pcss', css);
+}
+
+/* ----------------------------------------------------------------------------
+page-specific css files
+---------------------------------------------------------------------------- */
+
+function buildCssPages() {
+  return src(source+'/css-pages/**/*.pcss')
+    .pipe(sourcemaps.init())
+    .pipe(postcss([
+      postcssPresetEnv({stage: 1, importFrom: output+'vars.css'}),
+      cssnano()
+    ]))
+    .pipe(rename({ extname: '.css' }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest(output)
+  );
+}
+
+function watchCssPages(){
+  return watch(source+'/css-pages/**/*.pcss', cssPages);
+}
+
+/* ----------------------------------------------------------------------------
+javascript
+---------------------------------------------------------------------------- */
+
+function buildJs() {
+  return src(source+'/js/app.js')
     .pipe(gulpEsbuild({
-      outfile: paths.js.fileName,
+      outfile: 'app.js',
       bundle: true,
       sourcemap: true,
       minify: true,
     }))
-    .pipe(dest(paths.assets)
+    .pipe(dest(output)
   );
 }
 
-// process images
-function img() {
-  return src(paths.img.source)
-    .pipe(changed(paths.assets))
-    .pipe(imagemin())
-    .pipe(dest(paths.assets)
-  );
-}
-
-// watch CSS for changes
-function watchCss(){
-  return watch(paths.css.source, css);
-}
-
-// watch CSS for changes
-function watchCssPages(){
-  return watch(paths.cssPages.source, cssPages);
-}
-
-// watch images for changes
-function watchImg(){
-  return watch(paths.img.source, img);
-}
-
-// watch JS for changes
 function watchJs(){
-  return watch(paths.js.source, js);
+  return watch(source+'/js/**/*.js', js);
 }
+
+/* ----------------------------------------------------------------------------
+images
+---------------------------------------------------------------------------- */
+
+const imgPath = [
+  source+'/images/**/*',
+  '!'+source+'/images/**/.*'
+];
+
+function buildImg() {
+  return src(imgPath)
+    .pipe(changed(output))
+    .pipe(imagemin())
+    .pipe(dest(output)
+  );
+}
+
+function watchImg(){
+  return watch(imgPath, img);
+}
+
+/* ----------------------------------------------------------------------------
+utilities
+---------------------------------------------------------------------------- */
 
 // clean out the build directory
 function clean(){
-  return del(paths.output + '/**');
+  return del('_public/**');
 }
 
-// export functions
-exports.default = parallel(css, cssPages, js, img);
-exports.css = parallel(css, cssPages);
+// compound tasks
+const buildAllCss = series(buildCss, buildCssPages);
+const buildAll = parallel(buildAllCss, buildJs, buildImg);
+const watchAll = parallel(watchCss, watchCssPages, watchJs, watchImg);
+
+/* ----------------------------------------------------------------------------
+exports
+---------------------------------------------------------------------------- */
+
+exports.default = buildAll;
+exports.css = buildAllCss;
 exports.js = js;
 exports.img = img;
 exports.clean = clean;
-exports.watch = series(
-  parallel(css, cssPages, js, img), 
-  parallel(watchCss, watchCssPages, watchJs, watchImg)
-);
+exports.watch = series(buildAll, watchAll);
