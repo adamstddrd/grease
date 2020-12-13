@@ -1,16 +1,14 @@
 const { src, dest, watch, series, parallel } = require('gulp');
-const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
+const esbuild = require('gulp-esbuild');
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
 const postcssPresetEnv = require('postcss-preset-env');
-const gulpEsbuild = require('gulp-esbuild');
 const postcssImport = require('postcss-import');
 const postcssImportGlob = require('postcss-import-ext-glob');
-
 const source = '_source/_assets';
 const output = '_public/assets';
 
@@ -64,7 +62,7 @@ javascript
 
 function buildJs() {
   return src(source+'/js/app.js')
-    .pipe(gulpEsbuild({
+    .pipe(esbuild({
       outfile: 'app.js',
       bundle: true,
       sourcemap: true,
@@ -100,15 +98,9 @@ function watchImg(){
 }
 
 /* ----------------------------------------------------------------------------
-utilities
+composed tasks
 ---------------------------------------------------------------------------- */
 
-// clean out the build directory
-function clean(){
-  return del('_public/**');
-}
-
-// compound tasks
 const buildAllCss = series(buildCss, buildCssPages);
 const buildAll = parallel(buildAllCss, buildJs, buildImg);
 const watchAll = parallel(watchCss, watchCssPages, watchJs, watchImg);
@@ -121,5 +113,4 @@ exports.default = buildAll;
 exports.css = buildAllCss;
 exports.js = buildJs;
 exports.img = buildImg;
-exports.clean = clean;
 exports.watch = series(buildAll, watchAll);
