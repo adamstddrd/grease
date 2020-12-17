@@ -33,15 +33,6 @@ body {
   background-color: var(--color-sheet);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--leading-m);
-}
-
 h1 {
   margin: max(var(--space-xl), 30vmin) 0 var(--space-xs) 0;
   font-size: var(--type-xxxl);
@@ -52,9 +43,10 @@ h1 {
 }
 
 h2 {
-  margin: var(--space-xl) 0 0.25em 0;
+  margin: var(--space-xl) 0 var(--space-xs) 0;
   font-size: var(--type-xl);
   font-weight: 900;
+  line-height: var(--leading-m);
   text-transform: uppercase;
 }
 
@@ -62,6 +54,7 @@ h3 {
   margin: var(--space-l) 0 var(--space-xs) 0;
   font-size: var(--type-l);
   font-weight: 900;
+  line-height: var(--leading-m);
 }
 
 h4,
@@ -70,6 +63,7 @@ h6 {
   margin: var(--space-m) 0 0 0;
   font-size: var(--type-m);
   font-weight: 600;
+  line-height: var(--leading-m);
 }
 
 p,
@@ -82,52 +76,26 @@ dl {
   font-weight: 350;
 }
 
-code {
-  margin-right: 0.1rem;
-  padding: 0.2em 0.3em;
-  color: var(--color-text);
-  background-color: var(--color-sheet);
-  border: 0.1rem solid var(--color-text);
-  box-shadow: 0.1rem 0.1rem 0 var(--color-text);
-}
-
-blockquote {
-  position: relative;
-  margin: var(--space-l) 0;
-  padding: 0;
-  quotes: "\201C""\201D""\2018""\2019";
-  text-transform: uppercase;
-  font-size: var(--type-m);
-  letter-spacing: 0.1em;
-  font-weight: 200;
-  font-style: italic;
-}
-
-ul,
-ol {
+ul {
   padding: 0;
   list-style-position: outside;
-}
-
-ul {
   list-style-type: none;
 }
 
 ol {
+  padding: 0;
+  list-style-position: outside;
   list-style-type: decimal;
 }
 
-ul li,
-ol li {
+li {
   margin-left: 0;
   margin-bottom: var(--space-xs);
   position: relative;
 }
 
-ul li ul,
-ul li ol,
-ol li ol,
-ol li ul {
+li ul,
+li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
   font-size: var(--type-m);
@@ -155,6 +123,27 @@ a:visited {
 
 a:hover {
   color: var(--color-accent);
+}
+
+code {
+  margin-right: 0.1rem;
+  padding: 0.2em 0.3em;
+  color: var(--color-text);
+  background-color: var(--color-sheet);
+  border: 0.1rem solid var(--color-text);
+  box-shadow: 0.1rem 0.1rem 0 var(--color-text);
+}
+
+blockquote {
+  position: relative;
+  margin: var(--space-l) 0;
+  padding: 0;
+  quotes: "\201C""\201D""\2018""\2019";
+  text-transform: uppercase;
+  font-size: var(--type-m);
+  letter-spacing: 0.1em;
+  font-weight: 200;
+  font-style: italic;
 }
 
 img,
