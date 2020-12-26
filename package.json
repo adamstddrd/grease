@@ -6,6 +6,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "cssnano": "^4.1.10",
+    "del-cli": "^3.0.1",
     "esbuild": "^0.8.21",
     "eslint": "^7.15.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -20,14 +21,13 @@
     "postcss-import-ext-glob": "^1.1.0",
     "postcss-preset-env": "^6.7.0",
     "stylelint": "^13.8.0",
-    "stylelint-config-standard": "^20.0.0",
-    "trash-cli": "^4.0.0"
+    "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
     "serve": "npm-run-all -s build:js -p watch:**",
     "publish:stage": "ELEVENTY_ENV=stage run-s build:**",
     "publish:prod": "ELEVENTY_ENV=prod run-s build:**",
-    "clean": "trash _public",
+    "clean": "del-cli _public/**",
     "build:11ty": "npx eleventy",
     "watch:11ty": "npx eleventy --serve --quiet",
     "build:css": "postcss _source/_assets/css/main.css -o _public/assets/main.css --map",
