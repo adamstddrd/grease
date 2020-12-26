@@ -18,8 +18,7 @@ module.exports = function(eleventyConfig) {
       '_public/assets/*.css',
       '_public/assets/*.js',
       '_public/assets',
-      '!_public/assets/**/**.map',
-      '!_public/assets/vars.css'
+      '!_public/assets/**/**.map'
     ],
     ui: false,
   });

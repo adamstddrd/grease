@@ -1,6 +1,5 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
-const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 const esbuild = require('gulp-esbuild');
@@ -17,22 +16,21 @@ main css file
 ---------------------------------------------------------------------------- */
 
 function buildCss() {
-  return src(source+'/css/main.pcss')
+  return src(source+'/css/main.css')
     .pipe(sourcemaps.init())
     .pipe(postcss([
       postcssImportGlob(),
       postcssImport(),
-      postcssPresetEnv({stage: 1, exportTo: output+'vars.css'}),
+      postcssPresetEnv({stage: 1}),
       cssnano()
     ]))
-    .pipe(rename({ extname: '.css' }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest(output)
   );
 }
 
 function watchCss(){
-  return watch(source+'/css/**/*.pcss', buildCss);
+  return watch(source+'/css/**/*.css', buildCss);
 }
 
 /* ----------------------------------------------------------------------------
@@ -40,20 +38,19 @@ page-specific css files
 ---------------------------------------------------------------------------- */
 
 function buildCssPages() {
-  return src(source+'/css-pages/**/*.pcss')
+  return src(source+'/css-pages/**/*.css')
     .pipe(sourcemaps.init())
     .pipe(postcss([
-      postcssPresetEnv({stage: 1, importFrom: output+'vars.css'}),
+      postcssPresetEnv({stage: 1, importFrom: source+'/css/base/@root.css'}),
       cssnano()
     ]))
-    .pipe(rename({ extname: '.css' }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest(output)
   );
 }
 
 function watchCssPages(){
-  return watch(source+'/css-pages/**/*.pcss', buildCssPages);
+  return watch(source+'/css-pages/**/*.css', buildCssPages);
 }
 
 /* ----------------------------------------------------------------------------
@@ -101,16 +98,7 @@ function watchImg(){
 composed tasks
 ---------------------------------------------------------------------------- */
 
-const buildAllCss = series(buildCss, buildCssPages);
-const buildAll = parallel(buildAllCss, buildJs, buildImg);
+const buildAll = parallel(buildCss, buildCssPages, buildJs, buildImg);
 const watchAll = parallel(watchCss, watchCssPages, watchJs, watchImg);
-
-/* ----------------------------------------------------------------------------
-exports
----------------------------------------------------------------------------- */
-
 exports.default = buildAll;
-exports.css = buildAllCss;
-exports.js = buildJs;
-exports.img = buildImg;
 exports.watch = series(buildAll, watchAll);
