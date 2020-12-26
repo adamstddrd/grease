@@ -30,13 +30,13 @@
     "clean": "trash _public",
     "build:11ty": "npx eleventy",
     "watch:11ty": "npx eleventy --serve --quiet",
-    "build:css": "postcss _source/_assets/css/main.pcss -o _public/assets/main.css --map",
+    "build:css": "postcss _source/_assets/css/main.css -o _public/assets/main.css --map",
     "watch:css": "npm run build:css -- --watch",
-    "build:css:pages": "postcss _source/_assets/css/pages/**/*.pcss -d _public/assets/ --ext css --map",
+    "build:css:pages": "postcss _source/_assets/css/pages/**/*.css -d _public/assets/ --map",
     "watch:css:pages": "npm run build:css:pages -- --watch",
     "build:js": "esbuild _source/_assets/js/app.js --bundle --minify --sourcemap --outdir=_public/assets",
     "watch:js": "onchange \"_source/_assets/js/**/*.js\" -- npm run build:js",
-    "lint:css": "stylelint _source/**/*.pcss --fix",
+    "lint:css": "stylelint _source/**/*.css --fix",
     "lint:js": "eslint _source/**/*.js --fix"
   },
   "husky": {
@@ -45,7 +45,7 @@
     }
   },
   "lint-staged": {
-    "_source/**/*.pcss": [
+    "_source/**/*.css": [
       "stylelint --fix"
     ],
     "_source/**/*.js": [

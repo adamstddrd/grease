@@ -2,9 +2,9 @@
 main CSS bundle
 ---------------------------------------------------------------------------- */
 
-@import "base/@root.pcss";
-@import "base/fonts.pcss";
-@import "base/elements.pcss";
+@import "base/@root.css";
+@import "base/fonts.css";
+@import "base/elements.css";
 
-@import-glob "components/**/*.pcss";
-@import-glob "utilities/**/*.pcss";
+@import-glob "components/**/*.css";
+@import-glob "utilities/**/*.css";
