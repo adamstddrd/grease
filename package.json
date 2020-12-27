@@ -24,12 +24,12 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
-    "serve": "npm-run-all -s build:js -p watch:**",
+    "serve": "npm-run-all -s clean build:js -p watch:**",
     "publish:stage": "ELEVENTY_ENV=stage run-s build:**",
     "publish:prod": "ELEVENTY_ENV=prod run-s build:**",
     "clean": "del-cli _public/**",
     "build:11ty": "npx eleventy",
-    "watch:11ty": "npx eleventy --serve --quiet",
+    "watch:11ty": "npx eleventy --serve --incremental --quiet",
     "build:css": "postcss _source/_assets/css/main.css -o _public/assets/main.css --map",
     "watch:css": "npm run build:css -- --watch",
     "build:css:pages": "postcss _source/_assets/css/pages/**/*.css -d _public/assets/ --map",

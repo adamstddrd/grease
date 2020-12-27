@@ -1,15 +1,19 @@
-const sortBy = require('./_source/_filters/sortBy.js');
+const fullDate = require('./_source/_filters/fullDate.js');
+const markdownify = require('./_source/_filters/markdownify.js');
 const slayWidows = require('./_source/_filters/slayWidows.js');
-const prettyDate = require('./_source/_filters/prettyDate.js');
+const sortBy = require('./_source/_filters/sortBy.js');
+const where = require('./_source/_filters/where.js');
 
 module.exports = function(eleventyConfig) {
 
   /* --------------------------------------------------------------------------
   filters
   -------------------------------------------------------------------------- */
-  eleventyConfig.addFilter('sortBy', sortBy);
+  eleventyConfig.addFilter('fullDate', fullDate);
+  eleventyConfig.addFilter('markdownify', markdownify);
   eleventyConfig.addFilter('slayWidows', slayWidows);
-  eleventyConfig.addFilter('prettyDate', prettyDate);
+  eleventyConfig.addFilter('sortBy', sortBy);
+  eleventyConfig.addFilter('where', where);
 
   /* --------------------------------------------------------------------------
   BrowserSync settings

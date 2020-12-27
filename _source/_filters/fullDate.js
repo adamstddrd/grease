@@ -7,7 +7,7 @@ const appendSuffix = (n) => {
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 };
 
-module.exports = function prettyDate(value) {
+module.exports = function fullDate(value) {
   const dateObject = new Date(value);
 
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
