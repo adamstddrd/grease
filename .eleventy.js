@@ -1,16 +1,19 @@
-// docs: https://www.11ty.io/docs/config/
 const sortBy = require('./_source/_filters/sortBy.js');
 const slayWidows = require('./_source/_filters/slayWidows.js');
 const prettyDate = require('./_source/_filters/prettyDate.js');
 
 module.exports = function(eleventyConfig) {
 
-  // Filters
+  /* --------------------------------------------------------------------------
+  filters
+  -------------------------------------------------------------------------- */
   eleventyConfig.addFilter('sortBy', sortBy);
   eleventyConfig.addFilter('slayWidows', slayWidows);
   eleventyConfig.addFilter('prettyDate', prettyDate);
 
-  // BrowserSync settings
+  /* --------------------------------------------------------------------------
+  BrowserSync settings
+  -------------------------------------------------------------------------- */
   eleventyConfig.setBrowserSyncConfig({
     files: [ // watch the files generated elsewhere
       '_public/assets/*.css',
@@ -21,19 +24,23 @@ module.exports = function(eleventyConfig) {
     ui: false,
   });
 
-  // MarkdownIt settings
+  /* --------------------------------------------------------------------------
+  MarkdownIt settings
+  -------------------------------------------------------------------------- */
   let markdownIt = require('markdown-it');
   let markdownItOptions = {
     html: true, // allow HTML markup
     typographer: true // fancy quotes
   };
 
-  // 11ty settings
+  /* --------------------------------------------------------------------------
+  11ty settings
+  -------------------------------------------------------------------------- */
   eleventyConfig.setLibrary('md', markdownIt(markdownItOptions));
+  eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy('_redirects');
   eleventyConfig.addPassthroughCopy({ '_source/_assets/fonts': 'assets/fonts' });
   eleventyConfig.addPassthroughCopy({ '_source/_assets/images': 'assets' });
-  eleventyConfig.setDataDeepMerge(true);
 
   return {
     dir: {
