@@ -12,13 +12,13 @@
 * **🍱 all the fixins’ production sites need** - Robust redirect support, sitemaps, support for excluding pages from search indexes, canonical URL support, a broken link checker, custom headers, a custom 404 page, etc.
 
 ## Getting set up for local dev
-[install Node](https://nodejs.org/en/) if you haven't already. Once you've cloned this repo, run `npm install` to download the various dependencies. To run the local dev server, run `npm run serve`. Check your terminal output for the URL, but it'll default to [http://localhost:8080](http://localhost:8080) unless that port is already in use.
+[Install Node](https://nodejs.org/en/) if you haven’t already. Once you’ve cloned this repo, run `npm install` to download the various dependencies. To run the local dev server, run `npm run serve`. Check your terminal output for the URL, but it’ll default to [http://localhost:8080](http://localhost:8080) unless that port is already in use.
 
 ### Working with CSS
 11Kit uses [PostCSS](https://postcss.org/) and the [PostCSS PresetEnv plugin](https://preset-env.cssdb.org/) that let’s you use future CSS today (in addition to back-filling rules and vendor prefixes for older browsers). You’ll definitely want to review the [draft CSS Nesting spec](https://drafts.csswg.org/css-nesting-1/) for syntax since it differs from SASS. Any CSS file you add to the `_source/_assets/css/pages` directory will be output individually instead of being included in the main bundle. Documentation for the functional CSS systems are baked into the site, at /docs.
 
 ## Deploys
-Any commit that you push to main will automatically be deployed to production (unless tests fail). If you don't want that to happen, make a branch. Every branch gets it's own staging URL. Similar to main, every push to that branch will trigger an automatic build.
+Any commit that you push to main will automatically be deployed to production (unless tests fail). If you don’t want that to happen, make a branch. Every branch gets its own staging URL. Similar to main, every push to that branch will trigger an automatic build.
 
 ## Configuring infrastructure
 All of the configuration is stored in the `netlify.toml` file. Want to add a build plugin that runs a test? netlify.toml. Need to add headers? netlify.toml. Redirects? netlify.toml! [Take a look a the Netlify docs for details and syntax](https://docs.netlify.com/configure-builds/file-based-configuration/).
