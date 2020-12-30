@@ -26,6 +26,7 @@ module.exports = function(eleventyConfig) {
       '!_public/assets/**/**.map'
     ],
     ui: false,
+    logPrefix: false,
   });
 
   /* --------------------------------------------------------------------------

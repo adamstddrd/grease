@@ -24,7 +24,7 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
-    "serve": "npm-run-all -s clean build:js -p watch:**",
+    "serve": "npm-run-all -s clean build:js -p watch:** --silent",
     "publish:stage": "ELEVENTY_ENV=stage run-s build:**",
     "publish:prod": "ELEVENTY_ENV=prod run-s build:**",
     "clean": "del-cli _public/**",
