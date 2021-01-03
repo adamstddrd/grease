@@ -5,7 +5,7 @@ module.exports = (ctx) => ({
     'postcss-import': {},
     'postcss-preset-env': {
       stage: 1,
-      importFrom: '_source/_assets/css/base/@root.css'
+      importFrom: '_source/_assets/css/_base/@root.css'
     },
     'cssnano': {},
   },

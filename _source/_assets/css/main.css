@@ -2,9 +2,9 @@
 main CSS bundle
 ---------------------------------------------------------------------------- */
 
-@import "base/@root.css";
-@import "base/fonts.css";
-@import "base/elements.css";
+@import "_base/@root.css";
+@import "_base/fonts.css";
+@import "_base/elements.css";
 
-@import-glob "components/**/*.css";
-@import-glob "utilities/**/*.css";
+@import-glob "_components/**/*.css";
+@import-glob "_utilities/**/*.css";
