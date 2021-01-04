@@ -26,12 +26,19 @@
   <link rel="mask-icon" href="/assets/icons/favicon.svg" color="#000000">
   <link rel="apple-touch-icon" href="/assets/icons/favicon-196x196.png">
 
+  <link rel="preload" href="/assets/fonts/Inter-roman-subset.var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Inter-italic-subset.var.woff2" as="font" type="font/woff2" crossorigin>
+
   <link rel="stylesheet" href="/assets/main.css" media="all">
 
-  {% if stylesheet %}
+  {%- if stylesheet -%}
   <link rel="stylesheet" href="/assets/{{ stylesheet }}" media="all">
-  {% endif %}
+  {%- endif -%}
 
   <script src="/assets/app.js" type="module"></script>
+
+  {%- if javascript -%}
+  <script src="/assets/{{ javascript }}"  type="module"></script>
+  {%- endif -%}
 
 </head>
