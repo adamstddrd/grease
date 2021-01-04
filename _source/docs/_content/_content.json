@@ -3,6 +3,6 @@
     "docs"
   ],
   "layout": "page.html",
-  "stylesheet": "docs.css",
+  "stylesheet": "pages/docs.css",
   "permalink": "/docs/{{ page.fileSlug }}/"
 }
