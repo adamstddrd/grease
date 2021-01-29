@@ -7,9 +7,13 @@ simple centered layout
   justify-content: center;
   align-items: center;
   width: 100vw;
-  min-height: 96vh;
+  height: 100vh;
   margin: 0;
   padding: 2vh;
+
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 
   &.--fullscreen {
     position: absolute;
