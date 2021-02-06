@@ -5,7 +5,7 @@ grid: a simple grid system for page composition
   display: grid;
   grid-template-columns: 1fr minmax(80vw, 100%) 1fr;
   align-items: start;
-  column-gap: min(5vw, 5ch);
+  column-gap: min(5vw, 5rem);
 
   & > .grid {
     grid-column: 1 / -1;
@@ -18,8 +18,8 @@ grid: a simple grid system for page composition
   &.--dense { grid-auto-flow: dense; }
 
   @media (--viewport-medium) {
-    grid-template-columns: 1fr repeat(12, minmax(3ch, 100%)) 1fr;
-    column-gap: min(2.5vw, 2.5ch);
+    grid-template-columns: 1fr repeat(12, minmax(3.75rem, 100%)) 1fr;
+    column-gap: min(2.5vw, 3.75rem);
 
     & > *:not([class*="grid"]) {
       grid-column: 3 / span 6;
@@ -27,8 +27,8 @@ grid: a simple grid system for page composition
   }
 
   @media (--viewport-large) {
-    grid-template-columns: 1fr repeat(12, 5.6ch) 1fr;
-    column-gap: 2.5ch;
+    grid-template-columns: 1fr repeat(12, 8rem) 1fr;
+    column-gap: 3.5rem;
   }
 }
 

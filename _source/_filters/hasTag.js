@@ -1,9 +1,9 @@
 /* ----------------------------------------------------------------------------
-the number of words contained in the passed content
-Liquid: {{ foo.templateContent | numberOfWords }}
+returns true if an entry belongs to a specific collection
+Liquid: {% assign foo = entry.data.tags | hasTag: "bar" %}
 ---------------------------------------------------------------------------- */
 module.exports = {
 
-  numberOfWords: (content) => content.split(/\s+/g).length,
+  hasTag: (tags, tag) => tags.includes(tag),
 
 };

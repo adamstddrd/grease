@@ -4,12 +4,12 @@ simple centered layout
 
 .card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+  align-items: stretch;
+  min-height: 100vh;
   margin: 0;
-  padding: 2vh;
+  padding: 0;
 
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
@@ -19,6 +19,5 @@ simple centered layout
     position: absolute;
     top: 0;
     left: 0;
-    padding: 0;
   }
 }

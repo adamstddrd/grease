@@ -1,19 +1,14 @@
-const fullDate = require('./_source/_filters/fullDate.js');
-const markdownify = require('./_source/_filters/markdownify.js');
-const slayWidows = require('./_source/_filters/slayWidows.js');
-const sortBy = require('./_source/_filters/sortBy.js');
-const where = require('./_source/_filters/where.js');
+const glob = require('fast-glob');
 
 module.exports = function(eleventyConfig) {
 
   /* --------------------------------------------------------------------------
   filters
   -------------------------------------------------------------------------- */
-  eleventyConfig.addFilter('fullDate', fullDate);
-  eleventyConfig.addFilter('markdownify', markdownify);
-  eleventyConfig.addFilter('slayWidows', slayWidows);
-  eleventyConfig.addFilter('sortBy', sortBy);
-  eleventyConfig.addFilter('where', where);
+  glob.sync(['_source/_filters/*.js']).forEach(file => {
+    let filters = require('./' + file);
+    Object.keys(filters).forEach(name => eleventyConfig.addFilter(name, filters[name]));
+  });
 
   /* --------------------------------------------------------------------------
   BrowserSync settings

@@ -1,9 +1,9 @@
 /* ----------------------------------------------------------------------------
-the number of words contained in the passed content
-Liquid: {{ foo.templateContent | numberOfWords }}
+offset the starting point in a collection
+Liquid: {% assign foo = collections.bar | offset: 5 %}
 ---------------------------------------------------------------------------- */
 module.exports = {
 
-  numberOfWords: (content) => content.split(/\s+/g).length,
+  offset: (collection, offset) => collection.slice(offset),
 
 };

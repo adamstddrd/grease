@@ -1,9 +1,9 @@
 /* ----------------------------------------------------------------------------
-the number of words contained in the passed content
-Liquid: {{ foo.templateContent | numberOfWords }}
+limit the number of items returned in a collection
+Liquid: {% assign foo = collections.bar | limit: 5 %}
 ---------------------------------------------------------------------------- */
 module.exports = {
 
-  numberOfWords: (content) => content.split(/\s+/g).length,
+  limit: (collection, limit) => collection.slice(0, limit),
 
 };

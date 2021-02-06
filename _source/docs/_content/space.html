@@ -7,7 +7,7 @@ order: 02
 
 <p>Where <code>.grid</code> is mostly concerned about horizontal layout, <code>.space</code> deals with vertical layout; albeit in a simpler way. <code>.space</code> doesn’t apply any default on its own, so you’ll always use it with a modifier class.</p>
 
-<p>Most of the modifiers are self-explanatory, but the <code>--top-flush-soft</code> and <code>--bottom-flush-soft</code> are worth calling out. Unlike the regular flush modifiers, these only apply to the medium and large breakpoints. They’re for those times when you want elements flush when they’re sitting side by side, but not when they’re stacked (which is always the case in the small breakpoint).</p>
+<p>Most of the modifiers are self-explanatory, but the <code>--top-flush@medium</code> and <code>--bottom-flush@medium</code> are worth calling out. Unlike the regular flush modifiers, these only apply to the medium and large breakpoints. They’re for those times when you want elements flush when they’re sitting side by side, but not when they’re stacked (which is always the case in the small breakpoint).</p>
 
 <section class="grid__item --span-5 --start-2">
   <h2>--top modifiers</h2>
@@ -38,7 +38,7 @@ order: 02
   </div>
 
   <div class="docs-space-demo">
-    <p class="space --top-flush-soft --bottom-flush">space --top-flush-soft</p>
+    <p class="space --top-flush@medium --bottom-flush">space --top-flush@medium</p>
   </div>
 
   <div class="docs-space-demo space --top-s">
@@ -91,7 +91,7 @@ order: 02
   </div>
 
   <div class="docs-space-demo">
-    <p class="space --top-flush --bottom-flush-soft">space --bottom-flush-soft</p>
+    <p class="space --top-flush --bottom-flush@medium">space --bottom-flush@medium</p>
   </div>
 
   <div class="docs-space-demo space --bottom-s">
