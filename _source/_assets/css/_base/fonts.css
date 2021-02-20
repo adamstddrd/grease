@@ -7,7 +7,7 @@ custom fonts
   font-weight: 100 900;
   font-stretch: normal;
   font-named-instance: 'Regular';
-  src: url('/assets/fonts/Inter-roman-subset.var.woff2') format('woff2');
+  src: url('/assets/Inter-roman-subset.var.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -16,6 +16,6 @@ custom fonts
   font-weight: 100 900;
   font-style: italic;
   font-named-instance: 'Italic';
-  src: url('/assets/fonts/Inter-italic-subset.var.woff2') format('woff2');
+  src: url('/assets/Inter-italic-subset.var.woff2') format('woff2');
   font-display: swap;
 }

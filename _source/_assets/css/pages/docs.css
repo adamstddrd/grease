@@ -2,15 +2,10 @@
 styles for /docs
 ---------------------------------------------------------------------------- */
 
-.docs-grid-demo {
-  margin-bottom: 2em;
-
-  & p {
-    margin: var(--space-m) 0;
-    padding: 0.25em 0.5em;
-    color: var(--color-sheet);
-    background-color: var(--color-text);
-  }
+.docs-grid-demo p {
+  padding: 0.25em 0.5em;
+  color: var(--color-sheet);
+  background-color: var(--color-text);
 }
 
 .docs-inverted {
@@ -24,8 +19,8 @@ styles for /docs
 
 .docs-box {
   display: block;
-  margin: var(--space-m) 0;
   height: 10em;
+  margin: var(--space-m) 0;
   background-color: var(--color-text);
 }
 

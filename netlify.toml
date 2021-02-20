@@ -26,7 +26,7 @@
 
 # cache fonts forever
 [[headers]]
-  for = "/assets/fonts/*"
+  for = "/assets/*.woff2"
   [headers.values]
     Cache-Control = "public, max-age=365000000, immutable"
 

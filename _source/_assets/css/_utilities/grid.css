@@ -22,7 +22,7 @@ grid: a simple grid system for page composition
     column-gap: min(2.5vw, 3.75rem);
 
     & > *:not([class*="grid"]) {
-      grid-column: 3 / span 6;
+      grid-column: 3 / span 7;
     }
   }
 

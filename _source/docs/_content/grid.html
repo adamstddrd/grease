@@ -12,7 +12,7 @@ order: 01
 <section class="docs-inverted grid space --top-l --bottom-l">
 
   <div class="grid__item --span-4 --place-center">
-    <p><strong><code>.grid</code> is nestable</strong>, which solves two issues:</p>
+    <p><strong><code>.grid</code> is nestable</strong>, which solves two common page layout issues:</p>
     <ol>
       <li>Maintaining a consistent layout grid without having to “flatten” your markup.</li>
       <li>Creating full-bleed page breakouts with content that <em>aligns to the same grid columns</em>.</li>
@@ -27,7 +27,7 @@ order: 01
 <p><strong><code>.grid</code> <em>is not</em> designed for older browsers.</strong> It uses CSS grids under the hood, with no fallbacks or polyfills. A fallback solution is highly dependent on how much fidelity you’re willing to lose, so it’s up to you to implement a solution that aligns with your project goals.</p>
 
 
-<h2>.grid__item</h2>
+<h2 class="grid__item">.grid__item</h2>
 
 <p><strong><code>.grid__item</code> is the basic building block of the grid system.</strong> Without modifiers, grid items span six columns starting on column 2. All direct children of <code>.grid</code> are mapped to these same columns too; both a sensible default, and a means to style markup that you can’t easily add classes too (Markdown generated markup, for instance).</p>
 
@@ -116,7 +116,7 @@ order: 01
 <div class="docs-box grid__item --start-4">&nbsp;</div>
 
 <div class="docs-box grid__item --start-2 --span-4">&nbsp;</div>
-<p class="grid__item --start-auto text --size-xxxl --weight-200 space --top-s">Sphinx of black quartz, judge my vow.</div>
+<p class="grid__item --start-auto text --size-xxxl --weight-200">Sphinx of black quartz, judge my vow.</div>
 
 <div class="grid__item --span-3 --start-1">
   <div class="docs-box">&nbsp;</div>

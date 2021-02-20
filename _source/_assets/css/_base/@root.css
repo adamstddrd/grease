@@ -24,7 +24,7 @@ custom properties
   --color-accent: var(--color-teal);
 
   /* spacing */
-  --space-base: 2rem;
+  --space-base: 1.6rem;
   --space-scale: 2;
   --space-xxs: calc(var(--space-xs) / var(--space-scale));
   --space-xs: calc(var(--space-s) / var(--space-scale));

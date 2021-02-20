@@ -6,6 +6,8 @@ element styles
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 ::selection,
@@ -17,7 +19,7 @@ element styles
 html {
   font-size: 10px;
   background-color: var(--color-sheet);
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
 }
 
 body {
@@ -26,8 +28,6 @@ body {
   align-items: stretch;
   min-height: 100vh;
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
   font-family: var(--font-main);
   font-size: var(--type-base);
   line-height: var(--leading-l);
@@ -35,32 +35,30 @@ body {
   background-color: var(--color-sheet);
 
   @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
   }
 }
 
 h1 {
   margin: max(var(--space-xl), 30vmin) 0 var(--space-m) 0;
   font-size: var(--type-xxxl);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
   line-height: var(--leading-s);
   transition: font-weight 0.2s ease;
 }
 
 h2 {
-  margin: var(--space-xl) 0 var(--space-xs) 0;
+  margin: var(--space-xl) 0 var(--space-m) 0;
   font-size: var(--type-xl);
-  font-weight: 900;
-  line-height: var(--leading-m);
-  text-transform: uppercase;
+  font-weight: 800;
+  line-height: var(--leading-s);
 }
 
 h3 {
-  margin: var(--space-m) 0 var(--space-xs) 0;
+  margin: var(--space-l) 0 var(--space-s) 0;
   font-size: var(--type-l);
-  font-weight: 900;
-  line-height: var(--leading-m);
+  font-weight: 700;
 }
 
 h4,
@@ -69,38 +67,37 @@ h6 {
   margin: var(--space-m) 0 0 0;
   font-size: var(--type-m);
   font-weight: 600;
-  line-height: var(--leading-m);
 }
 
 p,
 ul,
 ol,
 dl {
-  margin: var(--space-m) 0;
+  margin: var(--space-s) 0;
   font-weight: 350;
 }
 
 ul {
-  padding: 0;
   list-style-position: outside;
   list-style-type: none;
 }
 
 ol {
-  padding: 0;
   list-style-position: outside;
   list-style-type: decimal;
 }
 
 li {
-  margin-bottom: var(--space-xs);
   position: relative;
+
+  & + li {
+    margin: var(--space-xs) 0 0 0;
+  }
 }
 
 li ul,
 li ol {
   margin-left: 1.25em;
-  margin-bottom: 0;
   font-size: var(--type-m);
 }
 
@@ -130,7 +127,7 @@ a:hover {
 
 code {
   margin-right: 0.1rem;
-  padding: 0.2em 0.3em;
+  padding: 0.15em 0.25em;
   color: var(--color-text);
   background-color: var(--color-sheet);
   border: 0.1rem solid var(--color-text);
@@ -140,7 +137,6 @@ code {
 blockquote {
   position: relative;
   margin: var(--space-l) 0;
-  padding: 0;
   quotes: "\201C""\201D""\2018""\2019";
   text-transform: uppercase;
   font-size: var(--type-m);
