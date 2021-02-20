@@ -7,6 +7,8 @@ module.exports = (ctx) => ({
       stage: 1,
       importFrom: '_source/_assets/css/_base/@root.css'
     },
-    'cssnano': {},
+    'postcss-csso': {
+      restructure: false
+    },
   },
 })
