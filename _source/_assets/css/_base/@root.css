@@ -13,15 +13,15 @@ custom properties
   /* colors */
   --color-white: #fff;
   --color-black: #191919;
-  --color-grey: #263340;
-  --color-teal: #5fddc5;
 
   /* semantic colors */
   --color-text: var(--color-black);
   --color-sheet: var(--color-white);
-  --color-neutral: var(--color-grey);
-  --color-link: var(--color-white);
-  --color-accent: var(--color-teal);
+
+  @media (prefers-color-scheme: dark) {
+    --color-text: var(--color-white);
+    --color-sheet: var(--color-black);
+  }
 
   /* spacing */
   --space-base: 1.6rem;

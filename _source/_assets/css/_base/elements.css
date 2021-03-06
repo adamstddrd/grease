@@ -119,10 +119,11 @@ a,
 a:visited {
   color: var(--color-text);
   text-decoration-thickness: 0.1em;
+  transition: text-decoration-thickness 0.1s ease;
 }
 
 a:hover {
-  color: var(--color-accent);
+  text-decoration-thickness: 0.2em;
 }
 
 code {

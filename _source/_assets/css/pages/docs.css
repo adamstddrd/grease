@@ -9,12 +9,9 @@ styles for /docs
 }
 
 .docs-inverted {
-  --color-text: var(--color-white);
-  --color-sheet: var(--color-black);
-
   padding: var(--space-l) 0;
-  color: var(--color-text);
-  background-color: var(--color-sheet);
+  color: var(--color-sheet);
+  background-color: var(--color-text);
 }
 
 .docs-box {
@@ -28,7 +25,7 @@ styles for /docs
   min-height: 2em;
   margin: var(--space-m) 0;
   padding: 0;
-  border: 0.2rem solid var(--color-accent);
+  border: 0.1rem solid var(--color-text);
 
   & p {
     padding: var(--space-xs);
