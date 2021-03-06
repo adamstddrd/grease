@@ -27,6 +27,7 @@ module.exports = function(eleventyConfig) {
     ],
     ui: false,
     logPrefix: false,
+    ghostMode: false,
   });
 
   /* --------------------------------------------------------------------------

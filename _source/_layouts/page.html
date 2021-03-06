@@ -2,7 +2,11 @@
 layout: base.html
 ---
 
-<main class="grid animate --fade-in pad --bottom-soft">
+<main class="grid pad --bottom-soft">
+
+  <a href="/" class="grid__item --span-3 space --top-xl" aria-label="Grease">
+    {% include svg/grease.svg %}
+  </a>
 
   {{ content }}
 
