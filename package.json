@@ -2,7 +2,6 @@
   "name": "Grease",
   "version": "1.0.0",
   "private": true,
-  "description": "zero fri",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-img": "^0.8.0",
@@ -24,7 +23,7 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
-    "serve": "npm-run-all -s clean build:js -p watch:** --silent",
+    "serve": "run-p watch:** --silent",
     "publish:stage": "ELEVENTY_ENV=stage run-s build:**",
     "publish:prod": "ELEVENTY_ENV=prod run-s build:**",
     "clean": "del-cli \"_public/**\"",

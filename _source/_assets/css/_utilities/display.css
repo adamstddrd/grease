@@ -10,7 +10,7 @@ display: manipulate the visual display of elements
 
   &.--none { display: none; }
 
-  &.--none-s {
+  &.--none\@small {
     @media (--viewport-small) {
       display: none;
     }
