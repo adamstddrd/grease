@@ -17,6 +17,7 @@ process.argv.forEach((val) => {
     sourcemap: true,
     watch: watchMode,
     format: 'esm',
+    logLevel: 'info',
     outdir: '_public/assets',
     outbase: '_source/_assets/js',
   });

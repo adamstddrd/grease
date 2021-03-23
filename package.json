@@ -29,9 +29,9 @@
     "clean": "del-cli \"_public/**\"",
     "build:11ty": "eleventy",
     "watch:11ty": "eleventy --serve --incremental --quiet",
-    "build:css": "postcss \"_source/_assets/**/[!_]*/*.css\" --dir _public/assets/ --base _source/_assets/css --map",
+    "build:css": "postcss \"_source/_assets/**/[!_]*/*.css\" --dir _public/assets/ --base _source/_assets/css --map --verbose",
     "watch:css": "npm run build:css -- --watch",
-    "build:js": "node esbuild.js",
+    "build:js": "node esbuild.config.js",
     "watch:js": "npm run build:js -- --watch",
     "lint:css": "stylelint \"_source/**/*.css\" --fix",
     "lint:js": "eslint \"_source/**/*.js\" --fix"
