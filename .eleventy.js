@@ -22,7 +22,6 @@ module.exports = function(eleventyConfig) {
     files: [ // watch the files generated elsewhere
       '_public/assets/*.css',
       '_public/assets/*.js',
-      '_public/assets',
       '!_public/assets/**/**.map'
     ],
     ui: false,
