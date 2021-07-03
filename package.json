@@ -6,11 +6,11 @@
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-img": "^0.9.0",
     "del-cli": "^4.0.0",
-    "esbuild": "^0.12.9",
-    "eslint": "^7.29.0",
+    "esbuild": "^0.12.14",
+    "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
-    "husky": "^4.3.8",
+    "husky": "^7.0.0",
     "lint-staged": "^11.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.5",
@@ -35,11 +35,6 @@
     "watch:js": "npm run build:js -- --watch",
     "lint:css": "stylelint \"_source/**/*.css\" --fix",
     "lint:js": "eslint \"_source/**/*.js\" --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "_source/**/*.css": [
