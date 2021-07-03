@@ -34,7 +34,8 @@
     "build:js": "node esbuild.config.js",
     "watch:js": "npm run build:js -- --watch",
     "lint:css": "stylelint \"_source/**/*.css\" --fix",
-    "lint:js": "eslint \"_source/**/*.js\" --fix"
+    "lint:js": "eslint \"_source/**/*.js\" --fix",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "_source/**/*.css": [
