@@ -1,10 +1,9 @@
 /* ----------------------------------------------------------------------------
 js entry point
 ---------------------------------------------------------------------------- */
-import * as scroll from './_utilities/scroll.js';
-// import * as netlify from "./utilities/netlify.js";
+import { animateOnScroll } from './_utilities/aos.js';
+import ScrollSentinel from './_utilities/scroll-sentinel.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  scroll.animateOnScroll();
-  scroll.hasScrolled();
+  animateOnScroll();
 });
