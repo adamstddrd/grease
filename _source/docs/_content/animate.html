@@ -45,9 +45,9 @@ order: 04
 
 <p class="animate --delay-xl" data-aos="--fade-in"><code> class="animate --delay-xl" data-aos="--fade-in"</code></p>
 
-<p>It's not always practical or possible to add animation properties to every element you'd like to animate, so .animate comes with a method for animating child elements. Add your animation properties to the parent element instead along with a <code>data-aos-children</code> attribute, and the animation will be removed from the parent and copied to each child element at runtime.</p>
+<p>It’s not always practical or possible to add animation properties to every element you’d like to animate, so .animate comes with a method for animating child elements. Add your animation properties to the parent element using the <code>data-aos-children</code> attribute, and the animation will be removed from the parent and copied to each child element at runtime.</p>
 
-<article class="animate --delay-xl" data-aos="--fade-in" data-aos-children>
+<article class="animate --delay-xl" data-aos-children="--fade-in">
 
   <p><code>child element</code></p>
   <p><code>child element</code></p>
@@ -62,7 +62,3 @@ order: 04
   <p><code>child element</code></p>
 
 </article>
-
-
-
-
