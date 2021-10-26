@@ -11,7 +11,7 @@ grid: a simple grid system for page composition
     grid-column: 1 / -1;
   }
 
-  & > *:not([class*="grid"]) {
+  @nest :where(&) > *:not([class*="grid"]) {
     grid-column: 2;
   }
 
@@ -21,7 +21,7 @@ grid: a simple grid system for page composition
     grid-template-columns: 1fr repeat(12, minmax(3.75rem, 100%)) 1fr;
     column-gap: min(2.5vw, 3.75rem);
 
-    & > *:not([class*="grid"]) {
+    @nest :where(&) > *:not([class*="grid"]) {
       grid-column: 3 / span 7;
     }
   }
