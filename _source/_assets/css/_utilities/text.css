@@ -10,27 +10,10 @@ text: masquerade text... as other text
   &.--size-s { font-size: var(--type-s); }
   &.--size-m { font-size: var(--type-m); }
   &.--size-l { font-size: var(--type-l); }
-
-  &.--size-xl {
-    font-size: var(--type-xl);
-    line-height: var(--leading-m);
-  }
-
-  &.--size-xxl {
-    font-size: var(--type-xxl);
-    line-height: var(--leading-m);
-  }
-
-  &.--size-xxxl {
-    font-size: var(--type-xxxl);
-    line-height: var(--leading-s);
-  }
-
-  &.--size-xxxxl {
-    font-size: var(--type-xxxxl);
-    line-height: var(--leading-s);
-    letter-spacing: -0.02em;
-  }
+  &.--size-xl { font-size: var(--type-xl); }
+  &.--size-xxl { font-size: var(--type-xxl); }
+  &.--size-xxxl { font-size: var(--type-xxxl); }
+  &.--size-xxxxl { font-size: var(--type-xxxxl); }
 
   &.--weight-200 { font-weight: 200; }
   &.--weight-300 { font-weight: 300; }

@@ -8,6 +8,7 @@ element styles
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  line-height: var(--leading-fluid);
 }
 
 ::selection,
@@ -30,7 +31,6 @@ body {
   overflow-x: hidden;
   font-family: var(--font-main);
   font-size: var(--type-base);
-  line-height: var(--leading-l);
   color: var(--color-text);
   background-color: var(--color-sheet);
 
@@ -44,7 +44,6 @@ h1 {
   font-size: var(--type-xxxl);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: var(--leading-s);
   transition: font-weight 0.2s ease;
 }
 
@@ -52,11 +51,10 @@ h2 {
   margin: var(--space-xl) 0 var(--space-m) 0;
   font-size: var(--type-xl);
   font-weight: 800;
-  line-height: var(--leading-s);
 }
 
 h3 {
-  margin: var(--space-l) 0 var(--space-s) 0;
+  margin: var(--space-l) 0 0 0;
   font-size: var(--type-l);
   font-weight: 700;
 }
@@ -73,7 +71,7 @@ p,
 ul,
 ol,
 dl {
-  margin: var(--space-s) 0;
+  margin: var(--space-m) 0;
   font-weight: 350;
 }
 

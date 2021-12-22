@@ -11,6 +11,10 @@ animate: make any element animate now, later, or when it scrolls into view
     opacity: 0;
   }
 
+  @nest .js &[data-aos-children] > * {
+    opacity: 0;
+  }
+
   &.--delay-s { animation-delay: 0.15s; }
   &.--delay-m { animation-delay: 0.3s; }
   &.--delay-l { animation-delay: 0.45s; }

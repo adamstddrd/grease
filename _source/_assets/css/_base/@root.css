@@ -24,7 +24,7 @@ custom properties
   }
 
   /* spacing */
-  --space-base: 1.6rem;
+  --space-base: 2rem;
   --space-scale: 2;
   --space-xxs: calc(var(--space-xs) / var(--space-scale));
   --space-xs: calc(var(--space-s) / var(--space-scale));
@@ -40,12 +40,7 @@ custom properties
   /* type sizes */
   --type-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
   --type-scale-s: 1.1;
-  --type-scale-l: 1.3;
-
-  @media (--viewport-medium) {
-    --type-scale-l: 1.45;
-  }
-
+  --type-scale-l: 1.333;
   --type-xxxs: calc(var(--type-xxs) / var(--type-scale-s));
   --type-xxs: calc(var(--type-xs) / var(--type-scale-s));
   --type-xs: calc(var(--type-s) / var(--type-scale-s));
@@ -63,4 +58,5 @@ custom properties
   --leading-s: var(--leading-base);
   --leading-m: calc(var(--leading-s) * var(--leading-scale));
   --leading-l: calc(var(--leading-m) * var(--leading-scale));
+  --leading-fluid: calc(0.75rem + 1.25em);
 }
