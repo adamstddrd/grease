@@ -8,7 +8,6 @@ permalink: /sitemap.xml
   {% if item.data.noindex != false %}
   <url>
     <loc>{{ env.baseUrl }}{{ item.url }}</loc>
-    <lastmod>{{ page.date | htmlDateString }}</lastmod>
   </url>
   {% endif %}
 {% endfor %}
