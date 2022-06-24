@@ -5,10 +5,9 @@ module.exports = (ctx) => ({
     'postcss-import': {},
     'postcss-preset-env': {
       stage: 1,
-      importFrom: '_source/_assets/css/_base/@root.css'
     },
     'postcss-csso': {
-      restructure: false
+      restructure: false,
     },
   },
-})
+});
