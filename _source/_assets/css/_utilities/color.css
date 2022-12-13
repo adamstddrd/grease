@@ -1,0 +1,35 @@
+/* ----------------------------------------------------------------------------
+modify color on the fly
+---------------------------------------------------------------------------- */
+.color {
+  &.--text { --color-text: var(--property); }
+  &.--sheet { --color-sheet: var(--property); }
+  &.--neutral { --color-neutral: var(--property); }
+  &.--accent { --color-accent: var(--property); }
+  &.--card { --color-card: var(--property); }
+
+  &.--transparent { --property: transparent; }
+  &.--use-sheet { --property: var(--color-sheet); }
+  &.--use-text { --property: var(--color-text); }
+  &.--use-neutral { --property: var(--color-neutral); }
+  &.--use-accent { --property: var(--color-accent); }
+  &.--use-card { --property: var(--color-card); }
+
+  &.--set-text { color: var(--color-text); }
+  &.--set-sheet { background-color: var(--color-sheet); }
+
+  &.--invert {
+    color: var(--color-sheet);
+    background-color: var(--color-text);
+  }
+
+  &.--alpha-90 { --alpha: 90%; }
+  &.--alpha-80 { --alpha: 80%; }
+  &.--alpha-70 { --alpha: 70%; }
+  &.--alpha-60 { --alpha: 60%; }
+  &.--alpha-50 { --alpha: 50%; }
+  &.--alpha-40 { --alpha: 40%; }
+  &.--alpha-30 { --alpha: 30%; }
+  &.--alpha-20 { --alpha: 20%; }
+  &.--alpha-10 { --alpha: 10%; }
+}

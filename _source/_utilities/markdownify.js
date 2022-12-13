@@ -7,8 +7,6 @@ const markdownIt = require('markdown-it')({
   typographer: true,
 });
 
-module.exports = {
+const markdownify = (value) => markdownIt.render(value);
 
-  markdownify: (value) => markdownIt.render(value),
-
-};
+module.exports = markdownify;

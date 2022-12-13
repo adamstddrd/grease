@@ -1,10 +1,12 @@
 /* ----------------------------------------------------------------------------
 main CSS bundle
 ---------------------------------------------------------------------------- */
+@layer base, components, utilities;
 
-@import "_base/@root.css";
-@import "_base/fonts.css";
-@import "_base/elements.css";
+@import "_base/@media.css";
+@import "_base/@root.css" layer(base);
+@import "_base/fonts.css" layer(base);
+@import "_base/elements.css" layer(base);
 
-@import-glob "_components/**/*.css";
-@import-glob "_utilities/**/*.css";
+@import-glob "_components/**/*.css" layer(components);
+@import-glob "_utilities/**/*.css" layer(utilities);

@@ -3,19 +3,11 @@ custom fonts
 ---------------------------------------------------------------------------- */
 
 @font-face {
-  font-family: 'Inter';
-  font-weight: 100 900;
-  font-stretch: normal;
-  font-named-instance: 'Regular';
-  src: url('/assets/Inter-roman-subset.var.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-weight: 100 900;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/assets/Inter-italic-subset.var.woff2') format('woff2');
+  font-family: "Mona Sans";
+  src:
+    url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+    url("/fonts/Mona-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
   font-display: swap;
 }

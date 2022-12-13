@@ -3,9 +3,8 @@ module.exports = (ctx) => ({
   plugins: {
     'postcss-import-ext-glob': {},
     'postcss-import': {},
-    'postcss-preset-env': {
-      stage: 1,
-    },
+    'postcss-custom-media': {},
+    'postcss-nesting': {},
     'postcss-csso': {
       restructure: false,
     },

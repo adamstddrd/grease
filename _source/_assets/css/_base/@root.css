@@ -1,25 +1,31 @@
 /* ----------------------------------------------------------------------------
-custom media queries
----------------------------------------------------------------------------- */
-@custom-media --viewport-small (max-width: 44.9em);
-@custom-media --viewport-medium (min-width: 45em);
-@custom-media --viewport-large (min-width: 90em);
-
-/* ----------------------------------------------------------------------------
 custom properties
 ---------------------------------------------------------------------------- */
 :root {
   /* colors */
-  --color-white: #fff;
-  --color-black: #191919;
+  --alpha: 100%;
+  --color-white: hsl(20deg 5% 100% / var(--alpha));
+  --color-beige: hsl(20deg 35% 95% / var(--alpha));
+  --color-gray: hsl(230deg 15% 35% / var(--alpha));
+  --color-taupe: hsl(310deg 5% 60% / var(--alpha));
+  --color-peach: hsl(10deg 100% 85% / var(--alpha));
+  --color-peach-dark: hsl(10deg 80% 65% / var(--alpha));
+  --color-ink: hsl(240deg 30% 20% / var(--alpha));
+  --color-black: hsl(240deg 30% 10% / var(--alpha));
 
   /* semantic colors */
-  --color-text: var(--color-black);
+  --color-text: var(--color-ink);
   --color-sheet: var(--color-white);
+  --color-neutral: var(--color-taupe);
+  --color-accent: var(--color-peach);
+  --color-card: var(--color-beige);
 
   @media (prefers-color-scheme: dark) {
-    --color-text: var(--color-white);
-    --color-sheet: var(--color-black);
+    --color-text: var(--color-beige);
+    --color-sheet: var(--color-ink);
+    --color-neutral: var(--color-gray);
+    --color-accent: var(--color-peach);
+    --color-card: var(--color-black);
   }
 
   /* spacing */
@@ -34,28 +40,44 @@ custom properties
   --space-xxl: calc(var(--space-xl) * var(--space-scale));
 
   /* font stacks */
-  --font-main: 'Inter', 'Helvetica Neue', helvetica, 'Apple Color Emoji', arial, sans-serif;
+  --font-main:
+    "Mona Sans",
+    -apple-system,
+    blinkmacsystemfont,
+    "Segoe UI",
+    roboto,
+    helvetica,
+    arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
 
   /* type sizes */
-  --type-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
-  --type-scale-s: 1.1;
-  --type-scale-l: 1.333;
-  --type-xxxs: calc(var(--type-xxs) / var(--type-scale-s));
-  --type-xxs: calc(var(--type-xs) / var(--type-scale-s));
-  --type-xs: calc(var(--type-s) / var(--type-scale-s));
-  --type-s: calc(var(--type-m) / var(--type-scale-s));
-  --type-m: 1em;
-  --type-l: calc(var(--type-m) * var(--type-scale-l));
-  --type-xl: calc(var(--type-l) * var(--type-scale-l));
-  --type-xxl: calc(var(--type-xl) * var(--type-scale-l));
-  --type-xxxl: calc(var(--type-xxl) * var(--type-scale-l));
-  --type-xxxxl: calc(var(--type-xxxl) * var(--type-scale-l));
+  --font-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
+  --font-scale-s: 1.2;
+  --font-scale-l: 1.333;
+  --font-xxxs: calc(var(--type-xxs) / var(--type-scale-s));
+  --font-xxs: calc(var(--type-xs) / var(--type-scale-s));
+  --font-xs: calc(var(--type-s) / var(--type-scale-s));
+  --font-s: calc(var(--type-m) / var(--type-scale-s));
+  --font-m: 1em;
+  --font-l: calc(var(--type-m) * var(--type-scale-l));
+  --font-xl: calc(var(--type-l) * var(--type-scale-l));
+  --font-xxl: calc(var(--type-xl) * var(--type-scale-l));
+  --font-xxxl: calc(var(--type-xxl) * var(--type-scale-l));
+  --font-xxxxl: calc(var(--type-xxxl) * var(--type-scale-l));
 
   /* line heights */
-  --leading-base: 1.1;
-  --leading-scale: 1.25;
-  --leading-s: var(--leading-base);
-  --leading-m: calc(var(--leading-s) * var(--leading-scale));
-  --leading-l: calc(var(--leading-m) * var(--leading-scale));
-  --leading-fluid: calc(0.75rem + 1.25em);
+  --font-leading-base: 1.1;
+  --font-leading-scale: 1.25;
+  --font-leading-s: var(--leading-base);
+  --font-leading-m: calc(var(--leading-s) * var(--leading-scale));
+  --font-leading-l: calc(var(--leading-m) * var(--leading-scale));
+  --font-leading-fluid: calc(0.75rem + 1.25em);
+
+  /* letter spacing */
+  --font-spacing-s: -0.025em;
+  --font-spacing-m: 0;
+  --font-spacing-l: 0.1em;
 }

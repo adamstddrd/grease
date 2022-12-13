@@ -8,11 +8,12 @@ element styles
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: var(--leading-fluid);
+  line-height: var(--font-leading-fluid);
+
+  /* color: var(--color-text); */
 }
 
-::selection,
-::-moz-selection {
+::selection {
   color: var(--color-sheet);
   background-color: var(--color-text);
 }
@@ -20,28 +21,25 @@ element styles
 html {
   font-size: 10px;
   background-color: var(--color-sheet);
-  min-height: -webkit-fill-available;
+  min-height: 100dvh;
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  min-height: 100vh;
-  overflow-x: hidden;
+  min-height: 100dvh;
+  overflow-x: clip;
   font-family: var(--font-main);
-  font-size: var(--type-base);
+  font-size: var(--font-base);
+  line-height: var(--font-leading-fluid);
   color: var(--color-text);
   background-color: var(--color-sheet);
-
-  @supports (-webkit-touch-callout: none) {
-    min-height: -webkit-fill-available;
-  }
 }
 
 h1 {
-  margin: max(var(--space-xl), 20vmin) 0 var(--space-m) 0;
-  font-size: var(--type-xxxl);
+  margin: var(--space-xl) 0 var(--space-m) 0;
+  font-size: var(--font-xxxl);
   font-weight: 800;
   letter-spacing: -0.02em;
   transition: font-weight 0.2s ease;
@@ -49,13 +47,13 @@ h1 {
 
 h2 {
   margin: var(--space-xl) 0 var(--space-m) 0;
-  font-size: var(--type-xl);
+  font-size: var(--font-xl);
   font-weight: 800;
 }
 
 h3 {
   margin: var(--space-l) 0 0 0;
-  font-size: var(--type-l);
+  font-size: var(--font-l);
   font-weight: 700;
 }
 
@@ -63,7 +61,7 @@ h4,
 h5,
 h6 {
   margin: var(--space-m) 0 0 0;
-  font-size: var(--type-m);
+  font-size: var(--font-m);
   font-weight: 600;
 }
 
@@ -96,7 +94,7 @@ li {
 li ul,
 li ol {
   margin-left: 1.25em;
-  font-size: var(--type-m);
+  font-size: var(--font-m);
 }
 
 b,
@@ -110,7 +108,7 @@ em {
 }
 
 small {
-  font-size: var(--type-s);
+  font-size: var(--font-s);
 }
 
 a,
@@ -125,12 +123,13 @@ a:hover {
 }
 
 code {
-  margin-right: 0.1rem;
-  padding: 0.15em 0.25em;
+  --alpha: 50%;
+
+  font-family: var(--font-main);
+  padding: var(--space-xs);
+  border-radius: var(--space-xs);
   color: var(--color-text);
-  background-color: var(--color-sheet);
-  border: 0.1rem solid var(--color-text);
-  box-shadow: 0.1rem 0.1rem 0 var(--color-text);
+  background-color: var(--color-card);
 }
 
 blockquote {
@@ -138,7 +137,7 @@ blockquote {
   margin: var(--space-l) 0;
   quotes: "\201C""\201D""\2018""\2019";
   text-transform: uppercase;
-  font-size: var(--type-m);
+  font-size: var(--font-m);
   letter-spacing: 0.1em;
   font-weight: 200;
   font-style: italic;
