@@ -3,29 +3,19 @@ title: Grid
 order: 01
 ---
 
-<h1>.grid</h1>
+<h1 class="color --text --use-accent">Grid: a powerful-but-tiny utility class for rapidly composing responsive layouts.</h1>
 
-<p><strong><code>.grid</code> is a flexible, responsive, <em>tiny</em> utility class for composing pages.</strong> Twelve columns plus two “shadow” columns for edge-to-edge content keep the system simple, but potent. At just 2KB of CSS, <code>.grid</code> can produce most common page layouts, and a bunch of uncommon ones too. You’ll write fewer media queries, think less about mobile-specific styles, and spend more time focused on the key, unique parts of the page.</p>
+<p>Twelve columns plus two “shadow” columns for edge-to-edge content keep the system simple, but potent. At just 2KB of CSS, <code>.grid</code> can produce most common page layouts, and a bunch of uncommon ones too. You’ll write fewer media queries, think less about mobile-specific styles, and spend more time focused on the key, unique parts of the page.</p>
 
 <p><strong><code>.grid</code> is fluid and responsive.</strong> Columns and gutters scale alongside your type as window dimensions change in order to maintain layout consistency and reduce the number of breakpoints required (grid uses three). At the smallest screen sizes <code>.grid</code> collapses to a one column layout, but keeps the two shadow columns in order to preserve full-bleed page elements. Simple, predictable, and effective.</p>
 
-<section class="grid space --top-l --bottom-l color --set-sheet --sheet --use-card">
-
-  <div class="grid__item --span-4 --place-center">
-    <p><strong><code>.grid</code> is nestable</strong>, which solves two common page layout issues:</p>
-    <ol>
-      <li>Maintaining a consistent layout grid without having to “flatten” your markup.</li>
-      <li>Creating full-bleed page breakouts with content that <em>aligns to the same grid columns</em>.</li>
-    </ol>
-  </div>
-  
-  <p class="grid__item --start-7 --span-5 --place-center text --size-xl --weight-700">Nest grids to create full-bleed breakouts with grid-aligned content, like this one.</p>
-</section>
-
-<p><strong><code>.grid</code> <em>is not</em> designed for generated repeating content.</strong> You can make it happen with conditionals in your template code, but you’re better off creating a separate block class, then using this system to control size and placement on the page.</p>
-
-<p><strong><code>.grid</code> <em>is not</em> designed for older browsers.</strong> It uses CSS grids under the hood, with no fallbacks or polyfills. A fallback solution is highly dependent on how much fidelity you’re willing to lose, so it’s up to you to implement a solution that aligns with your project goals.</p>
-
+<div>
+  <p><strong><code>.grid</code> is nestable</strong>, which solves two common page layout issues:</p>
+  <ol>
+    <li>Maintaining a consistent layout grid without having to “flatten” your markup.</li>
+    <li>Creating full-bleed page breakouts with content that <em>aligns to the same grid columns</em>.</li>
+  </ol>
+</div>
 
 <h2 class="grid__item">.grid__item</h2>
 

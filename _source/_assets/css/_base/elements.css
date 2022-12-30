@@ -8,9 +8,8 @@ element styles
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: var(--font-leading-fluid);
-
-  /* color: var(--color-text); */
+  color: hsl(var(--color-text-hsl) / var(--color-alpha));
+  background-color: hsl(var(--color-sheet) / var(--color-sheet-alpha));
 }
 
 ::selection {
@@ -20,8 +19,8 @@ element styles
 
 html {
   font-size: 10px;
-  background-color: var(--color-sheet);
   min-height: 100dvh;
+  background-color: var(--color-sheet);
 }
 
 body {
@@ -30,47 +29,44 @@ body {
   align-items: stretch;
   min-height: 100dvh;
   overflow-x: clip;
-  font-family: var(--font-main);
-  font-size: var(--font-base);
-  line-height: var(--font-leading-fluid);
-  color: var(--color-text);
+  font-family: var(--text-main);
+  font-size: var(--text-base);
+  line-height: var(--text-leading-fluid);
   background-color: var(--color-sheet);
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, li, pre, blockquote) {
+  line-height: var(--text-leading-fluid);
 }
 
 h1 {
   margin: var(--space-xl) 0 var(--space-m) 0;
-  font-size: var(--font-xxxl);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  transition: font-weight 0.2s ease;
+  font-size: var(--text-xxl);
+  font-weight: 300;
+  letter-spacing: var(--text-spacing-s);
 }
 
 h2 {
   margin: var(--space-xl) 0 var(--space-m) 0;
-  font-size: var(--font-xl);
+  font-size: var(--text-xl);
   font-weight: 800;
 }
 
 h3 {
   margin: var(--space-l) 0 0 0;
-  font-size: var(--font-l);
+  font-size: var(--text-l);
   font-weight: 700;
 }
 
-h4,
-h5,
-h6 {
+:where(h4, h5, h6) {
   margin: var(--space-m) 0 0 0;
-  font-size: var(--font-m);
+  font-size: var(--text-m);
   font-weight: 600;
 }
 
-p,
-ul,
-ol,
-dl {
-  margin: var(--space-m) 0;
-  font-weight: 350;
+:where(p, ul, ol, dl) {
+  margin: 0 0 var(--space-l) 0;
+  font-weight: var(--text-weight-base);
 }
 
 ul {
@@ -86,15 +82,14 @@ ol {
 li {
   position: relative;
 
-  & + li {
+  &:where(li + li) {
     margin: var(--space-xs) 0 0 0;
   }
-}
 
-li ul,
-li ol {
-  margin-left: 1.25em;
-  font-size: var(--font-m);
+  & :where(ul, ol) {
+    margin-left: var(--space-m);
+    font-size: var(--text-m);
+  }
 }
 
 b,
@@ -108,53 +103,44 @@ em {
 }
 
 small {
-  font-size: var(--font-s);
+  font-size: var(--text-s);
 }
 
 a,
 a:visited {
-  color: var(--color-text);
-  text-decoration-thickness: 0.1em;
+  /* color: var(--color-text); */
+  text-decoration-thickness: var(--border-weight-s);
   transition: text-decoration-thickness 0.1s ease;
 }
 
 a:hover {
-  text-decoration-thickness: 0.2em;
+  text-decoration-thickness: var(--border-weight-m);
 }
 
 code {
-  --alpha: 50%;
+  --color-sheet: var(--color-glint);
+  --color-sheet-alpha: 10%;
 
-  font-family: var(--font-main);
-  padding: var(--space-xs);
-  border-radius: var(--space-xs);
-  color: var(--color-text);
-  background-color: var(--color-card);
+  font-family: var(--text-main);
+  padding: 0 var(--space-xs) var(--space-xxs) var(--space-xxs);
+  border-radius: var(--border-radius-m);
 }
 
 blockquote {
-  position: relative;
   margin: var(--space-l) 0;
-  quotes: "\201C""\201D""\2018""\2019";
-  text-transform: uppercase;
-  font-size: var(--font-m);
-  letter-spacing: 0.1em;
-  font-weight: 200;
+  font-size: var(--text-m);
   font-style: italic;
 }
 
-img,
-embed,
-object,
-svg,
-video {
+:where(img, embed, object, svg, video) {
   max-width: 100%;
   height: auto;
+  line-height: var(--text-leading-fluid);
 }
 
 hr {
   width: 100%;
   margin: var(--space-xl) 0;
   border: 0;
-  border-top: 0.1rem solid var(--color-text);
+  border-top: var(--border-weight-s) solid var(--color-text);
 }

@@ -3,9 +3,14 @@ grid: a simple grid system for page composition
 ---------------------------------------------------------------------------- */
 .grid {
   display: grid;
-  grid-template-columns: 1fr minmax(80vw, 100%) 1fr;
   align-items: start;
+  grid-template-columns: 1fr minmax(80vw, 100%) 1fr;
   column-gap: min(5vw, 5rem);
+
+  @media (--viewport-medium) {
+    grid-template-columns: 1fr repeat(12, minmax(0, 3em)) 1fr;
+    column-gap: min(4vw, 3em);
+  }
 
   & > .grid {
     grid-column: 1 / -1;
@@ -13,23 +18,13 @@ grid: a simple grid system for page composition
 
   @nest :where(&) > *:not([class*="grid"]) {
     grid-column: 2;
-  }
 
-  &.--dense { grid-auto-flow: dense; }
-
-  @media (--viewport-medium) {
-    grid-template-columns: 1fr repeat(12, minmax(3.75rem, 100%)) 1fr;
-    column-gap: min(2.5vw, 3.75rem);
-
-    @nest :where(&) > *:not([class*="grid"]) {
-      grid-column: 3 / span 7;
+    @media (--viewport-medium) {
+      grid-column: 3 / span 10;
     }
   }
 
-  @media (--viewport-large) {
-    grid-template-columns: 1fr repeat(12, 8rem) 1fr;
-    column-gap: 3.5rem;
-  }
+  &.--dense { grid-auto-flow: dense; }
 }
 
 .grid__item {

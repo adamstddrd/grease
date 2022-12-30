@@ -2,6 +2,26 @@
 styles for /docs
 ---------------------------------------------------------------------------- */
 
+.docs-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-m);
+  list-style-type: none;
+
+  & li {
+    margin: 0;
+  }
+
+  & a {
+    display: block;
+    aspect-ratio: 4 / 3;
+    padding: var(--space-s);
+    color: var(--color-text);
+    text-decoration: none;
+    border: var(--border-weight-s) solid var(--color-text);
+  }
+}
+
 .docs-grid-demo p {
   padding: 0.25em 0.5em;
   color: var(--color-sheet);
@@ -17,8 +37,10 @@ styles for /docs
 .docs-box {
   display: block;
   height: 10em;
-  margin: var(--space-m) 0;
-  background-color: var(--color-text);
+  margin: 0 0 var(--space-l) 0;
+  background-color: hsl(var(--color-text-hsl) / 10%);
+  box-shadow: var(--shadow-l);
+  border: var(--border-weight-s) solid var(--color-accent);
 }
 
 .docs-space-demo {

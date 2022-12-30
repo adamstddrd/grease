@@ -1,19 +1,18 @@
 /* ----------------------------------------------------------------------------
-text: masquerade text... as other text
+font: transform text display properties
 ---------------------------------------------------------------------------- */
 
 .text {
-
-  &.--size-xxxs { font-size: var(--type-xxxs); }
-  &.--size-xxs { font-size: var(--type-xxs); }
-  &.--size-xs { font-size: var(--type-xs); }
-  &.--size-s { font-size: var(--type-s); }
-  &.--size-m { font-size: var(--type-m); }
-  &.--size-l { font-size: var(--type-l); }
-  &.--size-xl { font-size: var(--type-xl); }
-  &.--size-xxl { font-size: var(--type-xxl); }
-  &.--size-xxxl { font-size: var(--type-xxxl); }
-  &.--size-xxxxl { font-size: var(--type-xxxxl); }
+  &.--size-xxxs { font-size: var(--text-xxxs); }
+  &.--size-xxs { font-size: var(--text-xxs); }
+  &.--size-xs { font-size: var(--text-xs); }
+  &.--size-s { font-size: var(--text-s); }
+  &.--size-m { font-size: var(--text-m); }
+  &.--size-l { font-size: var(--text-l); }
+  &.--size-xl { font-size: var(--text-xl); }
+  &.--size-xxl { font-size: var(--text-xxl); }
+  &.--size-xxxl { font-size: var(--text-xxxl); }
+  &.--size-xxxxl { font-size: var(--text-xxxxl); }
 
   &.--weight-200 { font-weight: 200; }
   &.--weight-300 { font-weight: 300; }
@@ -27,7 +26,7 @@ text: masquerade text... as other text
   &.--align-center { text-align: center; }
   &.--align-right { text-align: right; }
 
-  &.--leading-s { line-height: var(--leading-s); }
-  &.--leading-m { line-height: var(--leading-m); }
-  &.--leading-l { line-height: var(--leading-l); }
+  &.--leading-s { line-height: var(--text-leading-s); }
+  &.--leading-m { line-height: var(--text-leading-m); }
+  &.--leading-l { line-height: var(--text-leading-l); }
 }

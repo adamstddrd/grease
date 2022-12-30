@@ -23,13 +23,13 @@ modify color on the fly
     background-color: var(--color-text);
   }
 
-  &.--alpha-90 { --alpha: 90%; }
-  &.--alpha-80 { --alpha: 80%; }
-  &.--alpha-70 { --alpha: 70%; }
-  &.--alpha-60 { --alpha: 60%; }
-  &.--alpha-50 { --alpha: 50%; }
-  &.--alpha-40 { --alpha: 40%; }
-  &.--alpha-30 { --alpha: 30%; }
-  &.--alpha-20 { --alpha: 20%; }
-  &.--alpha-10 { --alpha: 10%; }
+  &.--alpha-90 { --color-alpha: 90%; }
+  &.--alpha-80 { --color-alpha: 80%; }
+  &.--alpha-70 { --color-alpha: 70%; }
+  &.--alpha-60 { --color-alpha: 60%; }
+  &.--alpha-50 { --color-alpha: 50%; }
+  &.--alpha-40 { --color-alpha: 40%; }
+  &.--alpha-30 { --color-alpha: 30%; }
+  &.--alpha-20 { --color-alpha: 20%; }
+  &.--alpha-10 { --color-alpha: 10%; }
 }
