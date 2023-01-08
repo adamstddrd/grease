@@ -2,6 +2,7 @@ const markdownIt = require('markdown-it');
 const esbuild = require('./_source/_utilities/esbuild.js');
 const lightingcss = require('./_source/_utilities/lightningcss.js');
 const image = require('./_source/_utilities/image.js');
+const style = require('./_source/_utilities/style.js');
 const setVar = require('./_source/_utilities/setVar.js');
 const fullDate = require('./_source/_utilities/fullDate.js');
 const getRandom = require('./_source/_utilities/getRandom.js');
@@ -16,6 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(lightingcss);
   eleventyConfig.addShortcode('image', image);
   eleventyConfig.addPairedShortcode('setVar', setVar);
+  eleventyConfig.addPairedShortcode('style', style);
   eleventyConfig.addFilter('fullDate', fullDate);
   eleventyConfig.addFilter('getRandom', getRandom);
   eleventyConfig.addFilter('sortBy', sortBy);

@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
         return undefined;
       }
       const files = [];
-      const targets = { safari: (16) };
+      const targets = { future: (1) }; // enables draft syntaxes
       const result = await lighting.bundleAsync({
         filename: inputPath,
         minify: true,

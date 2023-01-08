@@ -9,3 +9,15 @@ layout: page
 <p class="text --size-l space --top-l color --text --use-accent">Grease is a website starter with a purpose; <strong>make building high-performance, rock-solid websites fun, fast, and friction-free</strong>. It uses <a href="https://www.11ty.dev/" rel="nofollow">11ty</a>, <a href="https://postcss.org/" rel="nofollow">PostCSS</a>, and <a href="https://esbuild.github.io/" rel="nofollow">esbuild</a> under the hood, plus a lightweight, opinionated CSS architecture that takes most of the pain out of developing responsive websites. It includes everything you need to peg the needle on a Lighthouse test without getting bogged down in tooling.</p>
 
 {% include 'docs.html' %}
+
+{% setVar 'foo' %}<bar>fizz</bar>{% endsetVar %}
+
+{% style %}
+.foo {
+  color: red;
+
+  & bar {
+    color: blue;
+  }
+}
+{% endstyle %}
