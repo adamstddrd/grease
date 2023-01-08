@@ -35,6 +35,10 @@ body {
   background-color: var(--color-sheet);
 }
 
+animate-on-scroll {
+  display: contents;
+}
+
 :where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, li, pre, blockquote) {
   line-height: var(--text-leading-fluid);
 }

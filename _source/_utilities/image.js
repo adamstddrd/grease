@@ -4,12 +4,12 @@ creates a responsive <img>
 const Image = require('@11ty/eleventy-img');
 
 module.exports = async function image(src, alt, cssClass = null, sizes = '90vw', loadingAttr = 'lazy') {
-  const filePath = `_source/_assets/images/${src}`;
+  const filePath = `_source/assets/images/${src}`;
   const metadata = await Image(filePath, {
     widths: [500, 1000, 1500, 2000, 2500, 3000],
     formats: ['webp'],
-    urlPath: '/assets/',
-    outputDir: './_public/assets/',
+    urlPath: '/assets/images/',
+    outputDir: './_public/assets/images/',
     sharpWebpOptions: { quality: 40 },
   });
   const format = metadata[Object.keys(metadata)[0]];

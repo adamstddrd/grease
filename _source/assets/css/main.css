@@ -4,9 +4,6 @@ main CSS bundle
 @layer base, components, utilities;
 
 @import "_base/@media.css";
-@import "_base/@root.css" layer(base);
-@import "_base/fonts.css" layer(base);
-@import "_base/elements.css" layer(base);
-
-@import-glob "_components/**/*.css" layer(components);
-@import-glob "_utilities/**/*.css" layer(utilities);
+@import "_base/_base.css" layer(base);
+@import "_components/_components.css" layer(components);
+@import "_utilities/_utilities.css" layer(utilities);

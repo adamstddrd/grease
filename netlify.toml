@@ -9,7 +9,7 @@
   command = "npm run publish:stage"
 
 [[headers]]
-  for = "/fonts/*"
+  for = "/assets/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=365000000, immutable"
 
