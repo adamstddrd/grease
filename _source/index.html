@@ -1,23 +1,141 @@
 ---
 title: Grease
-description: Grease is a website starter with a purpose; make building high-performance, rock-solid websites fun, fast, and friction-free.
-layout: page
+description: Grease is a website starter that makes building performant, accessible, aesthetic websites fast &amp; frictionless.
+layout: page.html
 # noindex: true
-# canonical: https://foo.com/bar.html
+# canonical: https://example.com/page.html
+# stylesheet: stylesheet: pages/example.css
+ingredients:
+  - title: Designed for in-browser design
+    description: Ultra-fast tools (11ty, Esbuild, Lightning CSS) plus incremental builds makes designing in browser a joy.
+  - title: Zero-config entrypoints
+    description: Import everything into monolithic CSS and JS bundles? Break out page bundles? Inline critical CSS? YES!
+  - title: No production surprises
+    description: CSS and JS are treated the same on dev as on production (bundled, minified, etc). What you see is what you’ll get.
+  - title: No fillers, no additives
+    description: Grease keeps it light so you can focus on building instead of messing around with tools and frameworks.
+  - title: Build faster with less CSS 
+    description: Grease comes loaded with a small but mighty declarative CSS architecture that helps you build layouts fast.
+  - title: Batteries included
+    description: Production-ready odds & ends come in the box. Sitemaps, canonical URLs, search index blocking, etc.
 ---
 
-<p class="text --size-l space --top-l color --text --use-accent">Grease is a website starter with a purpose; <strong>make building high-performance, rock-solid websites fun, fast, and friction-free</strong>. It uses <a href="https://www.11ty.dev/" rel="nofollow">11ty</a>, <a href="https://postcss.org/" rel="nofollow">PostCSS</a>, and <a href="https://esbuild.github.io/" rel="nofollow">esbuild</a> under the hood, plus a lightweight, opinionated CSS architecture that takes most of the pain out of developing responsive websites. It includes everything you need to peg the needle on a Lighthouse test without getting bogged down in tooling.</p>
+<p class="grid__item --start-1 --span-12 flex --no-wrap --justify-between --align-items-center text --size-m --weight-200 --width-s --leading-s --spacing-xl --uppercase space --bottom-flush --top-pad-m --bottom-pad-m">
+  <span>Fast sites </span>
+  {% render 'svg/grease.svg' %}
+  <span>built faster</span>
+</p>
 
-{% include 'docs.html' %}
+<h1 class="grid__item --start-1 --span-12 hero text --size-xl --weight-800 --width-l --leading-s --spacing-s --uppercase space --top-flush --bottom-l border --top-thin --bottom-thin">Grease</h1>
 
-{% setVar 'foo' %}<bar>fizz</bar>{% endsetVar %}
+<small-details>
+  <details class="footer__menu grid__item --start-1 --span-4" open>
+    <summary class="text --size-xl --weight-600 --width-s --uppercase space --bottom-m">Menu</summary>
+    <ul class="text --undecorated --unlisted">
+      <li><a class="button text --size-xl --align-center display --block" href="https://github.com/adamstddrd/grease">Get Grease</a></li>
+      <li><a class="button text --size-xl --align-center display --block" href="#instructions">Instructions</a></li>
+    </ul>
+  </details>
+</small-details>
+
+<section class="grid__item --start-auto --span-8 border --left-thin@m space --left-pad-l@m">
+  <p class="text --size-m --weight-300 space --bottom-flush">Grease is a website starter that makes building performant, accessible, aesthetic websites fast &amp; frictionless</strong>. It uses <a href="https://www.11ty.dev/" rel="nofollow">11ty</a>, <a href="https://lightningcss.dev/" rel="nofollow">Lightning CSS</a>, and <a href="https://esbuild.github.io/" rel="nofollow">Esbuild</a>, and includes a lightweight, declarative CSS architecture that sets you up for success.</p>
+</section>
+
+<hr class="grid__item --start-1 --span-12 space --top-l --bottom-flush">
+
+<h2 class="grid__item --start-1 --span-12 text --size-xl --weight-800 --width-l --leading-s --spacing-s --uppercase --align-center space --top-flush --bottom-m border --top-thin --bottom-thin color --invert">100% pure grease! Speed guaranteed!</h2>
+
+{% for item in ingredients %}
+  {% capture gridClass %}
+    {% cycle "gridClassCycle": "--start-1", "--start-auto", "--start-auto" %}
+  {% endcapture %}
+  <div class="grid__item {{ gridClass }} --span-4">
+    <h3 class="space --top-s">{{ item.title }}</h3>
+    <div class="text --size-s">{{ item.description | markdownify }}</div>
+  </div>
+{% endfor %}
+
+<p class="grid__item --start-1 --span-12 text --size-m --weight-800 --width-l --leading-s --spacing-s --uppercase --align-center space --top-m --bottom-l border --top-thin --bottom-thin color --invert">Apply directly to the web platform for best results!</p>
+
+<section id="instructions" class="grid__item --start-1 --span-6 --align-stretch">
+
+  <h2 class="space --top-flush">Getting started</h2>
+  <ul>
+    <li><a href="https://github.com/adamstddrd/grease">Clone the Grease repo on Github</a>.</li>
+    <li>To start the local dev server, run <code>npm start</code>.</li>
+    <li>Grease is all set up for <a href="https://www.netlify.com">Netlify</a> deployment. You can use the <code>publish:prod</code> script and <code>_public</code> output directory to deploy elsewhere.</li>
+  </ul>
+
+  <h2>Working with CSS</h2>
+  <p>Grease uses a practical, declarative approach to writing modern CSS, using three <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">cascade layers</a>:</p>
+  <ol class="text --size-s space --bottom-flush">
+    <li><code>base</code> is where you define the default presentation characteristics for your project. Tailoring the custom media queries, custom properties, typeface, and base elements alone should get you halfway there.</li>
+    <li><code>components</code> is where you define <strong>commonly repeated objects</strong> that live across your project. Components care very little about their position on any given page.</li>
+    <li><code>utilities</code> is for CSS that <strong>manipulates elements and components</strong>. Grease aims to cover the small subset of attributes that are highly variable (page position, type characteristics, spacing) as opposed to making every property available. All the page weight and speed benefits utilities afford, none of the tooling complexity.</li>
+  </ol>
+
+  <h3>Syntax, draft specs</h3>
+  <p class="text --size-s">Components and utilties in Grease are written using a modfied <a href="https://getbem.com/introduction/">BEM syntax</a>. The only difference is modifiers, which use a utility-friendly <code>block --modifier1 --modifier2</code> syntax instead of <code>block--modifier1 block--modifier2</code>.</p>
+  <p class="text --size-s"><a href="https://lightningcss.dev/">Lighting</a> is configured to support the nesting and custom media draft specs, but it doesn't target older browsers out of the box. Adjust as need be for the project at hand.</p>
+
+  <h3>Breaking up CSS</h3>
+  <p class="text --size-s">Grease gives you three options for including CSS:</p>
+  <ol class="text --size-s space --bottom-flush">
+    <li>In the main bundle. Global stuff goes here.</li>
+    <li>As route-specific bundles. Add a CSS file to <code>source/css/pages</code> (or any folder not prefixed by an underscore) to create a new entrypoint. Assign the path to <code>stylesheet</code> in template frontmatter to use it.</li>
+    <li>As <code>style</code> tags. For critical CSS or page-specific one-offs, Grease includes a <code>style</code> shortcode that processes CSS with Lightning and adds it to a style tag in the page head.</li>
+  </ol>
+</section>
+
+<section class="grid__item --start-auto --span-6 --align-stretch space --left-pad-l@m border --left-thin@m">
+
+<h2 class="space --top-flush@m">Utility cheatsheet</h2>
+
+  <h3>.grid</h3>
+  <p>Rapidly compose responsive layouts with an infinitely nestable 12+2 “bleed” column grid that collapses to 1+2 @small.</p>
+  <h4>.grid__item</h4>
+  <ul class="text --size-s space --bottom-flush">
+    <li><code>--start-{1-10/auto}</code> changes the start positon</li>
+    <li><code>--span-{2-12}</code> changes how many columns the grid__item spans at @medium+</li>
+    <li><code>--bleed-{left/right/full}</code> makes elements stick to page edges across breakpoints</li>
+    <li><code>--place-{start/center/end}</code> changes the placement of content within a grid area</li>
+  </ul>
+
+  <h3>.space</h3>
+  <p>Manipulate margin and padding.</p>
+  <ul class="text --size-s space --bottom-flush">
+    <li><code>--{top/bottom}-{flush/xxs-xxl/flex}</code> adds margin</li>
+    <li><code>--{top/bottom}-pull-{flush/xxs-xxl}</code> inverts margin</li>
+    <li><code>--pad-{flush/xs-xxl}</code> adds padding to all sides</li>
+    <li><code>--pad-{top/right/bottom/left}-{flush/xs-xxl}</code> adds padding to one side</li>
+    <li>Append <code>@m</code>to modifiers to apply @medium+</li>
+  </ul>
+
+  <h3>.text</h3>
+  <p>Decouple semantics from presentation.</p>
+  <ul class="text --size-s space --bottom-flush">
+    <li><code>--size-{xxxs-xxxxl}</code> adjusts font size</li>
+    <li><code>--size-{poster/poster-l}</code> for very large type</li>
+    <li><code>--weight-{100-800}</code> adjusts font-weight</li>
+    <li><code>--width-{s-l}</code> adjust variable font width axis</li>
+    <li><code>--measure-{xs-xl}</code> max width based on character width</li>
+    <li><code>--align-{left/center/right}</code> changes text alignment</li>
+    <li><code>--leading-{xs-l/fluid}</code> adjusts line height</li>
+    <li><code>--spacing-{s-xl}</code> adjusts letter spacing</li>
+    <li><code>--italic</code>, <code>--uppercase</code>, <code>--unlisted</code>, and <code>--undecorated</code> do what the names suggest</li>
+  </ul>
+
+  <h3>.animate, .flex, .color, .display</h3>
+  <p class="text --size-s">Grease includes a few smaller, less frequently used utilties too. Check the source for details.</p>
+</section>
+
+<footer class="grid__item --start-1 --span-12 border --top-thin space --top-l --top-pad-m text --size-s">
+  <p>Brought to you by <a href="https://aaadaaam.com">AAADAAAM</a>. Have fun.</p>
+</footer>
 
 {% style %}
-.foo {
-  color: red;
-
-  & bar {
-    color: blue;
-  }
+.hero {
+  font-size: 14.375vw;
 }
 {% endstyle %}

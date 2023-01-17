@@ -3,18 +3,9 @@ display: manipulate the visual display of elements
 ---------------------------------------------------------------------------- */
 
 .display {
-
   &.--block { display: block; }
-
   &.--inline { display: inline; }
-
   &.--none { display: none; }
-
-  &.--none\@small {
-    @media (--viewport-small) {
-      display: none;
-    }
-  }
 
   &.--sr-only {
     clip: rect(1px, 1px, 1px, 1px);
@@ -22,5 +13,11 @@ display: manipulate the visual display of elements
     height: 1px;
     width: 1px;
     overflow: hidden;
+  }
+
+  @media (--viewport-small) {
+    &.--none\@s {
+      display: none;
+    }
   }
 }

@@ -76,35 +76,35 @@ space: manipulate the space between elements
   &.--right-pad-xl { padding-right: var(--space-xl); }
   &.--right-pad-xxl { padding-right: var(--space-xxl); }
 
-  @media (--viewport-small) {
+  @media (--viewport-medium) {
 
-    &.--top-flush\@small { margin-top: 0; }
-    &.--top-s\@small { margin-top: var(--space-s); }
-    &.--top-m\@small { margin-top: var(--space-m); }
-    &.--top-l\@small { margin-top: var(--space-l); }
-    &.--top-xl\@small { margin-top: var(--space-xl); }
-    &.--top-xxl\@small { margin-top: var(--space-xxl); }
-    &.--top-flex\@small { margin-top: var(--space-flex); }
+    &.--top-flush\@m { margin-top: 0; }
+    &.--top-s\@m { margin-top: var(--space-s); }
+    &.--top-m\@m { margin-top: var(--space-m); }
+    &.--top-l\@m { margin-top: var(--space-l); }
+    &.--top-xl\@m { margin-top: var(--space-xl); }
+    &.--top-xxl\@m { margin-top: var(--space-xxl); }
+    &.--top-flex\@m { margin-top: var(--space-flex); }
 
-    &.--bottom-flush\@small { margin-bottom: 0; }
-    &.--bottom-s\@small { margin-bottom: var(--space-s); }
-    &.--bottom-m\@small { margin-bottom: var(--space-m); }
-    &.--bottom-l\@small { margin-bottom: var(--space-l); }
-    &.--bottom-xl\@small { margin-bottom: var(--space-xl); }
-    &.--bottom-xxl\@small { margin-bottom: var(--space-xxl); }
+    &.--bottom-flush\@m { margin-bottom: 0; }
+    &.--bottom-s\@m { margin-bottom: var(--space-s); }
+    &.--bottom-m\@m { margin-bottom: var(--space-m); }
+    &.--bottom-l\@m { margin-bottom: var(--space-l); }
+    &.--bottom-xl\@m { margin-bottom: var(--space-xl); }
+    &.--bottom-xxl\@m { margin-bottom: var(--space-xxl); }
 
-    &.--pad-none\@small { padding: 0; }
-    &.--bottom-pad-none\@small { padding-bottom: 0; }
-    &.--bottom-pad-m\@small { padding-bottom: var(--space-m); }
-    &.--bottom-pad-l\@small { padding-bottom: var(--space-l); }
-    &.--top-pad-none\@small { padding-top: 0; }
-    &.--top-pad-m\@small { padding-top: var(--space-m); }
-    &.--top-pad-l\@small { padding-top: var(--space-l); }
-    &.--left-pad-none\@small { padding-left: 0; }
-    &.--left-pad-m\@small { padding-left: var(--space-m); }
-    &.--left-pad-l\@small { padding-left: var(--space-l); }
-    &.--right-pad-none\@small { padding-right: 0; }
-    &.--right-pad-m\@small { padding-right: var(--space-m); }
-    &.--right-pad-l\@small { padding-right: var(--space-l); }
+    &.--pad-none\@m { padding: 0; }
+    &.--bottom-pad-none\@m { padding-bottom: 0; }
+    &.--bottom-pad-m\@m { padding-bottom: var(--space-m); }
+    &.--bottom-pad-l\@m { padding-bottom: var(--space-l); }
+    &.--top-pad-none\@m { padding-top: 0; }
+    &.--top-pad-m\@m { padding-top: var(--space-m); }
+    &.--top-pad-l\@m { padding-top: var(--space-l); }
+    &.--left-pad-none\@m { padding-left: 0; }
+    &.--left-pad-m\@m { padding-left: var(--space-m); }
+    &.--left-pad-l\@m { padding-left: var(--space-l); }
+    &.--right-pad-none\@m { padding-right: 0; }
+    &.--right-pad-m\@m { padding-right: var(--space-m); }
+    &.--right-pad-l\@m { padding-right: var(--space-l); }
   }
 }

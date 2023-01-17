@@ -3,27 +3,9 @@ custom fonts
 ---------------------------------------------------------------------------- */
 
 @font-face {
-  font-family: "Mona Sans";
-  src:
-    url("/assets/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
-    url("/assets/fonts/Mona-Sans.woff2") format("woff2-variations");
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Quattro;
-  src: url("/assets/fonts/iAWriterQuattroV.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 200 900;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Quattro;
-  src: url("/assets/fonts/iAWriterQuattroV-italic.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 200 900;
+  font-family: Trispace;
+  src: url("/assets/fonts/Trispace.woff2") format("woff2");
+  font-weight: 100 800;
+  font-stretch: normal;
   font-display: swap;
 }
