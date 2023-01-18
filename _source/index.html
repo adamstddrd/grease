@@ -20,31 +20,33 @@ ingredients:
     description: Production-ready odds & ends come in the box. Sitemaps, canonical URLs, search index blocking, etc.
 ---
 
-<p class="grid__item --start-1 --span-12 flex --no-wrap --justify-between --align-items-center text --size-m --weight-200 --width-s --leading-s --spacing-xl --uppercase space --bottom-flush --top-pad-m --bottom-pad-m">
-  <span>Fast sites </span>
-  {% render 'svg/grease.svg' %}
-  <span>built faster</span>
-</p>
+<section class="grid color --invert --set-sheet space --bottom-m">
 
-<h1 class="grid__item --start-1 --span-12 hero text --size-xl --weight-800 --width-l --leading-s --spacing-s --uppercase space --top-flush --bottom-l border --top-thin --bottom-thin">Grease</h1>
+  <p class="grid__item --start-1 --span-12 flex --no-wrap --justify-between --align-items-center text --size-m --weight-200 --width-s --leading-s --spacing-xl --uppercase space --bottom-flush --top-pad-m --bottom-pad-m">
+    <span>Fast sites </span>
+    {% render 'svg/grease.svg' %}
+    <span>built faster</span>
+  </p>
 
-<small-details>
-  <details class="footer__menu grid__item --start-1 --span-4" open>
-    <summary class="text --size-xl --weight-600 --width-s --uppercase space --bottom-m">Menu</summary>
-    <ul class="text --undecorated --unlisted">
-      <li><a class="button text --size-xl --align-center display --block" href="https://github.com/adamstddrd/grease">Get Grease</a></li>
-      <li><a class="button text --size-xl --align-center display --block" href="#instructions">Instructions</a></li>
-    </ul>
-  </details>
-</small-details>
+  <h1 class="grid__item --start-1 --span-12 hero text --size-xl --weight-800 --width-l --leading-s --spacing-s --uppercase space --top-flush --bottom-l border --top-thin --bottom-thin">Grease</h1>
 
-<section class="grid__item --start-auto --span-8 border --left-thin@m space --left-pad-l@m">
-  <p class="text --size-m --weight-300 space --bottom-flush">Grease is a website starter that makes building performant, accessible, aesthetic websites fast &amp; frictionless</strong>. It uses <a href="https://www.11ty.dev/" rel="nofollow">11ty</a>, <a href="https://lightningcss.dev/" rel="nofollow">Lightning CSS</a>, and <a href="https://esbuild.github.io/" rel="nofollow">Esbuild</a>, and includes a lightweight, declarative CSS architecture that sets you up for success.</p>
+  <small-details>
+    <details class="footer__menu grid__item --start-1 --span-4" open>
+      <summary class="text --size-xl --weight-600 --width-s --uppercase space --bottom-m">Menu</summary>
+      <ul class="text --undecorated --unlisted">
+        <li><a class="button text --size-xl --align-center display --block" href="https://github.com/adamstddrd/grease">Get Grease</a></li>
+        <li><a class="button text --size-xl --align-center display --block" href="#instructions">Instructions</a></li>
+      </ul>
+    </details>
+  </small-details>
+
+  <div class="grid__item --start-auto --span-8 border --left-thin@m space --left-pad-l@m">
+    <p class="text --size-m --weight-300 space --bottom-flush">Grease is a website starter that makes building performant, accessible, aesthetic websites fast &amp; frictionless</strong>. It uses <a href="https://www.11ty.dev/" rel="nofollow">11ty</a>, <a href="https://lightningcss.dev/" rel="nofollow">Lightning CSS</a>, and <a href="https://esbuild.github.io/" rel="nofollow">Esbuild</a>, and includes a lightweight, declarative CSS architecture that sets you up for success.</p>
+  </div>
+
+  <h2 class="grid__item --start-1 --span-12 text --size-xl --weight-800 --width-l --leading-s --spacing-s --uppercase --align-center space --top-l --bottom-m border --top-thin --bottom-thin">100% pure grease! Speed guaranteed!</h2>
+
 </section>
-
-<hr class="grid__item --start-1 --span-12 space --top-l --bottom-flush">
-
-<h2 class="grid__item --start-1 --span-12 text --size-xl --weight-800 --width-l --leading-s --spacing-s --uppercase --align-center space --top-flush --bottom-m border --top-thin --bottom-thin color --invert">100% pure grease! Speed guaranteed!</h2>
 
 {% for item in ingredients %}
   {% capture gridClass %}
@@ -56,7 +58,7 @@ ingredients:
   </div>
 {% endfor %}
 
-<p class="grid__item --start-1 --span-12 text --size-m --weight-800 --width-l --leading-s --spacing-s --uppercase --align-center space --top-m --bottom-l border --top-thin --bottom-thin color --invert">Apply directly to the web platform for best results!</p>
+<p class="grid__item --start-1 --span-12 text --size-m --weight-800 --width-l --leading-s --spacing-s --uppercase --align-center space --top-m --bottom-l border --top-thin --bottom-thin color --invert --set-sheet">Apply directly to the web platform for best results!</p>
 
 <section id="instructions" class="grid__item --start-1 --span-6 --align-stretch">
 
