@@ -5,7 +5,6 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.14",
     "@11ty/eleventy-img": "^2.0.1",
-    "del-cli": "^5.0.0",
     "esbuild": "^0.16.4",
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -18,7 +17,6 @@
     "start": "eleventy --serve --incremental --quiet",
     "publish:stage": "ELEVENTY_ENV=stage eleventy",
     "publish:prod": "ELEVENTY_ENV=prod eleventy",
-    "clean": "del-cli \"_public/**\"",
     "lint:css": "stylelint \"_source/**/*.css\" --fix",
     "lint:js": "eslint \"_source/**/*.js\" --fix"
   }
