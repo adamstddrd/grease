@@ -4,19 +4,19 @@
   --------------------------------------------------------------------------- */
   --color-alpha: 100%;
   --color-peach: 10deg 100% 85%;
-  --color-black: 60deg 3% 6%;
+  --color-charcoal: 40deg 2% 15%;
 
   /* semantic color themes */
-  --color-text-hsl: var(--color-black);
-  --color-text: hsl(var(--color-black) / var(--color-alpha));
+  --color-text-hsl: var(--color-charcoal);
+  --color-text: hsl(var(--color-charcoal) / var(--color-alpha));
   --color-sheet-hsl: var(--color-peach);
   --color-sheet: hsl(var(--color-peach) / var(--color-alpha));
 
   @media (prefers-color-scheme: dark) {
     --color-text-hsl: var(--color-peach);
     --color-text: hsl(var(--color-peach) / var(--color-alpha));
-    --color-sheet-hsl: var(--color-black);
-    --color-sheet: hsl(var(--color-black) / var(--color-alpha));
+    --color-sheet-hsl: var(--color-charcoal);
+    --color-sheet: hsl(var(--color-charcoal) / var(--color-alpha));
   }
 
   /* ---------------------------------------------------------------------------
