@@ -1,0 +1,163 @@
+/* ----------------------------------------------------------------------------
+element styles
+---------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  font-variation-settings: "wght" var(--text-weight), "wdth" var(--text-width);
+}
+
+::selection {
+  color: var(--color-sheet);
+  background-color: var(--color-text);
+}
+
+html {
+  font-size: 10px;
+  min-height: 100dvh;
+  background-color: var(--color-sheet);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100dvh;
+  overflow-x: clip;
+  font-family: var(--text-main);
+  font-size: var(--text-base);
+  line-height: var(--text-leading-fluid);
+  background-color: var(--color-sheet);
+}
+
+animate-on-scroll {
+  display: contents;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, li, pre, blockquote) {
+  line-height: var(--text-leading-fluid);
+}
+
+h1 {
+  --text-weight: 300;
+
+  margin: var(--space-xl) 0 var(--space-m) 0;
+  font-size: var(--text-xxl);
+  letter-spacing: var(--text-spacing-s);
+}
+
+h2 {
+  --text-weight: 500;
+  --text-width: var(--text-width-s);
+
+  margin: var(--space-l) 0 var(--space-s) 0;
+  font-size: var(--text-xl);
+  text-transform: uppercase;
+  border-bottom: var(--border-weight-s) solid var(--color-text);
+}
+
+h3 {
+  --text-weight: 500;
+  --text-width: var(--text-width-s);
+
+  margin: var(--space-m) 0 0 0;
+  font-size: var(--text-l);
+  text-transform: uppercase;
+}
+
+:where(h4, h5, h6) {
+  --text-weight: 400;
+  --text-width: var(--text-width-s);
+
+  margin: var(--space-s) 0 0 0;
+  font-size: var(--text-m);
+  text-transform: uppercase;
+}
+
+:where(p, ul, ol, dl) {
+  margin: 0 0 var(--space-s) 0;
+  font-weight: var(--text-weight-base);
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: square;
+}
+
+ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+li {
+  position: relative;
+
+  &:where(li + li) {
+    margin: var(--space-xs) 0 0 0;
+  }
+
+  & :where(ul, ol) {
+    margin-left: var(--space-m);
+    font-size: var(--text-m);
+  }
+}
+
+b,
+strong {
+  --text-weight: 500;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--text-s);
+}
+
+a,
+a:visited {
+  color: var(--color-text);
+  text-decoration-thickness: var(--border-weight-s);
+  transition: text-decoration-thickness 0.1s ease;
+}
+
+a:hover {
+  text-decoration-thickness: var(--border-weight-m);
+}
+
+code {
+  --bg-color: var(--color-text-hsl);
+  --alpha: 10%;
+
+  font-family: var(--text-main);
+  padding: var(--space-xs);
+  padding-top: calc(var(--space-xxs) * 1.375);
+  border-radius: var(--border-radius-s);
+  background-color: hsl(var(--bg-color) / var(--alpha));
+}
+
+blockquote {
+  margin: var(--space-l) 0;
+  font-size: var(--text-m);
+  font-style: italic;
+}
+
+:where(img, embed, object, svg, video) {
+  max-width: 100%;
+  height: auto;
+  line-height: var(--text-leading-fluid);
+}
+
+hr {
+  width: 100%;
+  margin: var(--space-xl) 0;
+  border: 0;
+  border-top: var(--border-weight-s) solid var(--color-text);
+}

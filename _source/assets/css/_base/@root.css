@@ -1,0 +1,142 @@
+:root {
+  /* ---------------------------------------------------------------------------
+  color
+  --------------------------------------------------------------------------- */
+  --color-alpha: 100%;
+  --color-peach: 10deg 100% 85%;
+  --color-charcoal: 40deg 2% 15%;
+
+  /* semantic color themes */
+  --color-text-hsl: var(--color-charcoal);
+  --color-text: hsl(var(--color-charcoal) / var(--color-alpha));
+  --color-sheet-hsl: var(--color-peach);
+  --color-sheet: hsl(var(--color-peach) / var(--color-alpha));
+
+  @media (prefers-color-scheme: dark) {
+    --color-text-hsl: var(--color-peach);
+    --color-text: hsl(var(--color-peach) / var(--color-alpha));
+    --color-sheet-hsl: var(--color-charcoal);
+    --color-sheet: hsl(var(--color-charcoal) / var(--color-alpha));
+  }
+
+  /* ---------------------------------------------------------------------------
+  spacing
+  --------------------------------------------------------------------------- */
+
+  --space-scale: 2;
+  --space-base-s: 2rem;
+  --space-base: max(1.5rem, min(calc(0.5rem + 1.5vw), 3rem));
+  --space-xxs: calc(var(--space-xs) / var(--space-scale));
+  --space-xs: calc(var(--space-s) / var(--space-scale));
+  --space-s: calc(var(--space-base-s) / var(--space-scale));
+  --space-m: var(--space-base);
+  --space-l: calc(var(--space-m) * var(--space-scale));
+  --space-xl: calc(var(--space-l) * var(--space-scale));
+  --space-xxl: calc(var(--space-xl) * var(--space-scale));
+
+  /* ---------------------------------------------------------------------------
+  text properties
+  --------------------------------------------------------------------------- */
+
+  /* font stacks */
+  --text-main:
+    "Trispace",
+    -apple-system,
+    blinkmacsystemfont,
+    "Segoe UI",
+    roboto,
+    helvetica,
+    arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+
+  /* size */
+  --text-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
+  --text-scale-s: 1.2;
+  --text-scale-l: 1.333;
+  --text-xxxs: calc(var(--text-xxs) / var(--text-scale-s));
+  --text-xxs: calc(var(--text-xs) / var(--text-scale-s));
+  --text-xs: calc(var(--text-s) / var(--text-scale-s));
+  --text-s: calc(var(--text-m) / var(--text-scale-s));
+  --text-m: 1em;
+  --text-l: calc(var(--text-m) * var(--text-scale-l));
+  --text-xl: calc(var(--text-l) * var(--text-scale-l));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-l));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-l));
+  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-l));
+  --text-poster: clamp(4.5rem, 8vw, 10rem);
+  --text-poster-l: clamp(5.5rem, 9vw, 12rem);
+
+  /* weight */
+  --text-weight: 250;
+  --text-width-s: 75;
+  --text-width-m: 100;
+  --text-width-l: 125;
+  --text-width: var(--text-width-m);
+
+  /* measure */
+  --text-measure-xs: 15ch;
+  --text-measure-s: 30ch;
+  --text-measure-m: 45ch;
+  --text-measure-l: 60ch;
+  --text-measure-xl: 75ch;
+
+  /* line height */
+  --text-leading-base: 1.1;
+  --text-leading-scale: 1.25;
+  --text-leading-xs: calc(var(--text-leading-s) / var(--text-leading-scale));
+  --text-leading-s: var(--text-leading-base);
+  --text-leading-m: calc(var(--text-leading-s) * var(--text-leading-scale));
+  --text-leading-l: calc(var(--text-leading-m) * var(--text-leading-scale));
+  --text-leading-fluid: calc(0.75rem + 1.25em);
+
+  /* letter spacing */
+  --text-spacing-s: -0.025em;
+  --text-spacing-m: 0;
+  --text-spacing-l: 0.1em;
+  --text-spacing-xl: 0.3em;
+
+  /* ---------------------------------------------------------------------------
+  borders
+  --------------------------------------------------------------------------- */
+
+  /* border radius */
+  --border-radius-s: 0.3rem;
+  --border-radius-m: 0.6rem;
+  --border-radius-l: 0.9rem;
+
+  /* border weight */
+  --border-weight-s: 0.1rem;
+  --border-weight-m: 0.2rem;
+  --border-weight-l: 0.3rem;
+
+  /* ---------------------------------------------------------------------------
+  z-index layers
+  --------------------------------------------------------------------------- */
+  --layer-1: 1;
+  --layer-2: 2;
+  --layer-3: 3;
+  --layer-4: 4;
+  --layer-5: 5;
+
+  /* ---------------------------------------------------------------------------
+  shadows
+  --------------------------------------------------------------------------- */
+  --shadow-color: 220 3% 15%;
+  --shadow-s: 0 1px 2px -1px hsl(var(--shadow-color) / 1%);
+  --shadow-m:
+    0 -1px 3px 0 hsl(var(--shadow-color) / 2%),
+    0 1px 2px -5px hsl(var(--shadow-color) / 2%),
+    0 2px 5px -5px hsl(var(--shadow-color) / 4%),
+    0 4px 12px -5px hsl(var(--shadow-color) / 5%),
+    0 12px 15px -5px hsl(var(--shadow-color) / 7%);
+  --shadow-l:
+    0 -1px 2px 0 hsl(var(--shadow-color) / 2%),
+    0 2px 1px -2px hsl(var(--shadow-color) / 3%),
+    0 5px 5px -2px hsl(var(--shadow-color) / 3%),
+    0 10px 10px -2px hsl(var(--shadow-color) / 4%),
+    0 20px 20px -2px hsl(var(--shadow-color) / 5%),
+    0 40px 40px -2px hsl(var(--shadow-color) / 7%);
+}

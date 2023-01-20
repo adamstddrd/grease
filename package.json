@@ -1,42 +1,23 @@
 {
-  "name": "Grease",
-  "version": "1.0.0",
+  "name": "grease",
+  "version": "2.0.0",
   "private": true,
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-img": "^2.0.1",
-    "del-cli": "^4.0.1",
-    "esbuild": "^0.14.7",
+    "esbuild": "^0.16.4",
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.24.2",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.3.6",
-    "postcss-cli": "^9.1.0",
-    "postcss-csso": "^6.0.0",
-    "postcss-import": "^14.0.2",
-    "postcss-import-ext-glob": "^2.0.1",
-    "postcss-preset-env": "^7.0.2",
+    "lightningcss": "^1.18.0",
     "stylelint": "^14.2.0",
-    "stylelint-config-standard": "^26.0.0"
+    "stylelint-config-standard": "^29.0.0"
   },
   "scripts": {
-    "serve": "run-p watch:** --silent",
-    "publish:stage": "ELEVENTY_ENV=stage run-s build:**",
-    "publish:prod": "ELEVENTY_ENV=prod run-s build:**",
-    "clean": "del-cli \"_public/**\"",
-    "build:11ty": "eleventy",
-    "watch:11ty": "eleventy --serve --incremental --quiet",
-    "build:css": "postcss \"_source/_assets/**/[!_]*/*.css\" --dir _public/assets/ --base _source/_assets/css --map --verbose",
-    "watch:css": "npm run build:css -- --watch",
-    "build:js": "node esbuild.config.js",
-    "watch:js": "npm run build:js -- --watch",
+    "start": "eleventy --serve --incremental --quiet",
+    "publish:stage": "ELEVENTY_ENV=stage eleventy",
+    "publish:prod": "ELEVENTY_ENV=prod eleventy",
     "lint:css": "stylelint \"_source/**/*.css\" --fix",
     "lint:js": "eslint \"_source/**/*.js\" --fix"
-  },
-  "browserslist": [
-    "cover 90% in US",
-    "not dead",
-    "not ie 11"
-  ]
+  }
 }

@@ -1,0 +1,78 @@
+.button {
+  --text-weight: 600;
+  --text-width: var(--text-width-s);
+  --button-text: var(--color-text);
+  --button-bg: var(--color-sheet);
+  --button-border: var(--color-text);
+  --button-icon: var(--color-text);
+
+  color: var(--button-text);
+  background-color: var(--button-bg);
+  border: var(--color-text) solid var(--border-weight-s);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  padding: var(--space-s);
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  transition: color 0.1s step-sta, background-color 0.1s linear;
+  border-radius: var(--border-radius);
+  line-height: 1;
+  text-transform: uppercase;
+
+  &:visited {
+    color: var(--button-text);
+  }
+
+  @media (--viewport-small) {
+    line-height: inherit;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      --button-text: var(--color-sheet);
+      --button-bg: var(--color-text);
+
+      cursor: pointer;
+    }
+  }
+
+  & svg {
+    width: 1.5em;
+    height: auto;
+  }
+
+  &.--fill\@s {
+    @media (--viewport-small) {
+      width: 100%;
+    }
+  }
+
+  &.--inverted {
+    --button-text: var(--color-sheet);
+    --button-bg: var(--color-text);
+    --button-border: var(--color-text);
+  }
+
+  &.--text-only {
+    border-color: transparent;
+    background-color: transparent;
+
+    @media (hover: hover) {
+      &:hover {
+        --button-text: var(--color-text);
+        --button-bg: var(--color-sheet);
+
+        border-bottom-color: var(--button-border);
+      }
+    }
+  }
+
+  &[aria-current] {
+    &:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+}

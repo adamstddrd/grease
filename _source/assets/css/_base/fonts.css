@@ -1,0 +1,11 @@
+/* ----------------------------------------------------------------------------
+custom fonts
+---------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: Trispace;
+  src: url("/assets/fonts/Trispace.woff2") format("woff2");
+  font-weight: 100 800;
+  font-stretch: normal;
+  font-display: swap;
+}

@@ -1,0 +1,9 @@
+/* ----------------------------------------------------------------------------
+main CSS bundle
+---------------------------------------------------------------------------- */
+@layer base, components, utilities;
+
+@import "_base/@media.css";
+@import "_base/_base.css" layer(base);
+@import "_components/_components.css" layer(components);
+@import "_utilities/_utilities.css" layer(utilities);

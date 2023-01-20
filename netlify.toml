@@ -1,7 +1,5 @@
 [build]
-  # Directory that contains the deploy-ready HTML files and assets
   publish = "_public/"
-  # Default build command.
   command = "npm run publish:prod"
 
 [context.branch-deploy]
@@ -10,23 +8,8 @@
 [context.deploy-preview]
   command = "npm run publish:stage"
 
-# fail the build if there are any broken links
-[[plugins]]
-  package = "netlify-plugin-checklinks"
-    [plugins.inputs]
-    entryPoints = [
-      "*.html",
-    ]
-    recursive = true
-    pretty = true
-    skipPatterns = []
-    todoPatterns = []
-    checkExternal = false
-    followSourceMaps = false
-
-# cache fonts forever
 [[headers]]
-  for = "/assets/*.woff2"
+  for = "/assets/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=365000000, immutable"
 

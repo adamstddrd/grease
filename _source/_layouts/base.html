@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include 'head.html' %}
+  <head>
+    
+    <meta charset="utf-8">
+
+    <script>document.documentElement.classList.add('js');</script>
+
+    <title>{% if title %}{{ title | escape }} | {% endif %}{{ site.title | escape }}</title>
+
+    <meta name="description" content="{% if description %}{{ description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {%- if noindex -%}
+    <meta name="robots" content="noindex, nofollow">
+    {%- endif -%}
+
+    {%- if canonical -%}
+    <link rel="canonical" href="{{ canonical }}">
+    {%- else -%}
+    <link rel="canonical" href="{{ env.baseUrl }}{{ page.url }}">
+    {%- endif -%}
+
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+    <link rel="mask-icon" href="/assets/icons/favicon.svg" color="#000000">
+    <link rel="apple-touch-icon" href="/assets/icons/favicon-196x196.png">
+
+    <link rel="preload" href="/assets/fonts/Trispace.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="/assets/css/main.css" media="all">
+
+    {%- if stylesheet -%}
+    <link rel="stylesheet" href="/assets/css/{{ stylesheet }}" media="all">
+    {%- endif -%}
+
+    {%- if page.style -%}
+    <style>
+      {{ page.style }}
+    </style>
+    {%- endif -%}
+
+    <script src="/assets/js/app.js" type="module"></script>
+
+    {%- if javascript -%}
+    <script src="/assets/js/{{ javascript }}"  type="module"></script>
+    {%- endif -%}
+
+  </head>
 
   <body {% if page.class %} class="{{ page.class }}"{% endif %}>
 
     <scroll-sentinel></scroll-sentinel>
 
-    {{ content }}
+    <animate-on-scroll>
+      {{ content }}
+    </animate-on-scroll>
 
   </body>
 

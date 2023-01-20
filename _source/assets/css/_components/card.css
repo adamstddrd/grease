@@ -1,0 +1,19 @@
+/* ----------------------------------------------------------------------------
+simple centered layout
+---------------------------------------------------------------------------- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+
+  &.--fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

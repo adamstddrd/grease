@@ -1,0 +1,73 @@
+/* ----------------------------------------------------------------------------
+grid: a simple grid system for page composition
+---------------------------------------------------------------------------- */
+.grid {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr minmax(80vw, 100%) 1fr;
+  column-gap: min(5vw, 5rem);
+
+  @media (--viewport-medium) {
+    grid-template-columns: 1fr repeat(12, minmax(0, 3em)) 1fr;
+    column-gap: min(4vw, 3em);
+  }
+
+  & > .grid {
+    grid-column: 1 / -1;
+  }
+
+  @nest :where(&) > *:not([class*="grid"]) {
+    grid-column: 2;
+
+    @media (--viewport-medium) {
+      grid-column: 4 / span 8;
+    }
+  }
+
+  &.--dense { grid-auto-flow: dense; }
+}
+
+.grid__item {
+  grid-column-start: 2;
+
+  &.--bleed-left { grid-column: 1 / span 2; }
+  &.--bleed-right { grid-column-end: -1; }
+  &.--bleed-full { grid-column: 1 / -1; }
+
+  @media (--viewport-medium) {
+    grid-column: 3 / span 6;
+
+    &.--span-2 { grid-column-end: span 2; }
+    &.--span-3 { grid-column-end: span 3; }
+    &.--span-4 { grid-column-end: span 4; }
+    &.--span-5 { grid-column-end: span 5; }
+    &.--span-6 { grid-column-end: span 6; }
+    &.--span-7 { grid-column-end: span 7; }
+    &.--span-8 { grid-column-end: span 8; }
+    &.--span-9 { grid-column-end: span 9; }
+    &.--span-10 { grid-column-end: span 10; }
+    &.--span-11 { grid-column-end: span 11; }
+    &.--span-12 { grid-column: 2 / span 12; }
+
+    &.--start-1 { grid-column-start: 2; }
+    &.--start-2 { grid-column-start: 3; }
+    &.--start-3 { grid-column-start: 4; }
+    &.--start-4 { grid-column-start: 5; }
+    &.--start-5 { grid-column-start: 6; }
+    &.--start-6 { grid-column-start: 7; }
+    &.--start-7 { grid-column-start: 8; }
+    &.--start-8 { grid-column-start: 9; }
+    &.--start-9 { grid-column-start: 10; }
+    &.--start-10 { grid-column-start: 11; }
+    &.--start-auto { grid-column-start: auto; }
+
+    &.--place-start { place-self: start; }
+    &.--place-center { place-self: center; }
+    &.--place-end { place-self: end; }
+
+    &.--align-center { align-self: center; }
+    &.--align-start { align-self: start; }
+    &.--align-end { align-self: end; }
+    &.--align-stretch { align-self: stretch; }
+  }
+}

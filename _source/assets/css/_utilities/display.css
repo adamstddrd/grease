@@ -1,0 +1,23 @@
+/* ----------------------------------------------------------------------------
+display: manipulate the visual display of elements
+---------------------------------------------------------------------------- */
+
+.display {
+  &.--block { display: block; }
+  &.--inline { display: inline; }
+  &.--none { display: none; }
+
+  &.--sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  @media (--viewport-small) {
+    &.--none\@s {
+      display: none;
+    }
+  }
+}

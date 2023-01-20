@@ -1,0 +1,6 @@
+/* ----------------------------------------------------------------------------
+custom media queries
+---------------------------------------------------------------------------- */
+@custom-media --viewport-small (max-width: 44.999em);
+@custom-media --viewport-medium (min-width: 45em);
+@custom-media --viewport-large (min-width: 90em);

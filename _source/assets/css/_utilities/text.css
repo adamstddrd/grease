@@ -1,0 +1,57 @@
+/* ----------------------------------------------------------------------------
+font: transform text display properties
+---------------------------------------------------------------------------- */
+
+.text {
+  &.--size-xxxs { font-size: var(--text-xxxs); }
+  &.--size-xxs { font-size: var(--text-xxs); }
+  &.--size-xs { font-size: var(--text-xs); }
+  &.--size-s { font-size: var(--text-s); }
+  &.--size-m { font-size: var(--text-m); }
+  &.--size-l { font-size: var(--text-l); }
+  &.--size-xl { font-size: var(--text-xl); }
+  &.--size-xxl { font-size: var(--text-xxl); }
+  &.--size-xxxl { font-size: var(--text-xxxl); }
+  &.--size-xxxxl { font-size: var(--text-xxxxl); }
+  &.--size-poster { font-size: var(--text-poster); }
+  &.--size-poster-l { font-size: var(--text-poster-l); }
+
+  &.--weight-100 { --text-weight: 100; }
+  &.--weight-200 { --text-weight: 200; }
+  &.--weight-300 { --text-weight: 300; }
+  &.--weight-400 { --text-weight: 400; }
+  &.--weight-500 { --text-weight: 500; }
+  &.--weight-600 { --text-weight: 600; }
+  &.--weight-700 { --text-weight: 700; }
+  &.--weight-800 { --text-weight: 800; }
+
+  &.--measure-xs { max-width: var(--text-measure-xs); }
+  &.--measure-s { max-width: var(--text-measure-s); }
+  &.--measure-m { max-width: var(--text-measure-m); }
+  &.--measure-l { max-width: var(--text-measure-l); }
+  &.--measure-xl { max-width: var(--text-measure-xl); }
+
+  &.--width-s { --text-width: var(--text-width-s); }
+  &.--width-m { --text-width: var(--text-width-m); }
+  &.--width-l { --text-width: var(--text-width-l); }
+
+  &.--align-left { text-align: left; }
+  &.--align-center { text-align: center; }
+  &.--align-right { text-align: right; }
+
+  &.--leading-xs { line-height: var(--text-leading-xs); }
+  &.--leading-s { line-height: var(--text-leading-s); }
+  &.--leading-m { line-height: var(--text-leading-m); }
+  &.--leading-l { line-height: var(--text-leading-l); }
+  &.--leading-fluid { line-height: var(--text-leading-fluid); }
+
+  &.--spacing-s { letter-spacing: var(--text-spacing-s); }
+  &.--spacing-m { letter-spacing: var(--text-spacing-m); }
+  &.--spacing-l { letter-spacing: var(--text-spacing-l); }
+  &.--spacing-xl { letter-spacing: var(--text-spacing-xl); }
+
+  &.--italic { font-style: italic; }
+  &.--uppercase { text-transform: uppercase; }
+  &.--unlisted { list-style-type: none; }
+  &.--undecorated { text-decoration: none; }
+}
