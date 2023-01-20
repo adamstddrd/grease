@@ -10,11 +10,11 @@ element styles
   padding: 0;
   color: var(--color-text);
   font-variation-settings: "wght" var(--text-weight), "wdth" var(--text-width);
-}
 
-::selection {
-  color: var(--color-sheet);
-  background-color: var(--color-text);
+  &::selection {
+    color: var(--color-sheet);
+    background-color: var(--color-text);
+  }
 }
 
 html {
