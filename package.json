@@ -5,7 +5,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-img": "^2.0.1",
-    "esbuild": "^0.16.4",
+    "esbuild": "^0.17.4",
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.24.2",
