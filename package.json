@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "private": true,
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-beta.1",
-    "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy": "^2.0.0-beta.3",
+    "@11ty/eleventy-img": "^3.0.0",
     "esbuild": "^0.17.4",
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
