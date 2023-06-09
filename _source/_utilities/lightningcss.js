@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-process CSS files with PostCSS
+process CSS files with Lightning CSS
 ---------------------------------------------------------------------------- */
 const lighting = require('lightningcss');
 const path = require('node:path');
