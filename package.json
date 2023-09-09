@@ -5,13 +5,13 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-beta.3",
     "@11ty/eleventy-img": "^3.0.0",
-    "esbuild": "^0.17.4",
+    "esbuild": "^0.19.2",
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.24.2",
     "lightningcss": "^1.18.0",
-    "stylelint": "^14.2.0",
-    "stylelint-config-standard": "^29.0.0"
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0"
   },
   "scripts": {
     "start": "eleventy --serve --incremental --quiet",
