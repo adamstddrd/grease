@@ -2,11 +2,11 @@
 process CSS tag pair and add it to a <style> tag in the page head
 {% style %}.foo { bar: fizz;}{% endstyle %}
 ---------------------------------------------------------------------------- */
-const lighting = require('lightningcss');
+import { transform } from 'lightningcss';
 
-module.exports = function style(content) {
+export default function style(content) {
   const targets = { future: (1) }; // enables draft syntaxes
-  const result = lighting.transform({
+  const result = transform({
     code: Buffer.from(content),
     minify: true,
     drafts: {

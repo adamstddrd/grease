@@ -1,16 +1,16 @@
-const markdownIt = require('markdown-it');
-const esbuild = require('./_source/_utilities/esbuild.js');
-const lightingcss = require('./_source/_utilities/lightningcss.js');
-const image = require('./_source/_utilities/image.js');
-const style = require('./_source/_utilities/style.js');
-const setVar = require('./_source/_utilities/setVar.js');
-const fullDate = require('./_source/_utilities/fullDate.js');
-const getRandom = require('./_source/_utilities/getRandom.js');
-const markdownify = require('./_source/_utilities/markdownify.js');
-const sortBy = require('./_source/_utilities/sortBy.js');
-const where = require('./_source/_utilities/where.js');
+import markdownIt from 'markdown-it';
+import esbuild from './_source/_utilities/esbuild.js';
+import lightingcss from './_source/_utilities/lightningcss.js';
+import image from './_source/_utilities/image.js';
+import style from './_source/_utilities/style.js';
+import setVar from './_source/_utilities/setVar.js';
+import fullDate from './_source/_utilities/fullDate.js';
+import getRandom from './_source/_utilities/getRandom.js';
+import markdownify from './_source/_utilities/markdownify.js';
+import sortBy from './_source/_utilities/sortBy.js';
+import where from './_source/_utilities/where.js';
 
-module.exports = function (eleventyConfig) {
+export default async function (eleventyConfig) {
   /* --------------------------------------------------------------------------
   Plugins, shortcodes, filters
   -------------------------------------------------------------------------- */

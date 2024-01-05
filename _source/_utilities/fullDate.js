@@ -8,13 +8,9 @@ const appendSuffix = (n) => {
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 };
 
-const fullDate = (value) => {
+export default function fullDate(value) {
   const dateObject = new Date(value);
-
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const dayWithSuffix = appendSuffix(dateObject.getDate());
-
   return `${months[dateObject.getMonth()]} ${dayWithSuffix} ${dateObject.getFullYear()}`;
-};
-
-module.exports = fullDate;
+}

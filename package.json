@@ -1,9 +1,10 @@
 {
   "name": "grease",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
+  "type": "module",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-beta.3",
+    "@11ty/eleventy": "3.0.0-alpha.4",
     "@11ty/eleventy-img": "^3.0.0",
     "esbuild": "^0.19.2",
     "eslint": "^8.5.0",

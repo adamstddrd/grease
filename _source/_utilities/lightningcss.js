@@ -1,10 +1,10 @@
 /* ----------------------------------------------------------------------------
-process CSS files with PostCSS
+process CSS with LightningCSS
 ---------------------------------------------------------------------------- */
-const lighting = require('lightningcss');
-const path = require('node:path');
+import { bundleAsync } from 'lightningcss';
+import path from 'node:path';
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addTemplateFormats('css');
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',
@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
       }
       const files = [];
       const targets = { future: (1) }; // enables draft syntaxes
-      const result = await lighting.bundleAsync({
+      const result = await bundleAsync({
         filename: inputPath,
         minify: true,
         sourceMap: true,
@@ -36,4 +36,4 @@ module.exports = function (eleventyConfig) {
       return () => result.code.toString();
     },
   });
-};
+}
