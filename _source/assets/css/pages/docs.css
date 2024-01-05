@@ -1,0 +1,37 @@
+@import "../_base/@media.css";
+
+.hero {
+	--font-weight: 800;
+
+	display: grid;
+	/* place-items: center; */
+	letter-spacing: var(--tracking-md);
+	font-size: clamp(5em, 20vw, 18em);
+	filter: url("#greasy") drop-shadow(0 3rem 1rem hsl(0 0% 0% / 30%));
+	/* mix-blend-mode: overlay; */
+	
+	@media (--md) {
+		display: grid;
+	}
+	
+	& > * {
+  	grid-area: 1 / 1 / -1 / -1;
+	}
+	
+	& > span {
+  	/* -webkit-text-stroke-width: var(--space-xs);
+  	-webkit-text-stroke-color: hsl(var(--color-sheet)); */
+	}
+	
+	&:before {
+		--font-shape: 4;
+		--font-weight: 400;
+		--opacity-text: 100%;
+  	/* display: block;
+  	content: "Grease"; */
+  	color: hsl(var(--color-text) / var(--opacity-text));
+  	grid-area: 1/1/-1/-1;
+  	/* -webkit-text-stroke-width: var(--space-sm);
+  	-webkit-text-stroke-color: hsl(var(--color-text)); */
+	};
+}

@@ -76,7 +76,7 @@ space: manipulate the space between elements
   &.--right-pad-xl { padding-right: var(--space-xl); }
   &.--right-pad-xxl { padding-right: var(--space-xxl); }
 
-  @media (--viewport-medium) {
+  @media (--md) {
 
     &.--top-flush\@m { margin-top: 0; }
     &.--top-s\@m { margin-top: var(--space-s); }

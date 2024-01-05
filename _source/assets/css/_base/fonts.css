@@ -9,3 +9,20 @@ custom fonts
   font-stretch: normal;
   font-display: swap;
 }
+
+@font-face {
+    font-family: 'Sono';
+    src: url('/assets/fonts/Sono.woff2') format("woff2-variations");
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Handjet';
+    src: url('/assets/fonts/Handjet.woff2') format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap;
+}

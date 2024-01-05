@@ -3,5 +3,5 @@ the Grease logo
 ---------------------------------------------------------------------------- */
 
 .logo {
-  fill: var(--color-text);
+  fill: hsl(var(--color-text));
 }

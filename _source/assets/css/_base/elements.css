@@ -8,19 +8,19 @@ element styles
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: var(--color-text);
-  font-variation-settings: "wght" var(--text-weight), "wdth" var(--text-width);
+  color: hsl(var(--color-text) / var(--opacity-text));
+  font-variation-settings: "wght" var(--font-weight), "wdth" var(--font-width), "MONO" var(--font-mono), "ELSH" var(--font-shape);
 
   &::selection {
-    color: var(--color-sheet);
-    background-color: var(--color-text);
+    color: hsl(var(--color-sheet) / var(--opacity-text));
+    background-color: hsl(var(--color-text) / var(--opacity-sheet));
   }
 }
 
 html {
   font-size: 10px;
   min-height: 100dvh;
-  background-color: var(--color-sheet);
+  background-color: hsl(var(--color-sheet) / 100%);
 }
 
 body {
@@ -29,10 +29,10 @@ body {
   align-items: stretch;
   min-height: 100dvh;
   overflow-x: clip;
-  font-family: var(--text-main);
-  font-size: var(--text-base);
-  line-height: var(--text-leading-fluid);
-  background-color: var(--color-sheet);
+  font-family: var(--font-main);
+  font-size: var(--size-base);
+  line-height: var(--leading-fluid);
+  background-color: hsl(var(--color-sheet) / 100%);
 }
 
 animate-on-scroll {
@@ -40,48 +40,47 @@ animate-on-scroll {
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, li, pre, blockquote) {
-  line-height: var(--text-leading-fluid);
+  margin-inline: 0;
+  line-height: var(--leading-fluid);
 }
 
 h1 {
-  --text-weight: 300;
+  --font-weight: 300;
 
-  margin: var(--space-xl) 0 var(--space-m) 0;
-  font-size: var(--text-xxl);
-  letter-spacing: var(--text-spacing-s);
+  margin-block: var(--space-xl) var(--space-md);
+  font-size: var(--size-xxl);
+  letter-spacing: var(--tracking-sm);
 }
 
 h2 {
-  --text-weight: 500;
-  --text-width: var(--text-width-s);
+  --font-weight: 500;
+  --font-width: var(--font-width-sm);
 
-  margin: var(--space-l) 0 var(--space-s) 0;
-  font-size: var(--text-xl);
+  margin-block: var(--space-lg) var(--space-sm);
+  font-size: var(--size-xl);
   text-transform: uppercase;
-  border-bottom: var(--border-weight-s) solid var(--color-text);
+  border-bottom: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
 }
 
 h3 {
-  --text-weight: 500;
-  --text-width: var(--text-width-s);
+  --font-weight: 600;
+  --font-width: var(--font-width-sm);
 
-  margin: var(--space-m) 0 0 0;
-  font-size: var(--text-l);
-  text-transform: uppercase;
+  margin-block: var(--space-md) 0;
+  font-size: var(--size-lg);
 }
 
 :where(h4, h5, h6) {
-  --text-weight: 400;
-  --text-width: var(--text-width-s);
+  --font-weight: 400;
+  --font-width: var(--font-width-sm);
 
-  margin: var(--space-s) 0 0 0;
-  font-size: var(--text-m);
+  margin-block: var(--space-sm) 0;
+  font-size: var(--text-md);
   text-transform: uppercase;
 }
 
 :where(p, ul, ol, dl) {
-  margin: 0 0 var(--space-s) 0;
-  font-weight: var(--text-weight-base);
+  margin-block: 0 var(--space-sm);
 }
 
 ul {
@@ -98,18 +97,18 @@ li {
   position: relative;
 
   &:where(li + li) {
-    margin: var(--space-xs) 0 0 0;
+    margin-block: var(--space-xs) 0;
   }
 
   & :where(ul, ol) {
-    margin-left: var(--space-m);
-    font-size: var(--text-m);
+    margin-inline-start: var(--space-md);
+    font-size: var(--size-md);
   }
 }
 
 b,
 strong {
-  --text-weight: 500;
+  --font-weight: 500;
 }
 
 i,
@@ -118,46 +117,46 @@ em {
 }
 
 small {
-  font-size: var(--text-s);
+  font-size: var(--type-sm);
 }
 
 a,
 a:visited {
-  color: var(--color-text);
-  text-decoration-thickness: var(--border-weight-s);
+  color: hsl(var(--color-text) / var(--opacity-text));
+  text-decoration-thickness: var(--border-weight-sm);
   transition: text-decoration-thickness 0.1s ease;
 }
 
 a:hover {
-  text-decoration-thickness: var(--border-weight-m);
+  text-decoration-thickness: var(--border-weight-md);
 }
 
 code {
-  --bg-color: var(--color-text-hsl);
+  --bg-color: var(--color-text);
   --alpha: 10%;
 
-  font-family: var(--text-main);
+  font-family: var(--font-main);
   padding: var(--space-xs);
-  padding-top: calc(var(--space-xxs) * 1.375);
-  border-radius: var(--border-radius-s);
+  padding-block-start: calc(var(--space-xxs) * 1.375);
+  border-radius: var(--border-radius-sm);
   background-color: hsl(var(--bg-color) / var(--alpha));
 }
 
 blockquote {
-  margin: var(--space-l) 0;
-  font-size: var(--text-m);
+  margin: var(--space-lg) 0;
+  font-size: var(--size-md);
   font-style: italic;
 }
 
 :where(img, embed, object, svg, video) {
   max-width: 100%;
   height: auto;
-  line-height: var(--text-leading-fluid);
+  line-height: var(--leading-fluid);
 }
 
 hr {
   width: 100%;
-  margin: var(--space-xl) 0;
+  margin-block: var(--space-xl);
   border: 0;
-  border-top: var(--border-weight-s) solid var(--color-text);
+  border-block-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
 }

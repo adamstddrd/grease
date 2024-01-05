@@ -2,38 +2,45 @@
 animate: make any element animate now, later, or when it scrolls into view
 ---------------------------------------------------------------------------- */
 
-.animate {
-  &.--fade-in {
-    animation: fade-in 0.5s ease-out forwards;
-  }
-
-  @nest .js &[data-aos] {
+@media (--motion) {
+  .js [data-aos],
+  .js [data-aos-children] > * {
     opacity: 0;
   }
 
-  @nest .js &[data-aos-children] > * {
-    opacity: 0;
+  .fade-in {
+    animation: fade-in 0.2s ease-in-out forwards;
   }
 
-  &.--delay-s { animation-delay: 0.15s; }
-  &.--delay-m { animation-delay: 0.3s; }
-  &.--delay-l { animation-delay: 0.45s; }
-  &.--delay-xl { animation-delay: 0.6s; }
-  &.--delay-xxl { animation-delay: 0.75s; }
+  .animate-on-entry {
+    @supports(animation-timeline: view()) {
+      animation-timeline: view();
+      animation-duration: auto;
+      animation-range: entry 0% entry 100%;
+    }
+  }
 
-  &.--duration-s { animation-duration: 0.25s; }
-  &.--duration-m { animation-duration: 0.5s; }
-  &.--duration-l { animation-duration: 0.75s; }
-  &.--duration-xl { animation-duration: 1s; }
-  &.--duration-xxl { animation-duration: 1.5s; }
+  .delay-sm { animation-delay: 0.15s; }
+  .delay-md { animation-delay: 0.3s; }
+  .delay-lg { animation-delay: 0.45s; }
+  .delay-xl { animation-delay: 0.6s; }
+  .delay-xxl { animation-delay: 0.75s; }
+
+  .duration-sm { animation-duration: 0.25s; }
+  .duration-md { animation-duration: 0.5s; }
+  .duration-lg { animation-duration: 0.75s; }
+  .duration-xl { animation-duration: 1s; }
+  .duration-xxl { animation-duration: 1.5s; }
 }
 
 @keyframes fade-in {
   0% {
+    transform: translateX(-2rem);
     opacity: 0;
   }
 
   100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }

@@ -1,6 +1,9 @@
 /* ----------------------------------------------------------------------------
 custom media queries
 ---------------------------------------------------------------------------- */
-@custom-media --viewport-small (max-width: 44.999em);
-@custom-media --viewport-medium (min-width: 45em);
-@custom-media --viewport-large (min-width: 90em);
+@custom-media --sm (max-width: 44.999em);
+@custom-media --md (min-width: 45em);
+@custom-media --lg (min-width: 90em);
+@custom-media --dark (prefers-color-scheme: dark);
+@custom-media --motion (prefers-reduced-motion: no-preference);
+@custom-media --hover (hover) and (pointer: fine);

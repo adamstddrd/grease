@@ -7,13 +7,8 @@ modify color on the fly
   &.--transparent { --property: transparent; }
   &.--use-sheet { --property: var(--color-sheet); }
   &.--use-text { --property: var(--color-text); }
-  &.--set-text { color: var(--color-text); }
-  &.--set-sheet { background-color: var(--color-sheet); }
-
-  &.--invert {
-    --color-text: hsl(var(--color-sheet-hsl) / var(--color-alpha));
-    --color-sheet: hsl(var(--color-text-hsl) / var(--color-alpha));
-  }
+  &.--set-text { color: hsl(var(--color-text) / var(--opacity-text)); }
+  &.--set-sheet { background-color: hsl(var(--color-sheet) / var(--opacity-sheet)); }
 
   &.--alpha-90 { --color-alpha: 90%; }
   &.--alpha-80 { --color-alpha: 80%; }

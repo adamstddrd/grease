@@ -1,10 +1,9 @@
 small-details {
-  display: contents;
 
   & details {
-    @media (--viewport-small) {
+    @media (--sm) {
       &[open] {
-        margin-bottom: var(--space-m);
+        margin-bottom: var(--space-md);
 
         & summary::before {
           transform: rotate(90deg);
@@ -12,7 +11,7 @@ small-details {
       }
     }
 
-    @media (--viewport-medium) {
+    @media (--md) {
       &:focus {
         outline: none;
       }
@@ -26,14 +25,14 @@ small-details {
       display: none;
     }
 
-    @media (--viewport-small) {
+    @media (--sm) {
       display: flex;
       flex-wrap: nowrap;
       gap: var(--space-xs);
       align-items: center;
       cursor: pointer;
-      border-bottom: var(--color-text) solid var(--border-weight-s);
-      padding-bottom: var(--space-m);
+      border-bottom: var(--color-text) solid var(--border-weight-sm);
+      padding-bottom: var(--space-md);
 
       &::before {
         position: relative;
@@ -46,7 +45,7 @@ small-details {
       }
     }
 
-    @media (--viewport-medium) {
+    @media (--md) {
       list-style: none;
       pointer-events: none;
 

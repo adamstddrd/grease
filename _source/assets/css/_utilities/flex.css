@@ -1,34 +1,50 @@
+/* ----------------------------------------------------------------------------
+flex: simple sub-layouts
+---------------------------------------------------------------------------- */
 .flex {
   display: flex;
   flex-wrap: wrap;
+}
 
-  &.--gap-s { gap: var(--space-s); }
-  &.--gap-m { gap: var(--space-m); }
-  &.--gap-l { gap: var(--space-l); }
+.inline-flex { 
+  display: inline-flex;
+  flex-wrap: wrap;
+}
 
-  &.--column-gap-s { column-gap: var(--space-s); }
-  &.--column-gap-m { column-gap: var(--space-m); }
-  &.--column-gap-l { column-gap: var(--space-l); }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
 
-  &.--align-items-center { align-items: center; }
-  &.--align-items-start { align-items: flex-start; }
-  &.--align-items-end { align-items: flex-end; }
+.column-gap-sm { column-gap: var(--space-sm); }
+.column-gap-md { column-gap: var(--space-md); }
+.column-gap-lg { column-gap: var(--space-lg); }
 
-  &.--justify-center { justify-content: center; }
-  &.--justify-between { justify-content: space-between; }
-  &.--justify-end { justify-content: flex-end; }
+.align-items-center { align-items: center; }
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
 
-  &.--no-wrap { flex-wrap: nowrap; }
-  &.--column { flex-direction: column; }
-  &.--inline { display: inline-flex; }
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
 
-  &.--half > * {
-    width: 48%;
-  }
+.no-wrap { flex-wrap: nowrap; }
+.column { flex-direction: column; }
 
-  @media (--viewport-medium) {
-    &.--gap-s\@m { gap: var(--space-s); }
-    &.--gap-m\@m { gap: var(--space-m); }
-    &.--gap-l\@m { gap: var(--space-l); }
-  }
+@media (--sm) {
+  .gap-none\@sm { gap: 0; }
+  .gap-sm\@sm { gap: var(--space-sm); }
+  .gap-md\@sm { gap: var(--space-md); }
+  .gap-lg\@sm { gap: var(--space-lg); }
+  .justify-start\@sm { justify-content: flex-start; }
+  .column\@sm { flex-direction: column; }
+}
+
+@media (--md) {
+  .gap-none\@md { gap: 0; }
+  .gap-sm\@md { gap: var(--space-sm); }
+  .gap-md\@md { gap: var(--space-md); }
+  .gap-lg\@md { gap: var(--space-lg); }
+  .justify-start\@md { justify-content: flex-start; }
+  .justify-end\@md { justify-content: flex-end; }
 }

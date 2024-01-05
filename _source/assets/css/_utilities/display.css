@@ -15,7 +15,7 @@ display: manipulate the visual display of elements
     overflow: hidden;
   }
 
-  @media (--viewport-small) {
+  @media (--sm) {
     &.--none\@s {
       display: none;
     }

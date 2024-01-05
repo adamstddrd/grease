@@ -4,5 +4,6 @@
 @import "display.css";
 @import "flex.css";
 @import "grid.css";
-@import "space.css";
+@import "margin.css";
+@import "padding.css";
 @import "text.css";
