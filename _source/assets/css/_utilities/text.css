@@ -13,16 +13,6 @@ text: decouple semantics from presentation
 .size-xxxl { font-size: var(--size-xxxl); }
 .size-xxxxl { font-size: var(--size-xxxxl); }
 
-.size-poster {
-  font-size: var(--size-poster);
-  text-wrap: balance;
-}
-
-.size-poster-lg {
-  font-size: var(--size-poster-lg);
-  text-wrap: balance;
-}
-
 .weight-200 { --font-weight: 200; }
 .weight-300 { --font-weight: 300; }
 .weight-400 { --font-weight: 400; }

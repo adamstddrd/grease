@@ -13,7 +13,7 @@ ingredients:
   - title: No production surprises
     description: CSS and JS are treated the same on dev as on production (bundled, minified, etc). What you see is what you’ll get.
   - title: No fillers, no additives
-    description: Grease keeps it light so you can focus on building instead of messing around with tools and frameworks.
+    description: Grease keeps it light so you can focus on building instead of messing around with tooling.
   - title: Fluid, variable type 
     description: A straightforward fluid type system pre-loaded for variable fonts keeps your type game on point.
   - title: Batteries included
@@ -39,18 +39,20 @@ ingredients:
     </details>
   </small-details> {% endcomment %}
 
-  <h2 class="span-12 size-xl weight-800 width-lg leading-sm tracking-sm uppercase center mt-lg mb-0 border-top border-bottom">100% pure grease! Speed guaranteed!</h2>
-
 </section>
 
-{% for item in ingredients %}
-  <div class="span-1/3">
-    <h3 class="mt-sm">{{ item.title }}</h3>
-    <div class="">{{ item.description | markdownify }}</div>
-  </div>
-{% endfor %}
+<section class="grid">
+  <h2 class="span-12 size-xl weight-800 width-lg leading-sm tracking-sm uppercase center mt-lg mb-md border-top border-bottom">100% pure grease! Speed guaranteed!</h2>
+  {% for item in ingredients %}
+    <div class="span-1/3">
+      <h3 class="mt-sm">{{ item.title }}</h3>
+      <div class="">{{ item.description | markdownify }}</div>
+    </div>
+  {% endfor %}
+  <p class="span-12 size-xl weight-800 width-lg leading-sm tracking-sm uppercase center mt-md mb-xl border-top border-bottom">Apply directly to web platform for best results!</p>
+</section>
 
-<p class="span-12 size-xl weight-800 width-lg leading-sm tracking-sm uppercase center mt-md mb-xl border-top border-bottom">Apply directly to web platform for best results!</p>
+
 
 <section id="instructions" class="start-1 span-6 align-stretch">
 
@@ -70,7 +72,7 @@ ingredients:
   </ol>
 
   <h3>Syntax, draft specs</h3>
-  <p class="size-sm">Components and utilities in Grease are written using a modified <a href="https://getbem.com/introduction/">BEM syntax</a>, which uses a utility-friendly <code>block --modifier1 --modifier2</code> syntax instead of <code>block--modifier1 block--modifier2</code>.</p>
+  <p class="size-sm">Components and utilities in Grease are written using a modified <a href="https://getbem.com/introduction/">BEM syntax</a>, which uses a terse <code>block --modifier1 --modifier2</code> syntax instead of <code>block--modifier1 block--modifier2</code>.</p>
   <p class="size-sm"><a href="https://lightningcss.dev/">Lightning</a> is configured to support the <a href="https://www.w3.org/TR/css-nesting-1/">nesting</a> and <a href="https://www.w3.org/TR/mediaqueries-5/#custom-mq">custom media</a> draft specs, but it doesn’t target older browsers out of the box. Adjust as need be for the project at hand.</p>
 
   <h3>Breaking up CSS</h3>

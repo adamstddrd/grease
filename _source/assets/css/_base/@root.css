@@ -68,8 +68,6 @@
   --size-xxl: calc(var(--size-xl) * var(--size-scale-lg));
   --size-xxxl: calc(var(--size-xxl) * var(--size-scale-lg));
   --size-xxxxl: calc(var(--size-xxxl) * var(--size-scale-lg));
-  --size-poster: clamp(4.5rem, 8vw, 10rem);
-  --size-poster-lg: clamp(5.5rem, 9vw, 12rem);
 
   /* measure */
   --measure-xs: 15ch;
