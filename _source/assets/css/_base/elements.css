@@ -18,7 +18,6 @@ element styles
 }
 
 html {
-  font-size: 10px;
   min-height: 100dvh;
   background-color: hsl(var(--color-sheet) / 100%);
 }
@@ -37,6 +36,10 @@ body {
 
 animate-on-scroll {
   display: contents;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, li, pre, blockquote) {
@@ -59,7 +62,7 @@ h2 {
   margin-block: var(--space-lg) var(--space-sm);
   font-size: var(--size-xl);
   text-transform: uppercase;
-  border-bottom: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
+  border-block-end: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
 }
 
 h3 {

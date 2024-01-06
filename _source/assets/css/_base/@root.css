@@ -24,8 +24,8 @@
   spacing
   --------------------------------------------------------------------------- */
   --space-scale: 2;
-  --space-base-sm: 2rem;
-  --space-base: max(1.5rem, min(calc(0.5rem + 1.5vw), 3rem));
+  --space-base-sm: 1rem;
+  --space-base: max(1rem, min(calc(0.5rem + 1.5vw), 2rem));
   --space-xxs: calc(var(--space-xs) / var(--space-scale));
   --space-xs: calc(var(--space-sm) / var(--space-scale));
   --space-sm: calc(var(--space-base-sm) / var(--space-scale));
@@ -34,7 +34,7 @@
   --space-xl: calc(var(--space-lg) * var(--space-scale));
   --space-xxl: calc(var(--space-xl) * var(--space-scale));
   --space-xxxl: calc(var(--space-xxl) * var(--space-scale));
-  --space-flex: clamp(12rem, 20vw, 24rem);
+  --space-flex: clamp(8rem, 20vw, 16rem);
 
   /* ---------------------------------------------------------------------------
   typography
@@ -55,7 +55,7 @@
   --font-width: var(--font-width-md);
 
   /* font size */
-  --size-base: max(1.8em, min(calc(0.5em + 1vw), 2.4em));
+  --size-base: max(1.125em, min(calc(0.675em + 0.675vw), 2em));
   --size-scale-sm: 1.2;
   --size-scale-lg: 1.333;
   --size-xxxs: calc(var(--size-xxs) / var(--size-scale-sm));
@@ -83,7 +83,7 @@
   --leading-sm: var(--leading-base);
   --leading-md: calc(var(--leading-sm) * var(--leading-scale));
   --leading-lg: calc(var(--leading-md) * var(--leading-scale));
-  --leading-fluid: calc(0.75rem + 1.25em);
+  --leading-fluid: calc(0.46875rem + 1.25em);
 
   /* letter spacing */
   --tracking-sm: -0.025em;
@@ -97,14 +97,14 @@
 
   /* border radius */
   --border-radius-0: 0;
-  --border-radius-sm: 0.3rem;
-  --border-radius-md: 0.6rem;
-  --border-radius-lg: 0.9rem;
+  --border-radius-sm: 0.2rem;
+  --border-radius-md: 0.4rem;
+  --border-radius-lg: 0.8rem;
 
   /* border weight */
-  --border-weight-sm: 0.1rem;
-  --border-weight-md: 0.2rem;
-  --border-weight-lg: 0.3rem;
+  --border-weight-sm: 0.0625rem;
+  --border-weight-md: 0.125rem;
+  --border-weight-lg: 0.25rem;
 
   /* ---------------------------------------------------------------------------
   z-index layers

@@ -2,8 +2,9 @@
 grid: compose pages
 ---------------------------------------------------------------------------- */
 .grid {
-  --width-sm: minmax(50vw, 60rem);
-  --width-md: 68em;
+  --width-sm: minmax(50vw, 36rem);
+  /* --width-md: 68em; */
+  --width-md: 64em;
   --gap-sm: min(5vw, 5rem);
   --gap-md: min(4vw, 3em);
   --col-count: 12;
