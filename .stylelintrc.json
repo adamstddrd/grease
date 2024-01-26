@@ -1,9 +1,11 @@
 {
   "extends": ["stylelint-config-standard"],
   "rules": {
-    "property-no-unknown" : null,
     "at-rule-no-unknown" : null,
+    "import-notation": null,
+    "no-empty-source" : null,
+    "property-no-unknown" : null,
     "selector-class-pattern": null,
-    "import-notation": null
+    "property-no-vendor-prefix": null
    }
 }

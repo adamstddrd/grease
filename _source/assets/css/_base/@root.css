@@ -2,17 +2,25 @@
   /* ---------------------------------------------------------------------------
   color
   --------------------------------------------------------------------------- */
-  --color-grease: 132deg 47% 10%;
-  --color-marigold: 45deg 100% 50%;
+  --color-grease: 132deg 0% 10%;
+  --color-marigold: 45deg 60% 70%;
+  --color-white: 45deg 20% 98%;
+  --color-black: 45deg 20% 8%;
+  --color-pink: 325deg 65% 62%;
+  --color-shadow: 0deg 0% 0%;
 
   /* semantic color */
-  --color-text: var(--color-grease);
-  --color-sheet: var(--color-marigold);
+  --color-text: var(--color-black);
+  --color-sheet: var(--color-white);
+  --color-accent: var(--color-marigold);
 
   @media (--dark) {
-    --color-text: var(--color-marigold);
-    --color-sheet: var(--color-grease);
+    --color-text: var(--color-white);
+    --color-sheet: var(--color-black);
+    --color-accent: var(--color-marigold);
   }
+  
+  color-scheme: light dark;
 
   /* color opacity */
   --color-alpha: 100%;
@@ -25,7 +33,7 @@
   --------------------------------------------------------------------------- */
   --space-scale: 2;
   --space-base-sm: 1rem;
-  --space-base: max(1rem, min(calc(0.5rem + 1.5vw), 2rem));
+  --space-base: 2rem;
   --space-xxs: calc(var(--space-xs) / var(--space-scale));
   --space-xs: calc(var(--space-sm) / var(--space-scale));
   --space-sm: calc(var(--space-base-sm) / var(--space-scale));
@@ -43,19 +51,12 @@
   /* font stacks */
   --font-main: "Sono", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-  /* font weight */
-  --font-weight: 300;
-  --font-shape: 2;
+  /* font properties */
+  --font-weight: 400;
   --font-mono: 0;
 
-  /* font width */
-  --font-width-sm: 75;
-  --font-width-md: 100;
-  --font-width-lg: 125;
-  --font-width: var(--font-width-md);
-
   /* font size */
-  --size-base: max(1.125em, min(calc(0.675em + 0.675vw), 2em));
+  --size-base: max(1.125em, min(calc(0.675em + 0.5vw), 1.875em));
   --size-scale-sm: 1.2;
   --size-scale-lg: 1.333;
   --size-xxxs: calc(var(--size-xxs) / var(--size-scale-sm));
@@ -70,11 +71,11 @@
   --size-xxxxl: calc(var(--size-xxxl) * var(--size-scale-lg));
 
   /* measure */
-  --measure-xs: 15ch;
-  --measure-sm: 30ch;
-  --measure-md: 45ch;
+  --measure-xs: 16ch;
+  --measure-sm: 32ch;
+  --measure-md: 48ch;
   --measure-lg: 60ch;
-  --measure-xl: 75ch;
+  --measure-xl: 72ch;
 
   /* line height */
   --leading-base: 1.1;
@@ -83,7 +84,7 @@
   --leading-sm: var(--leading-base);
   --leading-md: calc(var(--leading-sm) * var(--leading-scale));
   --leading-lg: calc(var(--leading-md) * var(--leading-scale));
-  --leading-fluid: calc(0.46875rem + 1.25em);
+  --leading-fluid: calc(0.45rem + 1.25em);
 
   /* letter spacing */
   --tracking-sm: -0.025em;
@@ -100,6 +101,7 @@
   --border-radius-sm: 0.2rem;
   --border-radius-md: 0.4rem;
   --border-radius-lg: 0.8rem;
+  --border-radius-xl: 1.6rem;
 
   /* border weight */
   --border-weight-sm: 0.0625rem;
@@ -119,18 +121,18 @@
   shadows
   --------------------------------------------------------------------------- */
   --shadow-color: 220 3% 15%;
-  --shadow-sm: 0 1px 2px -1px hsl(var(--shadow-color) / 1%);
+  --shadow-sm: 0 1px 2px -1px hsl(var(--color-text) / 1%);
   --shadow-md:
-    0 -1px 3px 0 hsl(var(--shadow-color) / 2%),
-    0 1px 2px -5px hsl(var(--shadow-color) / 2%),
-    0 2px 5px -5px hsl(var(--shadow-color) / 4%),
-    0 4px 12px -5px hsl(var(--shadow-color) / 5%),
-    0 12px 15px -5px hsl(var(--shadow-color) / 7%);
+    0 -1px 3px 0 hsl(var(--color-text) / 2%),
+    0 1px 2px -5px hsl(var(--color-text) / 2%),
+    0 2px 5px -5px hsl(var(--color-text) / 4%),
+    0 4px 12px -5px hsl(var(--color-text) / 5%),
+    0 12px 15px -5px hsl(var(--color-text) / 7%);
   --shadow-lg:
-    0 -1px 2px 0 hsl(var(--shadow-color) / 2%),
-    0 2px 1px -2px hsl(var(--shadow-color) / 3%),
-    0 5px 5px -2px hsl(var(--shadow-color) / 3%),
-    0 10px 10px -2px hsl(var(--shadow-color) / 4%),
-    0 20px 20px -2px hsl(var(--shadow-color) / 5%),
-    0 40px 40px -2px hsl(var(--shadow-color) / 7%);
+    0 -1px 2px 0 hsl(var(--color-shadow) / 3%),
+    0 2px 1px -2px hsl(var(--color-shadow) / 4%),
+    0 5px 5px -2px hsl(var(--color-shadow) / 5%),
+    0 10px 10px -2px hsl(var(--color-shadow) / 6%),
+    0 20px 20px -2px hsl(var(--color-shadow) / 7%),
+    0 40px 40px -2px hsl(var(--color-shadow) / 8%);
 }

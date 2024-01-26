@@ -1,37 +1,71 @@
 @import "../_base/@media.css";
 
-.hero {
-	--font-weight: 800;
+@layer components {
+  .banner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    place-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .hero {
+    --font-weight: 800;
+    --color-text: var(--color-sheet);
+    
+    display: grid;
+    position: relative;
+    inset-inline-start: -1rem;
+    letter-spacing: var(--tracking-md);
+    font-size: min(26vw, 22rem);
 
-	display: grid;
-	/* place-items: center; */
-	letter-spacing: var(--tracking-md);
-	font-size: clamp(5em, 20vw, 18em);
-	filter: url("#greasy") drop-shadow(0 3rem 1rem hsl(0 0% 0% / 30%));
-	/* mix-blend-mode: overlay; */
-	
-	@media (--md) {
-		display: grid;
-	}
-	
-	& > * {
-  	grid-area: 1 / 1 / -1 / -1;
-	}
-	
-	& > span {
-  	/* -webkit-text-stroke-width: var(--space-xs);
-  	-webkit-text-stroke-color: hsl(var(--color-sheet)); */
-	}
-	
-	&:before {
-		--font-shape: 4;
-		--font-weight: 400;
-		--opacity-text: 100%;
-  	/* display: block;
-  	content: "Grease"; */
-  	color: hsl(var(--color-text) / var(--opacity-text));
-  	grid-area: 1/1/-1/-1;
-  	/* -webkit-text-stroke-width: var(--space-sm);
-  	-webkit-text-stroke-color: hsl(var(--color-text)); */
-	};
+    /* font-size: clamp(5em, 22vw, 20em); */
+    filter: blur(0.5rem);
+    text-transform: uppercase;
+    text-align: center;
+    
+    @media (--md) {
+      display: grid;
+      inset-inline-start: -2rem;
+    }
+    
+    & > * {
+      grid-area: 1 / 1 / -1 / -1;
+    }
+  }
+  
+  .grease-marks {
+    width: 100%;
+    rotate: 15deg;
+    pointer-events: none;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
+    z-index: -1;
+    inset-block-start: -32rem;
+
+    @media (--md) {
+      inset-block-start: 0;
+    }
+    
+    & > * {
+      width: 10rem;
+      height: 10rem;
+      background-color: hsl(var(--color-sheet) / var(--opacity-sheet));
+      border-radius: 100%;
+      mix-blend-mode: exclusion;
+      filter: blur(1rem);
+      
+      @media (--dark) {
+        background-color: hsl(var(--color-text) / var(--opacity-sheet));
+        mix-blend-mode: screen;
+        opacity: 0.2;
+      }
+    }
+    
+    & > .shape-1 {
+      filter: blur(2rem);
+      background-color: hsl(var(--color-accent) / var(--opacity-sheet));
+    }
+  }
 }

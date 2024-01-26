@@ -17,4 +17,4 @@ export default function style(content) {
   });
   this.page.style = result.code.toString('utf8');
   return '';
-};
+}

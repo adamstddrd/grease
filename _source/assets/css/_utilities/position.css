@@ -1,0 +1,37 @@
+/* ----------------------------------------------------------------------------
+position: manipulate position across breakpoints
+---------------------------------------------------------------------------- */
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.sticky { position: sticky; }
+
+@media (--md) {
+  .relative\@md { position: relative; }
+  .absolute\@md { position: absolute; }
+
+  .sticky\@md {
+    position: sticky !important;
+    inset-block-start: var(--space-md);
+  }
+
+  .sticky-bottom\@md {
+    position: sticky !important;
+    inset-block-end: var(--space-md);
+  }
+}
+
+@media (--sm) {
+  .relative\@sm { position: relative; }
+  .absolute\@sm { position: absolute; }
+
+  .sticky\@sm { 
+    position: sticky !important;
+    top: var(--space-md); 
+  }
+
+  .sticky-bottom\@sm { 
+    position: sticky !important;
+    bottom: var(--space-md);
+  }
+}

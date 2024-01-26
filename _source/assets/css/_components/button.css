@@ -1,14 +1,25 @@
-.button {
+.button,
+input[type="submit"] {
   --font-weight: 600;
-  --font-width: var(--font-width-sm);
-  --button-text: hsl(var(--color-sheet) / var(--opacity-text));
-  --button-bg: hsl(var(--color-text) / var(--opacity-sheet));
+  --opacity-sheet: 0%;
+  --opacity-border: 70%;
+  --button-text: hsl(var(--color-text) / var(--opacity-text));
+  --button-bg: hsl(var(--color-sheet) / var(--opacity-sheet));
   --button-border: hsl(var(--color-text) / var(--opacity-border));
   --button-icon: hsl(var(--color-text) / var(--opacity-text));
+  
+  @media (--dark) {
+    --opacity-sheet: 0%;
+    --opacity-border: 20%;
+    --button-text: hsl(var(--color-text) / var(--opacity-text));
+    --button-bg: hsl(var(--color-text) / var(--opacity-sheet));
+    --button-border: hsl(var(--color-text) / var(--opacity-border));
+  }
 
   color: var(--button-text);
   background-color: var(--button-bg);
-  border: var(--border-weight-sm) solid var(--button-border);
+  border-inline: var(--border-weight-sm) solid var(--button-border);
+  border-block: var(--border-weight-sm) solid var(--button-border);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -18,8 +29,9 @@
   font-size: inherit;
   font-family: inherit;
   text-decoration: none;
-  transition: color 0.1s step-start, background-color 0.1s linear;
-  border-radius: var(--border-radius-lg);
+  transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
+
+  /* border-radius: var(--border-radius-xl); */
   line-height: 1;
   text-transform: uppercase;
 
@@ -33,13 +45,24 @@
 
   @media (--hover) {
     &:hover {
-      --opacity-sheet: 80%;
-      /* --button-text: hsl(var(--color-sheet) / var(--opacity-text));
-      --button-bg: hsl(var(--color-text) / var(--opacity-text)); */
+      --opacity-sheet: 50%;
+      --opacity-border: 0%;
+      --button-text: hsl(var(--color-sheet) / var(--opacity-text));
+      --button-bg: hsl(var(--color-text) / var(--opacity-sheet));
 
       cursor: pointer;
+      border-block: var(--border-weight-sm) solid var(--button-border);
+      
+      @media (--dark) {
+          --opacity-sheet: 0%;
+          --opacity-border: 60%;
+          --button-text: hsl(var(--color-text) / var(--opacity-text));
+          --button-bg: hsl(var(--color-sheet) / var(--opacity-sheet));
+      }
     }
   }
+  
+  
 
   & svg {
     width: 1.5em;
@@ -60,12 +83,14 @@
   }
 
   &.--text-only {
+    --button-text: hsl(var(--color-text) / var(--opacity-text));
+    
     border-color: transparent;
     background-color: transparent;
 
     @media (--hover) {
       &:hover {
-        --button-text: hsl(var(--color-sheet) / var(--opacity-text));
+        --button-text: hsl(var(--color-accent) / var(--opacity-text));
         --button-bg: hsl(var(--color-text) / var(--opacity-sheet));
 
         border-block-end-color: var(--button-border);

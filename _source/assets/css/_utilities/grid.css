@@ -3,7 +3,6 @@ grid: compose pages
 ---------------------------------------------------------------------------- */
 .grid {
   --width-sm: minmax(50vw, 36rem);
-  /* --width-md: 68em; */
   --width-md: 64em;
   --gap-sm: min(5vw, 5rem);
   --gap-md: min(4vw, 3em);
@@ -16,6 +15,7 @@ grid: compose pages
   grid-template-columns: 1fr var(--width-sm) 1fr;
   align-items: start;
   column-gap: var(--gap-sm);
+  position: relative;
 
   :where(&) > *:not([class="grid"]) {
     grid-column: 2; 
@@ -61,6 +61,7 @@ grid: compose pages
   .start-9 { grid-column-start: 10; }
   .start-10 { grid-column-start: 11; }
   .start-11 { grid-column-start: 12; }
+  .start-12 { grid-column-start: 13; }
   .start-auto { grid-column-start: auto; }
 
   .span-1 { grid-column-end: span 1; }
@@ -75,7 +76,6 @@ grid: compose pages
   .span-10 { grid-column-end: span 10; }
   .span-11 { grid-column-end: span 11; }
   .span-12 { grid-column: 2 / span 12; }
-  .span-all { grid-column: 2 / span 12; }
 
   .span-1\/2 { grid-column: auto / span 6; }
   :nth-child(2n+1 of .span-1\/2) { grid-column: 2 / span 6; }

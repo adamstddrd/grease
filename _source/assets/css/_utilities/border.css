@@ -6,6 +6,7 @@ border: adjust border appearance
 .radius-sm { border-radius: var(--border-radius-sm); }
 .radius-md { border-radius: var(--border-radius-md); }
 .radius-lg { border-radius: var(--border-radius-lg); }
+.radius-xl { border-radius: var(--border-radius-xl); }
 .radius-full { border-radius: 100%; }
 
 .border {

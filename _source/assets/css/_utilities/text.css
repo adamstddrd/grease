@@ -21,13 +21,13 @@ text: decouple semantics from presentation
 .weight-700 { --font-weight: 700; }
 .weight-800 { --font-weight: 800; }
 
-.width-sm { --font-width: var(--font-width-sm); }
-.width-md { --font-width: var(--font-width-md); }
-.width-lg { --font-width: var(--font-width-lg); }
-
 .left { text-align: left; }
 .right { text-align: right; }
-.center { text-align: center; }
+
+.center {
+  text-align: center;
+  margin-inline: auto;
+}
 
 .measure-xs { max-width: var(--measure-xs); }
 .measure-sm { max-width: var(--measure-sm); }

@@ -1,0 +1,15 @@
+/* ----------------------------------------------------------------------------
+shadow: add some depth
+---------------------------------------------------------------------------- */
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-content { filter: drop-shadow(3rem 3rem 1rem rgb(0 0 0 / 10%)); }
+
+@media (--md) {  
+  .shadow-sm\@md { box-shadow: var(--shadow-sm); }
+  .shadow-md\@md { box-shadow: var(--shadow-md); }
+  .shadow-lg\@md { box-shadow: var(--shadow-lg); }
+  .shadow-content\@md { filter: drop-shadow(3rem 3rem 1rem rgb(0 0 0 / 10%)); }
+}

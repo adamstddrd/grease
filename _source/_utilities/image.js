@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------
 creates a responsive <img>
 ---------------------------------------------------------------------------- */
-import eleventyImage, { eleventyImagePlugin } from "@11ty/eleventy-img";
+import eleventyImage, { eleventyImagePlugin } from '@11ty/eleventy-img';
 
 export default async function image(src, alt, cssClass = null, sizes = '90vw', loadingAttr = 'lazy') {
   const filePath = `_source/assets/images/${src}`;

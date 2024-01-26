@@ -4,7 +4,7 @@ process JS files with esbuild
 import esbuild from 'esbuild';
 import path from 'node:path';
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addTemplateFormats('js');
   eleventyConfig.addExtension('js', {
     outputFileExtension: 'js',
@@ -38,4 +38,4 @@ export default function(eleventyConfig) {
       return () => result.js;
     },
   });
-};
+}
