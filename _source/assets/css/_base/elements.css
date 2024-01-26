@@ -46,6 +46,7 @@ body {
 
 main {
   z-index: 2;
+  overflow-y: clip;
 }
 
 animate-on-scroll {
@@ -81,26 +82,8 @@ h2 {
   padding-block-start: var(--space-sm);
   font-size: var(--size-xl);
   text-transform: uppercase;
-
-  /* line-height: var(--leading-flush); */
   letter-spacing: var(--tracking-lg);
-
-  /* color: hsl(var(--color-sheet) / var(--opacity-text));
-  background-color: hsl(var(--color-text) / var(--opacity-sheet)); */
-  border-block-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
   filter: blur(0.05rem);
-
-  /* box-shadow: 1rem -1rem 1.5rem hsl(var(--color-text) / 10%); */
-  mix-blend-mode: multiply;
-
-  &::before {
-    display: block;
-    content: '';
-    width: 100%;
-    height: 0;
-    border-block-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
-    filter: blur(0.2rem);
-  }
 }
 
 h3 {
@@ -144,7 +127,7 @@ li {
   position: relative;
 
   &:where(li + li) {
-    margin-block-start: var(--space-sm);
+    margin-block-start: var(--space-xs);
   }
 
   & :where(ul, ol) {
@@ -186,8 +169,7 @@ code {
   --opacity-border: 5%;
 
   font-family: var(--font-main);
-  padding: 0.1rem var(--space-xs);
-  padding-block-start: calc(var(--space-xxs) * 1.375);
+  padding: 0.1rem var(--space-xxs);
   font-size: 90%;
   border-radius: var(--border-radius-sm);
   background-color: hsl(var(--bg-color) / var(--alpha));
@@ -206,6 +188,7 @@ hr {
   margin-block: var(--space-xl);
   border: 0;
   border-block-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
+  filter: blur(0.1rem);
 }
 
 :where(img, embed, object, svg, video) {

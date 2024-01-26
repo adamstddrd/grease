@@ -7,6 +7,7 @@ modify color on the fly
   &.--transparent { --property: transparent; }
   &.--use-sheet { --property: var(--color-sheet); }
   &.--use-text { --property: var(--color-text); }
+  &.--use-accent { --property: var(--color-accent); }
   &.--set-text { color: hsl(var(--color-text) / var(--opacity-text)); }
   &.--set-sheet { background-color: hsl(var(--color-sheet) / var(--opacity-sheet)); }
   

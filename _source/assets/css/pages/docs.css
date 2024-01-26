@@ -1,13 +1,6 @@
 @import "../_base/@media.css";
 
 @layer components {
-  .banner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    place-items: center;
-    gap: var(--space-sm);
-  }
-  
   .hero {
     --font-weight: 800;
     --color-text: var(--color-sheet);
@@ -16,7 +9,7 @@
     position: relative;
     inset-inline-start: -1rem;
     letter-spacing: var(--tracking-md);
-    font-size: min(26vw, 22rem);
+    font-size: min(26vw, 21.5rem);
 
     /* font-size: clamp(5em, 22vw, 20em); */
     filter: blur(0.5rem);
@@ -45,13 +38,13 @@
     inset-block-start: -32rem;
 
     @media (--md) {
-      inset-block-start: 0;
+      inset-block-start: 8rem;
     }
     
     & > * {
       width: 10rem;
       height: 10rem;
-      background-color: hsl(var(--color-sheet) / var(--opacity-sheet));
+      background-color: hsl(var(--color-text) / var(--opacity-sheet));
       border-radius: 100%;
       mix-blend-mode: exclusion;
       filter: blur(1rem);

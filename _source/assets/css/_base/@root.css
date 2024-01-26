@@ -32,11 +32,10 @@
   spacing
   --------------------------------------------------------------------------- */
   --space-scale: 2;
-  --space-base-sm: 1rem;
   --space-base: 2rem;
   --space-xxs: calc(var(--space-xs) / var(--space-scale));
   --space-xs: calc(var(--space-sm) / var(--space-scale));
-  --space-sm: calc(var(--space-base-sm) / var(--space-scale));
+  --space-sm: calc(var(--space-base) / var(--space-scale));
   --space-md: var(--space-base);
   --space-lg: calc(var(--space-md) * var(--space-scale));
   --space-xl: calc(var(--space-lg) * var(--space-scale));

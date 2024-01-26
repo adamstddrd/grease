@@ -7,40 +7,33 @@ stylesheet: pages/docs.css
 # canonical: https://example.com/page.html
 ---
 
-<section class="grid mb-lg">
-  <div class="banner span-12 right mt-md">
-    <hr class="mt-0 mb-0 color --border-20">
-    <a class="button" href="https://github.com/adamstddrd/grease">
-      Get Grease
-    </a>    
-  </div>
+<header class="grid mb-xxl mb-lg@md">
   <random-shapes class="grease-marks bleed mt-lg" quantity="50" jitter="20" scale="150"></random-shapes>
-  <h1 class="hero span-12 mt-xl mb-0">
+  <h1 class="hero span-12 mt-xxl mb-0">
     <span>Grease</span>
   </h1>
-</section>
+</header>
 
 <section id="docs" class="grid --dense">
-  <random-shapes class="grease-marks bleed-start span-5 -mt-xl -ml-lg absolute@md" quantity="3" jitter="0" scale="120"></random-shapes>
   
-  <nav class="sticky@md start-10 span-3 radius-md color --sheet --use-text --sheet-10 --border-20">
+  <nav class="sticky@md start-10 span-3 radius-md color --sheet --use-text --sheet-10 --border-20 border-left@md pl-md@md">
     <small-details>
       <details>
-        <summary class="size-sm weight-400 uppercase tracking-lg pt-sm pb-sm border-top">Using Grease</summary>
+        <summary class="size-sm weight-400 uppercase tracking-lg -mt-sm pt-md pb-sm ">Using Grease</summary>
         <ul class="unlisted size-sm weight-500 uppercase">
           <li><a href="#why-grease">Why Grease?</a></li>
           <li><a href="#getting-started">Getting started</a></li>
           <li><a href="#working-with-css">Working with CSS</a></li>
           <li><a href="#layout">Layout</a></li>
-          <li><a href="#utility-reference">Utility reference</a></li>
+          <li><a href="#typography">Typography</a></li>
         </ul>
       </details>
     </small-details>
   </nav>
   
-  <article class="start-1 span-8 measure-xl">
+  <article class="start-1 span-8 measure-xl border-left@md pl-md@md color --border-20">
     
-    <h2 id="why-grease" class="mt-0@md">Why Grease?</h2>
+    <h2 id="why-grease" class="mt-0 mt-0@md">Why Grease?</h2>
     <p>
       <strong>Grease</strong> takes the friction out of building fast, accessible, aesthetic websites. It combines <a href="https://www.11ty.dev/" rel="nofollow">11ty</a>, <a href="https://lightningcss.dev/" rel="nofollow">Lightning CSS</a>, &amp; <a href="https://esbuild.github.io/" rel="nofollow">Esbuild</a> with a declarative CSS architecture that sets you up for success. Key benefits:
     </p>
@@ -95,7 +88,6 @@ stylesheet: pages/docs.css
     <p>
       <a href="https://lightningcss.dev/">Lightning</a> is configured to transpile <a href="https://www.w3.org/TR/css-nesting-1/">nesting</a> and <a href="https://www.w3.org/TR/mediaqueries-5/#custom-mq">draft custom media</a> specs, but nothing else. Adjust as need be for the project at hand.
     </p>
-    
     <h3>Breaking up CSS</h3>
     <p>
       Grease gives you three options for including CSS:
@@ -107,11 +99,9 @@ stylesheet: pages/docs.css
     </ol>
     
     <h2 id="layout">Layout</h2>
-
     <p>
       Layout with Grease is handled primarily by <code>grid</code> and <code>flex</code> utilties. Both are opt-in, which makes it easy to mix in more specific layout needs (or wholesale replace with a different approach). Use <code>margin</code> and <code>padding</code> utilities to finnesse interplay between elements.
     </p>
-
     <h3>Grid</h3>
     <p>
       Rapidly compose responsive layouts with an infinitely nestable 12 column+2 “bleed” column grid that collapses to 1 column +2 bleed columns @small. Add the <code>.grid</code> class to a parent container to opt in.
@@ -123,7 +113,6 @@ stylesheet: pages/docs.css
       <li><code>bleed</code>, <code>bleed-{start/end}</code> makes elements stick to page edges @sm+</li>
       <li><code>place-{start/center/end}</code> set placement of content within a grid</li>
     </ul>
-
     <h3>Flex</h3>
     <p>
       Add the <code>.flex</code> or <code>.inline-flex</code> class to a parent container to opt in.
@@ -137,7 +126,6 @@ stylesheet: pages/docs.css
       <li><code>column</code> switches to a vertical orientation</li>
       <li>Append <code>@sm</code> or <code>@md</code> to properties to apply at specific breakpoints</li>
     </ul>
-
     <h3>Margin</h3>
     <ul>
       <li><code>mt-{0/xs-xxl/flex}</code> sets block start margin</li>
@@ -147,7 +135,6 @@ stylesheet: pages/docs.css
       <li>Prepend <code>-</code> to set negative margin</li>
       <li>Append <code>@md</code> to apply at medium+</li>
     </ul>
-
     <h3>Padding</h3>
     <ul>
       <li><code>pt-{0/xs-xxl/flex}</code> sets block start padding</li>
@@ -157,10 +144,8 @@ stylesheet: pages/docs.css
       <li>Append <code>@md</code> to apply at medium+</li>
     </ul>
     
-    <h2 id="utility-reference">Typography</h2>
-
+    <h2 id="typography">Typography</h2>
     <p>Grease uses a semi-fluid type system that attempts to do most of the heavy-lifting for you. Set <code>--size-base</code>, <code>--size-scale-sm</code>, and <code>--size-scale-md</code> in <code>@root.css</code> and Grease takes it from there. Line height defaults to <code>--leading-fluid</code>, which decreases as type size increases. A secondary step-based system steps in when you need fine-grained control.</p>
-
     <h3>Typographic utilities</h3>
     <ul>
       <li><code>size-{xxxs-xxxxl}</code> adjusts font size</li>
@@ -177,6 +162,7 @@ stylesheet: pages/docs.css
   
 </section>
 
-<footer class="span-12 border-top mt-lg pt-md size-sm">
+<footer class="relative span-12 mt-lg pt-md size-sm color --border-20">
+  <random-shapes class="grease-marks bleed-start span-5 mt-xxl ml-lg absolute@md" style="top: inherit; bottom: 0; opacity: 0.2;" quantity="20" jitter="10" scale="150"></random-shapes>
   <p>By <a href="https://aaadaaam.com">AAADAAAM</a>. Have fun.</p>
 </footer>
