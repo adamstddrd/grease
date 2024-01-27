@@ -1,55 +1,41 @@
 /* ----------------------------------------------------------------------------
 modify color on the fly
 ---------------------------------------------------------------------------- */
-.color {
-  &.--text { --color-text: var(--property); }
-  &.--sheet { --color-sheet: var(--property); }
-  &.--transparent { --property: transparent; }
-  &.--use-sheet { --property: var(--color-sheet); }
-  &.--use-text { --property: var(--color-text); }
-  &.--use-accent { --property: var(--color-accent); }
-  &.--set-text { color: hsl(var(--color-text) / var(--opacity-text)); }
-  &.--set-sheet { background-color: hsl(var(--color-sheet) / var(--opacity-sheet)); }
-  
-  &.--invert {
-    --color-text: var(--color-white);
-    --color-sheet: var(--color-black);
-    --color-accent: var(--color-pink);
-    
-    @media (--dark) {
-      --color-text: var(--color-black);
-      --color-sheet: var(--color-white);
-      --color-accent: var(--color-pink);
-    }
-  }
+.text-color { --color-text: var(--property); }
+.sheet-color { --color-sheet: var(--property); }
+.border-color { --color-border: var(--property); }
+.use-sheet { --property: var(--color-sheet); }
+.use-text { --property: var(--color-text); }
+.use-accent { --property: var(--color-accent); }
+.set-text { color: hsl(var(--color-text) / var(--opacity-text)); }
+.set-sheet { background-color: hsl(var(--color-sheet) / var(--opacity-sheet)); }
 
-  &.--text-90 { --opacity-text: 90%; }
-  &.--text-80 { --opacity-text: 80%; }
-  &.--text-70 { --opacity-text: 70%; }
-  &.--text-60 { --opacity-text: 60%; }
-  &.--text-50 { --opacity-text: 50%; }
-  &.--text-40 { --opacity-text: 40%; }
-  &.--text-30 { --opacity-text: 30%; }
-  &.--text-20 { --opacity-text: 20%; }
-  &.--text-10 { --opacity-text: 10%; }
-  
-  &.--sheet-90 { --opacity-sheet: 90%; }
-  &.--sheet-80 { --opacity-sheet: 80%; }
-  &.--sheet-70 { --opacity-sheet: 70%; }
-  &.--sheet-60 { --opacity-sheet: 60%; }
-  &.--sheet-50 { --opacity-sheet: 50%; }
-  &.--sheet-40 { --opacity-sheet: 40%; }
-  &.--sheet-30 { --opacity-sheet: 30%; }
-  &.--sheet-20 { --opacity-sheet: 20%; }
-  &.--sheet-10 { --opacity-sheet: 10%; }
-  
-  &.--border-90 { --opacity-border: 90%; }
-  &.--border-80 { --opacity-border: 80%; }
-  &.--border-70 { --opacity-border: 70%; }
-  &.--border-60 { --opacity-border: 60%; }
-  &.--border-50 { --opacity-border: 50%; }
-  &.--border-40 { --opacity-border: 40%; }
-  &.--border-30 { --opacity-border: 30%; }
-  &.--border-20 { --opacity-border: 20%; }
-  &.--border-10 { --opacity-border: 10%; }
-}
+.text-90 { --opacity-text: 90%; }
+.text-80 { --opacity-text: 80%; }
+.text-70 { --opacity-text: 70%; }
+.text-60 { --opacity-text: 60%; }
+.text-50 { --opacity-text: 50%; }
+.text-40 { --opacity-text: 40%; }
+.text-30 { --opacity-text: 30%; }
+.text-20 { --opacity-text: 20%; }
+.text-10 { --opacity-text: 10%; }
+
+.sheet-90 { --opacity-sheet: 90%; }
+.sheet-80 { --opacity-sheet: 80%; }
+.sheet-70 { --opacity-sheet: 70%; }
+.sheet-60 { --opacity-sheet: 60%; }
+.sheet-50 { --opacity-sheet: 50%; }
+.sheet-40 { --opacity-sheet: 40%; }
+.sheet-30 { --opacity-sheet: 30%; }
+.sheet-20 { --opacity-sheet: 20%; }
+.sheet-10 { --opacity-sheet: 10%; }
+
+.border-90 { --opacity-border: 90%; }
+.border-80 { --opacity-border: 80%; }
+.border-70 { --opacity-border: 70%; }
+.border-60 { --opacity-border: 60%; }
+.border-50 { --opacity-border: 50%; }
+.border-40 { --opacity-border: 40%; }
+.border-30 { --opacity-border: 30%; }
+.border-20 { --opacity-border: 20%; }
+.border-10 { --opacity-border: 10%; }

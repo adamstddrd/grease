@@ -9,12 +9,11 @@
     position: relative;
     inset-inline-start: -1rem;
     letter-spacing: var(--tracking-md);
-    font-size: min(26vw, 21.5rem);
-
-    /* font-size: clamp(5em, 22vw, 20em); */
+    font-size: min(26vw, 18em);
     filter: blur(0.5rem);
     text-transform: uppercase;
     text-align: center;
+    text-shadow: 0 0 4rem hsl(var(--color-accent) / 20%);
     
     @media (--md) {
       display: grid;
@@ -38,7 +37,7 @@
     inset-block-start: -32rem;
 
     @media (--md) {
-      inset-block-start: 8rem;
+      inset-block-start: 0;
     }
     
     & > * {
@@ -50,9 +49,7 @@
       filter: blur(1rem);
       
       @media (--dark) {
-        background-color: hsl(var(--color-text) / var(--opacity-sheet));
-        mix-blend-mode: screen;
-        opacity: 0.2;
+        background-color: hsl(var(--color-accent) / var(--opacity-sheet));
       }
     }
     

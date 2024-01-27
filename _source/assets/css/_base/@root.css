@@ -2,22 +2,19 @@
   /* ---------------------------------------------------------------------------
   color
   --------------------------------------------------------------------------- */
-  --color-grease: 132deg 0% 10%;
-  --color-marigold: 45deg 60% 70%;
-  --color-white: 45deg 20% 98%;
-  --color-black: 45deg 20% 8%;
-  --color-pink: 325deg 65% 62%;
-  --color-shadow: 0deg 0% 0%;
+  --color-blush: 0deg 60% 70%;
+  --color-white: 45deg 20% 100%;
+  --color-indigo: 250deg 70% 30%;
 
   /* semantic color */
-  --color-text: var(--color-black);
+  --color-text: var(--color-indigo);
   --color-sheet: var(--color-white);
-  --color-accent: var(--color-marigold);
+  --color-accent: var(--color-blush);
+  --color-shadow: 0deg 0% 0%;
 
   @media (--dark) {
     --color-text: var(--color-white);
-    --color-sheet: var(--color-black);
-    --color-accent: var(--color-marigold);
+    --color-sheet: var(--color-indigo);
   }
   
   color-scheme: light dark;

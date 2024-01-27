@@ -75,15 +75,14 @@ h1 {
 h2 {
   --font-weight: 700;
   --opacity-text: 90%;
-  --opacity-sheet: 100%;
-  --opacity-border: 20%;
 
-  margin-block: var(--space-xl) var(--space-md);
+  margin-block: var(--space-lg) var(--space-sm);
   padding-block-start: var(--space-sm);
   font-size: var(--size-xl);
   text-transform: uppercase;
   letter-spacing: var(--tracking-lg);
-  filter: blur(0.05rem);
+  filter: blur(0.1rem);
+  text-shadow: 0.4rem 0 0.4rem hsl(var(--color-accent) / 20%);
 }
 
 h3 {
@@ -99,11 +98,11 @@ h3 {
 }
 
 :where(h4, h5, h6) {
-  --font-weight: 500;
+  --font-weight: 600;
+  --opacity-text: 80%;
 
   margin-block: var(--space-sm) 0;
   font-size: var(--text-md);
-  text-transform: uppercase;
 }
 
 :where(p, ul, ol, dl) {
@@ -164,7 +163,7 @@ a:hover {
 
 code {
   --font-mono: 1;
-  --bg-color: var(--color-text);
+  --bg-color: var(--color-accent);
   --alpha: 10%;
   --opacity-border: 5%;
 

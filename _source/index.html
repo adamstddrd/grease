@@ -7,16 +7,16 @@ stylesheet: pages/docs.css
 # canonical: https://example.com/page.html
 ---
 
-<header class="grid mb-xxl mb-lg@md">
-  <random-shapes class="grease-marks bleed mt-lg" quantity="50" jitter="20" scale="150"></random-shapes>
-  <h1 class="hero span-12 mt-xxl mb-0">
+<header class="grid mb-xxl mb-xl@md">
+  <random-shapes class="grease-marks bleed mt-lg" quantity="40" jitter="45" scale="150"></random-shapes>
+  <h1 class="hero bleed mt-xxl mb-0">
     <span>Grease</span>
   </h1>
 </header>
 
 <section id="docs" class="grid --dense">
   
-  <nav class="sticky@md start-10 span-3 radius-md color --sheet --use-text --sheet-10 --border-20 border-left@md pl-md@md">
+  <nav class="sticky@md start-10 span-3 radius-md border-color use-accent border-20 border-left@md pl-md@md" style="mix-blend-mode: difference;">
     <small-details>
       <details>
         <summary class="size-sm weight-400 uppercase tracking-lg -mt-sm pt-md pb-sm ">Using Grease</summary>
@@ -31,7 +31,7 @@ stylesheet: pages/docs.css
     </small-details>
   </nav>
   
-  <article class="start-1 span-8 measure-xl border-left@md pl-md@md color --border-20">
+  <article class="start-1 span-8 measure-xl border-left@md border-20 pl-md@md">
     
     <h2 id="why-grease" class="mt-0 mt-0@md">Why Grease?</h2>
     <p>
@@ -79,11 +79,11 @@ stylesheet: pages/docs.css
     <ol>
       <li><code>base</code> is where you define the default presentation characteristics for your project. Tailoring the custom media queries, custom properties, typeface, and base elements alone should get you halfway there.</li>
       <li><code>components</code> is where you define <strong>commonly repeated objects</strong> that live across your project. Components care little about their position on any given page.</li>
-      <li><code>utilities</code> is for CSS that <strong>manipulates elements and components</strong>. Grease aims to cover the small subset of attributes that are highly variable (page position, type characteristics, spacing) as opposed to making every property available. This approaches delivers the key benefits of utility css (breaking the 1:1 ration between page count and bundle size, eliminating repetitious boilerplate) without the tooling complexity of library-centric approaches.</li>
+      <li><code>utilities</code> is for CSS that <strong>manipulates elements and components</strong>. Grease aims to cover the small subset of attributes that are highly variable (page position, type characteristics, spacing) as opposed to making every property available. This approaches delivers the key benefits of utility css (breaking the linear ratio between page count and lines of CSS, less repetition) without the tooling complexity of build-dependent approaches.</li>
     </ol>
     <h3>Syntax, draft specs</h3>
     <p>
-      Components and utilities in Grease use a modified <a href="https://getbem.com/introduction/">BEM syntax</a>, which uses a terse <code>block --modifier1 --modifier2</code> syntax instead of <code>block--modifier1 block--modifier2</code>.
+      Components in Grease use a modified <a href="https://getbem.com/introduction/">BEM syntax</a>, which uses a terse <code>block --modifier1 --modifier2</code> syntax instead of <code>block--modifier1 block--modifier2</code>.
     </p>
     <p>
       <a href="https://lightningcss.dev/">Lightning</a> is configured to transpile <a href="https://www.w3.org/TR/css-nesting-1/">nesting</a> and <a href="https://www.w3.org/TR/mediaqueries-5/#custom-mq">draft custom media</a> specs, but nothing else. Adjust as need be for the project at hand.
@@ -162,7 +162,7 @@ stylesheet: pages/docs.css
   
 </section>
 
-<footer class="relative span-12 mt-lg pt-md size-sm color --border-20">
-  <random-shapes class="grease-marks bleed-start span-5 mt-xxl ml-lg absolute@md" style="top: inherit; bottom: 0; opacity: 0.2;" quantity="20" jitter="10" scale="150"></random-shapes>
+<footer class="relative span-12 mt-lg pt-md size-sm">
+  <random-shapes class="grease-marks bleed-start span-5 mt-xxl -mr-xl absolute@md" style="width: 30%; inset-block-start: inherit; inset-block-end: 0; inset-inline-end: 0; rotate: -45deg" quantity="10" jitter="10" scale="150"></random-shapes>
   <p>By <a href="https://aaadaaam.com">AAADAAAM</a>. Have fun.</p>
 </footer>
