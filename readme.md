@@ -1,5 +1,5 @@
 # Grease
-[Grease](https://web-grease.netlify.app) is a website starter that makes building performant, accessible, aesthetic websites fast &amp; frictionless. It uses [11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), [esbuild](https://esbuild.github.io/), and includes a lightweight, declarative CSS architecture that sets you up for success.
+[Grease](https://grease.aaadaaam.com) takes the friction out of building fast, accessible, aesthetic websites. It combines [11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), & [esbuild](https://esbuild.github.io/) with a declarative CSS architecture that sets you up for success.
 
 ## Why Grease?
 * **designed for in-browser design** - Ultra-fast tools (11ty, Esbuild, Lightning CSS) plus incremental builds makes designing in browser a joy.
@@ -10,4 +10,4 @@
 * **batteries included** - Production-ready odds & ends come in the box. Sitemaps, canonical URLs, search index blocking, etc.
 
 ## Local dev
-[Install Node](https://nodejs.org/en/) if you haven’t already. Once you’ve cloned this repo, run `npm install` to download the various dependencies. To run the local dev server, run `npm start`. Check your terminal output for the URL, but it’ll default to [http://localhost:8080](http://localhost:8080) unless that port is already in use. 
+[Install Node](https://nodejs.org/en/) if you haven’t already. Once you’ve cloned this repo, run `npm install` to download and install dependencies. To run the local dev server, run `npm start`. Check your terminal output for the URL, but it’ll default to [http://localhost:8080](http://localhost:8080) unless that port is already in use. 
