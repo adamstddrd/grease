@@ -161,6 +161,20 @@ a:hover {
   text-decoration-color: hsl(var(--color-accent) / var(--opacity-text));
 }
 
+pre {
+  --bg-color: var(--color-accent);
+  --alpha: 10%;
+  --opacity-border: 5%;
+  margin-block: 0 var(--space-md);
+  margin-inline: calc(var(--space-sm) * -1);
+  padding: var(--space-sm);
+  line-height: var(--leading-md);
+  overflow: auto;
+  border-radius: var(--border-radius-sm);
+  background-color: hsl(var(--bg-color) / var(--alpha));
+  border: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
+}
+
 code {
   --font-mono: 1;
   --bg-color: var(--color-accent);
@@ -174,6 +188,14 @@ code {
   background-color: hsl(var(--bg-color) / var(--alpha));
   border: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
   -webkit-box-decoration-break: clone;
+
+  :is(pre) & {
+    border: none;
+    background-color: transparent;
+    padding-block: 0;
+    padding-inline: 0;
+    overflow: auto;
+  }
 }
 
 blockquote {
@@ -200,4 +222,31 @@ hr {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+}
+
+:where(input:not([type="range"], [type="button"], [type="submit"]), select, textarea) {
+	--opacity-sheet: 5%;
+	--opacity-border: 50%;
+	
+	background-color: hsl(var(--color-text) / var(--opacity-sheet));
+	border-radius: var(--border-radius-lg);
+	border: var(--border-weight-md) solid hsl(var(--color-text) / var(--opacity-border));
+	padding: var(--space-sm);
+	margin-block: 0 var(--space-md);
+}
+
+[disabled] {
+  opacity: 0.5;
+}
+
+fieldset {
+  border-radius: var(--border-radius);
+}
+
+optgroup {
+  font-weight: var(--bold-text);
+}
+
+input[type="checkbox"], input[type="radio"] {
+  scale: 1.5;
 }
