@@ -19,13 +19,16 @@ stylesheet: pages/docs.css
   <nav class="sticky@md start-10 span-3 radius-md border-color use-accent border-20 border-left@md pl-md@md" style="mix-blend-mode: difference;">
     <small-details>
       <details>
-        <summary class="size-sm weight-400 uppercase tracking-lg -mt-sm pt-md pb-sm ">Using Grease</summary>
+        <summary class="size-sm weight-400 uppercase tracking-lg -mt-sm pt-md pb-sm">Using Grease</summary>
         <ul class="unlisted size-sm weight-500 uppercase">
           <li><a href="#why-grease">Why Grease?</a></li>
           <li><a href="#getting-started">Getting started</a></li>
           <li><a href="#working-with-css">Working with CSS</a></li>
+          <li><a href="#working-with-js">Working with JS</a></li>
           <li><a href="#layout">Layout</a></li>
           <li><a href="#typography">Typography</a></li>
+          <li><a href="#color">Color</a></li>
+          <li><a href="#animation">Animation</a></li>
         </ul>
       </details>
     </small-details>
@@ -60,7 +63,7 @@ stylesheet: pages/docs.css
       </li>
       <li>
         <strong>Batteries included.</strong>
-        Production-ready odds & ends come in the box. Sitemaps, canonical URLs, search index blocking, etc.
+        Production-ready odds & ends come in the box. Sitemaps, canonical URLs, no-indexing, etc.
       </li>
     </ul>
     
@@ -97,6 +100,10 @@ stylesheet: pages/docs.css
       <li>As route-specific bundles. Add a CSS file to <code>source/css/pages</code> (or any folder not prefixed by an underscore) to create a new entrypoint. Assign the path to <code>stylesheet</code> in template frontmatter to use it.</li>
       <li>As <code>style</code> tags. For critical CSS or page-specific one-offs, Grease includes a <code>style</code> shortcode that processes CSS with Lightning and adds it to a style tag in the page head.</li>
     </ol>
+
+    <h2 id="working-with-js">Working with JS</h2>
+    <p>Like with CSS, Grease supports config-free javascript bundles. A main bundle is included by default, and you can add JS files to <code>source/js</code> (or any sub-folder not prefixed by an underscore) to create a new bundles. Assign paths to <code>javascript</code> in template frontmatter to use them.</p>
+    <p>Grease is designed to use the web platform directly, and assumes ESM. Several custom elements are included; a scroll detector, an element that collapses and expands <code>details</code> elements at different viewport sizes, and an element that triggers animations on viewport entry.</p>
     
     <h2 id="layout">Layout</h2>
     <p>
@@ -168,6 +175,28 @@ stylesheet: pages/docs.css
       <li><code>.balance</code> attempts to balance multiple lines of text</li>
       <li><code>.italic</code>, <code>uppercase</code>, <code>unlisted</code>,  <code>undecorated</code> do what they suggest</li>
     </ul>
+
+    <h2 id="color">Color</h2>
+    <p>Grease takes a structured, semantic approach to color. Hues are mapped to semantic variables like <code>--color-text</code>, <code>--color-sheet</code>, and <code>--color-accent</code> and assembled in color declarations with companion <code>--opacity-{text/sheet/accent}</code> variables.</p>
+    <p>Dark mode and alternate themes are implemented by redefining the color variables within those contexts. In practice, this approach means that you never have to micro-manage color at the component level.</p>
+    <h3>Color utilities</h3>
+    <ul>
+      <li><code>.{text/sheet/border}-color</code> sets a remap target</li>
+      <li><code>.use-{text/sheet/accent}</code> remaps the targeted color</li>
+      <li><code>.set-{text/sheet}</code> sets color</li>
+      <li><code>.text-{10-90}</code> adjusts text opacity</li>
+      <li><code>.sheet-{10-90}</code> adjusts sheet opacity</li>
+      <li><code>.border-{10-90}</code> adjusts border opacity</li>
+    </ul>
+
+    <h2 id="animation">Animation</h2>
+    <p>Grease includes a simple, tiny, composable animation system:</p>
+    <ol>
+      <li>Define a CSS animation and a utility class that invokes it.</li>
+      <li>Use the class name as the value for the <code>data-aos</code> attribute on the element you want to animate.</li>
+      <li>Grease will animate in the element when it enters the viewport. If multiple elements appear at once, Grease builds in a brief stagger (taking into consideration any existing delays).</li>
+    </ol>
+    <p>By adding animation to elements and sub-elements, you can quickly scaffold out suprisingly complex animations out of a handful of simple primities. For instances where it's inconvenient to add an atribute directly to an element, use <code>data-aos-children</code> to apply the animation class to all direct children of the element.</p>
     
   </article>
   

@@ -83,6 +83,10 @@ h2 {
   letter-spacing: var(--tracking-lg);
   filter: blur(0.1rem);
   text-shadow: 0.4rem 0 0.4rem hsl(var(--color-accent) / 20%);
+
+  @media (--dark) {
+    --color-text: var(--color-accent);
+  }
 }
 
 h3 {

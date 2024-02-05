@@ -5,7 +5,6 @@
     --font-weight: 800;
     --color-text: var(--color-sheet);
     
-    display: grid;
     position: relative;
     inset-inline-start: -1rem;
     letter-spacing: var(--tracking-md);
@@ -14,15 +13,6 @@
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 4rem hsl(var(--color-accent) / 20%);
-    
-    @media (--md) {
-      display: grid;
-      inset-inline-start: -2rem;
-    }
-    
-    & > * {
-      grid-area: 1 / 1 / -1 / -1;
-    }
   }
   
   .grease-marks {
