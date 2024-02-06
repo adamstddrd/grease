@@ -4,6 +4,7 @@
   .hero {
     --font-weight: 800;
     --color-text: var(--color-sheet);
+    --opacity-text: 100%;
     
     position: relative;
     inset-inline-start: -1rem;
