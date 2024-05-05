@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------
 process CSS with LightningCSS
 ---------------------------------------------------------------------------- */
-import { bundleAsync } from 'lightningcss';
+import { bundleAsync, Features } from 'lightningcss';
 import path from 'node:path';
 
 export default function (eleventyConfig) {
@@ -19,10 +19,8 @@ export default function (eleventyConfig) {
         filename: inputPath,
         minify: true,
         sourceMap: true,
-        drafts: {
-          customMedia: true,
-          nesting: true,
-        },
+        include: Features.Nesting,
+        drafts: { customMedia: true },
         resolver: {
           resolve(specifier, from) {
             const importPath = path.resolve(path.dirname(from), specifier);
