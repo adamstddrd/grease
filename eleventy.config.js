@@ -7,8 +7,6 @@ import setVar from './_source/_utilities/setVar.js';
 import fullDate from './_source/_utilities/fullDate.js';
 import getRandom from './_source/_utilities/getRandom.js';
 import markdownify from './_source/_utilities/markdownify.js';
-import sortBy from './_source/_utilities/sortBy.js';
-import where from './_source/_utilities/where.js';
 
 export default async function (eleventyConfig) {
   /* --------------------------------------------------------------------------
@@ -22,8 +20,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('fullDate', fullDate);
   eleventyConfig.addFilter('getRandom', getRandom);
   eleventyConfig.addFilter('markdownify', markdownify);
-  eleventyConfig.addFilter('sortBy', sortBy);
-  eleventyConfig.addFilter('where', where);
 
   /* --------------------------------------------------------------------------
   MarkdownIt settings
