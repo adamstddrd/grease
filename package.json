@@ -4,12 +4,10 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.4",
-    "@11ty/eleventy-img": "^3.0.0",
+    "@11ty/eleventy": "3.0.0-alpha.10",
+    "@11ty/eleventy-img": "^4.0.2",
     "esbuild": "^0.20.0",
-    "eslint": "^8.5.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.24.2",
+    "eslint": "^9.2.0",
     "lightningcss": "^1.18.0",
     "stylelint": "^16.2.0",
     "stylelint-config-standard": "^36.0.0"

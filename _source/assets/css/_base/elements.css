@@ -172,6 +172,7 @@ pre {
   --bg-color: var(--color-accent);
   --alpha: 10%;
   --opacity-border: 5%;
+
   margin-block: 0 var(--space-md);
   margin-inline: calc(var(--space-sm) * -1);
   padding: var(--space-sm);
