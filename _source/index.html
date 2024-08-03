@@ -89,7 +89,7 @@ stylesheet: pages/docs.css
       Components in Grease use a modified <a href="https://getbem.com/introduction/">BEM syntax</a>, which uses a terse <code>block --modifier1 --modifier2</code> syntax instead of <code>block--modifier1 block--modifier2</code>.
     </p>
     <p>
-      <a href="https://lightningcss.dev/">Lightning</a> is configured to transpile <a href="https://www.w3.org/TR/css-nesting-1/">nesting</a> and <a href="https://www.w3.org/TR/mediaqueries-5/#custom-mq">draft custom media</a> specs, but nothing else. Adjust as need be for the project at hand.
+      <a href="https://lightningcss.dev/">Lightning</a> is configured to transpile <a href="https://www.w3.org/TR/mediaqueries-5/#custom-mq">draft custom media syntax</a>, but nothing else. Adjust as need be for the project at hand.
     </p>
     <h3>Breaking up CSS</h3>
     <p>
@@ -98,7 +98,7 @@ stylesheet: pages/docs.css
     <ol>
       <li>In the main bundle. Global stuff goes here.</li>
       <li>As route-specific bundles. Add a CSS file to <code>source/css/pages</code> (or any folder not prefixed by an underscore) to create a new entrypoint. Assign the path to <code>stylesheet</code> in template frontmatter to use it.</li>
-      <li>As <code>style</code> tags. For critical CSS or page-specific one-offs, Grease includes a <code>style</code> shortcode that processes CSS with Lightning and adds it to a style tag in the page head.</li>
+      <li>As <code>style</code> tags. For critical CSS or page-specific one-offs, Grease includes an <a href="https://github.com/11ty/eleventy-plugin-bundle#usage">11ty bundle</a> that processes CSS with Lightning and adds it to a style tag in the page head.</li>
     </ol>
 
     <h2 id="working-with-js">Working with JS</h2>

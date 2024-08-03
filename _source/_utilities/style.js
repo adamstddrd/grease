@@ -1,10 +1,10 @@
 /* ----------------------------------------------------------------------------
 process CSS tag pair and add it to a <style> tag in the page head
-{% style %}.foo { bar: fizz;}{% endstyle %}
+{% css %}.foo { bar: fizz;}{% endcss %}
 ---------------------------------------------------------------------------- */
 import { transform, Features } from 'lightningcss';
 
-export default function style(content) {
+export default async function style(content) {
   const targets = { future: (1) }; // enables draft syntaxes
   const result = transform({
     code: Buffer.from(content),
@@ -13,6 +13,6 @@ export default function style(content) {
     drafts: { customMedia: true },
     targets,
   });
-  this.page.style = result.code.toString('utf8');
-  return '';
+  const resultString = result.code.toString('utf8');
+  return resultString;
 }

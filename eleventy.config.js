@@ -10,13 +10,13 @@ import markdownify from './_source/_utilities/markdownify.js';
 
 export default async function (eleventyConfig) {
   /* --------------------------------------------------------------------------
-  Plugins, shortcodes, filters
+  Plugins, bundles, shortcodes, filters
   -------------------------------------------------------------------------- */
   eleventyConfig.addPlugin(esbuild);
   eleventyConfig.addPlugin(lightingcss);
+  eleventyConfig.addBundle('css', { transforms: [style] });
   eleventyConfig.addShortcode('image', image);
   eleventyConfig.addPairedShortcode('setVar', setVar);
-  eleventyConfig.addPairedShortcode('style', style);
   eleventyConfig.addFilter('fullDate', fullDate);
   eleventyConfig.addFilter('getRandom', getRandom);
   eleventyConfig.addFilter('markdownify', markdownify);
