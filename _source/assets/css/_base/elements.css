@@ -76,7 +76,7 @@ h2 {
   --font-weight: 700;
   --opacity-text: 100%;
 
-  margin-block: var(--space-lg) var(--space-sm);
+  margin-block: var(--space-md) var(--space-sm);
   padding-block-start: var(--space-sm);
   font-size: var(--size-xl);
   text-transform: uppercase;
@@ -91,9 +91,9 @@ h2 {
 
 h3 {
   --font-weight: 600;
-  --opacity-text: 90%;
+  --opacity-text: 100%;
 
-  margin-block: var(--space-md) var(--space-sm);
+  margin-block: var(--space-md) 0;
   font-size: var(--size-lg);
   
   h2 + & {
@@ -103,14 +103,15 @@ h3 {
 
 :where(h4, h5, h6) {
   --font-weight: 600;
-  --opacity-text: 80%;
+  --opacity-text: 100%;
 
   margin-block: var(--space-sm) 0;
-  font-size: var(--text-md);
+  font-size: var(--size-md);
+  text-transform: uppercase;
 }
 
 :where(p, ul, ol, dl) {
-  margin-block: 0 var(--space-md);
+  margin-block: 0 var(--space-sm);
   margin-inline: 0;
 }
 
@@ -173,7 +174,7 @@ pre {
   --alpha: 10%;
   --opacity-border: 5%;
 
-  margin-block: 0 var(--space-md);
+  margin-block: 0 var(--space-sm);
   margin-inline: calc(var(--space-sm) * -1);
   padding: var(--space-sm);
   line-height: var(--leading-md);
