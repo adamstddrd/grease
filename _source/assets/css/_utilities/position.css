@@ -18,7 +18,7 @@ position: manipulate position across breakpoints
 
   .sticky\@md {
     position: sticky !important;
-    inset-block-start: 0;
+    inset-block-start: var(--space-md);
   }
 
   .sticky-bottom\@md {

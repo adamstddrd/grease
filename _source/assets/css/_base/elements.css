@@ -50,6 +50,12 @@ main {
   overflow-y: clip;
 }
 
+article {
+  > *:first-child {
+    margin-block-start: 0;
+  }
+}
+
 animate-on-scroll {
   display: contents;
 }
@@ -76,8 +82,7 @@ h1 {
 h2 {
   --font-weight: 800;
 
-  margin-block: var(--space-md) var(--space-sm);
-  padding-block-start: var(--space-sm);
+  margin-block: var(--space-lg) var(--space-sm);
   font-size: var(--size-xl);
 }
 

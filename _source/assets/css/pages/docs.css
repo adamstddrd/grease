@@ -14,19 +14,19 @@
   
   .grease-marks {
     width: 100%;
-    rotate: 15deg;
+    rotate: 10deg;
     pointer-events: none;
     position: absolute;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
     z-index: -1;
-    inset-block-start: -90rem;
+    inset-block-start: -40rem;
     inset-inline-end: 0;
 
     @media (--md) {
-      inset-block-start: -10rem;
-      inset-inline-end: -40rem;
+      inset-block-start: 0rem;
+      inset-inline-end: -30rem;
     }
     
     & > * {

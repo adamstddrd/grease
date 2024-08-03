@@ -7,6 +7,7 @@ import setVar from './_source/_utilities/setVar.js';
 import fullDate from './_source/_utilities/fullDate.js';
 import getRandom from './_source/_utilities/getRandom.js';
 import markdownify from './_source/_utilities/markdownify.js';
+import { IdAttributePlugin } from '@11ty/eleventy';
 
 export default async function (eleventyConfig) {
   /* --------------------------------------------------------------------------
@@ -14,6 +15,7 @@ export default async function (eleventyConfig) {
   -------------------------------------------------------------------------- */
   eleventyConfig.addPlugin(esbuild);
   eleventyConfig.addPlugin(lightingcss);
+  eleventyConfig.addPlugin(IdAttributePlugin);
   eleventyConfig.addBundle('css', { transforms: [style] });
   eleventyConfig.addShortcode('image', image);
   eleventyConfig.addPairedShortcode('setVar', setVar);
