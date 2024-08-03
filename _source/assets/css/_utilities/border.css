@@ -10,44 +10,44 @@ border: adjust border appearance
 .radius-full { border-radius: 100%; }
 
 .border {
-  border: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+  border: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
 }
 
 .border-top {
-  border-block-start: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+  border-block-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
 }
 
 .border-bottom {
-  border-block-end: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+  border-block-end: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
 }
 
 .border-left {
-  border-inline-start: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+  border-inline-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
 }
 
 .border-right {
-  border-inline-end: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+  border-inline-end: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
 }
 
 @media (--md) {
   .border\@md {
-    border: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+    border: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
   }
 
   .border-top\@md {
-    border-block-start: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+    border-block-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
   }
 
   .border-bottom\@md {
-    border-block-end: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+    border-block-end: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
   }
 
   .border-left\@md {
-    border-inline-start: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+    border-inline-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
   }
 
   .border-right\@md {
-    border-inline-end: var(--border-weight-sm) solid hsl(var(--color-accent) / var(--opacity-border));
+    border-inline-end: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
   }
 }
 

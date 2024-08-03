@@ -21,7 +21,7 @@
 
   /* color opacity */
   --color-alpha: 100%;
-  --opacity-text: 80%;
+  --opacity-text: 100%;
   --opacity-sheet: 100%;
   --opacity-border: 100%;
 
@@ -45,7 +45,9 @@
   --------------------------------------------------------------------------- */
 
   /* font stacks */
-  --font-main: "Sono", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --font-code: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   /* font properties */
   --font-weight: 400;

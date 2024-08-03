@@ -30,6 +30,7 @@ html {
   min-height: 100dvh;
   background-color: hsl(var(--color-sheet) / 100%);
   accent-color: hsl(var(--color-text));
+  overflow-x: clip;
 }
 
 body {
@@ -65,7 +66,7 @@ animate-on-scroll {
 }
 
 h1 {
-  --font-weight: 300;
+  --font-weight: 800;
 
   margin-block: var(--space-xl) var(--space-md);
   font-size: var(--size-xxl);
@@ -73,25 +74,15 @@ h1 {
 }
 
 h2 {
-  --font-weight: 700;
-  --opacity-text: 100%;
+  --font-weight: 800;
 
   margin-block: var(--space-md) var(--space-sm);
   padding-block-start: var(--space-sm);
   font-size: var(--size-xl);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-lg);
-  filter: blur(0.1rem);
-  text-shadow: 0.4rem 0 0.4rem hsl(var(--color-accent) / 20%);
-
-  /* @media (--dark) {
-    --color-text: var(--color-accent);
-  } */
 }
 
 h3 {
-  --font-weight: 600;
-  --opacity-text: 100%;
+  --font-weight: 700;
 
   margin-block: var(--space-md) 0;
   font-size: var(--size-lg);
@@ -103,11 +94,10 @@ h3 {
 
 :where(h4, h5, h6) {
   --font-weight: 600;
-  --opacity-text: 100%;
 
   margin-block: var(--space-sm) 0;
   font-size: var(--size-md);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 :where(p, ul, ol, dl) {
@@ -142,7 +132,6 @@ li {
 b,
 strong {
   --font-weight: 700;
-  --opacity-text: 90%;
 }
 
 i,
@@ -156,8 +145,6 @@ small {
 
 a,
 a:visited {
-  --opacity-text: 100%;
-
   color: hsl(var(--color-text) / var(--opacity-text));
   text-decoration-thickness: var(--border-weight-sm);
   text-underline-offset: 0.2rem;
@@ -185,12 +172,11 @@ pre {
 }
 
 code {
-  --font-mono: 1;
   --bg-color: var(--color-accent);
-  --alpha: 10%;
-  --opacity-border: 5%;
+  --alpha: 20%;
+  --opacity-border: 10%;
 
-  font-family: var(--font-main);
+  font-family: var(--font-code);
   padding: 0.1rem var(--space-xxs);
   font-size: 90%;
   border-radius: var(--border-radius-sm);
@@ -208,7 +194,7 @@ code {
 }
 
 blockquote {
-  margin: var(--space-lg) 0;
+  margin: var(--space-md) 0;
   font-size: var(--size-md);
   font-style: italic;
 }

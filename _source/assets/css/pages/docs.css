@@ -3,17 +3,13 @@
 @layer components {
   .hero {
     --font-weight: 800;
-    --color-text: var(--color-sheet);
-    --opacity-text: 100%;
     
     position: relative;
-    inset-inline-start: -1rem;
-    letter-spacing: var(--tracking-md);
-    font-size: min(26vw, 18em);
-    filter: blur(0.5rem);
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 0 0 4rem hsl(var(--color-accent) / 20%);
+    margin-block: var(--space-xxl) var(--space-xl);
+    font-size: min(18vw, 10em);
+    line-height: 1;
+    border-block-end: var(--border-weight-md) solid hsl(var(--color-text));
+    mix-blend-mode: difference;
   }
   
   .grease-marks {
@@ -22,28 +18,30 @@
     pointer-events: none;
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
     z-index: -1;
-    inset-block-start: -32rem;
+    inset-block-start: -90rem;
+    inset-inline-end: 0;
 
     @media (--md) {
-      inset-block-start: 0;
+      inset-block-start: -10rem;
+      inset-inline-end: -40rem;
     }
     
     & > * {
-      width: 10rem;
-      height: 10rem;
+      width: 5rem;
+      height: 5rem;
       background-color: hsl(var(--color-text) / var(--opacity-sheet));
-      border-radius: 100%;
-      mix-blend-mode: exclusion;
+      border-radius: 100%;      
       filter: blur(1rem);
       
       @media (--dark) {
-        background-color: hsl(var(--color-accent) / var(--opacity-sheet));
+        background-color: hsl(var(--color-sheet) / var(--opacity-sheet));
       }
+      
     }
-    
+
     & > .shape-1 {
       filter: blur(2rem);
       background-color: hsl(var(--color-accent) / var(--opacity-sheet));
