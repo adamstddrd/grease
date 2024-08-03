@@ -31,6 +31,10 @@ html {
   background-color: hsl(var(--color-sheet) / 100%);
   accent-color: hsl(var(--color-text));
   overflow-x: clip;
+
+  @media (--motion) {
+    scroll-behavior: smooth;
+  }
 }
 
 body {

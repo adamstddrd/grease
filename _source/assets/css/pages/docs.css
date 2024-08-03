@@ -5,11 +5,15 @@
     --font-weight: 800;
     
     position: relative;
-    margin-block: var(--space-xxl) var(--space-xl);
+    margin-block: var(--space-xxl) 0;
     font-size: min(18vw, 10em);
     line-height: 1;
     border-block-end: var(--border-weight-md) solid hsl(var(--color-text));
     mix-blend-mode: difference;
+
+    @media (--md) {
+      margin-block: var(--space-xxl) var(--space-xl);
+    }
   }
   
   .grease-marks {

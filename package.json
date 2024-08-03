@@ -13,7 +13,7 @@
     "stylelint-config-standard": "^36.0.0"
   },
   "scripts": {
-    "start": "eleventy --serve --incremental --quiet",
+    "start": "eleventy --serve --quiet",
     "publish:stage": "ELEVENTY_ENV=stage eleventy",
     "publish:prod": "ELEVENTY_ENV=prod eleventy",
     "lint:css": "stylelint \"_source/**/*.css\" --fix",
