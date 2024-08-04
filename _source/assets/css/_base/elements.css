@@ -111,8 +111,9 @@ h3 {
   margin-inline: 0;
 }
 
-:where(li ul, li ol) {
-  margin-block: var(--space-sm) 0;
+:where(li > ul, li > ol) {
+  margin-block: var(--space-xs) 0;
+  padding-inline: 1em 0;
 }
 
 ul {
@@ -177,8 +178,8 @@ pre {
 }
 
 code {
-  --color-bg: oklch(from var(--color-accent) l c h / 20%);
-  --color-border: oklch(from var(--color-text) l c h / 10%);
+  --color-bg: oklch(from var(--color-accent) l c h / 10%);
+  --color-border: oklch(from var(--color-text) l c h / 5%);
 
   font-family: var(--font-code);
   padding: 0.1rem var(--space-xxs);
@@ -236,6 +237,10 @@ hr {
 	border: var(--border-weight-sm) solid var(--color-border);
 	padding: var(--space-sm);
 
+  &::placeholder {
+    color: oklch(from var(--color-text) l c h / 50%);
+  }
+
   &:focus {
     border-color: oklch(from var(--color-text) l c h / 50%);
   }
@@ -259,6 +264,29 @@ textarea {
   width: 100%;
   field-sizing: content;
   min-height: var(--space-xl);
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+
+  > select {
+    grid-area: select;
+    appearance: none;
+  }
+
+  &::after {
+    grid-area: select;
+    justify-self: end;
+    content: "";
+    display: block;
+    width: 0.8em;
+    height: 0.5em;
+    margin-inline-end: var(--space-sm);
+    background-color: var(--color-text);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
 }
 
 [disabled] {

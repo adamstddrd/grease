@@ -17,11 +17,14 @@ stylesheet: pages/docs.css
     </label>
     <label for="selct">
       <span>Select</span>
-      <select id="select">
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-      </select>
+      <div class="select">
+        <select id="select" placeholder="foo">
+          <option value="" disabled selected hidden>Pick an option...</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
     </label>
   </div>
   <label for="textarea">Text area</label>
@@ -42,7 +45,7 @@ stylesheet: pages/docs.css
       </label>
     </div>
     
-    <button class="button --fill@sm">Button</button>
+    <button class="button --primary --fill@sm">Button</button>
   </div>
 </form>
 

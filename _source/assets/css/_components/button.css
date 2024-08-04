@@ -4,19 +4,12 @@ input[type="submit"] {
   --font-weight: 600;
   --button-text: var(--color-text);
   --button-bg: oklch(from var(--color-bg) l c h / 0%);
-  --button-border: oklch(from var(--color-text) l c h / 70%);
+  --button-border: var(--color-text);
   --button-icon: var(--color-text);
-  
-  @media (--dark) {
-    --button-text: var(--color-text);
-    --button-bg: oklch(from var(--color-text) l c h / 0%);
-    --button-border: oklch(from var(--color-text) l c h / 20%);
-  }
 
   color: var(--button-text);
   background-color: var(--button-bg);
-  border-inline: var(--border-weight-sm) solid var(--button-border);
-  border-block: var(--border-weight-sm) solid var(--button-border);
+  border: var(--border-weight-sm) solid var(--button-border);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +22,7 @@ input[type="submit"] {
   transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
   line-height: 1;
   text-transform: uppercase;
+  border-radius: var(--border-radius-sm);
 
   &:visited {
     color: var(--button-text);
@@ -41,21 +35,11 @@ input[type="submit"] {
   @media (--hover) {
     &:hover {
       --button-text: var(--color-bg);
-      --button-bg: oklch(from var(--color-text) l c h / 50%);
-      --button-border: oklch(from var(--color-text) l c h / 0%);
+      --button-bg: var(--color-text);
 
       cursor: pointer;
-      border-block: var(--border-weight-sm) solid var(--button-border);
-      
-      @media (--dark) {
-          --button-text: var(--color-text);
-          --button-bg: oklch(from var(--color-bg) l c h / 0%);
-          --button-border: oklch(from var(--color-text) l c h / 60%);
-      }
     }
   }
-  
-  
 
   & svg {
     width: 1.5em;
@@ -68,6 +52,19 @@ input[type="submit"] {
     }
   }
 
+  &.--primary {
+    --button-text: var(--color-bg);
+    --button-bg: var(--color-text);
+    --button-border: var(--color-text);
+
+    @media (--hover) {
+      &:hover {
+        --button-bg: var(--color-accent);
+        --button-border: var(--color-accent);
+      }
+    }
+  }
+
   &.--text-only {
     --button-text: var(--color-text);
     
@@ -76,9 +73,6 @@ input[type="submit"] {
 
     @media (--hover) {
       &:hover {
-        --button-text: var(--color-accent);
-        --button-bg: var(--color-text);
-
         border-block-end-color: var(--button-border);
       }
     }
