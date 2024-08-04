@@ -10,17 +10,12 @@ element styles
   font-variation-settings: "wght" var(--font-weight), "MONO" var(--font-mono);
 
   &::selection {
-    color: var(--color-bg);
-    background-color: var(--color-text);
+    background-color: oklch(from var(--color-accent) l c h / 40%);
   }
   
   &:focus-visible {
     outline: var(--border-weight-md) var(--color-accent) solid;
     outline-offset: var(--border-weight-md);
-  }
-  
-  &:focus:not(:focus-visible) {
-    outline: none;
   }
 }
 
@@ -150,6 +145,10 @@ small {
   font-size: var(--type-sm);
 }
 
+mark {
+  background-color: oklch(from var(--color-accent) l c h / 40%);
+}
+
 a,
 a:visited {
   color: var(--color-text);
@@ -216,87 +215,4 @@ hr {
   max-width: 100%;
   height: auto;
   line-height: var(--leading-fluid);
-}
-
-:where(button, input, select, option, textarea) {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-:where(input:not([type="range"], [type="button"], [type="submit"]), select, textarea) {
-	--color-bg: oklch(from var(--color-text) l c h / 5%);
-  --color-border: oklch(from var(--color-text) l c h / 0%);
-	
-	background-color: var(--color-bg);
-	border-radius: var(--border-radius-sm);
-	border: var(--border-weight-sm) solid var(--color-border);
-	padding: var(--space-sm);
-
-  &::placeholder {
-    color: oklch(from var(--color-text) l c h / 50%);
-  }
-
-  &:focus {
-    border-color: oklch(from var(--color-text) l c h / 50%);
-  }
-}
-
-:where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {
-  width: 100%;
-}
-
-:where(input[type="checkbox"], input[type="radio"]) {
-  scale: 1.4;
-  margin-inline-start: var(--space-xxs);
-}
-
-label {
-  display: block;
-  flex-grow: 1;
-}
-
-textarea {
-  width: 100%;
-  field-sizing: content;
-  min-height: var(--space-xl);
-}
-
-.select {
-  display: grid;
-  grid-template-areas: "select";
-  align-items: center;
-
-  > select {
-    grid-area: select;
-    appearance: none;
-  }
-
-  &::after {
-    grid-area: select;
-    justify-self: end;
-    content: "";
-    display: block;
-    width: 0.8em;
-    height: 0.5em;
-    margin-inline-end: var(--space-sm);
-    background-color: var(--color-text);
-    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-  }
-}
-
-[disabled] {
-  opacity: 0.5;
-}
-
-fieldset {
-  border-radius: var(--border-radius);
-}
-
-optgroup {
-  font-weight: var(--bold-text);
 }
