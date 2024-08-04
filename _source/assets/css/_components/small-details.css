@@ -37,7 +37,7 @@ small-details {
         width: 0.75em;
         height: 0.75em;
         top: -0.075em;
-        background-color: hsl(var(--color-text));
+        background-color: var(--color-text);
         clip-path: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%);
       }
     }

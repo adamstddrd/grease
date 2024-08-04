@@ -23,10 +23,10 @@ eleventyImport:
     <small-details>
       <details>
         <summary class="size-sm weight-400 uppercase tracking-lg pt-xs pb-sm">Using Grease</summary>
-        <ul class="unlisted size-sm weight-500 uppercase">
+        <ul class="unlisted size-md weight-600">
         {%- for post in collections.docs -%}
-          <li>
-            <a href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
+          <li class="mb-xs">
+            <a class="pt-xs pb-xs pr-xs" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
           </li>
         {%- endfor -%}
         </ul>

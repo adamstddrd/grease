@@ -1,19 +1,15 @@
 .button,
 input[type="submit"] {
   --font-weight: 600;
-  --opacity-sheet: 0%;
-  --opacity-border: 70%;
-  --button-text: hsl(var(--color-text) / var(--opacity-text));
-  --button-bg: hsl(var(--color-sheet) / var(--opacity-sheet));
-  --button-border: hsl(var(--color-text) / var(--opacity-border));
-  --button-icon: hsl(var(--color-text) / var(--opacity-text));
+  --button-text: var(--color-text);
+  --button-bg: lch(from var(--color-bg) l c h / 0%);
+  --button-border: lch(from var(--color-text) l c h / 70%);
+  --button-icon: var(--color-text);
   
   @media (--dark) {
-    --opacity-sheet: 0%;
-    --opacity-border: 20%;
-    --button-text: hsl(var(--color-text) / var(--opacity-text));
-    --button-bg: hsl(var(--color-text) / var(--opacity-sheet));
-    --button-border: hsl(var(--color-text) / var(--opacity-border));
+    --button-text: var(--color-text);
+    --button-bg: lch(from var(--color-text) l c h / 0%);
+    --button-border: lch(from var(--color-text) l c h / 20%);
   }
 
   color: var(--button-text);
@@ -30,8 +26,6 @@ input[type="submit"] {
   font-family: inherit;
   text-decoration: none;
   transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
-
-  /* border-radius: var(--border-radius-xl); */
   line-height: 1;
   text-transform: uppercase;
 
@@ -45,19 +39,17 @@ input[type="submit"] {
 
   @media (--hover) {
     &:hover {
-      --opacity-sheet: 50%;
-      --opacity-border: 0%;
-      --button-text: hsl(var(--color-sheet) / var(--opacity-text));
-      --button-bg: hsl(var(--color-text) / var(--opacity-sheet));
+      --button-text: var(--color-bg);
+      --button-bg: lch(from var(--color-text) l c h / 50%);
+      --button-border: lch(from var(--color-text) l c h / 0%);
 
       cursor: pointer;
       border-block: var(--border-weight-sm) solid var(--button-border);
       
       @media (--dark) {
-          --opacity-sheet: 0%;
-          --opacity-border: 60%;
-          --button-text: hsl(var(--color-text) / var(--opacity-text));
-          --button-bg: hsl(var(--color-sheet) / var(--opacity-sheet));
+          --button-text: var(--color-text);
+          --button-bg: lch(from var(--color-bg) l c h / 0%);
+          --button-border: lch(from var(--color-text) l c h / 60%);
       }
     }
   }
@@ -75,23 +67,16 @@ input[type="submit"] {
     }
   }
 
-  &.--inverted {
-    --button-text: hsl(var(--color-sheet) / var(--opacity-text));
-    --button-bg: hsl(var(--color-text) / var(--opacity-sheet));
-    --button-border: hsl(var(--color-sheet) / var(--opacity-border));
-    --button-icon: hsl(var(--color-sheet) / var(--opacity-text));
-  }
-
   &.--text-only {
-    --button-text: hsl(var(--color-text) / var(--opacity-text));
+    --button-text: var(--color-text);
     
     border-color: transparent;
     background-color: transparent;
 
     @media (--hover) {
       &:hover {
-        --button-text: hsl(var(--color-accent) / var(--opacity-text));
-        --button-bg: hsl(var(--color-text) / var(--opacity-sheet));
+        --button-text: var(--color-accent);
+        --button-bg: var(--color-text);
 
         border-block-end-color: var(--button-border);
       }

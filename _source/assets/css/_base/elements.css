@@ -2,22 +2,20 @@
 element styles
 ---------------------------------------------------------------------------- */
 
-*,
-*::before,
-*::after {
+:where(*, *::before, *::after)  {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: hsl(var(--color-text) / var(--opacity-text));
+  color: var(--color-text);
   font-variation-settings: "wght" var(--font-weight), "MONO" var(--font-mono);
 
   &::selection {
-    color: hsl(var(--color-sheet) / var(--opacity-text));
-    background-color: hsl(var(--color-text) / var(--opacity-sheet));
+    color: var(--color-bg);
+    background-color: var(--color-text);
   }
   
   &:focus-visible {
-    outline: var(--border-weight-md) hsl(var(--color-accent)) solid;
+    outline: var(--border-weight-md) var(--color-accent) solid;
     outline-offset: var(--border-weight-md);
   }
   
@@ -28,8 +26,8 @@ element styles
 
 html {
   min-height: 100dvh;
-  background-color: hsl(var(--color-sheet) / 100%);
-  accent-color: hsl(var(--color-text));
+  background-color: var(--color-bg);
+  accent-color: var(--color-text);
   overflow-x: clip;
 
   @media (--motion) {
@@ -46,7 +44,7 @@ body {
   font-family: var(--font-main);
   font-size: var(--size-base);
   line-height: var(--leading-fluid);
-  background-color: hsl(var(--color-sheet) / 100%);
+  background-color: var(--color-bg);
 }
 
 main {
@@ -106,7 +104,6 @@ h3 {
 
   margin-block: var(--space-sm) 0;
   font-size: var(--size-md);
-  /* text-transform: uppercase; */
 }
 
 :where(p, ul, ol, dl) {
@@ -154,7 +151,7 @@ small {
 
 a,
 a:visited {
-  color: hsl(var(--color-text) / var(--opacity-text));
+  color: var(--color-text);
   text-decoration-thickness: var(--border-weight-sm);
   text-underline-offset: 0.2rem;
   transition: text-decoration-thickness 0.1s ease;
@@ -162,13 +159,12 @@ a:visited {
 
 a:hover {
   text-decoration-thickness: var(--border-weight-md);
-  text-decoration-color: hsl(var(--color-accent) / var(--opacity-text));
+  text-decoration-color: var(--color-accent);
 }
 
 pre {
-  --bg-color: var(--color-accent);
-  --alpha: 10%;
-  --opacity-border: 5%;
+  --color-bg: lch(from var(--color-accent) l c h / 10%);
+  --color-border: lch(from var(--color-text) l c h / 5%);
 
   margin-block: 0 var(--space-sm);
   margin-inline: calc(var(--space-sm) * -1);
@@ -176,21 +172,20 @@ pre {
   line-height: var(--leading-md);
   overflow: auto;
   border-radius: var(--border-radius-sm);
-  background-color: hsl(var(--bg-color) / var(--alpha));
-  border: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
+  background-color: var(--color-bg);
+  border: var(--border-weight-sm) solid var(--color-border);
 }
 
 code {
-  --bg-color: var(--color-accent);
-  --alpha: 20%;
-  --opacity-border: 10%;
+  --color-bg: lch(from var(--color-accent) l c h / 20%);
+  --color-border: lch(from var(--color-text) l c h / 10%);
 
   font-family: var(--font-code);
   padding: 0.1rem var(--space-xxs);
   font-size: 90%;
   border-radius: var(--border-radius-sm);
-  background-color: hsl(var(--bg-color) / var(--alpha));
-  border: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
+  background-color: var(--color-bg);
+  border: var(--border-weight-sm) solid var(--color-border);
   -webkit-box-decoration-break: clone;
 
   :is(pre) & {
@@ -212,7 +207,7 @@ hr {
   width: 100%;
   margin-block: var(--space-xl);
   border: 0;
-  border-block-start: var(--border-weight-sm) solid hsl(var(--color-text) / var(--opacity-border));
+  border-block-start: var(--border-weight-sm) solid var(--color-text);
   filter: blur(0.1rem);
 }
 
@@ -229,12 +224,12 @@ hr {
 }
 
 :where(input:not([type="range"], [type="button"], [type="submit"]), select, textarea) {
-	--opacity-sheet: 5%;
-	--opacity-border: 50%;
+	--color-bg: lch(from var(--color-text) l c h / 5%);
+  --color-border: lch(from var(--color-text) l c h / 50%);
 	
-	background-color: hsl(var(--color-text) / var(--opacity-sheet));
+	background-color: var(--color-bg);
 	border-radius: var(--border-radius-lg);
-	border: var(--border-weight-md) solid hsl(var(--color-text) / var(--opacity-border));
+	border: var(--border-weight-md) solid var(--color-border);
 	padding: var(--space-sm);
 	margin-block: 0 var(--space-md);
 }
