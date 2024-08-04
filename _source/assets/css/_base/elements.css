@@ -163,8 +163,8 @@ a:hover {
 }
 
 pre {
-  --color-bg: lch(from var(--color-accent) l c h / 10%);
-  --color-border: lch(from var(--color-text) l c h / 5%);
+  --color-bg: oklch(from var(--color-accent) l c h / 10%);
+  --color-border: oklch(from var(--color-text) l c h / 5%);
 
   margin-block: 0 var(--space-sm);
   margin-inline: calc(var(--space-sm) * -1);
@@ -177,8 +177,8 @@ pre {
 }
 
 code {
-  --color-bg: lch(from var(--color-accent) l c h / 20%);
-  --color-border: lch(from var(--color-text) l c h / 10%);
+  --color-bg: oklch(from var(--color-accent) l c h / 20%);
+  --color-border: oklch(from var(--color-text) l c h / 10%);
 
   font-family: var(--font-code);
   padding: 0.1rem var(--space-xxs);
@@ -221,17 +221,44 @@ hr {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 :where(input:not([type="range"], [type="button"], [type="submit"]), select, textarea) {
-	--color-bg: lch(from var(--color-text) l c h / 5%);
-  --color-border: lch(from var(--color-text) l c h / 50%);
+	--color-bg: oklch(from var(--color-text) l c h / 5%);
+  --color-border: oklch(from var(--color-text) l c h / 0%);
 	
 	background-color: var(--color-bg);
-	border-radius: var(--border-radius-lg);
-	border: var(--border-weight-md) solid var(--color-border);
+	border-radius: var(--border-radius-sm);
+	border: var(--border-weight-sm) solid var(--color-border);
 	padding: var(--space-sm);
-	margin-block: 0 var(--space-md);
+
+  &:focus {
+    border-color: oklch(from var(--color-text) l c h / 50%);
+  }
+}
+
+:where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {
+  width: 100%;
+}
+
+:where(input[type="checkbox"], input[type="radio"]) {
+  scale: 1.4;
+  margin-inline-start: var(--space-xxs);
+}
+
+label {
+  display: block;
+  flex-grow: 1;
+}
+
+textarea {
+  width: 100%;
+  field-sizing: content;
+  min-height: var(--space-xl);
 }
 
 [disabled] {
@@ -244,8 +271,4 @@ fieldset {
 
 optgroup {
   font-weight: var(--bold-text);
-}
-
-input[type="checkbox"], input[type="radio"] {
-  scale: 1.5;
 }

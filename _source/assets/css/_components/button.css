@@ -1,15 +1,16 @@
 .button,
+button,
 input[type="submit"] {
   --font-weight: 600;
   --button-text: var(--color-text);
-  --button-bg: lch(from var(--color-bg) l c h / 0%);
-  --button-border: lch(from var(--color-text) l c h / 70%);
+  --button-bg: oklch(from var(--color-bg) l c h / 0%);
+  --button-border: oklch(from var(--color-text) l c h / 70%);
   --button-icon: var(--color-text);
   
   @media (--dark) {
     --button-text: var(--color-text);
-    --button-bg: lch(from var(--color-text) l c h / 0%);
-    --button-border: lch(from var(--color-text) l c h / 20%);
+    --button-bg: oklch(from var(--color-text) l c h / 0%);
+    --button-border: oklch(from var(--color-text) l c h / 20%);
   }
 
   color: var(--button-text);
@@ -40,16 +41,16 @@ input[type="submit"] {
   @media (--hover) {
     &:hover {
       --button-text: var(--color-bg);
-      --button-bg: lch(from var(--color-text) l c h / 50%);
-      --button-border: lch(from var(--color-text) l c h / 0%);
+      --button-bg: oklch(from var(--color-text) l c h / 50%);
+      --button-border: oklch(from var(--color-text) l c h / 0%);
 
       cursor: pointer;
       border-block: var(--border-weight-sm) solid var(--button-border);
       
       @media (--dark) {
           --button-text: var(--color-text);
-          --button-bg: lch(from var(--color-bg) l c h / 0%);
-          --button-border: lch(from var(--color-text) l c h / 60%);
+          --button-bg: oklch(from var(--color-bg) l c h / 0%);
+          --button-border: oklch(from var(--color-text) l c h / 60%);
       }
     }
   }
@@ -61,7 +62,7 @@ input[type="submit"] {
     height: auto;
   }
 
-  &.--fill\@s {
+  &.--fill\@sm {
     @media (--sm) {
       width: 100%;
     }

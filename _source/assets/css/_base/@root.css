@@ -2,10 +2,9 @@
   /* ---------------------------------------------------------------------------
   color
   --------------------------------------------------------------------------- */
-  --color-white: lch(100% 0 0);
-  --color-blush: lch(66% 39 24);
-  --color-indigo: lch(16% 88 302);
-  --color-indigo-600: lch(from var(--color-indigo) 40% c h);
+  --color-white: oklch(100% 0 0);
+  --color-blush: oklch(71% 0.11 20);
+  --color-indigo: oklch(32% 0.16 280);
 
   /* semantic color */
   --color-text: var(--color-indigo);
@@ -24,7 +23,7 @@
   spacing
   --------------------------------------------------------------------------- */
   --space-scale: 2;
-  --space-base: 2rem;
+  --space-base: 1.5rem;
   --space-xxs: calc(var(--space-xs) / var(--space-scale));
   --space-xs: calc(var(--space-sm) / var(--space-scale));
   --space-sm: calc(var(--space-base) / var(--space-scale));
@@ -114,18 +113,18 @@
   shadows
   --------------------------------------------------------------------------- */
   --shadow-color: 220 3% 15%;
-  --shadow-sm: 0 1px 2px -1px lch(var(--color-shadow) / 1%);
+  --shadow-sm: 0 1px 2px -1px oklch(var(--color-shadow) / 1%);
   --shadow-md:
-    0 -1px 3px 0 lch(var(--color-shadow) / 2%),
-    0 1px 2px -5px lch(var(--color-shadow) / 2%),
-    0 2px 5px -5px lch(var(--color-shadow) / 4%),
-    0 4px 12px -5px lch(var(--color-shadow) / 5%),
-    0 12px 15px -5px lch(var(--color-shadow) / 7%);
+    0 -1px 3px 0 oklch(var(--color-shadow) / 2%),
+    0 1px 2px -5px oklch(var(--color-shadow) / 2%),
+    0 2px 5px -5px oklch(var(--color-shadow) / 4%),
+    0 4px 12px -5px oklch(var(--color-shadow) / 5%),
+    0 12px 15px -5px oklch(var(--color-shadow) / 7%);
   --shadow-lg:
-    0 -1px 2px 0 lch(var(--color-shadow) / 3%),
-    0 2px 1px -2px lch(var(--color-shadow) / 4%),
-    0 5px 5px -2px lch(var(--color-shadow) / 5%),
-    0 10px 10px -2px lch(var(--color-shadow) / 6%),
-    0 20px 20px -2px lch(var(--color-shadow) / 7%),
-    0 40px 40px -2px lch(var(--color-shadow) / 8%);
+    0 -1px 2px 0 oklch(var(--color-shadow) / 3%),
+    0 2px 1px -2px oklch(var(--color-shadow) / 4%),
+    0 5px 5px -2px oklch(var(--color-shadow) / 5%),
+    0 10px 10px -2px oklch(var(--color-shadow) / 6%),
+    0 20px 20px -2px oklch(var(--color-shadow) / 7%),
+    0 40px 40px -2px oklch(var(--color-shadow) / 8%);
 }

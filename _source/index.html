@@ -19,7 +19,7 @@ eleventyImport:
 
 <section id="docs" class="grid --dense">
   
-  <nav class="sticky@md start-10 span-3 border-left@md mb-lg pl-md@md" style="mix-blend-mode: difference;">
+  <nav class="sticky@md start-10 span-3 border-left@md mb-lg pl-lg@md" style="mix-blend-mode: difference;">
     <small-details>
       <details>
         <summary class="size-sm weight-400 uppercase tracking-lg pt-xs pb-sm">Using Grease</summary>
@@ -34,7 +34,7 @@ eleventyImport:
     </small-details>
   </nav>
   
-  <article class="start-1 span-9 measure-xl border-left@md pl-md@md">
+  <article class="start-1 span-9 measure-xl border-left@md pl-lg@md">
     {%- for post in collections.docs -%}
       <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
       {{ post.content }}
