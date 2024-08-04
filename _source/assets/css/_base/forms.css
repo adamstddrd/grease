@@ -1,3 +1,6 @@
+form {
+  margin-block: var(--space-sm) var(--space-md);
+}
 label {
   --font-weight: 500;
 
@@ -20,7 +23,7 @@ textarea {
 :where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {
   --font-weight: 400;
   --color-bg: oklch(from var(--color-text) l c h / 5%);
-  --color-border: oklch(from var(--color-text) l c h / 0%);
+  --color-border: oklch(from var(--color-accent) l c h / 0%);
 	
   width: 100%;
 	background-color: var(--color-bg);
@@ -34,7 +37,7 @@ textarea {
 
   &:focus {
     outline: none;
-    border-color: oklch(from var(--color-text) l c h / 50%);
+    border-color: oklch(from var(--color-border) l c h / 100%);
   }
 }
 

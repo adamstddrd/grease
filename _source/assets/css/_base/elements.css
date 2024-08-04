@@ -123,11 +123,11 @@ li {
   position: relative;
 
   &:where(li + li) {
-    margin-block-start: var(--space-xs);
+    margin-block-start: 0;
   }
 
   & :where(ul, ol) {
-    font-size: var(--size-md);
+    margin-block-start: 0;
   }
 }
 
@@ -198,9 +198,22 @@ code {
 }
 
 blockquote {
-  margin: var(--space-md) 0;
+  margin-block: 0 var(--space-sm);
+  padding-inline-start: var(--space-sm);
   font-size: var(--size-md);
   font-style: italic;
+  border-inline-start: var(--border-weight-md) solid var(--color-text);
+
+  > p:has(+ cite) {
+    margin-block-end: 0;
+  }
+
+  cite {
+    --font-weight: 700;
+    display: block;
+    margin-block: 0;
+    font-size: var(--size-sm);
+  }
 }
 
 hr {
@@ -215,4 +228,22 @@ hr {
   max-width: 100%;
   height: auto;
   line-height: var(--leading-fluid);
+}
+
+details {
+  margin-block-end: var(--space-sm);
+
+  &:has(+ &) {
+    margin-block-end: 0;
+  }
+}
+
+dt {
+  --font-weight: 600;
+
+  margin-block-end: 0;
+}
+
+dd {
+  margin-block-end: var(--space-sm);
 }
