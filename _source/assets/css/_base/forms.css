@@ -27,8 +27,7 @@ textarea {
 	
   width: 100%;
 	background-color: var(--color-bg);
-	border-radius: var(--border-radius-sm);
-	border: var(--border-weight-sm) solid var(--color-border);
+	border: var(--border-weight-md) solid var(--color-border);
 	padding: var(--space-sm);
 
   &::placeholder {
@@ -68,14 +67,6 @@ textarea {
   opacity: 0.5;
 }
 
-fieldset {
-  border-radius: var(--border-radius);
-}
-
-optgroup {
-  font-weight: var(--bold-text);
-}
-
 input[type="checkbox"], input[type="radio"] {
   appearance: none;
   display: inline-grid;
@@ -100,8 +91,8 @@ input[type="radio"] {
 
   &::before {
     content: "";
-    width: 0.8em;
-    height: 0.8em;
+    width: 0.7em;
+    height: 0.7em;
     border-radius: 50%;
     scale: 0;
     transition: 100ms transform ease-in-out;
@@ -110,7 +101,6 @@ input[type="radio"] {
 }
 
 input[type="checkbox"] {
-  border-radius: var(--border-radius-sm);
 
   &::before {
     content: "";

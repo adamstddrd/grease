@@ -1,6 +1,6 @@
 ---
-title: Element reference
-description: Default elements in Grease.
+title: Kitchen sink
+description: All of the default elements in Grease.
 layout: page.html
 stylesheet: pages/docs.css
 ---
@@ -57,7 +57,7 @@ stylesheet: pages/docs.css
   <div class="flex gap-sm mb-sm">
     <label>
       <span>Input</span>
-      <input type="text" id="input" placeholder="input text goes here" required>
+      <input type="text" id="input" placeholder="input placeholder" required>
     </label>
     <label>
       <span>Select</span>
@@ -67,13 +67,17 @@ stylesheet: pages/docs.css
           <option>Option 1</option>
           <option>Option 2</option>
           <option>Option 3</option>
+          <optgroup label="Option group">
+            <option value="volvo">Option 4</option>
+            <option value="saab">Option 5</option>
+          </optgroup>
         </select>
       </div>
     </label>
   </div>
   <!-- text areas will automatically grow as lines of text increase -->
   <label for="textarea">Text area</label>
-  <textarea id="textarea"></textarea>
+  <textarea id="textarea" placeholder="textarea placeholder"></textarea>
   <!-- wrap inputs in <label> for bigger click/tap targets -->
   <div class="flex gap-md align-items-center justify-between gap-sm mt-sm">
     <div class="inline-flex gap-sm">
@@ -86,7 +90,7 @@ stylesheet: pages/docs.css
         <input type=radio name="radio-set">
       </label>
       <label>
-        Checkbox <input type=checkbox>
+        checkbox <input type=checkbox>
       </label>
     </div>
     
@@ -112,3 +116,30 @@ stylesheet: pages/docs.css
   <dt>Lorem ipsum dolor sit amet</dt>
   <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
 </dl>
+
+<h2>Grid</h2>
+<section class="grid demo-grid">
+  <div class="bleed">.bleed</div>
+  <div class="bleed-start span-6">.bleed-start</div>
+  <div class="bleed-end start-6">.bleed-end</div>
+  <div class="span-12">.span-12</div>
+  <div class="span-1/2">.span-1/2</div>
+  <div class="span-1/2">.span-1/2</div>
+  <div class="span-1/3">.span-1/3</div>
+  <div class="span-1/3">.span-1/3</div>
+  <div class="span-1/3">.span-1/3</div>
+  <div class="span-1/4">.span-1/4</div>
+  <div class="span-1/4">.span-1/4</div>
+  <div class="span-1/4">.span-1/4</div>
+  <div class="span-1/4">.span-1/4</div>
+  <div class="start-1 span-2">.start-1 .span-2</div>
+  <div class="start-auto span-10">start-auto .span-10</div>
+  <div class="start-1 span-3">start-1 .span-3</div>
+  <div class="start-auto span-9">.start-auto .span-9</div>
+  <div class="start-1 span-4">.start-1 .span-4</div>
+  <div class="start-auto span-8">.start-auto .span-8</div>
+  <div class="start-1 span-5">.start-1 .span-5</div>
+  <div class="start-auto span-7">.start-auto .span-7</div>
+  <div class="start-1 span-6">.start-1 .span-6</div>
+  <div class="start-auto span-6">.start-auto .span-6</div>
+</section>

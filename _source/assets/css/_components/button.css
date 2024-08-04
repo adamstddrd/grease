@@ -21,8 +21,6 @@ input[type="submit"] {
   text-decoration: none;
   transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
   line-height: 1;
-  text-transform: uppercase;
-  border-radius: var(--border-radius-sm);
 
   &:visited {
     color: var(--button-text);

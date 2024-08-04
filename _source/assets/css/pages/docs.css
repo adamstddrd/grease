@@ -11,8 +11,12 @@
     border-block-end: var(--border-weight-md) solid var(--color-text);
     mix-blend-mode: difference;
 
+    @media (--dark) {
+      mix-blend-mode: normal;
+    }
+
     @media (--md) {
-      margin-block: var(--space-xxl) var(--space-xl);
+      margin-block: var(--space-xxxl) var(--space-xl);
     }
   }
   
@@ -50,5 +54,15 @@
       filter: blur(2rem);
       background-color: var(--color-accent);
     }
+  }
+}
+
+.demo-grid {
+  > div {
+    padding: var(--space-sm);
+    color: var(--color-text);
+    background-color: oklch(from var(--color-accent) l c h / 10%);
+    margin-block: var(--space-sm);
+    font-size: var(--size-sm);
   }
 }

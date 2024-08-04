@@ -5,7 +5,7 @@
   --color-white: oklch(100% 0 0);
   --color-blush: oklch(71% 0.11 20);
   --color-indigo: oklch(32% 0.16 280);
-
+  
   /* semantic color */
   --color-text: var(--color-indigo);
   --color-bg: var(--color-white);
@@ -97,7 +97,7 @@
 
   /* border weight */
   --border-weight-sm: 0.0625rem;
-  --border-weight-md: 0.125rem;
+  --border-weight-md: 0.1rem;
   --border-weight-lg: 0.25rem;
 
   /* ---------------------------------------------------------------------------

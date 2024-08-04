@@ -71,7 +71,7 @@ animate-on-scroll {
 h1 {
   --font-weight: 800;
 
-  margin-block: var(--space-xl) var(--space-md);
+  margin-block: var(--space-xxl) var(--space-md);
   font-size: var(--size-xxl);
   letter-spacing: var(--tracking-sm);
 }
@@ -168,10 +168,10 @@ pre {
 
   margin-block: 0 var(--space-sm);
   margin-inline: calc(var(--space-sm) * -1);
-  padding: var(--space-sm);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-sm);
   line-height: var(--leading-md);
   overflow: auto;
-  border-radius: var(--border-radius-sm);
   background-color: var(--color-bg);
   border: var(--border-weight-sm) solid var(--color-border);
 }
@@ -183,7 +183,6 @@ code {
   font-family: var(--font-code);
   padding: 0.1rem var(--space-xxs);
   font-size: 90%;
-  border-radius: var(--border-radius-sm);
   background-color: var(--color-bg);
   border: var(--border-weight-sm) solid var(--color-border);
   -webkit-box-decoration-break: clone;

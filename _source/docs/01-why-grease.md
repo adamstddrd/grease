@@ -1,7 +1,7 @@
 ---
 title: Why Grease?
 ---
-**Grease** takes the friction out of building fast, accessible, aesthetic websites. It combines [11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), & [Esbuild](https://esbuild.github.io/) with a declarative CSS architecture that sets you up for success. Key benefits:
+**Grease** takes the friction out of building fast, accessible, aesthetic websites. It combines [11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), & [Esbuild](https://esbuild.github.io/) with a modern, declarative CSS architecture that sets you up for success. Key benefits:
 
 - **Fast in-browser design.**
   Fast tools (11ty, Esbuild, Lightning CSS) and incremental builds makes designing in browser a joy.
