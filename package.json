@@ -6,7 +6,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-beta.1",
     "@11ty/eleventy-img": "^4.0.2",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.23.0",
     "eslint": "^9.2.0",
     "lightningcss": "^1.18.0",
     "stylelint": "^16.2.0",
