@@ -36,7 +36,8 @@ grid: compose pages
   
   &.--gap-0 { 
     --col-width: calc(var(--width-md) / 12);
-    --gap: 0;
+    --gap-sm: 0;
+    --gap-md: 0;
   }
 
   &.--gap-xs { --gap: var(--size-xs); }
