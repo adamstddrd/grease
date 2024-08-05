@@ -21,8 +21,8 @@ text: decouple semantics from presentation
 .weight-700 { --font-weight: 700; }
 .weight-800 { --font-weight: 800; }
 
-.left { text-align: left; }
-.right { text-align: right; }
+.left { text-align: start; }
+.right { text-align: end; }
 
 .center {
   text-align: center;
@@ -65,7 +65,7 @@ text: decouple semantics from presentation
   .size-xxxl\@md { font-size: var(--size-xxxl); }
   .size-xxxxl\@md { font-size: var(--size-xxxxl); }
 
-  .left\@md { text-align: left; }
-  .right\@md { text-align: right; }
+  .left\@md { text-align: start; }
+  .right\@md { text-align: end; }
   .center\@md { text-align: center; }
 }

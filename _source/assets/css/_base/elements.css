@@ -217,10 +217,9 @@ blockquote {
 
 hr {
   width: 100%;
-  margin-block: var(--space-xl);
+  margin-block: var(--space-lg);
   border: 0;
   border-block-start: var(--border-weight-sm) solid var(--color-text);
-  filter: blur(0.1rem);
 }
 
 :where(img, embed, object, svg, video) {

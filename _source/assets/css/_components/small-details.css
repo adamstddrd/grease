@@ -4,7 +4,7 @@ small-details {
   & details {
     @media (--sm) {
       &[open] {
-        margin-bottom: var(--space-md);
+        margin-block-end: var(--space-md);
 
         & summary::before {
           transform: rotate(90deg);
@@ -36,7 +36,7 @@ small-details {
         content: "";
         width: 0.75em;
         height: 0.75em;
-        top: -0.075em;
+        inset-block-start: -0.075em;
         background-color: var(--color-text);
         clip-path: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%);
       }

@@ -35,13 +35,13 @@ padding: adjust space inside elements
 .pl-xl { padding-inline-start: var(--space-xl); }
 .pl-xxl { padding-inline-start: var(--space-xxl); }
 
-.pr-0{ padding-right: 0; }
-.pr-xs { padding-right: var(--space-xs); }
-.pr-sm { padding-right: var(--space-sm); }
-.pr-md { padding-right: var(--space-md); }
-.pr-lg { padding-right: var(--space-lg); }
-.pr-xl { padding-right: var(--space-xl); }
-.pr-xxl { padding-right: var(--space-xxl); }
+.pr-0{ padding-inline-end: 0; }
+.pr-xs { padding-inline-end: var(--space-xs); }
+.pr-sm { padding-inline-end: var(--space-sm); }
+.pr-md { padding-inline-end: var(--space-md); }
+.pr-lg { padding-inline-end: var(--space-lg); }
+.pr-xl { padding-inline-end: var(--space-xl); }
+.pr-xxl { padding-inline-end: var(--space-xxl); }
 
 @media (--md) {
   .p-0\@md { padding: 0; }
