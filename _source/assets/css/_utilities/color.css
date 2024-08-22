@@ -39,3 +39,6 @@ modify color on the fly
 .border-30 { border-color: oklch(from var(--color-text) l c h / 30%); }
 .border-20 { border-color: oklch(from var(--color-text) l c h / 20%); }
 .border-10 { border-color: oklch(from var(--color-text) l c h / 10%); }
+
+.blend-difference { mix-blend-mode: difference; }
+.blend-multiply { mix-blend-mode: multiply; }

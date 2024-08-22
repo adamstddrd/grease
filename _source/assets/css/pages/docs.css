@@ -6,9 +6,10 @@
     
     position: relative;
     margin-block: var(--space-xxl) 0;
+    margin-inline-start: calc(var(--space-sm) * -1);
     font-size: min(18vw, 10em);
     line-height: 1;
-    border-block-end: var(--border-weight-md) solid var(--color-text);
+    /* border-block-end: var(--border-weight-md) solid var(--color-text); */
     mix-blend-mode: difference;
 
     @media (--dark) {
@@ -16,13 +17,13 @@
     }
 
     @media (--md) {
-      margin-block: var(--space-xxl) var(--space-xl);
+      margin-block: var(--space-xxl) 0;
     }
   }
   
   .grease-marks {
     width: 100%;
-    rotate: 10deg;
+    rotate: 15deg;
     pointer-events: none;
     position: absolute;
     display: grid;

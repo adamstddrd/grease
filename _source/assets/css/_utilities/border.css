@@ -51,3 +51,14 @@ border: adjust border appearance
   }
 }
 
+.border-weight-sm {
+  border-width: var(--border-weight-sm);
+}
+
+.border-weight-md {
+  border-width: var(--border-weight-md);
+}
+
+.border-weight-lg {
+  border-width: var(--border-weight-lg);
+}
