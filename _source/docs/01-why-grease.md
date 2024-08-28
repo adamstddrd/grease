@@ -2,7 +2,7 @@
 title: Why Grease?
 ---
 
-At its core, Grease is a toolkit for building the modern web, using the modern web. It combines a trio of lightweight, ultra-fast tools ([11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), and [Esbuild](https://esbuild.github.io/)) with a modern, declarative CSS architecture that sets you up for success. It's light enough for small sites, but has everything you need to tackle large, ambitious projects without getting bogged down in slow build times, dependency hell, and bloated front-ends. Key benefits:
+Grease is a toolkit for building the modern web, using the modern web platform. It combines a trio of ultra-fast tools ([11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), and [Esbuild](https://esbuild.github.io/)) with a declarative CSS architecture that sets you up for success and frees you from browser micro-management. Grease is light enough for small sites, but has everything you need to tackle large projects without getting bogged down in slow builds, dependency hell, and bloated front-ends. Key benefits:
 
 - **Fast in-browser design.**
   Fast tools and a custom-property-powered composable CSS architecture makes designing in browser a joy, and scaffolding new pages *fast*.

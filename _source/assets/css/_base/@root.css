@@ -2,19 +2,59 @@
   /* ---------------------------------------------------------------------------
   color
   --------------------------------------------------------------------------- */
-  --color-white: oklch(100% 0 0);
-  --color-blush: oklch(71% 0.11 20);
-  --color-indigo: oklch(32% 0.16 280);
+  
+  --color-white: oklch(100% 0 210);
+  --color-black: oklch(0% 0 210);
+  --color-neutral: oklch(50% 0.02 210);
+  --color-primary: oklch(32% 0.16 210);
+  --color-secondary: oklch(71% 0.11 20);
+
+  --color-neutral-50: oklch(from var(--color-neutral) 98% calc(c / 4) h);
+  --color-neutral-100: oklch(from var(--color-neutral) 95% calc(c / 2) h);
+  --color-neutral-200: oklch(from var(--color-neutral) 90% calc(c / 1.5) h);
+  --color-neutral-300: oklch(from var(--color-neutral) 80% c h);
+  --color-neutral-400: oklch(from var(--color-neutral) 70% c h);
+  --color-neutral-500: oklch(from var(--color-neutral) 60% c h);
+  --color-neutral-600: oklch(from var(--color-neutral) 50% c h);
+  --color-neutral-700: oklch(from var(--color-neutral) 40% c h);
+  --color-neutral-800: oklch(from var(--color-neutral) 30% calc(c / 1.5) h);
+  --color-neutral-900: oklch(from var(--color-neutral) 20% calc(c / 2) h);
+
+  --color-primary-50: oklch(from var(--color-primary) 98% calc(c / 6) h);
+  --color-primary-100: oklch(from var(--color-primary) 95% calc(c / 2) h);
+  --color-primary-100: oklch(from var(--color-primary) 90% calc(c / 1.5) h);
+  --color-primary-200: oklch(from var(--color-primary) 80% c h);
+  --color-primary-300: oklch(from var(--color-primary) 70% c h);
+  --color-primary-400: oklch(from var(--color-primary) 60% c h);
+  --color-primary-500: oklch(from var(--color-primary) 50% c h);
+  --color-primary-600: oklch(from var(--color-primary) 40% c h);
+  --color-primary-700: oklch(from var(--color-primary) 30% c h);
+  --color-primary-800: oklch(from var(--color-primary) 20% calc(c / 1.5) h);
+  --color-primary-900: oklch(from var(--color-primary) 10% calc(c / 2) h);
+
+  --color-secondary-50: oklch(from var(--color-secondary) 98% calc(c / 6) h);
+  --color-secondary-100: oklch(from var(--color-secondary) 95% calc(c / 3) h);
+  --color-secondary-200: oklch(from var(--color-secondary) 90% calc(c / 1.5) h);
+  --color-secondary-300: oklch(from var(--color-secondary) 80% c h);
+  --color-secondary-400: oklch(from var(--color-secondary) 70% c h);
+  --color-secondary-500: oklch(from var(--color-secondary) 60% c h);
+  --color-secondary-600: oklch(from var(--color-secondary) 50% c h);
+  --color-secondary-700: oklch(from var(--color-secondary) 40% c h);
+  --color-secondary-800: oklch(from var(--color-secondary) 30% calc(c / 1.5) h);
+  --color-secondary-900: oklch(from var(--color-secondary) 20% calc(c / 2) h);
   
   /* semantic color */
-  --color-text: var(--color-indigo);
+  --color-text: var(--color-primary-700);
   --color-bg: var(--color-white);
-  --color-accent: var(--color-blush);
-  --color-shadow: 0% 0 0;
+  --color-accent: var(--color-secondary-400);
+  --color-border: var(--color-text);
+  --color-shadow: var(--color-black);
 
   @media (--dark) {
     --color-text: var(--color-white);
-    --color-bg: var(--color-indigo);
+    --color-bg: var(--color-primary-800);
+    --color-border: var(--color-primary-600);
+    --color-accent: var(--color-secondary-300);
   }
   
   color-scheme: light dark;
@@ -113,18 +153,18 @@
   shadows
   --------------------------------------------------------------------------- */
   --shadow-color: 220 3% 15%;
-  --shadow-sm: 0 1px 2px -1px oklch(var(--color-shadow) / 1%);
+  --shadow-sm: 0 1px 2px -1px oklch(from var(--color-shadow) l c h / 10%);
   --shadow-md:
-    0 -1px 3px 0 oklch(var(--color-shadow) / 2%),
-    0 1px 2px -5px oklch(var(--color-shadow) / 2%),
-    0 2px 5px -5px oklch(var(--color-shadow) / 4%),
-    0 4px 12px -5px oklch(var(--color-shadow) / 5%),
-    0 12px 15px -5px oklch(var(--color-shadow) / 7%);
+    0 -1px 3px 0 oklch(from var(--color-shadow) l c h / 2%),
+    0 1px 2px -5px oklch(from var(--color-shadow) l c h / 2%),
+    0 2px 5px -5px oklch(from var(--color-shadow) l c h / 4%),
+    0 4px 12px -5px oklch(from var(--color-shadow) l c h / 5%),
+    0 12px 15px -5px oklch(from var(--color-shadow) l c h / 7%);
   --shadow-lg:
-    0 -1px 2px 0 oklch(var(--color-shadow) / 3%),
-    0 2px 1px -2px oklch(var(--color-shadow) / 4%),
-    0 5px 5px -2px oklch(var(--color-shadow) / 5%),
-    0 10px 10px -2px oklch(var(--color-shadow) / 6%),
-    0 20px 20px -2px oklch(var(--color-shadow) / 7%),
-    0 40px 40px -2px oklch(var(--color-shadow) / 8%);
+    0 -1px 2px 0 oklch(from var(--color-shadow) l c h / 3%),
+    0 2px 1px -2px oklch(from var(--color-shadow) l c h / 4%),
+    0 5px 5px -2px oklch(from var(--color-shadow) l c h / 5%),
+    0 10px 10px -2px oklch(from var(--color-shadow) l c h / 6%),
+    0 20px 20px -2px oklch(from var(--color-shadow) l c h / 7%),
+    0 40px 40px -2px oklch(from var(--color-shadow) l c h / 8%);
 }

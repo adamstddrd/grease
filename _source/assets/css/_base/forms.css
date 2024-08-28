@@ -22,8 +22,12 @@ textarea {
 
 :where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {
   --font-weight: 400;
-  --color-bg: oklch(from var(--color-text) l c h / 5%);
-  --color-border: oklch(from var(--color-accent) l c h / 0%);
+  --color-bg: var(--color-neutral-50);
+  --color-border: oklch(from var(--color-primary-500) l c h / 0%);
+
+  @media (--dark) {
+    --color-bg: oklch(from var(--color-primary-600) l c h / 30%);
+  }
 	
   width: 100%;
 	background-color: var(--color-bg);

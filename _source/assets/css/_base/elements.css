@@ -24,6 +24,7 @@ html {
   background-color: var(--color-bg);
   accent-color: var(--color-text);
   overflow-x: clip;
+  animation: hue-shift 5s linear infinite;
 
   @media (--motion) {
     scroll-behavior: smooth;
@@ -153,38 +154,51 @@ a,
 a:visited {
   color: var(--color-text);
   text-decoration-thickness: var(--border-weight-sm);
-  text-underline-offset: 0.2rem;
-  transition: text-decoration-thickness 0.1s ease;
+  text-underline-offset: 0.15rem;
+  text-decoration-color: var(--color-accent);
+  transition: text-decoration-thickness 0.1s ease, color 0.1s ease;
 }
 
-a:hover {
-  text-decoration-thickness: var(--border-weight-md);
-  text-decoration-color: var(--color-accent);
+@media (--hover) {
+  a:hover {
+    --color-text: oklch(from var(--color-accent) calc(l / 1.5) c h);
+
+    @media (--dark) {
+      --color-text: oklch(from var(--color-accent) calc(l * 1.5) c h);
+    }
+
+    text-decoration-thickness: var(--border-weight-md);
+  }
+}
+
+pre,
+code {
+  --color-bg: var(--color-secondary-50);
+  --color-border: var(--color-secondary-100);
+
+  @media (--dark) {
+    --color-bg: oklch(from var(--color-secondary-300) l c h / 10%);
+    --color-border: oklch(from var(--color-secondary-300) l c h / 10%);
+  }
+
+  background-color: var(--color-bg);
+  border: var(--border-weight-sm) solid var(--color-border);
+  border-radius: var(--border-radius-sm);
 }
 
 pre {
-  --color-bg: oklch(from var(--color-accent) l c h / 10%);
-  --color-border: oklch(from var(--color-text) l c h / 5%);
-
   margin-block: 0 var(--space-sm);
   margin-inline: calc(var(--space-sm) * -1);
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
   line-height: var(--leading-md);
   overflow: auto;
-  background-color: var(--color-bg);
-  border: var(--border-weight-sm) solid var(--color-border);
 }
 
 code {
-  --color-bg: oklch(from var(--color-accent) l c h / 10%);
-  --color-border: oklch(from var(--color-text) l c h / 5%);
-
   font-family: var(--font-code);
   padding: 0.1rem var(--space-xxs);
   font-size: 90%;
-  background-color: var(--color-bg);
-  border: var(--border-weight-sm) solid var(--color-border);
   -webkit-box-decoration-break: clone;
 
   :is(pre) & {
@@ -197,11 +211,11 @@ code {
 }
 
 blockquote {
-  margin-block: 0 var(--space-sm);
+  margin-block: var(--space-xs) var(--space-sm);
   padding-inline-start: var(--space-sm);
   font-size: var(--size-md);
   font-style: italic;
-  border-inline-start: var(--border-weight-md) solid var(--color-text);
+  border-inline-start: var(--border-weight-md) solid var(--color-border);
 
   > p:has(+ cite) {
     margin-block-end: 0;
@@ -219,7 +233,7 @@ hr {
   width: 100%;
   margin-block: var(--space-lg);
   border: 0;
-  border-block-start: var(--border-weight-sm) solid var(--color-text);
+  border-block-start: var(--border-weight-sm) solid var(--color-border);
 }
 
 :where(img, embed, object, svg, video) {

@@ -1,14 +1,19 @@
 ---
-title: Color
+title: Color & opacity
 ---
-Grease takes a structured, semantic approach to color. Hues are mapped to semantic variables like `--color-text`, `--color-bg`, and `--color-accent` and assembled in color declarations with companion `--opacity-{text/bg/accent}` variables.
+Grease includes a fully featured color system built around [relative color syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors) that lets you work with color in a flexible way without having to micro-manage color themes and light/dark modes. Here's how it works:
+1. Update `--color-primary`, `--color-secondary`, and `--color-neutral` in `@root.css` to automatically update the corresponding 50-900 values.
+2. Set default colors for elements in light and dark mode by mapping colors like `--color-primary-500` to "parts" like `--color-text`, `--color-bg`, `--color-accent`.
+3. Use parts in your component definitions to create theme-friendly components, using the `--dark` custom media query when you need to make a dark mode adjustment.
+4. Use color and opacity utilities to make context-specific adjustments and one-offs.
+5. Create additional themes by adding a class to the HTML element that redefines `--color-primary`, `--color-secondary`, and `--color-neutral`.
 
-Dark mode and alternate themes are implemented by redefining the color variables within those contexts. In practice, this approach means that you never have to micro-manage color at the component level.
+### Color & opacity utilities
 
-### Color utilities
-
-- `.{text/bg/border}-color` sets a remap target
-- `.use-{text/bg/accent}` remaps the targeted color
+- `.color` does nothing on it's own; use with modifiers below
+- `.--{text/bg/border/accent}` sets a remap target
+- `.--use-{text/bg/border/accent}` remaps to a different part's color
+- `.--use-{primary/secondary/neutral}-{50-900}` remaps to a specific color
 - `.set-{text/bg}` sets color
 - `.text-{10-90}` adjusts text opacity
 - `.bg-{10-90}` adjusts background opacity
