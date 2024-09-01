@@ -1,0 +1,12 @@
+.high-contrast {
+  --c-white: oklch(100% 0 240);
+  --c-black: oklch(0% 0 240);
+  --c-neutral: oklch(30% 0 240);
+  --c-primary: oklch(30% 0.36 180);
+  --c-secondary: oklch(85% 0.36 240);
+  --color-text: light-dark(var(--c-black), var(--c-white));
+  --color-bg: light-dark(var(--c-white), var(--c-black));
+  --color-border: light-dark(var(--c-black), var(--c-white));
+  --color-accent: light-dark(var(--c-secondary), var(--c-secondary));
+  --color-subtle: light-dark(oklch(from var(--c-neutral) var(--c-400)), oklch(from var(--c-neutral) var(--c-600)));
+}

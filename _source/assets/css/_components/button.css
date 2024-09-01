@@ -57,8 +57,8 @@ input[type="submit"] {
 
     @media (--hover) {
       &:hover {
-        --button-bg: var(--color-primary-500);
-        --button-border: var(--color-primary-400);
+        --button-bg: oklch(from var(--c-primary) var(--c-500));
+        --button-border: oklch(from var(--c-primary) var(--c-400));
       }
     }
   }

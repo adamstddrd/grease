@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" {% if theme %} class="{{ theme }}"{% endif %}>
 
   <head>
     
@@ -45,7 +45,7 @@
 
   </head>
 
-  <body {% if page.class %} class="{{ page.class }}"{% endif %}>
+  <body {% if class %} class="{{ class }}"{% endif %}>
 
     <scroll-sentinel></scroll-sentinel>
 

@@ -11,47 +11,59 @@ modify color on the fly
   &.--border { --color-border: var(--property); }
   &.--accent { --color-accent: var(--property); }
   &.--shadow { --color-shadow: var(--property); }
+
   /* ... and map it do a different color */
   &.--use-text { --property: var(--color-text); }
   &.--use-bg { --property: var(--color-bg); }
   &.--use-border { --property: var(--color-border); }
   &.--use-accent { --property: var(--color-accent); }
   &.--use-shadow { --property: var(--color-shadow); }
+
   /* contrasting colors */
-  &.--use-contrast-light { --property: oklch(from var(--color-bg) calc(l - .60) c h); }
-  &.--use-contrast-dark { --property: oklch(from var(--color-bg) calc(l + .60) c h); }
-  /* text colors */
-  &.--use-primary-50 { --property: var(--color-primary-50); }
-  &.--use-primary-100 { --property: var(--color-primary-100); }
-  &.--use-primary-200 { --property: var(--color-primary-200); }
-  &.--use-primary-300 { --property: var(--color-primary-300); }
-  &.--use-primary-400 { --property: var(--color-primary-400); }
-  &.--use-primary-500 { --property: var(--color-primary-500); }
-  &.--use-primary-600 { --property: var(--color-primary-600); }
-  &.--use-primary-700 { --property: var(--color-primary-700); }
-  &.--use-primary-800 { --property: var(--color-primary-800); }
-  &.--use-primary-900 { --property: var(--color-primary-900); }
-  /* bg colors */
-  &.--use-neutral-50 { --property: var(--color-neutral-50); }
-  &.--use-neutral-100 { --property: var(--color-neutral-100); }
-  &.--use-neutral-100 { --property: var(--color-neutral-100); }
-  &.--use-neutral-200 { --property: var(--color-neutral-200); }
-  &.--use-neutral-300 { --property: var(--color-neutral-300); }
-  &.--use-neutral-400 { --property: var(--color-neutral-400); }
-  &.--use-neutral-500 { --property: var(--color-neutral-500); }
-  &.--use-neutral-600 { --property: var(--color-neutral-600); }
-  &.--use-neutral-700 { --property: var(--color-neutral-700); }
-  &.--use-neutral-800 { --property: var(--color-neutral-800); }
-  &.--use-neutral-900 { --property: var(--color-neutral-900); }
-  /* accent colors */
-  &.--use-secondary-50 { --property: var(--color-secondary-50); }
-  &.--use-secondary-100 { --property: var(--color-secondary-100); }
-  &.--use-secondary-200 { --property: var(--color-secondary-200); }
-  &.--use-secondary-300 { --property: var(--color-secondary-300); }
-  &.--use-secondary-400 { --property: var(--color-secondary-400); }
-  &.--use-secondary-500 { --property: var(--color-secondary-500); }
-  &.--use-secondary-600 { --property: var(--color-secondary-600); }
-  &.--use-secondary-700 { --property: var(--color-secondary-700); }
-  &.--use-secondary-800 { --property: var(--color-secondary-800); }
-  &.--use-secondary-900 { --property: var(--color-secondary-900); }
+  &.--contrast-light { --property: oklch(from var(--color-bg) calc(l/6) c h); }
+  &.--contrast-dark { --property: oklch(from var(--color-bg) calc(l*6) c h); }
+
+  /* primary colors */
+  &.--primary-50 { --property: oklch(from var(--c-primary) var(--c-50)); }
+  &.--primary-100 { --property: oklch(from var(--c-primary) var(--c-100)); }
+  &.--primary-200 { --property: oklch(from var(--c-primary) var(--c-200)); }
+  &.--primary-300 { --property: oklch(from var(--c-primary) var(--c-300)); }
+  &.--primary-400 { --property: oklch(from var(--c-primary) var(--c-400)); }
+  &.--primary-500 { --property: oklch(from var(--c-primary) var(--c-500)); }
+  &.--primary-600 { --property: oklch(from var(--c-primary) var(--c-600)); }
+  &.--primary-700 { --property: oklch(from var(--c-primary) var(--c-700)); }
+  &.--primary-800 { --property: oklch(from var(--c-primary) var(--c-800)); }
+  &.--primary-900 { --property: oklch(from var(--c-primary) var(--c-900)); }
+
+  /* secondary colors */
+  &.--secondary-50 { --property: oklch(from var(--c-secondary) var(--c-50)); }
+  &.--secondary-100 { --property: oklch(from var(--c-secondary) var(--c-100)); }
+  &.--secondary-200 { --property: oklch(from var(--c-secondary) var(--c-200)); }
+  &.--secondary-300 { --property: oklch(from var(--c-secondary) var(--c-300)); }
+  &.--secondary-400 { --property: oklch(from var(--c-secondary) var(--c-400)); }
+  &.--secondary-500 { --property: oklch(from var(--c-secondary) var(--c-500)); }
+  &.--secondary-600 { --property: oklch(from var(--c-secondary) var(--c-600)); }
+  &.--secondary-700 { --property: oklch(from var(--c-secondary) var(--c-700)); }
+  &.--secondary-800 { --property: oklch(from var(--c-secondary) var(--c-800)); }
+  &.--secondary-900 { --property: oklch(from var(--c-secondary) var(--c-900)); }
+
+  /* neutral colors */
+  &.--neutral-50 { --property: oklch(from var(--c-neutral) var(--c-50)); }
+  &.--neutral-100 { --property: oklch(from var(--c-neutral) var(--c-100)); }
+  &.--neutral-200 { --property: oklch(from var(--c-neutral) var(--c-200)); }
+  &.--neutral-300 { --property: oklch(from var(--c-neutral) var(--c-300)); }
+  &.--neutral-400 { --property: oklch(from var(--c-neutral) var(--c-400)); }
+  &.--neutral-500 { --property: oklch(from var(--c-neutral) var(--c-500)); }
+  &.--neutral-600 { --property: oklch(from var(--c-neutral) var(--c-600)); }
+  &.--neutral-700 { --property: oklch(from var(--c-neutral) var(--c-700)); }
+  &.--neutral-800 { --property: oklch(from var(--c-neutral) var(--c-800)); }
+  &.--neutral-900 { --property: oklch(from var(--c-neutral) var(--c-900)); }
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
 }

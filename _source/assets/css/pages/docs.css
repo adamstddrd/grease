@@ -16,7 +16,7 @@
     }
 
     @media (--md) {
-      margin-block: var(--space-xxl) 0;
+      margin-block: var(--space-xxxl) 0;
     }
   }
   
@@ -41,13 +41,9 @@
       width: 5rem;
       height: 5rem;
       background-color: var(--color-text);
-      border-radius: 100%;      
+      background-color: light-dark(var(--color-text), var(--color-bg));
+      border-radius: 100%;
       filter: blur(1rem);
-      
-      @media (--dark) {
-        background-color: var(--color-bg);
-      }
-      
     }
 
     & > .shape-1 {
@@ -58,11 +54,10 @@
 
   .demo-grid {
     > div {
-      --color-bg: var(--color-secondary-50);
-
-      @media (--dark) {
-        --color-bg: var(--color-primary-700);
-      }
+      --color-bg: light-dark(
+        oklch(from var(--c-neutral) var(--c-100)),
+        oklch(from var(--c-primary) var(--c-700))
+      );
 
       padding: var(--space-sm);
       color: var(--color-text);
