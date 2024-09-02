@@ -7,11 +7,12 @@
   /* default theme colors */
   --c-white: oklch(100% 0 210);
   --c-black: oklch(0% 0 210);
-  --c-neutral: oklch(50% 0.02 210);
+  --c-neutral: oklch(80% 0.01 210);
   --c-primary: oklch(30% 0.16 210);
   --c-secondary: oklch(70% 0.11 20);
 
   /* color steps */
+  --c-0: 100% 0 h;
   --c-50: 99% calc(c/16) h;
   --c-100: 94% calc(c/4) h;
   --c-200: 88% calc(c/2) h;
@@ -24,6 +25,13 @@
   --c-800: 20% calc(c/1.5) h;
   --c-900: 15% calc(c/2) h;
 
+  --c-lighten-sm: calc(l*2) c h;
+  --c-lighten-md: calc(l*4) c h;
+  --c-lighten-lg: calc(l*8) c h;
+  --c-darken-sm: calc(l/2) c h;
+  --c-darken-md: calc(l/4) c h;
+  --c-darken-lg: calc(l/8) c h;
+
   /* semantic colors */
   --color-text: light-dark(
     var(--c-primary),
@@ -33,17 +41,17 @@
     var(--c-white),
     oklch(from var(--c-primary) var(--c-800))
   );
-  --color-border: light-dark(
-    oklch(from var(--c-neutral) var(--c-400)),
-    oklch(from var(--c-primary) var(--c-600))
-  );
   --color-accent: light-dark(
     var(--c-secondary),
     oklch(from var(--c-secondary) var(--c-400))
   );
+  --color-border: light-dark(
+    var(--c-neutral),
+    oklch(from var(--c-primary) var(--c-600))
+  );
   --color-subtle: light-dark(
-    oklch(from var(--c-neutral) var(--c-400)),
-    oklch(from var(--c-neutral) var(--c-600))
+    oklch(from var(--c-neutral) var(--c-50)),
+    oklch(from var(--c-primary) var(--c-900))
   );
   --color-shadow: var(--c-black);
 

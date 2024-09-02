@@ -25,16 +25,14 @@ textarea {
 }
 
 :where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {
-  --font-weight: 400;
-  --color-bg: light-dark(
-    oklch(from var(--c-neutral) var(--c-50)),
-    oklch(from var(--c-primary) var(--c-900) / 60%)
-  );
+  --color-bg: var(--color-subtle);
 	
   width: 100%;
 	background-color: var(--color-bg);
 	border: var(--border-weight-sm) solid var(--color-border);
+  border-radius: var(--border-radius-sm);
 	padding: var(--space-sm);
+  font-weight: 400;
 
   &::placeholder {
     color: var(--color-text);

@@ -10,6 +10,7 @@ input[type="submit"] {
   color: var(--button-text);
   background-color: var(--button-bg);
   border: var(--border-weight-sm) solid var(--button-border);
+  border-radius: var(--border-radius-sm);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;

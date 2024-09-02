@@ -7,7 +7,7 @@ default element styles
   margin: 0;
   padding: 0;
   color: var(--color-text);
-  font-variation-settings: "wght" var(--font-weight), "MONO" var(--font-mono);
+  /* font-variation-settings: "wght" var(--font-weight), "MONO" var(--font-mono); */
 
   &::selection {
     color: var(--color-bg);
@@ -41,7 +41,6 @@ body {
   font-family: var(--font-main);
   font-size: var(--size-base);
   line-height: var(--leading-fluid);
-  background-color: var(--color-bg);
 }
 
 main {
@@ -72,25 +71,22 @@ animate-on-scroll {
 }
 
 h1 {
-  --font-weight: 800;
-
   margin-block: var(--space-xxl) var(--space-md);
   font-size: var(--size-xxl);
+  font-weight: 800;
   letter-spacing: var(--tracking-sm);
 }
 
 h2 {
-  --font-weight: 800;
-
   margin-block: var(--space-lg) var(--space-sm);
   font-size: var(--size-xl);
+  font-weight: 800;
 }
 
 h3 {
-  --font-weight: 700;
-
   margin-block: var(--space-md) 0;
   font-size: var(--size-lg);
+  font-weight: 700;
   
   h2 + & {
     margin-block: 0;
@@ -98,10 +94,9 @@ h3 {
 }
 
 :where(h4, h5, h6) {
-  --font-weight: 600;
-
   margin-block: var(--space-sm) 0;
   font-size: var(--size-md);
+  font-weight: 600;
 }
 
 :where(p, ul, ol, dl, pre, blockquote) {
@@ -153,7 +148,7 @@ li {
 
 b,
 strong {
-  --font-weight: 700;
+  font-weight: 700;
 }
 
 i,
@@ -251,8 +246,8 @@ blockquote {
   border-inline-start: var(--border-weight-md) solid var(--color-border);
 
   > p {
-    --font-weight: 200;
     font-size: var(--size-xl);
+    font-weight: 200;
   }
 
   > p:has(+ cite) {
@@ -260,10 +255,10 @@ blockquote {
   }
 
   cite {
-    --font-weight: 700;
     display: block;
     margin-block: 0;
     font-size: var(--size-xs);
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
   }
@@ -291,9 +286,8 @@ details {
 }
 
 dt {
-  --font-weight: 600;
-
   margin-block-end: 0;
+  font-weight: 600;
 }
 
 dd {

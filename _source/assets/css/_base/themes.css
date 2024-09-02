@@ -8,5 +8,8 @@
   --color-bg: light-dark(var(--c-white), var(--c-black));
   --color-border: light-dark(var(--c-black), var(--c-white));
   --color-accent: light-dark(var(--c-secondary), var(--c-secondary));
-  --color-subtle: light-dark(oklch(from var(--c-neutral) var(--c-400)), oklch(from var(--c-neutral) var(--c-600)));
+  --color-subtle: light-dark(
+    oklch(from var(--c-neutral) var(--c-100)),
+    oklch(from var(--c-neutral) var(--c-800))
+  );
 }
