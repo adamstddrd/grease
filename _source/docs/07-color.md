@@ -2,11 +2,11 @@
 title: Color & opacity
 ---
 Grease includes a fully featured color system built around modern features like [relative color](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors), [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark), and [color-mix()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) that lets you implement page theme, component themes, and light/dark mode without having to micro-manage color. Here's how it works:
-1. Update `--c-primary`, `--c-secondary`, and `--c-neutral` in `@root.css` to set base colors.
-2. Set default element colors in light and dark mode by mapping colors and steps like `--c-primary` and `--c-300` to functional colors like `--color-text` using relative color.
+1. Update `--primary`, `--secondary`, and `--neutral` in `@root.css` to set base colors.
+2. Set default element colors in light and dark mode by mapping colors and steps like `--primary` and `--300` to functional colors like `--color-text` using relative color.
 3. Use functional colors in your components to create theme-friendly components, using `light-dark()` when you need to make a dark mode adjustment.
 4. Use color and opacity utilities to make context-specific adjustments and one-offs.
-5. Create additional themes by creating a class in `css/_base/themes.css` that redefines `--c-primary`, `--c-secondary`, `--c-neutral`, and the functional colors. Add the class to the HTML element using the `theme` front matter key for a page-level theme, or to elements for component-level theming. You can also use `.light` or `.dark` to force light or dark mode at the page or component level.
+5. Create additional themes by creating a class in `css/_base/themes.css` that redefines `--primary`, `--secondary`, `--neutral`, and the functional colors. Add the class to the HTML element using the `theme` front matter key for a page-level theme, or to elements for component-level theming. You can also use `.light` or `.dark` to force light or dark mode at the page or component level.
 
 ### Color & opacity utilities
 

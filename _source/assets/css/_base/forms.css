@@ -29,7 +29,7 @@ textarea {
 	
   width: 100%;
 	background-color: var(--color-bg);
-	border: var(--border-weight-sm) solid var(--color-border);
+	border: var(--border-weight-md) solid var(--color-border);
   border-radius: var(--border-radius-sm);
 	padding: var(--space-sm);
   font-weight: 400;
@@ -40,7 +40,7 @@ textarea {
   }
 
   &:focus {
-    --color-border: oklch(from var(--c-primary) var(--c-300));
+    --color-border: oklch(from var(--primary) var(--300));
 
     outline: none;    
   }

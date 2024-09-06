@@ -55,8 +55,8 @@
   .demo-grid {
     > div {
       --color-bg: light-dark(
-        oklch(from var(--c-neutral) var(--c-100)),
-        oklch(from var(--c-primary) var(--c-700))
+        oklch(from var(--neutral) var(--100)),
+        oklch(from var(--primary) var(--700))
       );
 
       padding: var(--space-sm);

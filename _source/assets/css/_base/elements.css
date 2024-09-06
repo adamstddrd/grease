@@ -167,7 +167,7 @@ mark {
 
 a,
 a:visited {
-  --color-accent: oklch(from var(--c-secondary) var(--c-300));
+  /* --color-accent: oklch(from var(--secondary) var(--300)); */
 
   color: var(--color-text);
   text-decoration-thickness: var(--border-weight-md);
@@ -179,8 +179,8 @@ a:visited {
 @media (--hover) {
   a:hover {
     --color-text: light-dark(
-      oklch(from var(--c-secondary) var(--c-500)), 
-      oklch(from var(--c-secondary) var(--c-200))
+      oklch(from var(--secondary) var(--500)), 
+      oklch(from var(--secondary) var(--200))
     );
 
     text-decoration-thickness: var(--border-weight-lg);
@@ -190,16 +190,16 @@ a:visited {
 pre,
 code {
   --color-text: light-dark(
-    oklch(from var(--c-primary) var(--c-700)), 
-    oklch(from var(--c-primary) var(--c-200))
+    oklch(from var(--primary) var(--700)), 
+    oklch(from var(--primary) var(--200))
   );
   --color-bg: light-dark(
-    oklch(from var(--c-secondary) var(--c-50)), 
-    oklch(from var(--c-primary) var(--c-900))
+    oklch(from var(--secondary) var(--50)), 
+    oklch(from var(--primary) var(--900))
   );
   --color-border: light-dark(
-    oklch(from var(--c-secondary) var(--c-100)),
-    oklch(from var(--c-primary) var(--c-500) / 10%)
+    oklch(from var(--secondary) var(--100)),
+    oklch(from var(--primary) var(--500) / 10%)
   );
 
   background-color: var(--color-bg);
@@ -237,7 +237,7 @@ code {
 }
 
 blockquote {
-  --color-border: oklch(from var(--c-primary) var(--c-300));
+  --color-border: oklch(from var(--primary) var(--300));
 
   margin-block: var(--space-sm) var(--space-md);
   margin-inline: calc(var(--space-sm) * -1) 0;

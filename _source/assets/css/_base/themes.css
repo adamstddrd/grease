@@ -1,15 +1,13 @@
 .high-contrast {
-  --c-white: oklch(100% 0 240);
-  --c-black: oklch(0% 0 240);
-  --c-neutral: oklch(30% 0 240);
-  --c-primary: oklch(30% 0.36 180);
-  --c-secondary: oklch(85% 0.36 240);
-  --color-text: light-dark(var(--c-black), var(--c-white));
-  --color-bg: light-dark(var(--c-white), var(--c-black));
-  --color-border: light-dark(var(--c-black), var(--c-white));
-  --color-accent: light-dark(var(--c-secondary), var(--c-secondary));
+  --neutral: oklch(30% 0 260);
+  --primary: oklch(30% 0.36 190);
+  --secondary: oklch(85% 0.36 260);
+  --color-text: light-dark(black, white);
+  --color-bg: light-dark(white, black);
+  --color-border: light-dark(black, white);
+  --color-accent: var(--secondary);
   --color-subtle: light-dark(
-    oklch(from var(--c-neutral) var(--c-100)),
-    oklch(from var(--c-neutral) var(--c-800))
+    oklch(from var(--neutral) var(--100)),
+    oklch(from var(--neutral) var(--800))
   );
 }
