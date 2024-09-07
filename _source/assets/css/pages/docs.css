@@ -16,7 +16,7 @@
     }
 
     @media (--md) {
-      margin-block: var(--space-xxl) 0;
+      margin-block: var(--space-xxxl) 0;
     }
   }
 
@@ -28,7 +28,7 @@
   
   .grease-marks {
     width: 100%;
-    rotate: 20deg;
+    /* rotate: 20deg; */
     pointer-events: none;
     position: absolute;
     display: grid;
@@ -39,8 +39,8 @@
     inset-inline-end: 0;
 
     @media (--md) {
-      inset-block-start: 0rem;
-      inset-inline-end: -30rem;
+      inset-block-start: 0;
+      inset-inline-end: -10rem;
     }
     
     & > * {
@@ -51,11 +51,21 @@
       border-radius: 100%;
       mix-blend-mode: normal;
       opacity: 0.75;
+
+      @media (--dark) {
+        mix-blend-mode: overlay;
+      }
     }
 
     & > .shape-1 {
       background-color: var(--color-accent);
       box-shadow: 0 0 3rem 3.5rem var(--color-accent);
+      opacity: 0.5;
+      mix-blend-mode: overlay;
+
+      @media (--dark) {
+        mix-blend-mode: normal;
+      }
     }
   }
 
