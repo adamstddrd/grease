@@ -30,7 +30,7 @@ export default class RandomShapes extends HTMLElement {
     const classes = ['shape-1', 'shape-2', 'shape-3', 'shape-4'];
     for (let i = 0; i < this.quantity; i += 1) {
       const rClass = classes[Math.floor(Math.random() * classes.length)];
-      const rS = RandomShapes.random(this.scale / 5, this.scale * 5);
+      const rS = RandomShapes.random(this.scale, this.scale * 5);
       const rX = RandomShapes.random(this.jitter * -1, this.jitter);
       const rY = RandomShapes.random((this.jitter / 2) * -1, this.jitter / 2);
       const shape = document.createElement('div');

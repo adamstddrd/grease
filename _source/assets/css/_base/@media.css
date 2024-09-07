@@ -1,8 +1,8 @@
 /* ----------------------------------------------------------------------------
 custom media queries
 ---------------------------------------------------------------------------- */
-@custom-media --sm (max-width: 44.999em);
-@custom-media --md (min-width: 45em);
+@custom-media --sm (max-width: 49.999em);
+@custom-media --md (min-width: 50em);
 @custom-media --lg (min-width: 90em);
 @custom-media --dark (prefers-color-scheme: dark);
 @custom-media --motion (prefers-reduced-motion: no-preference);

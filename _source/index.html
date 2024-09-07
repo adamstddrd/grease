@@ -9,9 +9,8 @@ eleventyImport:
 # canonical: https://example.com/page.html
 ---
 
-<header class="grid mb-sm mb-lg@md">
-  <random-shapes class="grease-marks bleed" quantity="100" scale="100" jitter="30"></random-shapes>
-  <random-shapes class="grease-marks bleed" quantity="100" scale="2" jitter="40"></random-shapes>
+<header class="grid mb-lg@md">
+  <random-shapes class="grease-marks bleed" quantity="50" scale="100" jitter="30"></random-shapes>
   <h1 class="hero span-12">
     <span>Grease</span>
   </h1>
@@ -20,11 +19,11 @@ eleventyImport:
 
 <section id="docs" class="grid --dense">
   
-  <nav class="sticky@md start-10 span-3 border-left@md mb-lg pl-lg@md" style="mix-blend-mode: difference;">
+  <nav class="docs-block sticky@md start-10 span-3 border-left@md mb-lg">
     <small-details>
       <details>
         <summary class="size-sm weight-400 uppercase tracking-lg pt-xs pb-sm">Using Grease</summary>
-        <ul class="unlisted size-md weight-600">
+        <ul class="unlisted size-sm weight-600">
         {%- for post in collections.docs -%}
           <li class="mb-xs">
             <a class="pt-xs pb-xs pr-xs" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
@@ -35,7 +34,7 @@ eleventyImport:
     </small-details>
   </nav>
   
-  <article class="start-1 span-9 measure-xl border-left@md pl-lg@md">
+  <article class="docs-block start-1 span-9 measure-xl border-left@md">
     {%- for post in collections.docs -%}
       <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
       {{ post.content }}

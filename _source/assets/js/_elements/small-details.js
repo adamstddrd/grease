@@ -22,7 +22,7 @@ export default class SmallDetails extends HTMLElement {
   connectedCallback() {
     this.details = this.querySelector('details');
     this.summary = this.querySelector('summary');
-    this.mediaQuery = window.matchMedia('(max-width: 44.999em)');
+    this.mediaQuery = window.matchMedia('(max-width: 49.999em)');
     this.update(this.mediaQuery.matches);
     this.listen();
   }
