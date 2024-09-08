@@ -28,7 +28,7 @@
   
   .grease-marks {
     width: 100%;
-    /* rotate: 20deg; */
+    rotate: 20deg;
     pointer-events: none;
     position: absolute;
     display: grid;
@@ -72,7 +72,7 @@
   .demo-grid {
     > div {
       --color-bg: light-dark(
-        oklch(from var(--neutral) var(--100)),
+        oklch(from var(--neutral) var(--200) / 50%),
         oklch(from var(--primary) var(--700))
       );
 
@@ -86,7 +86,6 @@
 
   .demo-chips {
     display: flex;
-    gap: var(--space-sm);
     flex-wrap: wrap;
     margin-block: 0 var(--space-sm);
     list-style: none;
@@ -97,7 +96,6 @@
       padding: var(--space-sm);
       color: var(--color-text);
       background-color: var(--color-bg);
-      border-radius: var(--border-radius-sm);
       font-size: var(--size-xs);
     }
   }

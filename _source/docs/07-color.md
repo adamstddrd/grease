@@ -1,12 +1,24 @@
 ---
 title: Color & opacity
 ---
-Grease includes a fully featured color system built around modern features like [relative color](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors), [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark), and [color-mix()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) that lets you implement page theme, component themes, and light/dark mode without having to micro-manage color. Here's how it works:
-1. Update `--primary`, `--secondary`, and `--neutral` in `@root.css` to set base colors.
-2. Set default element colors in light and dark mode by mapping colors and steps like `--primary` and `--300` to functional colors like `--color-text` using relative color.
-3. Use functional colors in your components to create theme-friendly components, using `light-dark()` when you need to make a dark mode adjustment.
-4. Use color and opacity utilities to make context-specific adjustments and one-offs.
-5. Create additional themes by creating a class in `css/_base/themes.css` that redefines `--primary`, `--secondary`, `--neutral`, and the functional colors. Add the class to the HTML element using the `theme` front matter key for a page-level theme, or to elements for component-level theming. You can also use `.light` or `.dark` to force light or dark mode at the page or component level.
+Grease includes a fully featured color system built around modern features like [relative color](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors), [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark), and [color-mix()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) that lets you implement page themes, component themes, and light/dark mode without having to micro-manage color. Here's how it works:
+1. Set your base colors, like `--primary`, `--secondary`, and `--neutral` in `@root.css`. These colors, along with `--50` to `--900` tint & shade presets form your base color system.
+2. Create color "presets" like `--color-text`, `--color-bg`, etc with baked in light and dark support, and use them liberally to reduce micro-management and make theme-friendly components. To define presets, use relative color syntax along with light-dark(), like so:
+```
+--color-text: light-dark(
+  oklch(from var(--primary) var(--700)),
+  oklch(from var(--primary) var(--300) / 50%)
+)
+```
+3. Make component-level exceptions by using the same strategy above.
+4. Use color and opacity utilities to make context-specific adjustments and one-offs. Remember that you can always use `calc()` expressions instead of tint & shade presents, like so:
+```
+border-color: light-dark(
+  oklch(from var(--secondary) calc(l * 1.5) c h),
+  oklch(from var(--secondary) calc(l / 1.5) c h)
+)
+```
+5. Create additional themes by creating a class in `css/_base/themes.css` that redefines your base colors and your color presets. Add the class to the HTML element using the `theme` front matter key for a page-level theme, or to elements for component-level theming. You can also use `.light` or `.dark` to force light or dark mode at the page or component level.
 
 ### Color & opacity utilities
 

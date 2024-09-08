@@ -5,9 +5,9 @@ default form styles
 form {
   margin-block: var(--space-sm) var(--space-md);
 }
-label {
-  --font-weight: 500;
 
+label {
+  font-weight: 500;
   display: block;
   flex-grow: 1;
 }
@@ -24,11 +24,9 @@ textarea {
   font-weight: inherit;
 }
 
-:where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {
-  --color-bg: var(--color-subtle);
-	
+:where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {	
   width: 100%;
-	background-color: var(--color-bg);
+	background-color: var(--color-subtle);
 	border: var(--border-weight-md) solid var(--color-border);
   border-radius: var(--border-radius-sm);
 	padding: var(--space-sm);
@@ -40,9 +38,11 @@ textarea {
   }
 
   &:focus {
-    --color-border: oklch(from var(--primary) var(--300));
-
-    outline: none;    
+    border-color: light-dark(
+      oklch(from var(--primary) var(--400)),
+      oklch(from var(--primary) var(--300))
+    );
+    outline: none;
   }
 }
 

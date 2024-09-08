@@ -104,7 +104,6 @@ h3 {
   margin-inline: auto;
   line-height: var(--leading-fluid);
   overflow-wrap: break-word;
-
   color: light-dark(
     var(--color-text),
     color-mix(in oklch, var(--color-text), var(--color-bg) 10%)
@@ -167,8 +166,6 @@ mark {
 
 a,
 a:visited {
-  /* --color-accent: oklch(from var(--secondary) var(--300)); */
-
   color: var(--color-text);
   text-decoration-thickness: var(--border-weight-md);
   text-underline-offset: 0.15rem;
@@ -178,38 +175,29 @@ a:visited {
 
 @media (--hover) {
   a:hover {
-    --color-text: light-dark(
+    color: light-dark(
       oklch(from var(--secondary) var(--500)), 
       oklch(from var(--secondary) var(--200))
     );
-
     text-decoration-thickness: var(--border-weight-lg);
   }
 }
 
 pre,
 code {
-  --color-text: light-dark(
+  color: light-dark(
     oklch(from var(--primary) var(--700)), 
     oklch(from var(--primary) var(--200))
   );
-  --color-bg: light-dark(
-    oklch(from var(--secondary) var(--50)), 
-    oklch(from var(--primary) var(--900))
+  background-color: light-dark(
+    oklch(from var(--secondary) calc(l*1.5) calc(c/4) h), 
+    oklch(from var(--primary) calc(l/2) calc(c/4) h)
   );
-  --color-border: light-dark(
-    oklch(from var(--secondary) var(--100)),
-    oklch(from var(--primary) var(--500) / 10%)
+  border: var(--border-weight-sm) solid light-dark(
+    oklch(from var(--secondary) calc(l*1.35) calc(c/4) h),
+    oklch(from var(--primary) var(--500) / 20%)
   );
-
-  background-color: var(--color-bg);
-  border: var(--border-weight-sm) solid var(--color-border);
   border-radius: var(--border-radius-sm);
-  
-
-  &:not(pre > code) {
-    box-shadow: var(--shadow-sm);
-  }
 }
 
 pre {
@@ -237,13 +225,11 @@ code {
 }
 
 blockquote {
-  --color-border: oklch(from var(--primary) var(--300));
-
   margin-block: var(--space-sm) var(--space-md);
   margin-inline: calc(var(--space-sm) * -1) 0;
   padding-inline-start: var(--space-sm);
   font-size: var(--size-md);
-  border-inline-start: var(--border-weight-md) solid var(--color-border);
+  border-inline-start: var(--border-weight-md) solid oklch(from var(--primary) var(--300));
 
   > p {
     font-size: var(--size-xl);

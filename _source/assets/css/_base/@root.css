@@ -23,7 +23,7 @@
   --primary: oklch(30% 0.16 210);
   --secondary: oklch(70% 0.11 20);
 
-  /* semantic colors */
+  /* preset colors */
   --color-text: light-dark(
     var(--primary),
     white

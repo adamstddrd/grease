@@ -9,7 +9,7 @@ grid: compose pages
   --col-count: 12;
   --gutter-count: calc(var(--col-count) - 1);
   --col-width: calc((var(--width-md) - (var(--gap-md) * 11)) / 12);
-  --default-columns: 2 / span 10;
+  --default-columns: 3 / span 10;
 
   display: grid;
   grid-template-columns: 1fr var(--width-sm) 1fr;
