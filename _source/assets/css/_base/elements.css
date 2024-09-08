@@ -20,6 +20,17 @@ default element styles
   }
 }
 
+@media (--motion) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.1s;
+  }
+}
+
 html {
   min-height: 100dvh;
   background-color: var(--color-bg);
