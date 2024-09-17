@@ -16,7 +16,7 @@
     }
 
     @media (--md) {
-      margin-block: var(--space-xxxl) 0;
+      margin-block: var(--space-xxl) 0;
     }
   }
 
