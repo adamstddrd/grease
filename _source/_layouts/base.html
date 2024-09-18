@@ -29,13 +29,24 @@
     <link rel="mask-icon" href="/assets/icons/favicon.svg" color="#000000">
     <link rel="apple-touch-icon" href="/assets/icons/favicon-196x196.png">
 
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation-duration: 0.1s;
+      }
+
+      {% getBundle "css" %}
+    </style>
+
     <link rel="stylesheet" href="/assets/css/main.css" media="all">
 
     {%- if stylesheet -%}
     <link rel="stylesheet" href="/assets/css/{{ stylesheet }}" media="all">
     {%- endif -%}
-
-    <style>{% getBundle "css" %}</style>
 
     <script src="/assets/js/app.js" type="module"></script>
 
