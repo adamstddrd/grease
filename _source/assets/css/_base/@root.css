@@ -3,6 +3,7 @@
   color
   --------------------------------------------------------------------------- */
   color-scheme: light dark;
+  interpolate-size: allow-keywords;
 
   /* tints & shades */
   --0: 100% 0 h;

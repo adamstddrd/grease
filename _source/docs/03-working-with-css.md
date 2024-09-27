@@ -3,7 +3,7 @@ title: Working with CSS
 ---
 Grease uses a practical, declarative approach to writing modern CSS, using three breakpoints (small, medium, large), and three [cascade layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer):
 
-1. `base` is where you define the default presentation characteristics for your project. Tailoring the custom media queries, custom properties, typeface, and base elements alone should get you halfway there. A [kitchen sink demo](/demo) is included to make it easy to see the impact of your changes across a wide variety of elements.
+1. `base` is where you define the default presentation characteristics for your project. Tailoring the custom media queries, custom properties, typeface, and base elements alone should get you halfway there. A [kitchen sink demo](/kitchen-sink/) is included to make it easy to see the impact of your changes across a wide variety of elements.
 2. `components` is where you define **commonly repeated objects** that live across your project. Components care little about their position on any given page.
 3. `utilities` is for CSS that **manipulates elements and components**. Grease aims to cover the small subset of attributes that are highly variable (page position, type characteristics, spacing) as opposed to making every property available. This approaches delivers the key benefits of utility css (breaking the linear ratio between page count and lines of CSS, less repetition) without the tooling complexity of build-dependent approaches.
 
