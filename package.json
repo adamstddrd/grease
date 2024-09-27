@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0-beta.1",
+    "@11ty/eleventy": "3.0.0-alpha.20",
     "@11ty/eleventy-img": "^4.0.2",
     "esbuild": "^0.24.0",
     "eslint": "^9.11.1",
@@ -14,7 +14,7 @@
     "stylelint-config-standard": "^36.0.0"
   },
   "scripts": {
-    "start": "eleventy --serve --quiet",
+    "start": "eleventy --serve --incremental --quiet",
     "publish:stage": "ELEVENTY_ENV=stage eleventy",
     "publish:prod": "ELEVENTY_ENV=prod eleventy",
     "lint:css": "stylelint \"_source/**/*.css\" --fix",
