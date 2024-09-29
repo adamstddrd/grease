@@ -10,14 +10,14 @@ Grease includes a fully featured color system built around modern features like 
   oklch(from var(--primary) var(--300) / 50%)
 )
 ```
-3. Make component-level exceptions by using the same strategy above.
-4. Use color and opacity utilities to make context-specific adjustments and one-offs. Remember that you can always use `calc()` expressions instead of tint & shade presents, like so:
+3. Make component-level exceptions by using the same strategy above. Remember that you can always use `calc()` expressions instead of tint & shade presents, like so:
 ```
 border-color: light-dark(
   oklch(from var(--secondary) calc(l * 1.5) c h),
   oklch(from var(--secondary) calc(l / 1.5) c h)
 )
 ```
+4. Use color and opacity utilities to make context-specific adjustments and one-offs.
 5. Create additional themes by creating a class in `css/_base/themes.css` that redefines your base colors and your color presets. Add the class to the HTML element using the `theme` front matter key for a page-level theme, or to elements for component-level theming. You can also use `.light` or `.dark` to force light or dark mode at the page or component level.
 
 ### Color & opacity utilities
