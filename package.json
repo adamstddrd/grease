@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.20",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^4.0.2",
     "esbuild": "^0.24.0",
     "eslint": "^9.11.1",
