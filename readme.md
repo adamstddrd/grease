@@ -1,13 +1,19 @@
 # Grease
 [Grease](https://grease.aaadaaam.com) takes the friction out of building fast, accessible, aesthetic websites. It combines [11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), & [esbuild](https://esbuild.github.io/) with a declarative CSS architecture that sets you up for success.
 
-## Why Grease?
-* **designed for in-browser design** - Ultra-fast tools (11ty, Esbuild, Lightning CSS) plus incremental builds makes designing in browser a joy.
-* **fluid, variable type** - A straightforward fluid type system pre-loaded for variable fonts keeps your type game on point.
-* **no fillers, no additives** - Grease keeps it light so you can focus on building instead of messing around with tools and frameworks.
-* **zero-config entrypoints** - Import everything into monolithic CSS and JS bundles? Break out page bundles? Inline critical CSS? YES!
-* **no production surprises** - CSS and JS are treated the same on dev as on production (bundled, minified, etc). What you see is what you’ll get.
-* **batteries included** - Production-ready odds & ends come in the box. Sitemaps, canonical URLs, search index blocking, etc.
+Grease combines a trio of ultra-fast tools ([11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), and [Esbuild](https://esbuild.github.io/)) with a modern, declarative CSS architecture that frees you from browser micro-management. It's light enough for small sites, but has everything you need to tackle large projects without getting bogged down in slow builds, dependency hell, and bloated front-ends. Key benefits:
 
-## Local dev
-[Install Node](https://nodejs.org/en/) if you haven’t already. Once you’ve cloned this repo, run `npm install` to download and install dependencies. To run the local dev server, run `npm start`. Check your terminal output for the URL, but it’ll default to [http://localhost:8080](http://localhost:8080) unless that port is already in use. 
+- **Fast in-browser design.**
+  Fast tools and a custom-property-powered composable CSS architecture makes designing in browser a joy, and scaffolding new pages *fast*.
+- **Zero-config entrypoints.**
+  Import everything into monolithic CSS and JS bundles? Break out page bundles? Inline critical CSS? YES.
+- **No fillers, no additives.**
+  Grease takes a platform-first approach and keeps dependencies to minimum so you can focus on building, not bundling.
+- **Expressive color.**
+  Grease includes a comprehensive color system that lets you easily support light & dark mode, custom themes, composable themes, and all of the above.
+- **Fluid, variable type.**
+  A straightforward fluid type system makes it easy to keep your type game on point across a wide range of devices and screen sizes.
+- **Batteries included.**
+  Production-ready odds & ends come in the box. Sitemaps, canonical URL support, no-index support, metadata, etc.
+
+Visit [https://grease.aaadaaam.com](https://grease.aaadaaam.com) for docs and demos.
