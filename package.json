@@ -1,17 +1,17 @@
 {
   "name": "grease",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
+  "type": "module",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-beta.3",
-    "@11ty/eleventy-img": "^3.0.0",
-    "esbuild": "^0.19.2",
-    "eslint": "^8.5.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.24.2",
-    "lightningcss": "^1.18.0",
-    "stylelint": "^15.10.3",
-    "stylelint-config-standard": "^34.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^4.0.2",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.11.1",
+    "lightningcss": "^1.27.0",
+    "sharp": "^0.33.5",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard": "^36.0.0"
   },
   "scripts": {
     "start": "eleventy --serve --incremental --quiet",

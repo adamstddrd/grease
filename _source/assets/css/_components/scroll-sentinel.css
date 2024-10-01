@@ -7,6 +7,6 @@ the page scroll element created by has-scrolled.js
   visibility: hidden;
   width: 1px;
   height: 1px;
-  top: 0;
-  left: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
 }

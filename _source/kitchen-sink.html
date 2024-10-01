@@ -1,0 +1,321 @@
+---
+title: Kitchen sink
+description: All of the default elements in Grease.
+layout: page.html
+stylesheet: pages/docs.css
+themeList:
+  - "light"
+  - "dark"
+  - "high-contrast light"
+  - "high-contrast dark"
+  - "low-contrast light"
+  - "low-contrast dark"
+  - "primary light"
+  - "primary dark"
+  - "secondary light"
+  - "secondary dark"
+# theme: "low-contrast"
+# theme: "high-contrast"
+---
+
+<section class="grid pb-lg">
+
+  <h1>Heading level 1</h1>
+
+  <p>These are links: <a href="#">link 1</a>, <a href="#">link 2</a>. Mouse hover to see effects. Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. In id risus quis purus mollis lobortis vel ac tellus. Nam pharetra lorem quis dui commodo dapibus. Curabitur aliquet sapien vitae ligula pretium sollicitudin. Sed sed magna eu risus placerat gravida non sit amet augue. Morbi volutpat lobortis imperdiet. Sed elit purus, commodo a mi in, condimentum sagittis urna. Etiam condimentum pharetra cursus. Aliquam erat volutpat. In vel diam nulla. Praesent faucibus augue quis dui vehicula, a consequat est fringilla. Sed nec nisi fermentum, maximus nunc ac, hendrerit lorem. Proin mollis metus in erat dictum egestas.</p>
+
+  <p>Quisque laoreet tincidunt massa, non pulvinar eros euismod sit amet. Maecenas non lorem vitae lorem condimentum posuere. Maecenas ac lectus elit. Nullam feugiat scelerisque interdum. Nullam volutpat tincidunt viverra. Suspendisse egestas venenatis orci. Nunc vehicula ut dolor aliquet finibus.</p>
+
+  <blockquote>
+    <p>Those people who think they know everything are a great annoyance to those of us who do.</p>
+    <cite>Isaac Asimov</cite>
+  </blockquote>
+
+  <p>This is inline code <code>&lt;div&gt;div element&lt;/div&gt;</code>. And below is block code.</p>
+
+  <pre><code class="language-html">&lt;section class="grid"&gt;
+    &lt;div class="start-1 span-6"&gt;&lt;/div&gt;
+    &lt;div class="start-auto bleed-end"&gt;&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+  <p>Normal, <abbr title="Abbreviations">abbr</abbr>, <del>del</del>, <dfn>dfn</dfn>, <em>em</em>, <ins>ins</ins>, <mark>mark</mark>, <s>strike through</s>, <small>small</small>, <strong>strong</strong>, <sub>sub</sub>, <sup>sup</sup>, <u>u</u></p>
+
+  <h2>Heading level 2</h2>
+
+  <ul>
+    <li>Quisque laoreet tincidunt massa, non pulvinar eros euismod sit amet. Maecenas non lorem vitae lorem condimentum posuere. Maecenas ac lectus elit. Nullam feugiat scelerisque interdum. Nullam volutpat tincidunt viverra.</li>
+    <li>Maecenas non lorem vitae lorem condimentum posuere. Maecenas ac lectus elit.
+      <ul>
+        <li>Quisque laoreet tincidunt massa, non pulvinar eros euismod sit amet.</li>
+        <li>Maecenas non lorem vitae lorem condimentum posuere. Maecenas ac lectus elit.</li>
+      </ul>
+    </li>
+    <li>Quisque laoreet tincidunt massa, non pulvinar eros euismod sit amet.</li>
+  </ul>
+
+  <ol>
+    <li>Quisque laoreet tincidunt massa, non pulvinar eros euismod sit amet. Maecenas non lorem vitae lorem condimentum posuere. Maecenas ac lectus elit. Nullam feugiat scelerisque interdum. Nullam volutpat tincidunt viverra.</li>
+    <li>Maecenas non lorem vitae lorem condimentum posuere. Maecenas ac lectus elit.
+      <ol>
+        <li>Quisque laoreet tincidunt massa, non pulvinar eros euismod sit amet.</li>
+        <li>Maecenas non lorem vitae lorem condimentum posuere. Maecenas ac lectus elit.</li>
+      </ol>
+    </li>
+    <li>Quisque laoreet tincidunt massa, non pulvinar eros euismod sit amet.</li>
+  </ol>
+
+  <h3>Heading level 3</h3>
+
+  <form class="" action="">
+    <!-- use the flex utility to put multiple form elements in a row -->
+    <div class="flex gap-sm mb-sm">
+      <label>
+        <span>Input</span>
+        <input type="text" id="input" placeholder="input placeholder" required>
+      </label>
+      <label>
+        <span>Select</span>
+        <div class="select">
+          <select>
+            <option value="" disabled selected hidden>Pick an option...</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <optgroup label="Option group">
+              <option value="volvo">Option 4</option>
+              <option value="saab">Option 5</option>
+            </optgroup>
+          </select>
+        </div>
+      </label>
+    </div>
+    <!-- text areas will automatically grow as lines of text increase -->
+    <label for="textarea-1">Text area</label>
+    <textarea id="textarea-1" placeholder="textarea placeholder"></textarea>
+    <!-- wrap inputs in <label> for bigger click/tap targets -->
+    <div class="flex gap-md align-items-center justify-between gap-sm mt-sm">
+      <div class="inline-flex gap-sm">
+        <label>
+          radio 1
+          <input type=radio name="radio-set">
+        </label>
+        <label>
+          radio 2
+          <input type=radio name="radio-set">
+        </label>
+        <label>
+          checkbox <input type=checkbox>
+        </label>
+      </div>
+      
+      <button class="button --primary --fill@sm">Button</button>
+    </div>
+  </form>
+
+  <hr>
+
+  <h4>Heading level 4-6</h4>
+
+  <details>
+    <summary>Question 1</summary>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#" onclick="return false;">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+  </details>
+
+  <details>
+    <summary>Question 2</summary>
+    <p>Duis consequat metus et eros rutrum, interdum facilisis urna interdum. Etiam facilisis diam in libero varius ultricies id id est. Sed lacinia pellentesque sem vel sagittis.</p>
+  </details>
+
+  <dl>
+    <dt>Definition list</dt>
+    <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+    <dt>Lorem ipsum dolor sit amet</dt>
+    <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+  </dl>
+
+</section>
+
+<section class="grid set-bg dark pb-lg">
+  <h2>Colors</h2>
+  <ul class="demo-chips span-10">
+    <li class="color --bg --neutral-50">
+      <span class="color --text --contrast-light">neutral 50</span>
+    </li>
+    <li class="color --bg --neutral-100">
+      <span class="color --text --contrast-light">neutral 100</span>
+    </li>
+    <li class="color --bg --neutral-200">
+      <span class="color --text --contrast-light">neutral 200</span>
+    </li>
+    <li class="color --bg --neutral-300">
+      <span class="color --text --contrast-light">neutral 300</span>
+    </li>
+    <li class="color --bg --neutral-400">
+      <span class="color --text --contrast-light">neutral 400</span>
+    </li>
+    <li class="color --bg --neutral-500">
+      <span class="color --text --contrast-dark">neutral 500</span>
+    </li>
+    <li class="color --bg --neutral-600">
+      <span class="color --text --contrast-dark">neutral 600</span>
+    </li>
+    <li class="color --bg --neutral-700">
+      <span class="color --text --contrast-dark">neutral 700</span>
+    </li>
+    <li class="color --bg --neutral-800">
+      <span class="color --text --contrast-dark">neutral 800</span>
+    </li>
+    <li class="color --bg --neutral-900">
+      <span class="color --text --contrast-dark">neutral 900</span>
+    </li>
+  </ul>
+
+  <ul class="demo-chips span-10">
+    <li class="color --bg --primary-50">
+      <span class="color --text --contrast-light">primary 50</span>
+    </li>
+    <li class="color --bg --primary-100">
+      <span class="color --text --contrast-light">primary 100</span>
+    </li>
+    <li class="color --bg --primary-200">
+      <span class="color --text --contrast-light">primary 200</span>
+    </li>
+    <li class="color --bg --primary-300">
+      <span class="color --text --contrast-light">primary 300</span>
+    </li>
+    <li class="color --bg --primary-400">
+      <span class="color --text --contrast-light">primary 400</span>
+    </li>
+    <li class="color --bg --primary-500">
+      <span class="color --text --contrast-dark">primary 500</span>
+    </li>
+    <li class="color --bg --primary-600">
+      <span class="color --text --contrast-dark">primary 600</span>
+    </li>
+    <li class="color --bg --primary-700">
+      <span class="color --text --contrast-dark">primary 700</span>
+    </li>
+    <li class="color --bg --primary-800">
+      <span class="color --text --contrast-dark">primary 800</span>
+    </li>
+    <li class="color --bg --primary-900">
+      <span class="color --text --contrast-dark">primary 900</span>
+    </li>
+  </ul>
+
+  <ul class="demo-chips span-10">
+    <li class="color --bg --secondary-50">
+      <span class="color --text --contrast-light">accent 50</span>
+    </li>
+    <li class="color --bg --secondary-100">
+      <span class="color --text --contrast-light">accent 100</span>
+    </li>
+    <li class="color --bg --secondary-200">
+      <span class="color --text --contrast-light">accent 200</span>
+    </li>
+    <li class="color --bg --secondary-300">
+      <span class="color --text --contrast-light">accent 300</span>
+    </li>
+    <li class="color --bg --secondary-400">
+      <span class="color --text --contrast-light">accent 400</span>
+    </li>
+    <li class="color --bg --secondary-500">
+      <span class="color --text --contrast-dark">accent 500</span>
+    </li>
+    <li class="color --bg --secondary-600">
+      <span class="color --text --contrast-dark">accent 600</span>
+    </li>
+    <li class="color --bg --secondary-700">
+      <span class="color --text --contrast-dark">accent 700</span>
+    </li>
+    <li class="color --bg --secondary-800">
+      <span class="color --text --contrast-dark">accent 800</span>
+    </li>
+    <li class="color --bg --secondary-900">
+      <span class="color --text --contrast-dark">accent 900</span>
+    </li>
+  </ul>
+</section>
+
+
+<section class="grid demo-grid">
+  <h2>Grid</h2>
+  <div class="bleed"><a href="#">.bleed</a></div>
+  <div class="bleed-start span-6">.bleed-start</div>
+  <div class="bleed-end start-6">.bleed-end</div>
+  <div class="span-12">.span-12</div>
+  <div class="span-1/2">.span-1/2</div>
+  <div class="span-1/2">.span-1/2</div>
+  <div class="span-1/3">.span-1/3</div>
+  <div class="span-1/3">.span-1/3</div>
+  <div class="span-1/3">.span-1/3</div>
+  <div class="span-1/4">.span-1/4</div>
+  <div class="span-1/4">.span-1/4</div>
+  <div class="span-1/4">.span-1/4</div>
+  <div class="span-1/4">.span-1/4</div>
+  <div class="start-1 span-2">.start-1 .span-2</div>
+  <div class="start-auto span-10">start-auto .span-10</div>
+  <div class="start-1 span-3">start-1 .span-3</div>
+  <div class="start-auto span-9">.start-auto .span-9</div>
+  <div class="start-1 span-4">.start-1 .span-4</div>
+  <div class="start-auto span-8">.start-auto .span-8</div>
+  <div class="start-1 span-5">.start-1 .span-5</div>
+  <div class="start-auto span-7">.start-auto .span-7</div>
+  <div class="start-1 span-6">.start-1 .span-6</div>
+  <div class="start-auto span-6">.start-auto .span-6</div>
+</section>
+
+<section class="grid">
+  <h2>Themes</h2>
+</section>
+
+{% for theme in themeList %}
+  <section class="grid set-bg pt-md pb-md {{ theme }}">
+    <h3>{{ theme }}</h3>
+    <p>Consectetur <a href="#">adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This is inline code <code>&lt;div&gt;div element&lt;/div&gt;</code></p>
+    <form class="" action="">
+      <!-- use the flex utility to put multiple form elements in a row -->
+      <div class="flex gap-sm mb-sm">
+        <label>
+          <span>Input</span>
+          <input type="text" placeholder="input placeholder" required>
+        </label>
+        <label>
+          <span>Select</span>
+          <div class="select">
+            <select>
+              <option value="" disabled selected hidden>Pick an option...</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <optgroup label="Option group">
+                <option value="volvo">Option 4</option>
+                <option value="saab">Option 5</option>
+              </optgroup>
+            </select>
+          </div>
+        </label>
+      </div>
+      <!-- text areas will automatically grow as lines of text increase -->
+      <label for="textarea">Text area</label>
+      <textarea placeholder="textarea placeholder"></textarea>
+      <!-- wrap inputs in <label> for bigger click/tap targets -->
+      <div class="flex gap-md align-items-center justify-between gap-sm mt-sm">
+        <div class="inline-flex gap-sm">
+          <label>
+            radio 1
+            <input type=radio name="radio-set">
+          </label>
+          <label>
+            radio 2
+            <input type=radio name="radio-set">
+          </label>
+          <label>
+            checkbox <input type=checkbox>
+          </label>
+        </div>
+        <button class="button --fill@sm">Button</button>
+      </div>
+    </form>
+  </section>
+{% endfor %}

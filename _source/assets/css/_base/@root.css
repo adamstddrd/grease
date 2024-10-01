@@ -2,115 +2,132 @@
   /* ---------------------------------------------------------------------------
   color
   --------------------------------------------------------------------------- */
-  --color-alpha: 100%;
-  --color-peach: 10deg 100% 85%;
-  --color-charcoal: 40deg 2% 15%;
+  color-scheme: light dark;
+  interpolate-size: allow-keywords;
 
-  /* semantic color themes */
-  --color-text-hsl: var(--color-charcoal);
-  --color-text: hsl(var(--color-charcoal) / var(--color-alpha));
-  --color-sheet-hsl: var(--color-peach);
-  --color-sheet: hsl(var(--color-peach) / var(--color-alpha));
+  /* tints & shades */
+  --0: 100% 0 h;
+  --50: 99% calc(c/16) h;
+  --100: 94% calc(c/4) h;
+  --200: 88% calc(c/2) h;
+  --300: 70% c h;
+  --300: 70% c h;
+  --400: 60% c h;
+  --500: 50% c h;
+  --600: 40% c h;
+  --700: 30% c h;
+  --800: 20% calc(c/1.5) h;
+  --900: 15% calc(c/2) h;
 
-  @media (prefers-color-scheme: dark) {
-    --color-text-hsl: var(--color-peach);
-    --color-text: hsl(var(--color-peach) / var(--color-alpha));
-    --color-sheet-hsl: var(--color-charcoal);
-    --color-sheet: hsl(var(--color-charcoal) / var(--color-alpha));
-  }
+  /* source colors */
+  --neutral: oklch(80% 0.01 210);
+  --primary: oklch(30% 0.16 210);
+  --secondary: oklch(70% 0.11 20);
+
+  /* preset colors */
+  --color-text: light-dark(
+    var(--primary),
+    white
+  );
+  --color-bg: light-dark(
+    white,
+    oklch(from var(--primary) var(--800))
+  );
+  --color-accent: var(--secondary);
+  --color-border: light-dark(
+    var(--neutral),
+    oklch(from var(--primary) var(--600))
+  );
+  --color-subtle: light-dark(
+    oklch(from var(--neutral) var(--50)),
+    oklch(from var(--primary) var(--900))
+  );
+  --color-shadow: black;
 
   /* ---------------------------------------------------------------------------
   spacing
   --------------------------------------------------------------------------- */
-
   --space-scale: 2;
-  --space-base-s: 2rem;
-  --space-base: max(1.5rem, min(calc(0.5rem + 1.5vw), 3rem));
+  --space-base: 1.5rem;
   --space-xxs: calc(var(--space-xs) / var(--space-scale));
-  --space-xs: calc(var(--space-s) / var(--space-scale));
-  --space-s: calc(var(--space-base-s) / var(--space-scale));
-  --space-m: var(--space-base);
-  --space-l: calc(var(--space-m) * var(--space-scale));
-  --space-xl: calc(var(--space-l) * var(--space-scale));
+  --space-xs: calc(var(--space-sm) / var(--space-scale));
+  --space-sm: calc(var(--space-base) / var(--space-scale));
+  --space-md: var(--space-base);
+  --space-lg: calc(var(--space-md) * var(--space-scale));
+  --space-xl: calc(var(--space-lg) * var(--space-scale));
   --space-xxl: calc(var(--space-xl) * var(--space-scale));
+  --space-xxxl: calc(var(--space-xxl) * var(--space-scale));
+  --space-flex: clamp(8rem, 20vw, 16rem);
 
   /* ---------------------------------------------------------------------------
-  text properties
+  typography
   --------------------------------------------------------------------------- */
 
   /* font stacks */
-  --text-main:
-    "Trispace",
-    -apple-system,
-    blinkmacsystemfont,
-    "Segoe UI",
-    roboto,
-    helvetica,
-    arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 
-  /* size */
-  --text-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
-  --text-scale-s: 1.2;
-  --text-scale-l: 1.333;
-  --text-xxxs: calc(var(--text-xxs) / var(--text-scale-s));
-  --text-xxs: calc(var(--text-xs) / var(--text-scale-s));
-  --text-xs: calc(var(--text-s) / var(--text-scale-s));
-  --text-s: calc(var(--text-m) / var(--text-scale-s));
-  --text-m: 1em;
-  --text-l: calc(var(--text-m) * var(--text-scale-l));
-  --text-xl: calc(var(--text-l) * var(--text-scale-l));
-  --text-xxl: calc(var(--text-xl) * var(--text-scale-l));
-  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-l));
-  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-l));
-  --text-poster: clamp(4.5rem, 8vw, 10rem);
-  --text-poster-l: clamp(5.5rem, 9vw, 12rem);
+  --font-code: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  /* weight */
-  --text-weight: 250;
-  --text-width-s: 75;
-  --text-width-m: 100;
-  --text-width-l: 125;
-  --text-width: var(--text-width-m);
+  /* font properties */
+  --font-mono: 0;
+  --font-weight: 400;
+
+  @media (--dark) {
+    --font-weight: 350;
+  }
+
+  /* font size */
+  --size-base: max(1.125em, min(calc(0.675em + 0.5vw), 1.875em));
+  --size-scale-sm: 1.2;
+  --size-scale-lg: 1.333;
+  --size-xxxs: calc(var(--size-xxs) / var(--size-scale-sm));
+  --size-xxs: calc(var(--size-xs) / var(--size-scale-sm));
+  --size-xs: calc(var(--size-sm) / var(--size-scale-sm));
+  --size-sm: calc(var(--size-md) / var(--size-scale-sm));
+  --size-md: 1em;
+  --size-lg: calc(var(--size-md) * var(--size-scale-lg));
+  --size-xl: calc(var(--size-lg) * var(--size-scale-lg));
+  --size-xxl: calc(var(--size-xl) * var(--size-scale-lg));
+  --size-xxxl: calc(var(--size-xxl) * var(--size-scale-lg));
+  --size-xxxxl: calc(var(--size-xxxl) * var(--size-scale-lg));
 
   /* measure */
-  --text-measure-xs: 15ch;
-  --text-measure-s: 30ch;
-  --text-measure-m: 45ch;
-  --text-measure-l: 60ch;
-  --text-measure-xl: 75ch;
+  --measure-xs: 16ch;
+  --measure-sm: 32ch;
+  --measure-md: 48ch;
+  --measure-lg: 60ch;
+  --measure-xl: 72ch;
 
   /* line height */
-  --text-leading-base: 1.1;
-  --text-leading-scale: 1.25;
-  --text-leading-xs: calc(var(--text-leading-s) / var(--text-leading-scale));
-  --text-leading-s: var(--text-leading-base);
-  --text-leading-m: calc(var(--text-leading-s) * var(--text-leading-scale));
-  --text-leading-l: calc(var(--text-leading-m) * var(--text-leading-scale));
-  --text-leading-fluid: calc(0.75rem + 1.25em);
+  --leading-base: 1.1;
+  --leading-scale: 1.25;
+  --leading-xs: calc(var(--leading-sm) / var(--leading-scale));
+  --leading-sm: var(--leading-base);
+  --leading-md: calc(var(--leading-sm) * var(--leading-scale));
+  --leading-lg: calc(var(--leading-md) * var(--leading-scale));
+  --leading-fluid: calc(0.45rem + 1.25em);
 
   /* letter spacing */
-  --text-spacing-s: -0.025em;
-  --text-spacing-m: 0;
-  --text-spacing-l: 0.1em;
-  --text-spacing-xl: 0.3em;
+  --tracking-sm: -0.025em;
+  --tracking-md: 0;
+  --tracking-lg: 0.1em;
+  --tracking-xl: 0.3em;
 
   /* ---------------------------------------------------------------------------
   borders
   --------------------------------------------------------------------------- */
 
   /* border radius */
-  --border-radius-s: 0.3rem;
-  --border-radius-m: 0.6rem;
-  --border-radius-l: 0.9rem;
+  --border-radius-0: 0;
+  --border-radius-sm: 0.2rem;
+  --border-radius-md: 0.4rem;
+  --border-radius-lg: 0.8rem;
+  --border-radius-xl: 1.6rem;
 
   /* border weight */
-  --border-weight-s: 0.1rem;
-  --border-weight-m: 0.2rem;
-  --border-weight-l: 0.3rem;
+  --border-weight-sm: 0.0625rem;
+  --border-weight-md: 0.1rem;
+  --border-weight-lg: 0.25rem;
 
   /* ---------------------------------------------------------------------------
   z-index layers
@@ -125,18 +142,18 @@
   shadows
   --------------------------------------------------------------------------- */
   --shadow-color: 220 3% 15%;
-  --shadow-s: 0 1px 2px -1px hsl(var(--shadow-color) / 1%);
-  --shadow-m:
-    0 -1px 3px 0 hsl(var(--shadow-color) / 2%),
-    0 1px 2px -5px hsl(var(--shadow-color) / 2%),
-    0 2px 5px -5px hsl(var(--shadow-color) / 4%),
-    0 4px 12px -5px hsl(var(--shadow-color) / 5%),
-    0 12px 15px -5px hsl(var(--shadow-color) / 7%);
-  --shadow-l:
-    0 -1px 2px 0 hsl(var(--shadow-color) / 2%),
-    0 2px 1px -2px hsl(var(--shadow-color) / 3%),
-    0 5px 5px -2px hsl(var(--shadow-color) / 3%),
-    0 10px 10px -2px hsl(var(--shadow-color) / 4%),
-    0 20px 20px -2px hsl(var(--shadow-color) / 5%),
-    0 40px 40px -2px hsl(var(--shadow-color) / 7%);
+  --shadow-sm: 0 1px 2px -1px oklch(from var(--color-shadow) l c h / 10%);
+  --shadow-md:
+    0 -1px 3px 0 oklch(from var(--color-shadow) l c h / 2%),
+    0 1px 2px -5px oklch(from var(--color-shadow) l c h / 2%),
+    0 2px 5px -5px oklch(from var(--color-shadow) l c h / 4%),
+    0 4px 12px -5px oklch(from var(--color-shadow) l c h / 5%),
+    0 12px 15px -5px oklch(from var(--color-shadow) l c h / 7%);
+  --shadow-lg:
+    0 -1px 2px 0 oklch(from var(--color-shadow) l c h / 3%),
+    0 2px 1px -2px oklch(from var(--color-shadow) l c h / 4%),
+    0 5px 5px -2px oklch(from var(--color-shadow) l c h / 5%),
+    0 10px 10px -2px oklch(from var(--color-shadow) l c h / 6%),
+    0 20px 20px -2px oklch(from var(--color-shadow) l c h / 7%),
+    0 40px 40px -2px oklch(from var(--color-shadow) l c h / 8%);
 }

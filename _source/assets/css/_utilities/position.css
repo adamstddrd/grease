@@ -1,0 +1,43 @@
+/* ----------------------------------------------------------------------------
+position: manipulate position across breakpoints
+---------------------------------------------------------------------------- */
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.sticky { position: sticky; }
+
+.layer-1 { z-index: var(--layer-1); }
+.layer-2 { z-index: var(--layer-2); }
+.layer-3 { z-index: var(--layer-3); }
+.layer-4 { z-index: var(--layer-4); }
+.layer-5 { z-index: var(--layer-5); }
+
+@media (--md) {
+  .relative\@md { position: relative; }
+  .absolute\@md { position: absolute; }
+
+  .sticky\@md {
+    position: sticky !important;
+    inset-block-start: var(--space-md);
+  }
+
+  .sticky-bottom\@md {
+    position: sticky !important;
+    inset-block-end: 0;
+  }
+}
+
+@media (--sm) {
+  .relative\@sm { position: relative; }
+  .absolute\@sm { position: absolute; }
+
+  .sticky\@sm { 
+    position: sticky !important;
+    inset-block-start: 0; 
+  }
+
+  .sticky-bottom\@sm { 
+    position: sticky !important;
+    inset-block-end: 0;
+  }
+}

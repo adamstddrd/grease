@@ -1,20 +1,18 @@
 /* ----------------------------------------------------------------------------
 process CSS tag pair and add it to a <style> tag in the page head
-{% style %}.foo { bar: fizz;}{% endstyle %}
+{% css %}.foo { bar: fizz;}{% endcss %}
 ---------------------------------------------------------------------------- */
-const lighting = require('lightningcss');
+import { transform, Features } from 'lightningcss';
 
-module.exports = function style(content) {
+export default async function style(content) {
   const targets = { future: (1) }; // enables draft syntaxes
-  const result = lighting.transform({
+  const result = transform({
     code: Buffer.from(content),
     minify: true,
-    drafts: {
-      customMedia: true,
-      nesting: true,
-    },
+    include: Features.Nesting,
+    drafts: { customMedia: true },
     targets,
   });
-  this.page.style = result.code.toString('utf8');
-  return '';
-};
+  const resultString = result.code.toString('utf8');
+  return resultString;
+}

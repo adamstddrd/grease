@@ -1,0 +1,118 @@
+/* ----------------------------------------------------------------------------
+default form styles
+---------------------------------------------------------------------------- */
+
+form {
+  margin-block: var(--space-sm) var(--space-md);
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  flex-grow: 1;
+}
+
+textarea {
+  width: 100%;
+  field-sizing: content;
+  min-height: var(--space-xl);
+}
+
+:where(button, input, select, option, textarea) {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {	
+  width: 100%;
+	background-color: var(--color-subtle);
+	border: var(--border-weight-md) solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+	padding: var(--space-sm);
+  font-weight: 400;
+
+  &::placeholder {
+    color: var(--color-text);
+    opacity: 0.5;
+  }
+
+  &:focus {
+    border-color: light-dark(
+      oklch(from var(--primary) var(--400)),
+      oklch(from var(--primary) var(--300))
+    );
+    outline: none;
+  }
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+
+  > select {
+    grid-area: select;
+    appearance: none;
+  }
+
+  &::after {
+    grid-area: select;
+    justify-self: end;
+    content: "";
+    display: block;
+    width: 0.8em;
+    height: 0.5em;
+    margin-inline-end: var(--space-sm);
+    background-color: var(--color-text);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+}
+
+[disabled] {
+  opacity: 0.5;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  appearance: none;
+  display: inline-grid;
+  place-content: center;
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: currentColor;
+  background-color: var(--color-bg);
+  border: var(--border-weight-md) solid currentColor;
+
+  &:checked::before {
+    scale: 1;
+  }
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+  translate: 0 0.05em;
+
+  &::before {
+    content: "";
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    scale: 0;
+    transition: 100ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--color-text);
+  }
+}
+
+input[type="checkbox"] {
+  &::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    scale: 0;
+    box-shadow: inset 1em 1em var(--color-text);
+  }
+}

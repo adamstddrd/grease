@@ -2,11 +2,12 @@
 renders Markdown into HTML
 Liquid: {{ foo | markdownify }}
 ---------------------------------------------------------------------------- */
-const markdownIt = require('markdown-it')({
-  html: true,
-  typographer: true,
-});
+import markdownIt from 'markdown-it';
 
-const markdownify = (value) => markdownIt.render(value);
-
-module.exports = markdownify;
+export default function markdownify(value) {
+  const mdIt = markdownIt({
+    html: true,
+    typographer: true,
+  });
+  return mdIt.render(value);
+}

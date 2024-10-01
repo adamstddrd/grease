@@ -1,0 +1,88 @@
+.high-contrast {
+  --neutral: oklch(30% 0 210);
+  --primary: oklch(30% 0.36 210);
+  --secondary: oklch(85% 0.36 20);
+  --color-text: light-dark(black, white);
+  --color-bg: light-dark(white, black);
+  --color-border: light-dark(black, white);
+  --color-accent: var(--secondary);
+  --color-subtle: light-dark(
+    oklch(from var(--neutral) var(--100) / 50%),
+    oklch(from var(--neutral) var(--800))
+  );
+}
+
+.low-contrast {
+  --neutral: oklch(30% 0.04 210);
+  --primary: oklch(30% 0.04 210);
+  --secondary: oklch(60% 0.04 210);
+  --color-text: light-dark(
+    oklch(from var(--primary) var(--500)),
+    oklch(from var(--primary) var(--200))
+  );
+  --color-bg: light-dark(
+    oklch(from var(--primary) var(--100)),
+    oklch(from var(--primary) var(--800))
+  );
+  --color-border: light-dark(
+    oklch(from var(--neutral) var(--200)),
+    oklch(from var(--neutral) var(--700))
+  );
+  --color-accent: var(--secondary);
+  --color-subtle: light-dark(
+    oklch(from var(--neutral) var(--200) / 50%),
+    oklch(from var(--primary) var(--800))
+  );
+}
+
+.primary {
+  --neutral: oklch(30% 0.3 210);
+  --primary: oklch(20% 0.3 210);
+  --secondary: oklch(70% 0.3 210);
+  --color-text: light-dark(
+    oklch(from var(--primary) var(--700)),
+    oklch(from var(--primary) var(--50))
+  );
+  --color-bg: light-dark(
+    oklch(from var(--primary) var(--100)),
+    oklch(from var(--primary) var(--500))
+  );
+  --color-border: light-dark(
+    oklch(from var(--neutral) var(--200)),
+    oklch(from var(--neutral) var(--700))
+  );
+  --color-accent: light-dark(
+    oklch(from var(--secondary) var(--300)),
+    oklch(from var(--secondary) var(--700))
+  );
+  --color-subtle: light-dark(
+    white,
+    oklch(from var(--primary) var(--700))
+  );
+}
+
+.secondary {
+  --neutral: oklch(30% 0.15 20);
+  --primary: oklch(20% 0.15 20);
+  --secondary: oklch(70% 0.15 20);
+  --color-text: light-dark(
+    oklch(from var(--primary) var(--700)),
+    oklch(from var(--primary) var(--50))
+  );
+  --color-bg: light-dark(
+    oklch(from var(--primary) var(--100)),
+    oklch(from var(--primary) var(--500))
+  );
+  --color-border: light-dark(
+    oklch(from var(--neutral) var(--200)),
+    oklch(from var(--neutral) var(--700))
+  );
+  --color-accent: light-dark(
+    oklch(from var(--secondary) var(--300)),
+    oklch(from var(--secondary) var(--700))
+  );
+  --color-subtle: light-dark(
+    white,
+    oklch(from var(--primary) var(--700))
+  );
+}

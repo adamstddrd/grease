@@ -1,38 +1,39 @@
-.button {
-  --text-weight: 600;
-  --text-width: var(--text-width-s);
+.button,
+button,
+input[type="submit"] {
+  --font-weight: 600;
   --button-text: var(--color-text);
-  --button-bg: var(--color-sheet);
+  --button-bg: oklch(from var(--color-bg) l c h / 0%);
   --button-border: var(--color-text);
   --button-icon: var(--color-text);
 
   color: var(--button-text);
   background-color: var(--button-bg);
-  border: var(--color-text) solid var(--border-weight-s);
+  border: var(--border-weight-md) solid var(--button-border);
+  border-radius: var(--border-radius-sm);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-xs);
-  padding: var(--space-s);
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-md);
   font-size: inherit;
   font-family: inherit;
   text-decoration: none;
-  transition: color 0.1s step-sta, background-color 0.1s linear;
-  border-radius: var(--border-radius);
+  transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
   line-height: 1;
-  text-transform: uppercase;
 
   &:visited {
     color: var(--button-text);
   }
 
-  @media (--viewport-small) {
+  @media (--sm) {
     line-height: inherit;
   }
 
-  @media (hover: hover) {
+  @media (--hover) {
     &:hover {
-      --button-text: var(--color-sheet);
+      --button-text: var(--color-bg);
       --button-bg: var(--color-text);
 
       cursor: pointer;
@@ -44,28 +45,34 @@
     height: auto;
   }
 
-  &.--fill\@s {
-    @media (--viewport-small) {
+  &.--fill\@sm {
+    @media (--sm) {
       width: 100%;
     }
   }
 
-  &.--inverted {
-    --button-text: var(--color-sheet);
+  &.--primary {
+    --button-text: var(--color-bg);
     --button-bg: var(--color-text);
     --button-border: var(--color-text);
+
+    @media (--hover) {
+      &:hover {
+        --button-bg: oklch(from var(--primary) var(--500));
+        --button-border: oklch(from var(--primary) var(--400));
+      }
+    }
   }
 
   &.--text-only {
+    --button-text: var(--color-text);
+    
     border-color: transparent;
     background-color: transparent;
 
-    @media (hover: hover) {
+    @media (--hover) {
       &:hover {
-        --button-text: var(--color-text);
-        --button-bg: var(--color-sheet);
-
-        border-bottom-color: var(--button-border);
+        border-block-end-color: var(--button-border);
       }
     }
   }
