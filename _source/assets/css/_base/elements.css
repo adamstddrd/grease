@@ -130,9 +130,12 @@ h3 {
   color: inherit;
 }
 
+:where(ul:not([class]), ol:not([class])) {
+  padding-inline-start: 1.75ch;
+}
+
 :where(li > ul, li > ol) {
   margin-block: var(--space-xs) 0;
-  padding-inline: 1em 0;
 }
 
 ul {
