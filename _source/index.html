@@ -9,16 +9,18 @@ eleventyImport:
 # canonical: https://example.com/page.html
 ---
 
-<header class="grid mb-lg@md">
-  <random-shapes class="grease-marks bleed" quantity="50" scale="100" jitter="30"></random-shapes>
-  <h1 class="hero span-12">
-    <span>Grease</span>
-  </h1>
-  <p class="size-lg span-12 pb-sm border-bottom border-weight-md blend-difference">Grease takes the friction out of building fast, adaptable, aesthetic websites.</p>
-</header>
+<section class="grid primary set-bg clipped">
+  <header class="grid py-sm primary layer-1">
+    <nav class="span-12 flex justify-between align-items-center">
+      <a class="size-lg weight-800 uppercase undecorated button --text-only pl-0 pr-0" href="/">Grease</h1>
+      <a href="/" class="button --primary">On GitHub</a>
+    </nav>
+  </header>
+  <h1 class="hero span-12">Grease takes the friction out of building fast, adaptable websites.</h1>
+  <random-shapes class="grease-marks bleed" quantity="10" jitter="20"></random-shapes>
+</section>
 
-<section id="docs" class="grid --dense">
-  
+<section id="docs" class="grid --dense pt-xxl">
   <nav class="docs-block sticky@md start-10 span-3 border-left@md mb-lg">
     <small-details>
       <details>
@@ -36,17 +38,14 @@ eleventyImport:
       </details>
     </small-details>
   </nav>
-  
   <article class="docs-block start-1 span-9 measure-xl border-left@md">
     {%- for post in collections.docs -%}
       <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
       {{ post.content }}
     {%- endfor -%}
   </article>
-  
 </section>
 
 <footer class="relative span-12 mt-lg pt-md size-sm">
-  <random-shapes class="grease-marks bleed-start span-5 mt-xxl -mr-xl hidden@sm absolute" style="width: 30%; inset-block-start: inherit; inset-block-end: 0; inset-inline-end: 0; rotate: -45deg" quantity="10" jitter="10" scale="150"></random-shapes>
   <p>By <a href="https://aaadaaam.com">AAADAAAM</a>. Have fun.</p>
 </footer>

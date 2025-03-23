@@ -17,6 +17,7 @@ modify color on the fly
   &.--use-bg { --property: var(--color-bg); }
   &.--use-border { --property: var(--color-border); }
   &.--use-accent { --property: var(--color-accent); }
+  &.--use-focus { --property: var(--color-focus); }
   &.--use-shadow { --property: var(--color-shadow); }
 
   /* contrasting colors */
@@ -61,14 +62,6 @@ modify color on the fly
 }
 
 .glint {
-  /* border-color: light-dark(
-    oklch(from var(--color-text) 50% c h / 20%),
-    oklch(from var(--color-subtle) 10% c h / 20%)
-  );
-  outline: 1px solid light-dark(
-    oklch(100% 0 0 / 20%),
-    oklch(from var(--color-bg) 80% c h / 10%)
-  ); */
   border-color: light-dark(
     oklch(from var(--neutral) var(--500) / 20%),
     oklch(from var(--neutral) var(--800) / 20%)

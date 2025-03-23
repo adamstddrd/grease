@@ -3,19 +3,12 @@
 @layer components {
   .hero {    
     position: relative;
-    margin-block: var(--space-xxl) 0;
-    margin-inline-start: calc(var(--space-sm) * -1);
-    font-size: min(18vw, 10em);
+    margin-block: var(--space-xxl);
+    font-size: min(8vw, 7em);
     line-height: 1;
-    mix-blend-mode: difference;
-
-    @media (--dark) {
-      mix-blend-mode: normal;
-    }
-
-    @media (--md) {
-      margin-block: var(--space-xxxl) 0;
-    }
+    font-weight: 200;
+    color: var(--color-focus);
+    z-index: var(--layer-1);
   }
 
   .docs-block {
@@ -25,45 +18,28 @@
   }
   
   .grease-marks {
+    position: relative;
     width: 100%;
-    rotate: 20deg;
     pointer-events: none;
     position: absolute;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
-    z-index: -1;
-    inset-block-start: -20rem;
-    inset-inline-end: 0;
+    mix-blend-mode: overlay;
 
-    @media (--md) {
-      inset-block-start: 0;
-      inset-inline-end: -10rem;
-    }
-    
-    & > * {
-      width: 0.5rem;
-      height: 0.5rem;
-      background-color: light-dark(var(--color-focus), var(--color-bg));
-      box-shadow: 0 0 2rem 2.5rem light-dark(var(--color-focus), var(--color-bg));
-      border-radius: 100%;
-      mix-blend-mode: normal;
-      opacity: 0.75;
-
-      @media (--dark) {
-        mix-blend-mode: overlay;
-      }
-    }
-
-    & > .shape-1 {
-      background-color: var(--color-accent);
-      box-shadow: 0 0 3rem 3.5rem var(--color-accent);
+    @media (--dark) {
+      mix-blend-mode: multiply;
       opacity: 0.5;
-      mix-blend-mode: overlay;
+    }
 
-      @media (--dark) {
-        mix-blend-mode: normal;
-      }
+    & > * {
+      position: absolute;
+      inset-block-start: 8rem;
+      inset-inline-start: -70%;
+      width: 300rem;
+      height: 300rem;
+      border-block-start-width: 10rem;
+      border-style: solid;
+      border-color: light-dark(var(--color-focus), var(--color-bg));
+      border-radius: 100%;
+      mix-blend-mode: overlay;
     }
   }
 
@@ -99,5 +75,4 @@
       text-align: center;
     }
   }
-
 }
