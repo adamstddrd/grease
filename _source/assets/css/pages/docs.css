@@ -1,9 +1,7 @@
 @import "../_base/@media.css";
 
 @layer components {
-  .hero {
-    --font-weight: 800;
-    
+  .hero {    
     position: relative;
     margin-block: var(--space-xxl) 0;
     margin-inline-start: calc(var(--space-sm) * -1);
@@ -46,8 +44,8 @@
     & > * {
       width: 0.5rem;
       height: 0.5rem;
-      background-color: light-dark(var(--color-text), var(--color-bg));
-      box-shadow: 0 0 2rem 2.5rem light-dark(var(--color-text), var(--color-bg));
+      background-color: light-dark(var(--color-focus), var(--color-bg));
+      box-shadow: 0 0 2rem 2.5rem light-dark(var(--color-focus), var(--color-bg));
       border-radius: 100%;
       mix-blend-mode: normal;
       opacity: 0.75;
@@ -79,7 +77,6 @@
       padding: var(--space-sm);
       color: var(--color-text);
       background-color: var(--color-bg);
-      margin-block: var(--space-sm);
       font-size: var(--size-sm);
     }
   }
@@ -87,16 +84,19 @@
   .demo-chips {
     display: flex;
     flex-wrap: wrap;
-    margin-block: 0 var(--space-sm);
+    margin-block: 0 var(--space-xs);
     list-style: none;
 
     & > li {
       width: auto;
+      flex-grow: 1;
       margin: 0;
-      padding: var(--space-sm);
+      padding-block: var(--space-md);
+      padding-inline: var(--space-sm);
       color: var(--color-text);
       background-color: var(--color-bg);
       font-size: var(--size-xs);
+      text-align: center;
     }
   }
 

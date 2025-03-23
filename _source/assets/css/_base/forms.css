@@ -3,19 +3,22 @@ default form styles
 ---------------------------------------------------------------------------- */
 
 form {
-  margin-block: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 label {
   font-weight: 500;
   display: block;
   flex-grow: 1;
+  line-height: var(--leading-lg);
 }
 
 textarea {
   width: 100%;
   field-sizing: content;
-  min-height: var(--space-xl);
+  min-height: var(--space-xxl);
 }
 
 :where(button, input, select, option, textarea) {
@@ -31,6 +34,7 @@ textarea {
   border-radius: var(--border-radius-sm);
 	padding: var(--space-sm);
   font-weight: 400;
+  transition: border-color 0.1s ease;
 
   &::placeholder {
     color: var(--color-text);
@@ -38,10 +42,7 @@ textarea {
   }
 
   &:focus {
-    border-color: light-dark(
-      oklch(from var(--primary) var(--400)),
-      oklch(from var(--primary) var(--300))
-    );
+    border-color: var(--color-focus);
     outline: none;
   }
 }
@@ -83,11 +84,12 @@ input[type="checkbox"], input[type="radio"] {
   padding: 0;
   font: inherit;
   color: currentColor;
-  background-color: var(--color-bg);
-  border: var(--border-weight-md) solid currentColor;
+  background-color: var(--color-subtle);
+  border: var(--border-weight-md) solid var(--color-border);
 
   &:checked::before {
     scale: 1;
+    box-shadow: inset 1em 1em var(--color-focus);
   }
 }
 
@@ -107,6 +109,8 @@ input[type="radio"] {
 }
 
 input[type="checkbox"] {
+  border-radius: var(--border-radius-sm);
+
   &::before {
     content: "";
     width: 0.65em;

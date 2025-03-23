@@ -1,7 +1,6 @@
 .button,
 button,
 input[type="submit"] {
-  --font-weight: 600;
   --button-text: var(--color-text);
   --button-bg: oklch(from var(--color-bg) l c h / 0%);
   --button-border: var(--color-text);
@@ -15,13 +14,14 @@ input[type="submit"] {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-xs);
-  padding-block: var(--space-sm);
+  padding-block: var(--space-xs);
   padding-inline: var(--space-md);
   font-size: inherit;
   font-family: inherit;
   text-decoration: none;
   transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
   line-height: 1;
+  text-box: trim-both cap alphabetic;
 
   &:visited {
     color: var(--button-text);
@@ -51,15 +51,41 @@ input[type="submit"] {
     }
   }
 
-  &.--primary {
+  &.--tactile {
+    /* outline: 1px solid light-dark(
+      oklch(from var(--neutral) var(--50) / 20%),
+      oklch(from var(--neutral) var(--400) / 20%)
+    );
+    outline-offset: -2px; */
+
+    box-shadow: inset 0 0 0 1px light-dark(
+      oklch(from var(--neutral) var(--0) / 30%),
+      oklch(from var(--neutral) var(--0) / 30%)
+    );
+  }
+
+  &.--inverted {
     --button-text: var(--color-bg);
     --button-bg: var(--color-text);
     --button-border: var(--color-text);
 
     @media (--hover) {
       &:hover {
-        --button-bg: oklch(from var(--primary) var(--500));
-        --button-border: oklch(from var(--primary) var(--400));
+        --button-text: var(--color-bg);
+        --button-bg: var(--color-focus);
+        --button-border: var(--color-focus);
+      }
+    }
+  }
+
+  &.--primary {
+    --button-text: var(--color-focus);
+    --button-border: var(--color-focus);
+
+    @media (--hover) {
+      &:hover {
+        --button-bg: var(--color-focus);
+        --button-text: var(--color-bg);
       }
     }
   }

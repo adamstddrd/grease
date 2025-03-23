@@ -44,6 +44,8 @@ grid: compose pages
   &.--gap-sm { --gap: var(--size-sm); }
   &.--gap-md { --gap: var(--size-md); }
   &.--gap-lg { --gap: var(--size-lg); }
+
+  &.--gap-y-md { row-gap: var(--size-md); }
 }
 
 .bleed { grid-column: 1 / -1; }

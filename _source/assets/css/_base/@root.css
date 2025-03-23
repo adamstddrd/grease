@@ -7,47 +7,54 @@
 
   /* tints & shades */
   --0: 100% 0 h;
-  --50: 99% calc(c/16) h;
+  --50: 97% calc(c/16) h;
   --100: 94% calc(c/4) h;
-  --200: 88% calc(c/2) h;
+  --200: 88% calc(c/1.5) h;
   --300: 70% c h;
   --300: 70% c h;
   --400: 60% c h;
   --500: 50% c h;
   --600: 40% c h;
   --700: 30% c h;
-  --800: 20% calc(c/1.5) h;
-  --900: 15% calc(c/2) h;
+  --800: 22% calc(c/1.5) h;
+  --900: 18% calc(c/2) h;
 
   /* source colors */
-  --neutral: oklch(80% 0.01 210);
-  --primary: oklch(30% 0.16 210);
-  --secondary: oklch(70% 0.11 20);
+  --neutral: oklch(80% 0.01 300);
+  --primary: oklch(30% 0.3 300);
+  --secondary: oklch(70% 0.15 200);
 
   /* preset colors */
   --color-text: light-dark(
-    var(--primary),
-    white
+    oklch(from var(--neutral) var(--800)),
+    oklch(from var(--neutral) var(--100))
   );
   --color-bg: light-dark(
-    white,
+    oklch(from var(--primary) var(--0)),
     oklch(from var(--primary) var(--800))
   );
-  --color-accent: var(--secondary);
+  --color-accent: light-dark(
+    var(--secondary),
+    var(--secondary)
+  );
   --color-border: light-dark(
-    var(--neutral),
+    oklch(from var(--neutral) var(--200)),
     oklch(from var(--primary) var(--600))
   );
   --color-subtle: light-dark(
     oklch(from var(--neutral) var(--50)),
     oklch(from var(--primary) var(--900))
   );
+  --color-focus: light-dark(
+    oklch(from var(--primary) var(--500)),
+    oklch(from var(--primary) var(--300))
+  );
   --color-shadow: black;
 
   /* ---------------------------------------------------------------------------
   spacing
   --------------------------------------------------------------------------- */
-  --space-scale: 2;
+  --space-scale: 1.666;
   --space-base: 1.5rem;
   --space-xxs: calc(var(--space-xs) / var(--space-scale));
   --space-xs: calc(var(--space-sm) / var(--space-scale));
@@ -69,12 +76,7 @@
   --font-code: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   /* font properties */
-  --font-mono: 0;
-  --font-weight: 400;
-
-  @media (--dark) {
-    --font-weight: 350;
-  }
+  --font-weight: 325;
 
   /* font size */
   --size-base: max(1.125em, min(calc(0.675em + 0.5vw), 1.875em));
@@ -150,10 +152,8 @@
     0 4px 12px -5px oklch(from var(--color-shadow) l c h / 5%),
     0 12px 15px -5px oklch(from var(--color-shadow) l c h / 7%);
   --shadow-lg:
-    0 -1px 2px 0 oklch(from var(--color-shadow) l c h / 3%),
-    0 2px 1px -2px oklch(from var(--color-shadow) l c h / 4%),
-    0 5px 5px -2px oklch(from var(--color-shadow) l c h / 5%),
-    0 10px 10px -2px oklch(from var(--color-shadow) l c h / 6%),
-    0 20px 20px -2px oklch(from var(--color-shadow) l c h / 7%),
-    0 40px 40px -2px oklch(from var(--color-shadow) l c h / 8%);
+    0 5px 5px -2px oklch(from var(--color-shadow) l c h / 6%),
+    0 10px 10px -2px oklch(from var(--color-shadow) l c h / 7%),
+    0 20px 20px -2px oklch(from var(--color-shadow) l c h / 8%),
+    0 40px 40px -2px oklch(from var(--color-shadow) l c h / 9%);
 }

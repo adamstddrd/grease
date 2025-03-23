@@ -60,6 +60,26 @@ modify color on the fly
   &.--neutral-900 { --property: oklch(from var(--neutral) var(--900)); }
 }
 
+.glint {
+  /* border-color: light-dark(
+    oklch(from var(--color-text) 50% c h / 20%),
+    oklch(from var(--color-subtle) 10% c h / 20%)
+  );
+  outline: 1px solid light-dark(
+    oklch(100% 0 0 / 20%),
+    oklch(from var(--color-bg) 80% c h / 10%)
+  ); */
+  border-color: light-dark(
+    oklch(from var(--neutral) var(--500) / 20%),
+    oklch(from var(--neutral) var(--800) / 20%)
+  );
+  outline: 1px solid light-dark(
+    oklch(from var(--neutral) var(--50) / 20%),
+    oklch(from var(--neutral) var(--400) / 20%)
+  );
+  outline-offset: -2px;
+}
+
 .dark {
   color-scheme: dark;
 }

@@ -7,7 +7,6 @@ default element styles
   margin: 0;
   padding: 0;
   color: var(--color-text);
-  /* font-variation-settings: "wght" var(--font-weight), "MONO" var(--font-mono); */
 
   &::selection {
     color: var(--color-bg);
@@ -37,6 +36,7 @@ html {
   accent-color: var(--color-accent);
   overflow-x: clip;
   animation: hue-shift 5s linear infinite;
+  font-weight: var(--font-weight);
 
   @media (--motion) {
     scroll-behavior: smooth;
@@ -69,16 +69,16 @@ animate-on-scroll {
   display: contents;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
-  text-wrap: balance;
-  text-box: trim-both cap alphabetic;
-}
-
-:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote) {
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote, form) {
   width: 100%;
   margin-inline: auto;
-  line-height: var(--leading-fluid);
   overflow-wrap: break-word;
+  margin-block: var(--space-sm);
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+  margin-block: var(--space-lg) var(--space-sm);
 }
 
 h1 {
@@ -89,13 +89,11 @@ h1 {
 }
 
 h2 {
-  margin-block: var(--space-lg) var(--space-sm);
   font-size: var(--size-xl);
   font-weight: 800;
 }
 
 h3 {
-  margin-block: var(--space-md) 0;
   font-size: var(--size-lg);
   font-weight: 700;
   
@@ -105,7 +103,6 @@ h3 {
 }
 
 :where(h4, h5, h6) {
-  margin-block: var(--space-sm) 0;
   font-size: var(--size-md);
   font-weight: 600;
 }
@@ -122,7 +119,6 @@ h3 {
 }
 
 :where(p, ul, ol, dl) {
-  margin-block: 0 var(--space-sm);
   margin-inline: 0;
 }
 
@@ -135,7 +131,7 @@ h3 {
 }
 
 :where(li > ul, li > ol) {
-  margin-block: var(--space-xs) 0;
+  margin-block: 0;
 }
 
 ul {
@@ -149,14 +145,6 @@ ol {
 li {
   position: relative;
   color: inherit;
-
-  &:where(li + li) {
-    margin-block-start: 0;
-  }
-
-  & :where(ul, ol) {
-    margin-block-start: 0;
-  }
 }
 
 b,
@@ -189,33 +177,19 @@ a:visited {
 
 @media (--hover) {
   a:hover {
-    color: light-dark(
-      oklch(from var(--secondary) var(--500)), 
-      oklch(from var(--secondary) var(--200))
-    );
+    color: color-mix(in oklch, var(--color-accent), var(--color-text) 50%);
     text-decoration-thickness: var(--border-weight-lg);
   }
 }
 
 pre,
 code {
-  color: light-dark(
-    oklch(from var(--primary) var(--700)), 
-    oklch(from var(--primary) var(--200))
-  );
-  background-color: light-dark(
-    oklch(from var(--secondary) calc(l*1.5) calc(c/4) h), 
-    oklch(from var(--primary) calc(l/2) calc(c/4) h)
-  );
-  border: var(--border-weight-sm) solid light-dark(
-    oklch(from var(--secondary) calc(l*1.35) calc(c/4) h),
-    oklch(from var(--primary) var(--500) / 20%)
-  );
+  color: color-mix(in oklch, var(--color-accent), var(--color-text) 50%);
+  background-color: var(--color-subtle);
   border-radius: var(--border-radius-sm);
 }
 
 pre {
-  margin-block: 0 var(--space-sm);
   margin-inline: calc(var(--space-sm) * -1);
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
@@ -239,11 +213,20 @@ code {
 }
 
 blockquote {
-  margin-block: var(--space-sm) var(--space-md);
+  margin-block: var(--space-md);
   margin-inline: calc(var(--space-sm) * -1) 0;
   padding-inline-start: var(--space-sm);
   font-size: var(--size-md);
   border-inline-start: var(--border-weight-md) solid oklch(from var(--primary) var(--300));
+  text-box: trim-both cap alphabetic;
+
+  & :first-child {
+    margin-block-start: 0;
+  }
+
+  & :last-child {
+    margin-block-end: 0;
+  }
 
   > p {
     font-size: var(--size-xl);
