@@ -6,7 +6,7 @@ display: manipulate the visual display of elements
 .inline { display: inline; }
 .hidden { display: none !important; }
 .contents { display: contents; }
-.clipped { overflow: hidden; }
+.clipped { overflow: clip; }
 
 @media (--sm) {
   .block\@sm { display: block; }

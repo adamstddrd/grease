@@ -10,38 +10,30 @@ eleventyImport:
 ---
 
 <section class="grid primary set-bg clipped">
-  <header class="grid py-sm primary layer-1">
-    <nav class="span-12 flex justify-between align-items-center">
-      <a class="size-lg weight-800 uppercase undecorated button --text-only pl-0 pr-0" href="/">Grease</h1>
-      <a href="/" class="button --primary">On GitHub</a>
-    </nav>
-  </header>
+  {% render 'docs/header.html' %}
   <h1 class="hero span-12">Grease takes the friction out of building fast, adaptable websites.</h1>
   <random-shapes class="grease-marks bleed" quantity="10" jitter="20"></random-shapes>
 </section>
 
-<section id="docs" class="grid --dense pt-xxl">
-  <nav class="docs-block sticky@md start-10 span-3 border-left@md mb-lg">
+<section id="docs" class="docs-layout span-12 pt-md pt-xxl@md">
+  <nav class="docs-block sticky@md border-left@md mb-lg">
     <small-details>
       <details>
-        <summary class="size-sm weight-400 uppercase tracking-lg pt-xs pb-sm">Using Grease</summary>
+        <summary class="size-sm weight-400 uppercase tracking-lg pt-xs pb-xs">Using Grease</summary>
         <ul class="unlisted size-sm weight-600">
         {%- for post in collections.docs -%}
-          <li class="mb-xs">
-            <a class="pt-xs pb-xs pr-xs" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
+          <li>
+            <a class="button --text-only --fill@sm" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
           </li>
         {%- endfor -%}
-        <li class="mb-xs"></li>
-            <a class="pt-xs pb-xs pr-xs" href="/kitchen-sink/">Kitchen sink</a>
-          </li>
-        </ul>
       </details>
     </small-details>
   </nav>
-  <article class="docs-block start-1 span-9 measure-xl border-left@md">
+  <article class="measure-xl">
     {%- for post in collections.docs -%}
       <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
       {{ post.content }}
+      <hr>
     {%- endfor -%}
   </article>
 </section>

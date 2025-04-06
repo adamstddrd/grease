@@ -30,14 +30,14 @@ small-details {
       gap: var(--space-xs);
       align-items: center;
       cursor: pointer;
+      width: 100%;
 
       &::before {
         position: relative;
         content: "";
         width: 0.75em;
         height: 0.75em;
-        inset-block-start: -0.075em;
-        background-color: var(--color-text);
+        background-color: currentColor;
         clip-path: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%);
       }
     }

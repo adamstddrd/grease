@@ -3,6 +3,7 @@ default form styles
 ---------------------------------------------------------------------------- */
 
 form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
@@ -25,6 +26,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  color: var(--color-text);
 }
 
 :where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {	

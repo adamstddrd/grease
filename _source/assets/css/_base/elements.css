@@ -6,7 +6,6 @@ default element styles
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: var(--color-text);
 
   &::selection {
     color: var(--color-bg);
@@ -32,10 +31,10 @@ default element styles
 
 html {
   min-height: 100dvh;
+  color: var(--color-text);
   background-color: var(--color-bg);
   accent-color: var(--color-accent);
   overflow-x: clip;
-  animation: hue-shift 5s linear infinite;
   font-weight: var(--font-weight);
 
   @media (--motion) {
@@ -70,15 +69,17 @@ animate-on-scroll {
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote, form) {
-  width: 100%;
   margin-inline: auto;
   overflow-wrap: break-word;
   margin-block: var(--space-sm);
+  color: var(--color-text);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
+  width: 100%;
   text-wrap: balance;
   margin-block: var(--space-lg) var(--space-sm);
+  line-height: var(--leading-fluid);
 }
 
 h1 {
@@ -104,14 +105,14 @@ h3 {
 
 :where(h4, h5, h6) {
   font-size: var(--size-md);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 :where(p, ul, ol, dl, pre, blockquote) {
-  width: 100%;
   margin-inline: auto;
   line-height: var(--leading-fluid);
   overflow-wrap: break-word;
+  text-wrap: pretty;
   color: light-dark(
     var(--color-text),
     color-mix(in oklch, var(--color-text), var(--color-bg) 10%)
@@ -168,17 +169,15 @@ mark {
 
 a,
 a:visited {
-  color: var(--color-text);
+  color: var(--color-accent);
   text-decoration-thickness: var(--border-weight-md);
   text-underline-offset: 0.15rem;
-  text-decoration-color: var(--color-accent);
   transition: text-decoration-thickness 0.1s ease, color 0.1s ease;
 }
 
 @media (--hover) {
   a:hover {
-    color: color-mix(in oklch, var(--color-accent), var(--color-text) 50%);
-    text-decoration-thickness: var(--border-weight-lg);
+    text-decoration-thickness: calc(var(--border-weight-md) * 1.5);
   }
 }
 
@@ -228,16 +227,17 @@ blockquote {
     margin-block-end: 0;
   }
 
-  > p {
+  & > p {
     font-size: var(--size-xl);
     font-weight: 200;
+    text-wrap: balance;
   }
 
-  > p:has(+ cite) {
+  & > p:has(+ cite) {
     margin-block-end: 0;
   }
 
-  cite {
+  & cite {
     display: block;
     margin-block: 0;
     font-size: var(--size-xs);

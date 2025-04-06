@@ -6,6 +6,9 @@ position: manipulate position across breakpoints
 .absolute { position: absolute; }
 .sticky { position: sticky; }
 
+.h-screen { height: 100dvh; }
+.w-full { width: 100%; }
+
 .layer-1 { z-index: var(--layer-1); }
 .layer-2 { z-index: var(--layer-2); }
 .layer-3 { z-index: var(--layer-3); }
@@ -20,24 +23,9 @@ position: manipulate position across breakpoints
     position: sticky !important;
     inset-block-start: var(--space-md);
   }
-
-  .sticky-bottom\@md {
-    position: sticky !important;
-    inset-block-end: 0;
-  }
 }
 
 @media (--sm) {
   .relative\@sm { position: relative; }
   .absolute\@sm { position: absolute; }
-
-  .sticky\@sm { 
-    position: sticky !important;
-    inset-block-start: 0; 
-  }
-
-  .sticky-bottom\@sm { 
-    position: sticky !important;
-    inset-block-end: 0;
-  }
 }

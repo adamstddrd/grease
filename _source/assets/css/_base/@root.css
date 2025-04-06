@@ -34,8 +34,8 @@
     oklch(from var(--primary) var(--800))
   );
   --color-accent: light-dark(
-    var(--secondary),
-    var(--secondary)
+    oklch(from var(--secondary) var(--500)),
+    oklch(from var(--secondary) var(--200))
   );
   --color-border: light-dark(
     oklch(from var(--neutral) var(--200)),
@@ -92,6 +92,7 @@
   --size-xxl: calc(var(--size-xl) * var(--size-scale-lg));
   --size-xxxl: calc(var(--size-xxl) * var(--size-scale-lg));
   --size-xxxxl: calc(var(--size-xxxl) * var(--size-scale-lg));
+  --size-poster: font-size: clamp(3.5em, 8vw, 7em);
 
   /* measure */
   --measure-xs: 16ch;
@@ -107,7 +108,7 @@
   --leading-sm: var(--leading-base);
   --leading-md: calc(var(--leading-sm) * var(--leading-scale));
   --leading-lg: calc(var(--leading-md) * var(--leading-scale));
-  --leading-fluid: calc(0.45rem + 1.25em);
+  --leading-fluid: calc(0.6rem + 1em);
 
   /* letter spacing */
   --tracking-sm: -0.025em;

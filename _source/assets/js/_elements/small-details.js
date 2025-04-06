@@ -13,9 +13,11 @@ export default class SmallDetails extends HTMLElement {
     if (matches) {
       this.details.open = false;
       this.summary.tabIndex = 0;
+      this.summary.classList.add('button');
     } else {
       this.details.open = true;
       this.summary.tabIndex = -1;
+      this.summary.classList.remove('button');
     }
   }
 

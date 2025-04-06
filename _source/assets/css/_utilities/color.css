@@ -67,8 +67,8 @@ modify color on the fly
     oklch(from var(--neutral) var(--800) / 20%)
   );
   outline: 1px solid light-dark(
-    oklch(from var(--neutral) var(--50) / 20%),
-    oklch(from var(--neutral) var(--400) / 20%)
+    oklch(100% 0 0 / 20%),
+    oklch(from var(--color-bg) 80% c h / 10%)
   );
   outline-offset: -2px;
 }

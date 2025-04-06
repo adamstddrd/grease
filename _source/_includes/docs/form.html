@@ -1,0 +1,46 @@
+<form class="set-bg shadow-lg p-lg border glint radius-lg" action="">
+  <!-- use the flex utility to put multiple form elements in a row -->
+  <div class="flex gap-sm mb-sm">
+    <label>
+      <span>Input</span>
+      <input type="text" placeholder="input placeholder" required>
+    </label>
+    <label>
+      <span>Select</span>
+      <div class="select">
+        <select>
+          <option value="" disabled selected hidden>Pick an option...</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+          <optgroup label="Option group">
+            <option value="volvo">Option 4</option>
+            <option value="saab">Option 5</option>
+          </optgroup>
+        </select>
+      </div>
+    </label>
+  </div>
+  <!-- text areas will automatically grow as lines of text increase -->
+  <label>
+    Text area
+    <textarea placeholder="textarea placeholder"></textarea>
+  </label>
+  <!-- wrap inputs in <label> for bigger click/tap targets -->
+  <div class="flex gap-md align-items-center justify-between gap-sm mt-sm">
+    <div class="inline-flex gap-sm">
+      <label>
+        radio 1
+        <input type=radio name="radio-set">
+      </label>
+      <label>
+        radio 2
+        <input type=radio name="radio-set">
+      </label>
+      <label>
+        checkbox <input type=checkbox>
+      </label>
+    </div>
+    <button class="button --tactile --inverted --fill@sm">Button</button>
+  </div>
+</form>

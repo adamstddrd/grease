@@ -1,6 +1,4 @@
-.button,
-button,
-input[type="submit"] {
+:where(.button, button, input[type="submit"]) {
   --button-text: var(--color-text);
   --button-bg: oklch(from var(--color-bg) l c h / 0%);
   --button-border: var(--color-text);
@@ -12,8 +10,7 @@ input[type="submit"] {
   border-radius: var(--border-radius-sm);
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xs);
+  gap: var(--space-xxs);
   padding-block: var(--space-xs);
   padding-inline: var(--space-md);
   font-size: inherit;
@@ -41,7 +38,7 @@ input[type="submit"] {
   }
 
   & svg {
-    width: 1.5em;
+    width: 1em;
     height: auto;
   }
 
@@ -52,14 +49,8 @@ input[type="submit"] {
   }
 
   &.--tactile {
-    /* outline: 1px solid light-dark(
-      oklch(from var(--neutral) var(--50) / 20%),
-      oklch(from var(--neutral) var(--400) / 20%)
-    );
-    outline-offset: -2px; */
-
     box-shadow: inset 0 0 0 1px light-dark(
-      oklch(from var(--neutral) var(--0) / 30%),
+      oklch(from var(--primary) var(--0) / 30%),
       oklch(from var(--neutral) var(--0) / 30%)
     );
   }
@@ -91,13 +82,16 @@ input[type="submit"] {
   }
 
   &.--text-only {
-    --button-text: var(--color-text);
-    
+    padding-inline: 0;
+    border-radius: 0;
     border-color: transparent;
     background-color: transparent;
 
     @media (--hover) {
+
+      
       &:hover {
+        color: var(--button-border);
         border-block-end-color: var(--button-border);
       }
     }
