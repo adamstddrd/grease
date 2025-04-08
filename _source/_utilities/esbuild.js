@@ -18,7 +18,6 @@ export default function (eleventyConfig) {
         bundle: true,
         minify: true,
         sourcemap: true,
-        splitting: true,
         format: 'esm',
         logLevel: 'warning',
         outdir: '_public/assets/js',

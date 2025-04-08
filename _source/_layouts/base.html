@@ -34,17 +34,19 @@
     </style>
 
     <link rel="stylesheet" href="/assets/css/main.css" media="all">
-
-    {%- if stylesheet -%}
-    <link rel="stylesheet" href="/assets/css/{{ stylesheet }}" media="all">
-    {%- endif -%}
-
     <script src="/assets/js/app.js" type="module"></script>
 
-    {%- if javascript -%}
-    <script src="/assets/js/{{ javascript }}"  type="module"></script>
+    {%- if stylesheet -%}
+    {%- for sheet in stylesheet -%}
+    <link rel="stylesheet" href="/assets/css/{{ sheet }}" media="all">
+    {%- endfor -%}
     {%- endif -%}
 
+    {%- if javascript -%}
+    {%- for script in javascript -%}
+    <script src="/assets/js/{{ script }}" type="module"></script>
+    {%- endfor -%}
+    {%- endif -%}
   </head>
 
   <body {% if class %} class="{{ class }}"{% endif %}>
