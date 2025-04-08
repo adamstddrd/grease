@@ -6,8 +6,8 @@ position: manipulate position across breakpoints
 .absolute { position: absolute; }
 .sticky { position: sticky; }
 
-.h-screen { height: 100dvh; }
-.w-full { width: 100%; }
+.h-screen { block-size: 100dvh; }
+.w-full { inline-size: 100%; }
 
 .layer-1 { z-index: var(--layer-1); }
 .layer-2 { z-index: var(--layer-2); }

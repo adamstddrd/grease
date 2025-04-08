@@ -29,11 +29,11 @@ text: decouple semantics from presentation
   margin-inline: auto;
 }
 
-.measure-xs { max-width: var(--measure-xs); }
-.measure-sm { max-width: var(--measure-sm); }
-.measure-md { max-width: var(--measure-md); }
-.measure-lg { max-width: var(--measure-lg); }
-.measure-xl { max-width: var(--measure-xl); }
+.measure-xs { max-inline-size: var(--measure-xs); }
+.measure-sm { max-inline-size: var(--measure-sm); }
+.measure-md { max-inline-size: var(--measure-md); }
+.measure-lg { max-inline-size: var(--measure-lg); }
+.measure-xl { max-inline-size: var(--measure-xl); }
 
 .leading-flush { line-height: var(--leading-flush); }
 .leading-xxs { line-height: var(--leading-xxs); }

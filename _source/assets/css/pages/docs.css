@@ -29,7 +29,7 @@
   
   .grease-marks {
     position: relative;
-    width: 100%;
+    inline-size: 100%;
     pointer-events: none;
     position: absolute;
     mix-blend-mode: overlay;
@@ -43,8 +43,8 @@
       position: absolute;
       inset-block-start: 8rem;
       inset-inline-start: -70%;
-      width: 300rem;
-      height: 300rem;
+      inline-size: 300rem;
+      block-size: 300rem;
       border-block-start-width: 10rem;
       border-style: solid;
       border-color: light-dark(var(--color-focus), var(--color-bg));
@@ -74,7 +74,7 @@
     list-style: none;
 
     & > li {
-      width: auto;
+      inline-size: auto;
       flex-grow: 1;
       margin: 0;
       padding-block: var(--space-md);

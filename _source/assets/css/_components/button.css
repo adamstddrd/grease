@@ -34,13 +34,13 @@
   }
 
   & svg {
-    width: 1em;
-    height: auto;
+    inline-size: 1em;
+    block-size: auto;
   }
 
   &.--fill\@sm {
     @media (--sm) {
-      width: 100%;
+      inline-size: 100%;
     }
   }
 
