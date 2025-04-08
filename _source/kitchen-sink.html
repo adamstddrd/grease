@@ -7,6 +7,17 @@ colorList:
   - "neutral"
   - "primary"
   - "secondary"
+colorSteps:
+  - 50
+  - 100
+  - 200
+  - 300
+  - 400
+  - 500
+  - 600
+  - 700
+  - 800
+  - 900
 themeList:
   - "light"
   - "dark"
@@ -30,36 +41,11 @@ themeList:
   <h2>Colors</h2>
   {% for color in colorList %}
     <ul class="demo-chips bleed">
-      <li class="color --bg --{{ color }}-50">
-        <span class="color --text --contrast-light">{{ color }} 50</span>
-      </li>
-      <li class="color --bg --{{ color }}-100">
-        <span class="color --text --contrast-light">{{ color }} 100</span>
-      </li>
-      <li class="color --bg --{{ color }}-200">
-        <span class="color --text --contrast-light">{{ color }} 200</span>
-      </li>
-      <li class="color --bg --{{ color }}-300">
-        <span class="color --text --contrast-light">{{ color }} 300</span>
-      </li>
-      <li class="color --bg --{{ color }}-400">
-        <span class="color --text --contrast-light">{{ color }} 400</span>
-      </li>
-      <li class="color --bg --{{ color }}-500">
-        <span class="color --text --contrast-dark">{{ color }} 500</span>
-      </li>
-      <li class="color --bg --{{ color }}-600">
-        <span class="color --text --contrast-dark">{{ color }} 600</span>
-      </li>
-      <li class="color --bg --{{ color }}-700">
-        <span class="color --text --contrast-dark">{{ color }} 700</span>
-      </li>
-      <li class="color --bg --{{ color }}-800">
-        <span class="color --text --contrast-dark">{{ color }} 800</span>
-      </li>
-      <li class="color --bg --{{ color }}-900">
-        <span class="color --text --contrast-dark">{{ color }} 900</span>
-      </li>
+      {% for step in colorSteps %}
+        <li style="--color-bg: oklch(from var(--{{ color }}) var(--{{ step }}))">
+          <span {% if step >= 500 %}class="color --text --contrast-dark"{% endif %}>{{ color }} {{ step }}</span>
+        </li>
+      {% endfor %}
     </ul>
   {% endfor %}
 </section>
