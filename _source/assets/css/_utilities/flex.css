@@ -28,8 +28,8 @@ flex: simple sub-layouts
 .justify-between { justify-content: space-between; }
 .justify-end { justify-content: flex-end; }
 
-.no-wrap { flex-wrap: nowrap; }
 .column { flex-direction: column; }
+.no-wrap { flex-wrap: nowrap; }
 
 @media (--sm) {
   .gap-0\@sm { gap: 0; }

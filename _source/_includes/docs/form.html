@@ -1,24 +1,23 @@
 <form class="set-bg shadow-lg p-lg border glint radius-lg" action="">
   <!-- use the flex utility to put multiple form elements in a row -->
-  <div class="flex gap-sm mb-sm">
-    <label>
+  <div class="flex no-wrap gap-sm column@sm mb-sm">
+    <label class="w-full">
       <span>Input</span>
       <input type="text" placeholder="input placeholder" required>
     </label>
-    <label>
+    <label class="w-full">
       <span>Select</span>
-      <div class="select">
         <select>
-          <option value="" disabled selected hidden>Pick an option...</option>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
+          <option value="0" disabled selected hidden>Pick an option...</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
           <optgroup label="Option group">
-            <option value="volvo">Option 4</option>
-            <option value="saab">Option 5</option>
+            <legend>Option group</legend>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
           </optgroup>
         </select>
-      </div>
     </label>
   </div>
   <!-- text areas will automatically grow as lines of text increase -->

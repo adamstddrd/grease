@@ -17,15 +17,11 @@
   font-family: inherit;
   text-decoration: none;
   transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
-  line-height: 1;
+  line-height: var(--leading-sm);
   text-box: trim-both cap alphabetic;
 
   &:visited {
     color: var(--button-text);
-  }
-
-  @media (--sm) {
-    line-height: inherit;
   }
 
   @media (--hover) {
@@ -88,8 +84,6 @@
     background-color: transparent;
 
     @media (--hover) {
-
-      
       &:hover {
         color: var(--button-border);
         border-block-end-color: var(--button-border);

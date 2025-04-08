@@ -13,7 +13,7 @@
     oklch(from var(--secondary) var(--200))
   );
   --color-subtle: light-dark(
-    oklch(from var(--neutral) var(--100) / 50%),
+    oklch(from var(--neutral) var(--50)),
     oklch(from var(--neutral) var(--800))
   );
   --color-focus: light-dark(
@@ -43,8 +43,8 @@
     oklch(from var(--secondary) var(--300))
   );
   --color-subtle: light-dark(
-    oklch(from var(--neutral) var(--200) / 50%),
-    oklch(from var(--primary) var(--900) / 40%)
+    oklch(from var(--neutral) 92% calc(c/3) h),
+    oklch(from var(--primary) 20% calc(c/2) h)
   );
   --color-focus: light-dark(
     oklch(from var(--primary) var(--400)),

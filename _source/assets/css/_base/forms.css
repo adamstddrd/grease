@@ -3,34 +3,36 @@ default form styles
 ---------------------------------------------------------------------------- */
 
 form {
-  width: 100%;
+  inline-size: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
 }
 
 label {
-  font-weight: 500;
   display: block;
   flex-grow: 1;
+  flex-shrink: 1;
+  font-weight: 500;
   line-height: var(--leading-lg);
 }
 
 textarea {
-  width: 100%;
+  inline-size: 100%;
   field-sizing: content;
   min-height: var(--space-xxl);
 }
 
 :where(button, input, select, option, textarea) {
+  color: var(--color-text);
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
-  color: var(--color-text);
+  line-height: var(--leading-sm);
 }
 
 :where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {	
-  width: 100%;
+  inline-size: 100%;
 	background-color: var(--color-subtle);
 	border: var(--border-weight-md) solid var(--color-border);
   border-radius: var(--border-radius-sm);
@@ -43,32 +45,100 @@ textarea {
     opacity: 0.5;
   }
 
-  &:focus {
+  &:focus,
+  &:focus-within {
     border-color: var(--color-focus);
     outline: none;
   }
 }
 
-.select {
-  display: grid;
-  grid-template-areas: "select";
-  align-items: center;
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right var(--size-sm) center;
+  background-size: var(--size-md) var(--size-md);
 
-  > select {
-    grid-area: select;
-    appearance: none;
-  }
+  @supports (appearance: base-select) {
+    appearance: base-select;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: none;
 
-  &::after {
-    grid-area: select;
-    justify-self: end;
-    content: "";
-    display: block;
-    width: 0.8em;
-    height: 0.5em;
-    margin-inline-end: var(--space-sm);
-    background-color: var(--color-text);
-    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    &::picker-icon {
+      content: "";
+      display: block;
+      inline-size: 1em;
+      block-size: 0.75em;
+      background-color: var(--color-text);
+      clip-path: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%);
+      rotate: 90deg;
+    }
+
+    &::picker(select) {
+      appearance: base-select;
+      max-block-size: 24rem;
+      max-inline-size: 24rem;
+      position-try-order: normal;
+      margin-block: calc(var(--space-lg) * -1);
+      margin-inline: calc(var(--space-xs) * -1.25);
+      background-color: var(--color-subtle);
+      border: var(--border-weight-sm) solid var(--color-border);
+      border-radius: var(--border-radius-sm);
+      padding: var(--space-xs);
+      box-shadow: var(--shadow-md);
+    }
+
+    & legend {
+      padding: var(--space-xs);
+      font-size: var(--size-xs);
+      font-weight: 500;
+      color: var(--color-text);
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    & option {
+      display: block;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: var(--font-weight);
+      padding: var(--space-xs);
+      border-radius: var(--border-radius-sm);
+
+      &::checkmark {
+        display: none;
+      }
+
+      &[disabled] {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      &:not([disabled]) {
+        @media (hover: hover) {
+          &:hover {
+            background-color: oklch(from var(--color-text) l c h / 10%);
+          }
+        }
+
+        &:focus {
+          background-color: oklch(from var(--color-text) l c h / 10%);
+        }
+
+        &:focus-visible {
+          outline: none;
+        }
+
+        &:checked {
+          color: var(--color-bg);
+          background-color: var(--color-focus);
+        }
+      }
+    }
   }
 }
 
@@ -80,8 +150,8 @@ input[type="checkbox"], input[type="radio"] {
   appearance: none;
   display: inline-grid;
   place-content: center;
-  width: 1.2em;
-  height: 1.2em;
+  inline-size: 1.2em;
+  block-size: 1.2em;
   margin: 0;
   padding: 0;
   font: inherit;
@@ -101,8 +171,8 @@ input[type="radio"] {
 
   &::before {
     content: "";
-    width: 0.7em;
-    height: 0.7em;
+    inline-size: 0.7em;
+    block-size: 0.7em;
     border-radius: 50%;
     scale: 0;
     transition: 100ms transform ease-in-out;
@@ -115,8 +185,8 @@ input[type="checkbox"] {
 
   &::before {
     content: "";
-    width: 0.65em;
-    height: 0.65em;
+    inline-size: 0.65em;
+    block-size: 0.65em;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     scale: 0;
     box-shadow: inset 1em 1em var(--color-text);
