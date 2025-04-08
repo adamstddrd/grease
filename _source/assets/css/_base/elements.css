@@ -39,7 +39,6 @@ html {
 
   @media (--motion) {
     scroll-behavior: smooth;
-    interpolate-size: allow-keywords;
   }
 }
 

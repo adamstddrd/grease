@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-details element that defaults to closed @small and open @medium+
+details element that only looks like a details element @small
 ---------------------------------------------------------------------------- */
 
 export default class SmallDetails extends HTMLElement {

@@ -34,14 +34,13 @@
     </style>
 
     <link rel="stylesheet" href="/assets/css/main.css" media="all">
-    <script src="/assets/js/app.js" type="module"></script>
-
     {%- if stylesheet -%}
     {%- for sheet in stylesheet -%}
     <link rel="stylesheet" href="/assets/css/{{ sheet }}" media="all">
     {%- endfor -%}
     {%- endif -%}
 
+    <script src="/assets/js/app.js" type="module"></script>
     {%- if javascript -%}
     {%- for script in javascript -%}
     <script src="/assets/js/{{ script }}" type="module"></script>
@@ -50,13 +49,9 @@
   </head>
 
   <body {% if class %} class="{{ class }}"{% endif %}>
-
-    <scroll-sentinel></scroll-sentinel>
-
     <animate-on-scroll>
       {{ content }}
     </animate-on-scroll>
-
   </body>
 
 </html>
