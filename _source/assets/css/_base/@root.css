@@ -128,9 +128,9 @@
   --border-radius-xl: 1.6rem;
 
   /* border weight */
-  --border-weight-sm: 0.0625rem;
-  --border-weight-md: 0.1rem;
-  --border-weight-lg: 0.25rem;
+  --border-width-sm: 0.0625rem;
+  --border-width-md: 0.1rem;
+  --border-width-lg: 0.25rem;
 
   /* ---------------------------------------------------------------------------
   z-index layers

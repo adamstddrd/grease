@@ -10,55 +10,55 @@ border: adjust border appearance
 .radius-full { border-radius: 100%; }
 
 .border {
-  border: var(--border-weight-sm) solid var(--color-border);
+  border: var(--border-width-sm) solid var(--color-border);
 }
 
 .border-top {
-  border-block-start: var(--border-weight-sm) solid var(--color-border);
+  border-block-start: var(--border-width-sm) solid var(--color-border);
 }
 
 .border-bottom {
-  border-block-end: var(--border-weight-sm) solid var(--color-border);
+  border-block-end: var(--border-width-sm) solid var(--color-border);
 }
 
 .border-left {
-  border-inline-start: var(--border-weight-sm) solid var(--color-border);
+  border-inline-start: var(--border-width-sm) solid var(--color-border);
 }
 
 .border-right {
-  border-inline-end: var(--border-weight-sm) solid var(--color-border);
+  border-inline-end: var(--border-width-sm) solid var(--color-border);
 }
 
 @media (--md) {
   .border\@md {
-    border: var(--border-weight-sm) solid var(--color-border);
+    border: var(--border-width-sm) solid var(--color-border);
   }
 
   .border-top\@md {
-    border-block-start: var(--border-weight-sm) solid var(--color-border);
+    border-block-start: var(--border-width-sm) solid var(--color-border);
   }
 
   .border-bottom\@md {
-    border-block-end: var(--border-weight-sm) solid var(--color-border);
+    border-block-end: var(--border-width-sm) solid var(--color-border);
   }
 
   .border-left\@md {
-    border-inline-start: var(--border-weight-sm) solid var(--color-border);
+    border-inline-start: var(--border-width-sm) solid var(--color-border);
   }
 
   .border-right\@md {
-    border-inline-end: var(--border-weight-sm) solid var(--color-border);
+    border-inline-end: var(--border-width-sm) solid var(--color-border);
   }
 }
 
 .border-weight-sm {
-  border-width: var(--border-weight-sm);
+  border-width: var(--border-width-sm);
 }
 
 .border-weight-md {
-  border-width: var(--border-weight-md);
+  border-width: var(--border-width-md);
 }
 
 .border-weight-lg {
-  border-width: var(--border-weight-lg);
+  border-width: var(--border-width-lg);
 }

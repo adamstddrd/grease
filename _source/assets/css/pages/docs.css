@@ -22,7 +22,7 @@
       > nav {
         grid-column: 2;
         padding-inline-start: var(--space-lg);
-        border-inline-start: var(--border-weight-sm) solid var(--color-border);
+        border-inline-start: var(--border-width-sm) solid var(--color-border);
       }
     }
   }

@@ -6,7 +6,7 @@
 
   color: var(--button-text);
   background-color: var(--button-bg);
-  border: var(--border-weight-md) solid var(--button-border);
+  border: var(--border-width-md) solid var(--button-border);
   border-radius: var(--border-radius-sm);
   display: inline-flex;
   align-items: center;

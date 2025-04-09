@@ -13,8 +13,8 @@ default element styles
   }
   
   &:focus-visible {
-    outline: var(--border-weight-md) var(--color-accent) solid;
-    outline-offset: var(--border-weight-md);
+    outline: var(--border-width-md) var(--color-accent) solid;
+    outline-offset: var(--border-width-md);
   }
 }
 
@@ -170,14 +170,14 @@ mark {
 a,
 a:visited {
   color: var(--color-accent);
-  text-decoration-thickness: var(--border-weight-md);
+  text-decoration-thickness: var(--border-width-md);
   text-underline-offset: 0.15rem;
   transition: text-decoration-thickness 0.1s ease, color 0.1s ease;
 }
 
 @media (--hover) {
   a:hover {
-    text-decoration-thickness: calc(var(--border-weight-md) * 1.5);
+    text-decoration-thickness: calc(var(--border-width-md) * 1.5);
   }
 }
 
@@ -216,7 +216,7 @@ blockquote {
   margin-inline: calc(var(--space-sm) * -1) 0;
   padding-inline-start: var(--space-sm);
   font-size: var(--size-md);
-  border-inline-start: var(--border-weight-md) solid oklch(from var(--primary) var(--300));
+  border-inline-start: var(--border-width-md) solid oklch(from var(--primary) var(--300));
   text-box: trim-both cap alphabetic;
 
   & :first-child {
@@ -251,7 +251,7 @@ hr {
   inline-size: 100%;
   margin-block: var(--space-lg);
   border: 0;
-  border-block-start: var(--border-weight-sm) solid var(--color-border);
+  border-block-start: var(--border-width-sm) solid var(--color-border);
 }
 
 :where(img, embed, object, svg, video) {

@@ -34,7 +34,7 @@ textarea {
 :where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {	
   inline-size: 100%;
 	background-color: var(--color-subtle);
-	border: var(--border-weight-md) solid var(--color-border);
+	border: var(--border-width-md) solid var(--color-border);
   border-radius: var(--border-radius-sm);
 	padding: var(--space-sm);
   font-weight: 400;
@@ -84,7 +84,7 @@ select {
       margin-block: calc(var(--space-lg) * -1);
       margin-inline: calc(var(--space-xs) * -1.25);
       background-color: var(--color-subtle);
-      border: var(--border-weight-sm) solid var(--color-border);
+      border: var(--border-width-sm) solid var(--color-border);
       border-radius: var(--border-radius-sm);
       padding: var(--space-xs);
       box-shadow: var(--shadow-md);
@@ -157,7 +157,7 @@ input[type="checkbox"], input[type="radio"] {
   font: inherit;
   color: currentColor;
   background-color: var(--color-subtle);
-  border: var(--border-weight-md) solid var(--color-border);
+  border: var(--border-width-md) solid var(--color-border);
 
   &:checked::before {
     scale: 1;
