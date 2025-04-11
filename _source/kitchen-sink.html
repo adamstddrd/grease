@@ -31,7 +31,7 @@ themeList:
   - "secondary dark"
 ---
 
-{% render 'docs/header.html' class: 'set-bg' %}
+{% render 'docs/header.html' %}
 
 <section class="pb-lg">
   {% render 'docs/boilerplate.html' %}
@@ -43,7 +43,7 @@ themeList:
     <ul class="demo-chips bleed">
       {% for step in colorSteps %}
         <li style="--color-bg: oklch(from var(--{{ color }}) var(--{{ step }}))">
-          <span {% if step >= 500 %}class="color --text --contrast-dark"{% endif %}>{{ color }} {{ step }}</span>
+          <span {% if step >= 500 %}class="color --text --contrast-dark"{% else %}class="color --text --contrast-light"{% endif %}>{{ color }} {{ step }}</span>
         </li>
       {% endfor %}
     </ul>

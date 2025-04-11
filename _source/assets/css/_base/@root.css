@@ -71,50 +71,56 @@
   --------------------------------------------------------------------------- */
 
   /* font stacks */
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-family-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 
-  --font-code: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-family-code: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   /* font properties */
-  --font-weight: 325;
+  --font-weight-xs: 200;
+  --font-weight-sm: 325;
+  --font-weight-md: 400;
+  --font-weight-lg: 500;
+  --font-weight-xl: 700;
+  --font-weight-xxl: 800;
+  --font-weight: var(--font-weight-sm);
 
   /* font size */
-  --size-base: max(1.125em, min(calc(0.675em + 0.5vw), 1.875em));
-  --size-scale-sm: 1.2;
-  --size-scale-lg: 1.333;
-  --size-xxxs: calc(var(--size-xxs) / var(--size-scale-sm));
-  --size-xxs: calc(var(--size-xs) / var(--size-scale-sm));
-  --size-xs: calc(var(--size-sm) / var(--size-scale-sm));
-  --size-sm: calc(var(--size-md) / var(--size-scale-sm));
-  --size-md: 1em;
-  --size-lg: calc(var(--size-md) * var(--size-scale-lg));
-  --size-xl: calc(var(--size-lg) * var(--size-scale-lg));
-  --size-xxl: calc(var(--size-xl) * var(--size-scale-lg));
-  --size-xxxl: calc(var(--size-xxl) * var(--size-scale-lg));
-  --size-xxxxl: calc(var(--size-xxxl) * var(--size-scale-lg));
-  --size-poster: font-size: clamp(3.5em, 8vw, 7em);
+  --font-size-base: max(1.125em, min(calc(0.675em + 0.5vw), 1.875em));
+  --font-size-scale-sm: 1.2;
+  --font-size-scale-lg: 1.333;
+  --font-size-xxxs: calc(var(--font-size-xxs) / var(--font-size-scale-sm));
+  --font-size-xxs: calc(var(--font-size-xs) / var(--font-size-scale-sm));
+  --font-size-xs: calc(var(--font-size-sm) / var(--font-size-scale-sm));
+  --font-size-sm: calc(var(--font-size-md) / var(--font-size-scale-sm));
+  --font-size-md: 1em;
+  --font-size-lg: calc(var(--font-size-md) * var(--font-size-scale-lg));
+  --font-size-xl: calc(var(--font-size-lg) * var(--font-size-scale-lg));
+  --font-size-xxl: calc(var(--font-size-xl) * var(--font-size-scale-lg));
+  --font-size-xxxl: calc(var(--font-size-xxl) * var(--font-size-scale-lg));
+  --font-size-xxxxl: calc(var(--font-size-xxxl) * var(--font-size-scale-lg));
+  --font-size-poster: font-size: clamp(3.5em, 8vw, 7em);
 
-  /* measure */
-  --measure-xs: 16ch;
-  --measure-sm: 32ch;
-  --measure-md: 48ch;
-  --measure-lg: 60ch;
-  --measure-xl: 72ch;
+  /* line length */
+  --line-length-xs: 16ch;
+  --line-length-sm: 32ch;
+  --line-length-md: 48ch;
+  --line-length-lg: 60ch;
+  --line-length-xl: 72ch;
 
   /* line height */
-  --leading-base: 1.1;
-  --leading-scale: 1.25;
-  --leading-xs: calc(var(--leading-sm) / var(--leading-scale));
-  --leading-sm: var(--leading-base);
-  --leading-md: calc(var(--leading-sm) * var(--leading-scale));
-  --leading-lg: calc(var(--leading-md) * var(--leading-scale));
-  --leading-fluid: calc(0.6rem + 1em);
+  --line-height-base: 1.1;
+  --line-height-scale: 1.25;
+  --line-height-xs: calc(var(--line-height-sm) / var(--line-height-scale));
+  --line-height-sm: var(--line-height-base);
+  --line-height-md: calc(var(--line-height-sm) * var(--line-height-scale));
+  --line-height-lg: calc(var(--line-height-md) * var(--line-height-scale));
+  --line-height-fluid: calc(0.6rem + 1em);
 
   /* letter spacing */
-  --tracking-sm: -0.025em;
-  --tracking-md: 0;
-  --tracking-lg: 0.1em;
-  --tracking-xl: 0.3em;
+  --letter-spacing-sm: -0.025em;
+  --letter-spacing-md: 0;
+  --letter-spacing-lg: 0.1em;
+  --letter-spacing-xl: 0.3em;
 
   /* ---------------------------------------------------------------------------
   borders
@@ -127,19 +133,19 @@
   --border-radius-lg: 0.8rem;
   --border-radius-xl: 1.6rem;
 
-  /* border weight */
+  /* border width */
   --border-width-sm: 0.0625rem;
   --border-width-md: 0.1rem;
   --border-width-lg: 0.25rem;
 
   /* ---------------------------------------------------------------------------
-  z-index layers
+  z-index
   --------------------------------------------------------------------------- */
-  --layer-1: 1;
-  --layer-2: 2;
-  --layer-3: 3;
-  --layer-4: 4;
-  --layer-5: 5;
+  --z-1: 1;
+  --z-2: 2;
+  --z-3: 3;
+  --z-4: 4;
+  --z-5: 5;
 
   /* ---------------------------------------------------------------------------
   shadows

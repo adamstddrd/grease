@@ -17,7 +17,7 @@
   font-family: inherit;
   text-decoration: none;
   transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
-  line-height: var(--leading-sm);
+  line-height: var(--line-height-sm);
   text-box: trim-both cap alphabetic;
 
   &:visited {

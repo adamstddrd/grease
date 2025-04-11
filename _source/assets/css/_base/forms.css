@@ -13,8 +13,8 @@ label {
   display: block;
   flex-grow: 1;
   flex-shrink: 1;
-  font-weight: 500;
-  line-height: var(--leading-lg);
+  font-weight: var(--font-weight-lg);
+  line-height: var(--line-height-lg);
 }
 
 textarea {
@@ -28,7 +28,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
-  line-height: var(--leading-sm);
+  line-height: var(--line-height-sm);
 }
 
 :where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {	
@@ -37,7 +37,7 @@ textarea {
 	border: var(--border-width-md) solid var(--color-border);
   border-radius: var(--border-radius-sm);
 	padding: var(--space-sm);
-  font-weight: 400;
+  font-weight: var(--font-weight);
   transition: border-color 0.1s ease;
 
   &::placeholder {
@@ -56,8 +56,8 @@ select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
-  background-position: right var(--size-sm) center;
-  background-size: var(--size-md) var(--size-md);
+  background-position: right var(--space-sm) center;
+  background-size: var(--space-md) var(--space-md);
 
   @supports (appearance: base-select) {
     appearance: base-select;
@@ -92,8 +92,8 @@ select {
 
     & legend {
       padding: var(--space-xs);
-      font-size: var(--size-xs);
-      font-weight: 500;
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-lg);
       color: var(--color-text);
       text-transform: uppercase;
       opacity: 0.5;

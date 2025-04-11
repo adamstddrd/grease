@@ -19,8 +19,8 @@ eleventyImport:
   <nav class="sticky@md mb-lg">
     <small-details>
       <details>
-        <summary class="size-sm weight-400 uppercase tracking-lg pt-xs pb-xs">Using Grease</summary>
-        <ul class="unlisted size-sm weight-600">
+        <summary class="font-size-sm font-weight-md uppercase letter-spacing-lg pt-xs pb-xs">Using Grease</summary>
+        <ul class="unlisted font-size-sm font-weight-lg">
         {%- for post in collections.docs -%}
           <li>
             <a class="button --text-only --fill@sm" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
@@ -32,7 +32,7 @@ eleventyImport:
       </details>
     </small-details>
   </nav>
-  <article class="measure-xl">
+  <article class="line-length-xl">
     {%- for post in collections.docs -%}
       <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
       {{ post.content }}
@@ -41,6 +41,6 @@ eleventyImport:
   </article>
 </section>
 
-<footer class="relative span-12 mt-lg pt-md size-sm">
+<footer class="relative span-12 mt-lg pt-md font-size-sm">
   <p>By <a href="https://aaadaaam.com">AAADAAAM</a>. Have fun.</p>
 </footer>

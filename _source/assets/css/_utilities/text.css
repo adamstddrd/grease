@@ -2,68 +2,64 @@
 text: decouple semantics from presentation
 ---------------------------------------------------------------------------- */
 
-.size-xxxs { font-size: var(--size-xxxs); }
-.size-xxs { font-size: var(--size-xxs); }
-.size-xs { font-size: var(--size-xs); }
-.size-sm { font-size: var(--size-sm); }
-.size-md { font-size: var(--size-md); }
-.size-lg { font-size: var(--size-lg); }
-.size-xl { font-size: var(--size-xl); }
-.size-xxl { font-size: var(--size-xxl); }
-.size-xxxl { font-size: var(--size-xxxl); }
-.size-xxxxl { font-size: var(--size-xxxxl); }
+.font-size-xxxs { font-size: var(--font-size-xxxs); }
+.font-size-xxs { font-size: var(--font-size-xxs); }
+.font-size-xs { font-size: var(--font-size-xs); }
+.font-size-sm { font-size: var(--font-size-sm); }
+.font-size-md { font-size: var(--font-size-md); }
+.font-size-lg { font-size: var(--font-size-lg); }
+.font-size-xl { font-size: var(--font-size-xl); }
+.font-size-xxl { font-size: var(--font-size-xxl); }
+.font-size-xxxl { font-size: var(--font-size-xxxl); }
+.font-size-xxxxl { font-size: var(--font-size-xxxxl); }
 
-.weight-200 { font-weight: 200; }
-.weight-300 { font-weight: 300; }
-.weight-400 { font-weight: 400; }
-.weight-500 { font-weight: 500; }
-.weight-600 { font-weight: 600; }
-.weight-700 { font-weight: 700; }
-.weight-800 { font-weight: 800; }
+.font-weight-xs { font-weight: var(--font-weight-xs); }
+.font-weight-sm { font-weight: var(--font-weight-sm); }
+.font-weight-md { font-weight: var(--font-weight-md); }
+.font-weight-lg { font-weight: var(--font-weight-lg); }
+.font-weight-xl { font-weight: var(--font-weight-xl); }
+.font-weight-xxl { font-weight: var(--font-weight-xxl); }
 
 .left { text-align: start; }
 .right { text-align: end; }
+.center { text-align: center; }
 
-.center {
-  text-align: center;
-  margin-inline: auto;
-}
+.line-length-xs { max-inline-size: var(--line-length-xs); }
+.line-length-sm { max-inline-size: var(--line-length-sm); }
+.line-length-md { max-inline-size: var(--line-length-md); }
+.line-length-lg { max-inline-size: var(--line-length-lg); }
+.line-length-xl { max-inline-size: var(--line-length-xl); }
 
-.measure-xs { max-inline-size: var(--measure-xs); }
-.measure-sm { max-inline-size: var(--measure-sm); }
-.measure-md { max-inline-size: var(--measure-md); }
-.measure-lg { max-inline-size: var(--measure-lg); }
-.measure-xl { max-inline-size: var(--measure-xl); }
+.line-height-flush { line-height: var(--line-height-flush); }
+.line-height-xxs { line-height: var(--line-height-xxs); }
+.line-height-xs { line-height: var(--line-height-xs); }
+.line-height-sm { line-height: var(--line-height-sm); }
+.line-height-md { line-height: var(--line-height-md); }
+.line-height-lg { line-height: var(--line-height-lg); }
 
-.leading-flush { line-height: var(--leading-flush); }
-.leading-xxs { line-height: var(--leading-xxs); }
-.leading-xs { line-height: var(--leading-xs); }
-.leading-sm { line-height: var(--leading-sm); }
-.leading-md { line-height: var(--leading-md); }
-.leading-lg { line-height: var(--leading-lg); }
-
-.tracking-sm { letter-spacing: var(--tracking-sm); }
-.tracking-md { letter-spacing: var(--tracking-md); }
-.tracking-lg { letter-spacing: var(--tracking-lg); }
-.tracking-xl { letter-spacing: var(--tracking-xl); }
+.letter-spacing-sm { letter-spacing: var(--letter-spacing-sm); }
+.letter-spacing-md { letter-spacing: var(--letter-spacing-md); }
+.letter-spacing-lg { letter-spacing: var(--letter-spacing-lg); }
+.letter-spacing-xl { letter-spacing: var(--letter-spacing-xl); }
 
 .balance { text-wrap: balance; }
+.pretty { text-wrap: pretty; }
 .italic { font-style: italic; }
 .undecorated { text-decoration: none; }
 .unlisted { list-style-type: none; }
 .uppercase { text-transform: uppercase; }
 
 @media (--md) {
-  .size-xxxs\@md { font-size: var(--size-xxxs); }
-  .size-xxs\@md { font-size: var(--size-xxs); }
-  .size-xs\@md { font-size: var(--size-xs); }
-  .size-sm\@md { font-size: var(--size-sm); }
-  .size-md\@md { font-size: var(--size-md); }
-  .size-lg\@md { font-size: var(--size-lg); }
-  .size-xl\@md { font-size: var(--size-xl); }
-  .size-xxl\@md { font-size: var(--size-xxl); }
-  .size-xxxl\@md { font-size: var(--size-xxxl); }
-  .size-xxxxl\@md { font-size: var(--size-xxxxl); }
+  .font-size-xxxs\@md { font-size: var(--font-size-xxxs); }
+  .font-size-xxs\@md { font-size: var(--font-size-xxs); }
+  .font-size-xs\@md { font-size: var(--font-size-xs); }
+  .font-size-sm\@md { font-size: var(--font-size-sm); }
+  .font-size-md\@md { font-size: var(--font-size-md); }
+  .font-size-lg\@md { font-size: var(--font-size-lg); }
+  .font-size-xl\@md { font-size: var(--font-size-xl); }
+  .font-size-xxl\@md { font-size: var(--font-size-xxl); }
+  .font-size-xxxl\@md { font-size: var(--font-size-xxxl); }
+  .font-size-xxxxl\@md { font-size: var(--font-size-xxxxl); }
 
   .left\@md { text-align: start; }
   .right\@md { text-align: end; }

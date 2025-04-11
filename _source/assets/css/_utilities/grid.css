@@ -2,16 +2,16 @@
 grid: compose pages
 ---------------------------------------------------------------------------- */
 .grid {
-  --width-sm: minmax(50vw, 36rem);
-  --width-md: 64em;
-  --gap: min(4vw, 4em);
   --col-count: 12;
-  --gutter-count: calc(var(--col-count) - 1);
-  --col-width: calc((var(--width-md) - (var(--gap) * 11)) / 12);
+  --col-width-sm: minmax(50vw, 36rem);
+  --col-width-md: 64em;
+  --col-width: calc((var(--col-width-md) - (var(--gap) * 11)) / 12);
   --default-columns: 3 / span 10;
+  --gap: min(4vw, 4em);
+  --gutter-count: calc(var(--col-count) - 1);
 
   display: grid;
-  grid-template-columns: 1fr var(--width-sm) 1fr;
+  grid-template-columns: 1fr var(--col-width-sm) 1fr;
   align-items: start;
   column-gap: var(--gap);
   position: relative;
@@ -33,15 +33,15 @@ grid: compose pages
   &.--reverse { direction: rtl; }
   
   &.--gap-0 { 
-    --col-width: calc(var(--width-md) / 12);
+    --col-width: calc(var(--col-width-md) / 12);
     --gap: 0;
   }
 
-  &.--gap-xs { --gap: var(--size-xs); }
-  &.--gap-sm { --gap: var(--size-sm); }
-  &.--gap-md { --gap: var(--size-md); }
-  &.--gap-lg { --gap: var(--size-lg); }
-  &.--gap-y-md { row-gap: var(--size-md); }
+  &.--gap-xs { --gap: var(--space-xs); }
+  &.--gap-sm { --gap: var(--space-sm); }
+  &.--gap-md { --gap: var(--space-md); }
+  &.--gap-lg { --gap: var(--space-lg); }
+  &.--gap-y-md { row-gap: var(--space-md); }
 }
 
 .bleed { grid-column: 1 / -1; }

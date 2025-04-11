@@ -6,9 +6,9 @@
     margin-block: var(--space-xxl);
     font-size: clamp(4em, 8vw, 7em);
     line-height: 1;
-    font-weight: 200;
+    font-weight: var(--font-weight-xs);
     color: var(--color-focus);
-    z-index: var(--layer-1);
+    z-index: var(--z-1);
   }
 
   .docs-layout {
@@ -63,7 +63,7 @@
       padding: var(--space-sm);
       color: var(--color-text);
       background-color: var(--color-bg);
-      font-size: var(--size-sm);
+      font-size: var(--font-size-sm);
     }
   }
 
@@ -81,7 +81,7 @@
       padding-inline: var(--space-sm);
       color: var(--color-text);
       background-color: var(--color-bg);
-      font-size: var(--size-xs);
+      font-size: var(--font-size-xs);
       text-align: center;
 
       & > span {
