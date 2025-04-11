@@ -33,7 +33,7 @@ textarea {
 
 :where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {	
   inline-size: 100%;
-	background-color: var(--color-subtle);
+	background-color: var(--color-bg-dark);
 	border: var(--border-width-md) solid var(--color-border);
   border-radius: var(--border-radius-sm);
 	padding: var(--space-sm);
@@ -47,7 +47,7 @@ textarea {
 
   &:focus,
   &:focus-within {
-    border-color: var(--color-focus);
+    border-color: var(--color-accent);
     outline: none;
   }
 }
@@ -83,7 +83,7 @@ select {
       position-try-order: normal;
       margin-block: calc(var(--space-lg) * -1);
       margin-inline: calc(var(--space-xs) * -1.25);
-      background-color: var(--color-subtle);
+      background-color: var(--color-bg-dark);
       border: var(--border-width-sm) solid var(--color-border);
       border-radius: var(--border-radius-sm);
       padding: var(--space-xs);
@@ -135,7 +135,7 @@ select {
 
         &:checked {
           color: var(--color-bg);
-          background-color: var(--color-focus);
+          background-color: var(--color-accent);
         }
       }
     }
@@ -156,12 +156,12 @@ input[type="checkbox"], input[type="radio"] {
   padding: 0;
   font: inherit;
   color: currentColor;
-  background-color: var(--color-subtle);
+  background-color: var(--color-bg-dark);
   border: var(--border-width-md) solid var(--color-border);
 
   &:checked::before {
     scale: 1;
-    box-shadow: inset 1em 1em var(--color-focus);
+    box-shadow: inset 1em 1em var(--color-accent);
   }
 }
 

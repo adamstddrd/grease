@@ -59,19 +59,19 @@
     @media (--hover) {
       &:hover {
         --button-text: var(--color-bg);
-        --button-bg: var(--color-focus);
-        --button-border: var(--color-focus);
+        --button-bg: var(--color-accent);
+        --button-border: var(--color-accent);
       }
     }
   }
 
   &.--primary {
-    --button-text: var(--color-focus);
-    --button-border: var(--color-focus);
+    --button-text: var(--color-accent);
+    --button-border: var(--color-accent);
 
     @media (--hover) {
       &:hover {
-        --button-bg: var(--color-focus);
+        --button-bg: var(--color-accent);
         --button-text: var(--color-bg);
       }
     }

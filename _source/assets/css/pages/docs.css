@@ -7,8 +7,8 @@
     font-size: clamp(4em, 8vw, 7em);
     line-height: 1;
     font-weight: var(--font-weight-xs);
-    color: var(--color-focus);
-    z-index: var(--z-1);
+    color: var(--color-accent);
+    z-index: var(--z-2);
   }
 
   .docs-layout {
@@ -18,6 +18,8 @@
       grid-auto-flow: dense;
       align-items: start;
       gap: var(--space-lg);
+      position: relative;
+      z-index: var(--z-2);
 
       > nav {
         grid-column: 2;
@@ -28,33 +30,33 @@
   }
   
   .grease-marks {
-    position: relative;
     inline-size: 100%;
     pointer-events: none;
     position: absolute;
-    mix-blend-mode: overlay;
-
-    @media (--dark) {
-      mix-blend-mode: none;
-      opacity: 0.4;
-    }
+    inset-inline-start: -80rem;
+    z-index: -1;
+    opacity: 1;
+    rotate: -8deg;
 
     & > * {
       position: absolute;
-      inset-block-start: 8rem;
-      inset-inline-start: -70%;
+      inset-block-start: 0;
+      inset-inline-start: 0;
       inline-size: 300rem;
       block-size: 300rem;
+      border-width: 0;
       border-block-start-width: 10rem;
       border-style: solid;
-      border-color: light-dark(var(--color-focus), var(--color-bg));
+      border-color: light-dark(
+        oklch(from var(--color-accent) var(--100)), 
+        var(--color-bg));
       border-radius: 100%;
-      mix-blend-mode: multiply;
+      mix-blend-mode: soft-light;
     }
   }
 
   .demo-grid {
-    > div {
+    & > div {
       --color-bg: light-dark(
         oklch(from var(--neutral) var(--200) / 50%),
         oklch(from var(--primary) var(--700))

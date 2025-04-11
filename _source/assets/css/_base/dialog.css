@@ -5,7 +5,7 @@ dialog {
   padding-block: var(--space-md);
   padding-inline: var(--space-md);
   overflow: visible;
-  background-color: var(--color-subtle);
+  background-color: var(--color-bg-dark);
   border-radius: var(--border-radius-lg);
   border: var(--border-width-sm) solid var(--color-border);
   box-shadow: var(--shadow-lg);

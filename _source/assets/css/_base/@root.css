@@ -33,21 +33,21 @@
     oklch(from var(--primary) var(--0)),
     oklch(from var(--primary) var(--800))
   );
+  --color-bg-dark: light-dark(
+    oklch(from var(--neutral) var(--50)),
+    oklch(from var(--primary) var(--900))
+  );
   --color-accent: light-dark(
+    oklch(from var(--primary) var(--500)),
+    oklch(from var(--primary) var(--300))
+  );
+  --color-link: light-dark(
     oklch(from var(--secondary) var(--500)),
     oklch(from var(--secondary) var(--200))
   );
   --color-border: light-dark(
     oklch(from var(--neutral) var(--200)),
     oklch(from var(--primary) var(--600))
-  );
-  --color-subtle: light-dark(
-    oklch(from var(--neutral) var(--50)),
-    oklch(from var(--primary) var(--900))
-  );
-  --color-focus: light-dark(
-    oklch(from var(--primary) var(--500)),
-    oklch(from var(--primary) var(--300))
   );
   --color-shadow: black;
 
@@ -141,6 +141,7 @@
   /* ---------------------------------------------------------------------------
   z-index
   --------------------------------------------------------------------------- */
+  --z-0: 0;
   --z-1: 1;
   --z-2: 2;
   --z-3: 3;

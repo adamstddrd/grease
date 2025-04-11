@@ -9,6 +9,7 @@ modify color on the fly
   &.--text { --color-text: var(--property); }
   &.--bg { --color-bg: var(--property); }
   &.--border { --color-border: var(--property); }
+  &.--link { --color-link: var(--property); }
   &.--accent { --color-accent: var(--property); }
   &.--shadow { --color-shadow: var(--property); }
 
@@ -16,8 +17,8 @@ modify color on the fly
   &.--use-text { --property: var(--color-text); }
   &.--use-bg { --property: var(--color-bg); }
   &.--use-border { --property: var(--color-border); }
+  &.--use-link { --property: var(--color-link); }
   &.--use-accent { --property: var(--color-accent); }
-  &.--use-focus { --property: var(--color-focus); }
   &.--use-shadow { --property: var(--color-shadow); }
   &.--contrast-light { --property: oklch(from var(--color-bg) calc(l/6) c h); }
   &.--contrast-dark { --property: oklch(from var(--color-bg) calc(l*6) c h); }
