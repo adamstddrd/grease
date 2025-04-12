@@ -12,7 +12,7 @@
   align-items: center;
   gap: var(--space-xxs);
   padding-block: var(--space-xs);
-  padding-inline: var(--space-md);
+  padding-inline: var(--space-sm);
   font-size: inherit;
   font-family: inherit;
   text-decoration: none;

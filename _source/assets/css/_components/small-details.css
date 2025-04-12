@@ -2,18 +2,6 @@ small-details {
   display: contents;
 
   & details {
-    margin-block: 0;
-
-    @media (--sm) {
-      &[open] {
-        margin-block-end: var(--space-md);
-
-        & summary::before {
-          transform: rotate(90deg);
-        }
-      }
-    }
-
     @media (--md) {
       &:focus {
         outline: none;
@@ -22,34 +10,18 @@ small-details {
   }
 
   & summary {
-    padding-block: 0 var(--space-sm);
-
-    &::-webkit-details-marker {
-      display: none;
-    }
+    /* padding-block: 0 var(--space-sm); */
 
     @media (--sm) {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: var(--space-xs);
-      align-items: center;
-      cursor: pointer;
-      inline-size: 100%;
       padding-block: var(--space-sm);
-
-      &::before {
-        position: relative;
-        content: "";
-        inline-size: 0.75em;
-        block-size: 0.75em;
-        background-color: currentColor;
-        clip-path: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%);
-      }
     }
 
     @media (--md) {
-      list-style: none;
       pointer-events: none;
+
+      &::before {
+        content: none;
+      }
 
       &:focus {
         outline: none;
