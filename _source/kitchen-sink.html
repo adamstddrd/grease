@@ -29,63 +29,34 @@ themeList:
   - "primary dark"
   - "secondary light"
   - "secondary dark"
+demoSections:
+  - "Typography"
+  - "Colors"
+  - "Forms"
+  - "Grid"
+  - "Themes"
 ---
 
-{% render 'docs/header.html' class: "primary" %}
+{% render 'docs/header.html' class: "primary set-bg" %}
+<nav class="primary sticky top-0 z-5 grid pt-sm pb-sm set-bg color --bg --use-bg-dark">
+  <details-menu>
+    <details class="span-12">
+      <summary class="color --text --use-accent">On this page</summary>
+      <ul class="unlisted border-top mt-sm pt-sm">
+        {% for item in demoSections %}
+          <li>
+            <a href="#{{ item | slugify }}" class="button --text-only --primary">
+              {{ item }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
+  </details-menu>
+</nav>
 
-<section class="pb-lg">
-  {% render 'docs/boilerplate.html' %}
-</section>
-
-<section class="grid set-bg">
-  <h2>Colors</h2>
-  {% for color in colorList %}
-    <ul class="demo-chips bleed">
-      {% for step in colorSteps %}
-        <li style="--color-bg: oklch(from var(--{{ color }}) var(--{{ step }}))">
-          <span {% if step >= 500 %}class="color --text --contrast-dark"{% else %}class="color --text --contrast-light"{% endif %}>{{ color }} {{ step }}</span>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
-</section>
-
-<section class="demo-grid grid --gap-sm --gap-y-md py-lg">
-  <h2>Grid</h2>
-  <div class="bleed">.bleed</div>
-  <div class="bleed-start span-6">.bleed-start</div>
-  <div class="bleed-end start-6">.bleed-end</div>
-  <div class="span-12">.span-12</div>
-  <div class="span-1/2">.span-1/2</div>
-  <div class="span-1/2">.span-1/2</div>
-  <div class="span-1/3">.span-1/3</div>
-  <div class="span-1/3">.span-1/3</div>
-  <div class="span-1/3">.span-1/3</div>
-  <div class="span-1/4">.span-1/4</div>
-  <div class="span-1/4">.span-1/4</div>
-  <div class="span-1/4">.span-1/4</div>
-  <div class="span-1/4">.span-1/4</div>
-  <div class="start-1 span-2">.start-1 .span-2</div>
-  <div class="start-auto span-10">start-auto .span-10</div>
-  <div class="start-1 span-3">start-1 .span-3</div>
-  <div class="start-auto span-9">.start-auto .span-9</div>
-  <div class="start-1 span-4">.start-1 .span-4</div>
-  <div class="start-auto span-8">.start-auto .span-8</div>
-  <div class="start-1 span-5">.start-1 .span-5</div>
-  <div class="start-auto span-7">.start-auto .span-7</div>
-  <div class="start-1 span-6">.start-1 .span-6</div>
-  <div class="start-auto span-6">.start-auto .span-6</div>
-</section>
-
-<section class="grid set-bg">
-  <h2>Themes</h2>
-  {% for theme in themeList %}
-    <section class="grid set-bg py-lg {{ theme }}">
-      <article>
-        <h3>{{ theme }}</h3>
-        <p>Consectetur <a href="#">adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This is inline code <code>&lt;div&gt;div element&lt;/div&gt;</code></p>
-      </article>
-      {% render 'docs/form.html' %}
-    </section>
-  {% endfor %}
-</section>
+{% for item in demoSections %}
+  {% capture includePath %}docs/{{ item | slugify }}.html{% endcapture %}
+  <h2 class="span-12 mt-xl pt-md mb-md border-top">{{ item }}</h2>
+  {% render includePath colorList: colorList, colorSteps: colorSteps, themeList: themeList  %}
+{% endfor %}

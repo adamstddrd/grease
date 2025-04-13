@@ -16,6 +16,12 @@ position: manipulate position across breakpoints
 .z-4 { z-index: var(--z-4); }
 .z-5 { z-index: var(--z-5); }
 
+.top-0 { inset-block-start: 0; }
+.top-sm { inset-block-start: var(--space-sm); }
+.top-md { inset-block-start: var(--space-md); }
+.top-lg { inset-block-start: var(--space-lg); }
+.top-xl { inset-block-start: var(--space-xl); }
+
 @media (--md) {
   .relative\@md { position: relative; }
   .absolute\@md { position: absolute; }

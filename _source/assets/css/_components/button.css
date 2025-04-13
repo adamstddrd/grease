@@ -34,8 +34,8 @@
   }
 
   & svg {
-    inline-size: 1em;
-    block-size: auto;
+    block-size: 1em;
+    inline-size: auto;
   }
 
   &.--fill\@sm {

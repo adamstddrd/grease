@@ -101,11 +101,11 @@
   --font-size-poster: font-size: clamp(3.5em, 8vw, 7em);
 
   /* line length */
-  --line-length-xs: 16ch;
-  --line-length-sm: 32ch;
-  --line-length-md: 48ch;
-  --line-length-lg: 60ch;
-  --line-length-xl: 72ch;
+  --line-length-xs: 24ch;
+  --line-length-sm: 48ch;
+  --line-length-md: 64ch;
+  --line-length-lg: 72ch;
+  --line-length-xl: 80ch;
 
   /* line height */
   --line-height-base: 1.1;

@@ -108,7 +108,7 @@
     oklch(from var(--secondary) var(--200))
   );
   --color-border: light-dark(
-    oklch(from var(--neutral) var(--200)),
+    oklch(from var(--neutral) var(--300)),
     oklch(from var(--neutral) var(--900))
   );
 }

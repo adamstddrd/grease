@@ -16,6 +16,7 @@ modify color on the fly
   /* ... and map it do a different color */
   &.--use-text { --property: var(--color-text); }
   &.--use-bg { --property: var(--color-bg); }
+  &.--use-bg-dark { --property: var(--color-bg-dark); }
   &.--use-border { --property: var(--color-border); }
   &.--use-link { --property: var(--color-link); }
   &.--use-accent { --property: var(--color-accent); }

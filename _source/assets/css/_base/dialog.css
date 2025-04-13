@@ -45,14 +45,6 @@ dialog {
     position-try-order: most-block-size;
   }
 
-  & :first-child {
-    margin-block-start: 0;
-  }
-
-  & :last-child {
-    margin-block-end: 0;
-  }
-
   &::backdrop {
     transition: all 0.1s ease-in-out;
   }
