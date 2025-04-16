@@ -30,6 +30,12 @@
       --button-bg: var(--color-text);
       --button-border: var(--button-bg);
 
+      border-color: var(--button-border);
+      background-color: color-mix(
+        in oklch, 
+        var(--button-bg), 
+        var(--color-bg) 25%
+      );
       cursor: pointer;
     }
   }
@@ -50,38 +56,28 @@
   }
 
   &.--fill {
-    color: var(--button-bg);
-    background-color: var(--button-text);
-    border-color: var(--button-text);
-
-    @media (--hover) {
-      &:hover {
-        color: var(--button-text);
-        border-color: var(--button-bg);
-        background-color: oklch(from var(--button-bg) l c h / 75%);
-      }
+    &:not(:hover) {
+      color: var(--button-bg);
+      background-color: var(--button-text);
+      border-color: var(--button-text);
     }
   }
 
   &.--primary {
     --button-text: var(--color-accent);
 
-    @media (--hover) {
-      &:hover {
-        --button-bg: var(--color-accent);
-        --button-text: var(--color-bg);
-      }
+    &:hover {
+      --button-bg: var(--color-accent);
+      --button-text: var(--color-bg);
     }
   }
 
   &.--secondary {
     --button-text: var(--color-link);
 
-    @media (--hover) {
-      &:hover {
-        --button-bg: var(--color-link);
-        --button-text: var(--color-bg);
-      }
+    &:hover {
+      --button-bg: var(--color-link);
+      --button-text: var(--color-bg);
     }
   }
 

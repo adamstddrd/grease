@@ -30,7 +30,7 @@
     oklch(from var(--neutral) var(--100))
   );
   --color-bg: light-dark(
-    oklch(from var(--primary) var(--0)),
+    white,
     oklch(from var(--primary) var(--800))
   );
   --color-bg-dark: light-dark(
