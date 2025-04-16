@@ -32,28 +32,31 @@ themeList:
 demoSections:
   - "Typography"
   - "Colors"
+  - "Buttons"
   - "Forms"
   - "Grid"
   - "Themes"
 ---
 
-{% render 'docs/header.html' class: "primary set-bg" %}
-<nav class="primary sticky top-0 z-5 grid pt-sm pb-sm set-bg color --bg --use-bg-dark">
-  <details-menu>
-    <details class="span-12">
-      <summary class="color --text --use-accent">On this page</summary>
-      <ul class="unlisted border-top mt-sm pt-sm">
-        {% for item in demoSections %}
-          <li>
-            <a href="#{{ item | slugify }}" class="button --text-only --primary">
-              {{ item }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </details>
-  </details-menu>
-</nav>
+<header class="sticky top-0 z-5 grid pt-sm pb-sm">
+  <nav class="flex span-12 gap-xs align-items-center">
+    <a class="button --point-left --subtle --primary radius-xl shadow-md" href="/"><span class="sr-only">back</span></a>
+    <details-menu>
+      <details class="relative">
+        <summary class="button --primary radius-xl shadow-md">On this page</summary>
+        <ul class="absolute unlisted mt-xs flex column gap-xs">
+          {% for item in demoSections %}
+            <li>
+              <a href="#{{ item | slugify }}" class="button --subtle --primary radius-xl shadow-md">
+                {{ item }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </details>
+    </details-menu>
+  </nav>
+</header>
 
 {% for item in demoSections %}
   {% capture includePath %}docs/{{ item | slugify }}.html{% endcapture %}

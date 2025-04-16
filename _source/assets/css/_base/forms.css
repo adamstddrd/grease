@@ -72,7 +72,7 @@ select {
       inline-size: 1em;
       block-size: 0.75em;
       background-color: var(--color-text);
-      clip-path: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%);
+      clip-path: var(--shape-chevron);
       rotate: 90deg;
     }
 

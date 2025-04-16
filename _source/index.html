@@ -9,7 +9,7 @@ eleventyImport:
 # canonical: https://example.com/page.html
 ---
 
-<section class="grid primary">
+<section class="grid">
   {% render 'docs/header.html' %}
   <h1 class="hero span-12">Grease takes the friction out of building fast, adaptable websites.</h1>
   <random-shapes class="grease-marks bleed" quantity="10" jitter="20"></random-shapes>
@@ -23,16 +23,16 @@ eleventyImport:
         <ul class="unlisted font-size-sm font-weight-lg">
         {%- for post in collections.docs -%}
           <li>
-            <a class="button --text-only --fill@sm" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
+            <a class="button --simple w-full@sm" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
           </li>
         {%- endfor -%}
         <li>
-          <a class="button --text-only --fill@sm" href="/kitchen-sink/">kitchen sink</a>
+          <a class="button --simple w-full@sm" href="/kitchen-sink/">kitchen sink</a>
         </li>
       </details>
     </small-details>
   </nav>
-  <article class="line-length-xl">
+  <article class="line-length-lg">
     {%- for post in collections.docs -%}
       <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
       {{ post.content }}

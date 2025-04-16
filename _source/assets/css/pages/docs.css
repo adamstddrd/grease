@@ -26,6 +26,10 @@
         padding-inline-start: var(--space-lg);
         border-inline-start: var(--border-width-sm) solid var(--color-border);
       }
+
+      > article > :first-child {
+        margin-block-start: 0;
+      }
     }
   }
   
@@ -37,6 +41,7 @@
     z-index: -1;
     opacity: 1;
     rotate: -8deg;
+    filter: blur(0.2rem);
 
     & > * {
       position: absolute;
@@ -49,7 +54,8 @@
       border-style: solid;
       border-color: light-dark(
         oklch(from var(--color-accent) var(--100)), 
-        var(--color-bg));
+        oklch(from var(--color-accent) var(--700) / 15%)
+      );
       border-radius: 100%;
       mix-blend-mode: soft-light;
     }

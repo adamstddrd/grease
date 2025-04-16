@@ -1,3 +1,10 @@
+.inverted {
+  color-scheme: dark;
+  @media (--dark) {
+    color-scheme: light;
+  }
+}
+
 .high-contrast {
   --neutral: oklch(30% 0 300);
   --primary: oklch(30% 0.36 300);

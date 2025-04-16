@@ -68,12 +68,13 @@ header {
 }
 
 :where(article, .formatted) {
+  max-width: var(--line-length-xl);
+
   & > :where(h1, h2, h3) {
     margin-block: var(--space-lg) var(--space-sm);
   }
 
   & > :where(p, ul, ol, dl, pre, details, h4, h5, h6) {
-    max-width: var(--line-length-xl);
     margin-block: var(--space-sm);
   }
 
@@ -83,10 +84,6 @@ header {
 
   & > :where(blockquote, hr) {
     margin-block: var(--space-lg);
-  }
-
-  & > :where(p, ul, ol, dl, pre, blockquote, form) {
-    max-width: var(--line-length-xl);
   }
 }
 
@@ -265,10 +262,11 @@ details {
     &::before {
       position: relative;
       content: "";
-      inline-size: 0.75em;
-      block-size: 0.75em;
+      inline-size: 1em;
+      block-size: 1em;
+      scale: 0.9;
       background-color: currentColor;
-      clip-path: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%);
+      clip-path: var(--shape-chevron);
     }
   }
 

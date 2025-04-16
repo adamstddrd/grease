@@ -35,4 +35,5 @@ position: manipulate position across breakpoints
 @media (--sm) {
   .relative\@sm { position: relative; }
   .absolute\@sm { position: absolute; }
+  .w-full\@sm { inline-size: 100%; }
 }
