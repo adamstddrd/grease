@@ -30,6 +30,10 @@ dialog {
   );
   outline-offset: calc(var(--border-width-sm) * -2);
 
+  &:focus-visible {
+    outline: none;
+  }
+
   &[style^="position-anchor"] {
     position: absolute;
     margin-inline: 0 var(--space-md);
