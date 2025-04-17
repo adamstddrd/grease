@@ -7,31 +7,45 @@ eleventyImport:
   collections: ["docs"]
 # noindex: true
 # canonical: https://example.com/page.html
+# theme: low-contrast
 ---
 
 <section class="grid">
-  {% render 'docs/header.html' %}
+
+  <header class="grid layer-1 {{ class }}">
+    <nav class="span-12 flex no-wrap justify-between align-items-center">
+      <a class="font-size-lg font-weight-xxl uppercase undecorated button --simple  --primary" href="/">
+        {% render "svg/grease.svg" %}
+        Grease</a>
+        <ul class="docs-nav-group unlisted inline-flex gap-xs shrink align-items-center">
+          <li class="hidden@sm"><a href="/kitchen-sink/" class="button --subtle --primary shadow-md">Kitchen sink</a></li>
+          <li><a href="https://github.com/adamstddrd/grease" class="button --primary shadow-md">On GitHub</a></li>
+        </ul>
+    </nav>
+  </header>
+
   <h1 class="hero span-12">Grease takes the friction out of building fast, adaptable websites.</h1>
+
   <random-shapes class="grease-marks bleed" quantity="10" jitter="20"></random-shapes>
+
 </section>
 
 <section id="docs" class="docs-layout span-12">
+
   <nav class="sticky@md mb-lg">
     <small-details>
       <details>
         <summary class="font-size-sm font-weight-md uppercase letter-spacing-lg">Using Grease</summary>
-        <ul class="unlisted font-size-sm font-weight-lg">
+        <ul class="unlisted font-size-sm font-weight-lg mt-sm">
         {%- for post in collections.docs -%}
           <li>
             <a class="button --simple w-full@sm" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
           </li>
         {%- endfor -%}
-        <li>
-          <a class="button --simple w-full@sm" href="/kitchen-sink/">kitchen sink</a>
-        </li>
       </details>
     </small-details>
   </nav>
+
   <article class="line-length-lg">
     {%- for post in collections.docs -%}
       <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
@@ -39,6 +53,7 @@ eleventyImport:
       <hr>
     {%- endfor -%}
   </article>
+
 </section>
 
 <footer class="relative span-12 mt-lg pt-md font-size-sm">

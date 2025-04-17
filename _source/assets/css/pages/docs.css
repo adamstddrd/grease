@@ -1,6 +1,20 @@
 @import "../_base/@media.css";
 
 @layer components {
+  .docs-nav-group {
+    @media (--motion) {
+      view-transition-name: nav;
+      height: fit-content;
+      width: fit-content;
+    }
+  }
+
+  ::view-transition-group(nav) {
+    animation-duration: 0.5s;
+    scale: 1;
+    animation-timing-function: cubic-bezier(.29,1.36,.66,.99);
+  }
+
   .hero {
     position: relative;
     margin-block: var(--space-xxl);
