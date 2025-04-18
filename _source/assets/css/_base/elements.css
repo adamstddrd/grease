@@ -148,13 +148,11 @@ li {
   color: inherit;
 }
 
-b,
-strong {
+:where(b, strong) {
   font-weight: var(--font-weight-xl);
 }
 
-i,
-em {
+:where(i, em) {
   font-style: italic;
 }
 
@@ -167,8 +165,7 @@ mark {
   background-color: color-mix(in oklch, var(--color-text), var(--color-bg) 80%);
 }
 
-a,
-a:visited {
+:where(a, a:visited) {
   color: var(--color-link);
   text-decoration-thickness: var(--border-width-md);
   text-underline-offset: 0.15rem;
@@ -181,8 +178,7 @@ a:visited {
   }
 }
 
-pre,
-code {
+:where(pre, code) {
   color: color-mix(in oklch, var(--color-link), var(--color-text) 50%);
   background-color: var(--color-bg-dark);
   border-radius: var(--border-radius-sm);
@@ -211,7 +207,7 @@ code {
   }
 }
 
-blockquote {
+:where(blockquote) {
   margin-inline: calc(var(--space-sm) * -1) 0;
   padding-inline-start: var(--space-sm);
   font-size: var(--font-size-md);
@@ -246,7 +242,7 @@ hr {
   line-height: var(--line-height-fluid);
 }
 
-details {
+:where(details) {
   & > summary {
     display: flex;
     flex-wrap: nowrap;
@@ -275,7 +271,7 @@ details {
   }
 }
 
-dt {
+:where(dt) {
   font-weight: var(--font-weight-xl);
 
   dd + & {

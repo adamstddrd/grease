@@ -4,21 +4,9 @@ display: manipulate the visual display of elements
 
 .block { display: block; }
 .inline { display: inline; }
-.hidden { display: none !important; }
+.hidden { display: none; }
 .contents { display: contents; }
 .clipped { overflow: clip; }
-
-@media (--sm) {
-  .block\@sm { display: block; }
-  .inline\@sm { display: inline; }
-  .hidden\@sm { display: none !important; }
-}
-
-@media (--md) {
-  .block\@md { display: block; }
-  .inline\@md { display: inline; }
-  .hidden\@md { display: none !important; }
-}
 
 .sr-only {
   clip: rect(1px, 1px, 1px, 1px);
@@ -26,4 +14,24 @@ display: manipulate the visual display of elements
   block-size: 1px;
   inline-size: 1px;
   overflow: hidden;
+}
+
+@media (--sm) {
+  .block\@sm { display: block; }
+  .inline\@sm { display: inline; }
+  .hidden\@sm { display: none; }
+
+  .sr-only\@sm {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    block-size: 1px;
+    inline-size: 1px;
+    overflow: hidden;
+  }
+}
+
+@media (--md) {
+  .block\@md { display: block; }
+  .inline\@md { display: inline; }
+  .hidden\@md { display: none; }
 }
