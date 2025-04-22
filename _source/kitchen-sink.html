@@ -39,7 +39,7 @@ demoSections:
 ---
 
 <header class="sticky top-0 z-5 grid pt-sm pb-sm">
-  <nav class="flex span-12 gap-xs align-items-center">
+  <nav class="flex span-12 gap-xs align-items-center justify-between">
     <div class="docs-nav-group flex gap-xs">
       <a class="button --point-left --subtle --primary radius-xl shadow-md" href="/"><span class="sr-only">back</span></a>
       <details-menu>
@@ -57,7 +57,8 @@ demoSections:
         </details>
       </details-menu>
     </div>
-  </nav>
+    {% render "docs/theme-picker.html" site: site %}
+    </nav>
 </header>
 
 {% for item in demoSections %}

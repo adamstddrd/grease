@@ -14,6 +14,10 @@ border: adjust border appearance
   border: var(--border-width-sm) solid var(--color-border);
 }
 
+.border-glint {
+  border: var(--border-width-sm) solid oklch(from var(--color-border) l c h / 50%);
+}
+
 .border-top {
   border-block-start: var(--border-width-sm) solid var(--color-border);
 }

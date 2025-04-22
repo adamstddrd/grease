@@ -1,4 +1,14 @@
 {
   "title": "Grease",
-  "description": "Grease takes the friction out of building fast, adaptable websites."
+  "description": "Grease takes the friction out of building fast, adaptable websites.",
+  "ui": [
+    {
+      "type": "mode",
+      "values": ["system", "dark", "light"]
+    },
+    {
+      "type": "theme",
+      "values": ["default", "subtle", "vivid", "primary", "secondary"]
+    }
+  ]
 }

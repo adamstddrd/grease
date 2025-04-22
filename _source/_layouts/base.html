@@ -5,7 +5,20 @@
     
     <meta charset="utf-8">
 
-    <script>document.documentElement.classList.add('js');</script>
+    <script>
+      document.documentElement.classList.add('js');
+      const theme = localStorage.getItem('theme') || 'default';
+      const mode = localStorage.getItem('mode') || 'system';
+      
+      // Apply theme and mode as classes
+      if (theme !== 'default') {
+        document.documentElement.classList.add(theme);
+      }
+      
+      if (mode !== 'system') {
+        document.documentElement.classList.add(mode);
+      }
+    </script>
 
     <title>{% if title %}{{ title | escape }} | {% endif %}{{ site.title | escape }}</title>
 

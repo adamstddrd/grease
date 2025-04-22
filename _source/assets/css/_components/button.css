@@ -16,7 +16,6 @@
   font-size: inherit;
   font-family: inherit;
   text-decoration: none;
-  transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
   line-height: var(--line-height-sm);
   text-box: trim-both cap alphabetic;
 
@@ -55,12 +54,10 @@
     }
   }
 
-  &.--fill {
-    &:not(:hover) {
+  &.--fill:not(:hover) {
       color: var(--button-bg);
       background-color: var(--button-text);
       border-color: var(--button-text);
-    }
   }
 
   &.--primary {
@@ -106,11 +103,9 @@
         background-color: var(--color-bg-dark);
       }
     }
-  }
 
-  &[aria-current] {
-    &:not(:hover) {
-      opacity: 0.5;
+    &[aria-current] {
+      background-color: oklch(from currentColor l c h / 20%);
     }
   }
 
@@ -122,5 +117,9 @@
     background-color: currentColor;
     clip-path: var(--shape-chevron);
     rotate: 180deg;
+  }
+
+  &.--point-none::before {
+    content: none;
   }
 }

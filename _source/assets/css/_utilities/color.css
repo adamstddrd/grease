@@ -24,23 +24,3 @@ modify color on the fly
   &.--contrast-light { --property: oklch(from var(--color-bg) calc(l/6) c h); }
   &.--contrast-dark { --property: oklch(from var(--color-bg) calc(l*6) c h); }
 }
-
-.dark {
-  color-scheme: dark;
-}
-
-.light {
-  color-scheme: light;
-}
-
-.glint {
-  border-color: light-dark(
-    oklch(from var(--neutral) var(--500) / 20%),
-    oklch(from var(--neutral) var(--800) / 20%)
-  );
-  outline: var(--border-width-sm) solid light-dark(
-    oklch(100% 0 0 / 20%),
-    oklch(from var(--color-bg) 80% c h / 10%)
-  );
-  outline-offset: calc(var(--border-width-sm) * -2);
-}

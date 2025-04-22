@@ -5,7 +5,18 @@
   }
 }
 
-.high-contrast {
+.dark,
+[data-mode="dark"] {
+  color-scheme: dark;
+}
+
+.light,
+[data-mode="light"] {
+  color-scheme: light;
+}
+
+.vivid,
+[data-theme="vivid"] {
   --neutral: oklch(30% 0 300);
   --primary: oklch(30% 0.36 300);
   --secondary: oklch(85% 0.36 200);
@@ -29,7 +40,8 @@
   );
 }
 
-.low-contrast {
+.subtle,
+[data-theme="subtle"] {
   --neutral: oklch(30% 0.04 300);
   --primary: oklch(30% 0.04 300);
   --secondary: oklch(60% 0.04 200);
@@ -59,7 +71,8 @@
   );
 }
 
-.primary {
+.primary,
+[data-theme="primary"] {
   --neutral: oklch(30% 0.2 300);
   --primary: oklch(20% 0.2 300);
   --secondary: oklch(70% 0.2 300);
@@ -89,7 +102,8 @@
   );
 }
 
-.secondary {
+.secondary,
+[data-theme="secondary"] {
   --h: 210;
   --neutral: oklch(30% 0.15 var(--h));
   --primary: oklch(20% 0.15 var(--h));
