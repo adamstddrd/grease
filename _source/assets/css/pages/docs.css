@@ -10,9 +10,9 @@
   }
 
   ::view-transition-group(nav) {
-    animation-duration: 0.5s;
+    animation-duration: 0.4s;
     scale: 1;
-    animation-timing-function: cubic-bezier(.29,1.36,.66,.99);
+    animation-timing-function: cubic-bezier(.23,1.22,.64,1);
   }
 
   .hero {
