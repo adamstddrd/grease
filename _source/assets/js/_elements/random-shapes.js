@@ -8,15 +8,21 @@ export default class RandomShapes extends HTMLElement {
   }
 
   get quantity() {
-    return this.hasAttribute('quantity') ? this.getAttribute('quantity') : '30';
+    return Number(this.getAttribute('quantity')) || 30;
   }
 
   get scale() {
-    return this.hasAttribute('scale') ? this.getAttribute('scale') : '0';
+    return Number(this.getAttribute('scale')) || 0;
   }
 
   get jitter() {
-    return this.hasAttribute('jitter') ? this.getAttribute('jitter') : '0';
+    return Number(this.getAttribute('jitter')) || 0;
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) {
+      this.generateElements();
+    }
   }
 
   static random(min, max) {
@@ -28,6 +34,7 @@ export default class RandomShapes extends HTMLElement {
   generateElements() {
     this.innerHTML = '';
     const classes = ['shape-1', 'shape-2', 'shape-3', 'shape-4'];
+    const fragment = document.createDocumentFragment();
     for (let i = 0; i < this.quantity; i += 1) {
       const rClass = classes[Math.floor(Math.random() * classes.length)];
       const rS = RandomShapes.random(this.scale, this.scale * 5);
@@ -37,8 +44,9 @@ export default class RandomShapes extends HTMLElement {
       shape.classList.add(rClass);
       if (this.jitter > 0) { shape.style.translate = `${rX}rem ${rY}rem`; }
       if (this.scale > 0) { shape.style.scale = `${rS}%`; }
-      this.appendChild(shape);
+      fragment.appendChild(shape);
     }
+    this.appendChild(fragment);
   }
 
   connectedCallback() {

@@ -1,76 +1,90 @@
 @import "../_base/@media.css";
 
 @layer components {
-  .hero {
-    --font-weight: 800;
-    
-    position: relative;
-    margin-block: var(--space-xxl) 0;
-    margin-inline-start: calc(var(--space-sm) * -1);
-    font-size: min(18vw, 10em);
-    line-height: 1;
-    mix-blend-mode: difference;
-
-    @media (--dark) {
-      mix-blend-mode: normal;
-    }
-
-    @media (--md) {
-      margin-block: var(--space-xxxl) 0;
+  .docs-nav-group {
+    @media (--motion) {
+      view-transition-name: nav;
+      height: fit-content;
+      width: fit-content;
     }
   }
 
-  .docs-block {
+  ::view-transition-group(nav) {
+    animation-duration: 0.4s;
+    scale: 1;
+    animation-timing-function: cubic-bezier(.23,1.22,.64,1);
+  }
+
+  .hero {
+    position: relative;
+    margin-block: var(--space-xxl);
+    font-size: clamp(3.6em, 8vw, 7em);
+    line-height: 1;
+    font-weight: var(--font-weight-xs);
+    color: var(--color-accent);
+    z-index: var(--z-2);
+  }
+
+  .docs-layout {
     @media (--md) {
-      padding-inline-start: clamp(1rem, 3vw, 3rem);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-auto-flow: dense;
+      align-items: start;
+      gap: var(--space-lg);
+      position: relative;
+      z-index: var(--z-2);
+
+      > nav {
+        grid-column: 2;
+        padding-inline-start: var(--space-lg);
+        border-inline-start: var(--border-width-sm) solid var(--color-border);
+      }
+
+      > article > :first-child {
+        margin-block-start: 0;
+      }
     }
   }
   
   .grease-marks {
-    width: 100%;
-    rotate: 20deg;
+    inline-size: 100%;
     pointer-events: none;
     position: absolute;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
+    inset-inline-start: -80rem;
     z-index: -1;
-    inset-block-start: -20rem;
-    inset-inline-end: 0;
+    opacity: 1;
+    rotate: -8deg;
+    display: none;
 
-    @media (--md) {
-      inset-block-start: 0;
-      inset-inline-end: -10rem;
+    .js & {
+      display: block;
     }
-    
+
     & > * {
-      width: 0.5rem;
-      height: 0.5rem;
-      background-color: light-dark(var(--color-text), var(--color-bg));
-      box-shadow: 0 0 2rem 2.5rem light-dark(var(--color-text), var(--color-bg));
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: 300rem;
+      block-size: 300rem;
+      border-width: 0;
+      border-block-start-width: 10rem;
+      border-style: solid;
+      border-color: light-dark(
+        oklch(from var(--color-accent) var(--100)), 
+        oklch(from var(--color-accent) var(--700) / 15%)
+      );
       border-radius: 100%;
-      mix-blend-mode: normal;
-      opacity: 0.75;
+      mix-blend-mode: soft-light;
 
-      @media (--dark) {
-        mix-blend-mode: overlay;
-      }
-    }
-
-    & > .shape-1 {
-      background-color: var(--color-accent);
-      box-shadow: 0 0 3rem 3.5rem var(--color-accent);
-      opacity: 0.5;
-      mix-blend-mode: overlay;
-
-      @media (--dark) {
-        mix-blend-mode: normal;
+      .high-contrast & {
+        display: none;
       }
     }
   }
 
   .demo-grid {
-    > div {
+    & > div {
       --color-bg: light-dark(
         oklch(from var(--neutral) var(--200) / 50%),
         oklch(from var(--primary) var(--700))
@@ -79,25 +93,30 @@
       padding: var(--space-sm);
       color: var(--color-text);
       background-color: var(--color-bg);
-      margin-block: var(--space-sm);
-      font-size: var(--size-sm);
+      font-size: var(--font-size-sm);
     }
   }
 
   .demo-chips {
     display: flex;
     flex-wrap: wrap;
-    margin-block: 0 var(--space-sm);
+    margin-block: 0 var(--space-xs);
     list-style: none;
 
     & > li {
-      width: auto;
+      inline-size: auto;
+      flex-grow: 1;
       margin: 0;
-      padding: var(--space-sm);
+      padding-block: var(--space-md);
+      padding-inline: var(--space-sm);
       color: var(--color-text);
       background-color: var(--color-bg);
-      font-size: var(--size-xs);
+      font-size: var(--font-size-xs);
+      text-align: center;
+
+      & > span {
+        color: var(--color-text);
+      }
     }
   }
-
 }

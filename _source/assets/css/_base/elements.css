@@ -6,8 +6,6 @@ default element styles
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: var(--color-text);
-  /* font-variation-settings: "wght" var(--font-weight), "MONO" var(--font-mono); */
 
   &::selection {
     color: var(--color-bg);
@@ -15,8 +13,8 @@ default element styles
   }
   
   &:focus-visible {
-    outline: var(--border-weight-md) var(--color-accent) solid;
-    outline-offset: var(--border-weight-md);
+    outline: var(--border-width-md) var(--color-accent) solid;
+    outline-offset: var(--border-width-md);
   }
 }
 
@@ -32,11 +30,13 @@ default element styles
 }
 
 html {
-  min-height: 100dvh;
+  min-block-size: 100dvh;
+  scroll-padding-top: var(--space-xl);
+  color: var(--color-text);
   background-color: var(--color-bg);
   accent-color: var(--color-accent);
   overflow-x: clip;
-  animation: hue-shift 5s linear infinite;
+  font-weight: var(--font-weight);
 
   @media (--motion) {
     scroll-behavior: smooth;
@@ -47,11 +47,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  min-height: 100dvh;
+  min-block-size: 100dvh;
   overflow-x: clip;
-  font-family: var(--font-main);
-  font-size: var(--size-base);
-  line-height: var(--leading-fluid);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-fluid);
+}
+
+:where(animate-on-scroll, details-menu) {
+  display: contents;
 }
 
 main {
@@ -59,71 +63,68 @@ main {
   overflow-y: clip;
 }
 
-article {
-  > *:first-child {
-    margin-block-start: 0;
+header {
+  padding-block: var(--space-sm);
+}
+
+:where(article, .formatted) {
+  max-width: var(--line-length-xl);
+
+  & > :where(h1, h2, h3) {
+    margin-block: var(--space-lg) var(--space-sm);
+  }
+
+  & > :where(p, ul, ol, dl, pre, details, h4, h5, h6) {
+    margin-block: var(--space-sm);
+  }
+
+  & > :where(form, blockquote, img, video, picture) {
+    margin-block: var(--space-md);
+  }
+
+  & > :where(blockquote, hr) {
+    margin-block: var(--space-lg);
   }
 }
 
-animate-on-scroll {
-  display: contents;
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote, form) {
+  overflow-wrap: break-word;
+  color: var(--color-text);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
   text-wrap: balance;
-  text-box: trim-both cap alphabetic;
-}
-
-:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote) {
-  width: 100%;
-  margin-inline: auto;
-  line-height: var(--leading-fluid);
-  overflow-wrap: break-word;
+  line-height: var(--line-height-fluid);
 }
 
 h1 {
-  margin-block: var(--space-xxl) var(--space-md);
-  font-size: var(--size-xxl);
-  font-weight: 800;
-  letter-spacing: var(--tracking-sm);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-xxl);
+  letter-spacing: var(--letter-spacing-sm);
 }
 
 h2 {
-  margin-block: var(--space-lg) var(--space-sm);
-  font-size: var(--size-xl);
-  font-weight: 800;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-xl);
 }
 
 h3 {
-  margin-block: var(--space-md) 0;
-  font-size: var(--size-lg);
-  font-weight: 700;
-  
-  h2 + & {
-    margin-block: 0;
-  }
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-xl);
 }
 
 :where(h4, h5, h6) {
-  margin-block: var(--space-sm) 0;
-  font-size: var(--size-md);
-  font-weight: 600;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-xl);
 }
 
 :where(p, ul, ol, dl, pre, blockquote) {
-  width: 100%;
-  margin-inline: auto;
-  line-height: var(--leading-fluid);
-  overflow-wrap: break-word;
+  line-height: var(--line-height-fluid);
+  text-wrap: pretty;
   color: light-dark(
     var(--color-text),
     color-mix(in oklch, var(--color-text), var(--color-bg) 10%)
   );
-}
-
-:where(p, ul, ol, dl) {
-  margin-block: 0 var(--space-sm);
-  margin-inline: 0;
 }
 
 :where(a, li, dd, strong, em, i, mark) {
@@ -132,10 +133,6 @@ h3 {
 
 :where(ul:not([class]), ol:not([class])) {
   padding-inline-start: 1.75ch;
-}
-
-:where(li > ul, li > ol) {
-  margin-block: var(--space-xs) 0;
 }
 
 ul {
@@ -149,23 +146,13 @@ ol {
 li {
   position: relative;
   color: inherit;
-
-  &:where(li + li) {
-    margin-block-start: 0;
-  }
-
-  & :where(ul, ol) {
-    margin-block-start: 0;
-  }
 }
 
-b,
-strong {
-  font-weight: 700;
+:where(b, strong) {
+  font-weight: var(--font-weight-xl);
 }
 
-i,
-em {
+:where(i, em) {
   font-style: italic;
 }
 
@@ -178,53 +165,35 @@ mark {
   background-color: color-mix(in oklch, var(--color-text), var(--color-bg) 80%);
 }
 
-a,
-a:visited {
-  color: var(--color-text);
-  text-decoration-thickness: var(--border-weight-md);
+:where(a, a:visited) {
+  color: var(--color-link);
+  text-decoration-thickness: var(--border-width-md);
   text-underline-offset: 0.15rem;
-  text-decoration-color: var(--color-accent);
   transition: text-decoration-thickness 0.1s ease, color 0.1s ease;
 }
 
 @media (--hover) {
   a:hover {
-    color: light-dark(
-      oklch(from var(--secondary) var(--500)), 
-      oklch(from var(--secondary) var(--200))
-    );
-    text-decoration-thickness: var(--border-weight-lg);
+    text-decoration-thickness: calc(var(--border-width-md) * 1.5);
   }
 }
 
-pre,
-code {
-  color: light-dark(
-    oklch(from var(--primary) var(--700)), 
-    oklch(from var(--primary) var(--200))
-  );
-  background-color: light-dark(
-    oklch(from var(--secondary) calc(l*1.5) calc(c/4) h), 
-    oklch(from var(--primary) calc(l/2) calc(c/4) h)
-  );
-  border: var(--border-weight-sm) solid light-dark(
-    oklch(from var(--secondary) calc(l*1.35) calc(c/4) h),
-    oklch(from var(--primary) var(--500) / 20%)
-  );
+:where(pre, code) {
+  color: color-mix(in oklch, var(--color-link), var(--color-text) 50%);
+  background-color: var(--color-bg-dark);
   border-radius: var(--border-radius-sm);
 }
 
 pre {
-  margin-block: 0 var(--space-sm);
   margin-inline: calc(var(--space-sm) * -1);
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
-  line-height: var(--leading-md);
+  line-height: var(--line-height-md);
   overflow: auto;
 }
 
 code {
-  font-family: var(--font-code);
+  font-family: var(--font-family-code);
   padding: 0.1rem var(--space-xxs);
   font-size: 90%;
   -webkit-box-decoration-break: clone;
@@ -238,58 +207,75 @@ code {
   }
 }
 
-blockquote {
-  margin-block: var(--space-sm) var(--space-md);
+:where(blockquote) {
   margin-inline: calc(var(--space-sm) * -1) 0;
   padding-inline-start: var(--space-sm);
-  font-size: var(--size-md);
-  border-inline-start: var(--border-weight-md) solid oklch(from var(--primary) var(--300));
+  font-size: var(--font-size-md);
+  border-inline-start: var(--border-width-md) solid oklch(from var(--primary) var(--300));
+  text-box: trim-both cap alphabetic;
 
-  > p {
-    font-size: var(--size-xl);
-    font-weight: 200;
+  & > p {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-xs);
+    text-wrap: balance;
   }
 
-  > p:has(+ cite) {
-    margin-block-end: 0;
-  }
-
-  cite {
+  & cite {
     display: block;
-    margin-block: 0;
-    font-size: var(--size-xs);
-    font-weight: 700;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-xl);
     font-style: normal;
     text-transform: uppercase;
   }
 }
 
 hr {
-  width: 100%;
+  inline-size: 100%;
   margin-block: var(--space-lg);
   border: 0;
-  border-block-start: var(--border-weight-sm) solid var(--color-border);
+  border-block-start: var(--border-width-sm) solid var(--color-border);
 }
 
 :where(img, embed, object, svg, video) {
-  max-width: 100%;
-  height: auto;
-  line-height: var(--leading-fluid);
+  max-inline-size: 100%;
+  block-size: auto;
+  line-height: var(--line-height-fluid);
 }
 
-details {
-  margin-block-end: var(--space-sm);
+:where(details) {
+  & > summary {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--space-xs);
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-text);
 
-  &:has(+ &) {
-    margin-block-end: 0;
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      position: relative;
+      content: "";
+      inline-size: 1em;
+      block-size: 1em;
+      scale: 0.9;
+      background-color: currentColor;
+      clip-path: var(--shape-chevron);
+    }
+  }
+
+  &[open] > summary::before {
+    transform: rotate(90deg);
   }
 }
 
-dt {
-  margin-block-end: 0;
-  font-weight: 600;
+:where(dt) {
+  font-weight: var(--font-weight-xl);
+
+  dd + & {
+    margin-block-start: var(--space-sm);
+  }
 }
 
-dd {
-  margin-block-end: var(--space-sm);
-}

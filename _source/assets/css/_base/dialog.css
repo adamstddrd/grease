@@ -1,0 +1,71 @@
+dialog {
+  max-width: var(--line-length-lg);
+  margin-block: var(--space-xs);
+  margin-inline: auto;
+  padding-block: var(--space-md);
+  padding-inline: var(--space-md);
+  overflow: visible;
+  background-color: var(--color-bg-dark);
+  border-radius: var(--border-radius-lg);
+  border: var(--border-width-sm) solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  transition:
+    opacity 0.1s,
+    scale 0.1s,
+    overlay 0.1s allow-discrete,
+    display 0.1s allow-discrete;
+  opacity: 0;
+  scale: 0.9;
+  position: fixed;
+  inset-block-start: 50dvh; 
+  translate: 0 -50%;
+
+  border-color: light-dark(
+    oklch(from var(--neutral) var(--500) / 20%),
+    oklch(from var(--primary) var(--900) / 100%)
+  );
+  outline: var(--border-width-sm) solid light-dark(
+    oklch(100% 0 0 / 50%),
+    oklch(from var(--primary) 50% c h / 30%)
+  );
+  outline-offset: calc(var(--border-width-sm) * -2);
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &[style^="position-anchor"] {
+    position: absolute;
+    margin-inline: 0 var(--space-md);
+    padding-block: var(--space-xs);
+    padding-inline: var(--space-sm);
+    translate: none;
+    box-shadow: var(--shadow-md);
+    position-visibility: always;
+    inset-block-start: inherit;
+    inset-block-end: anchor(start);
+    inset-inline-start: anchor(start);
+    position-try-fallbacks: flip-block, flip-inline;
+    position-try-order: most-block-size;
+  }
+
+  &::backdrop {
+    transition: all 0.1s ease-in-out;
+  }
+
+  &:not([style^="position-anchor"])::backdrop {
+    backdrop-filter: blur(0.1rem);
+  }
+
+  &:popover-open {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@starting-style {
+  dialog:popover-open {
+    opacity: 0;
+    scale: 0.9;
+  }
+}

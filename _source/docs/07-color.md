@@ -25,7 +25,6 @@ border-color: light-dark(
 - `.color` does nothing on it's own; use with modifiers below
 - `.--{text/bg/border/accent}` sets a remap target
 - `.--use-{text/bg/border/accent}` remaps to a different part's color
-- `.--{primary/secondary/neutral}-{50-900}` remaps to a specific color
 - `.set-{text/bg}` sets color
 - `.text-{10-90}` adjusts text opacity
 - `.bg-{10-90}` adjusts background opacity

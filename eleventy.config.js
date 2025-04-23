@@ -5,7 +5,6 @@ import image from './_source/_utilities/image.js';
 import style from './_source/_utilities/style.js';
 import setVar from './_source/_utilities/setVar.js';
 import fullDate from './_source/_utilities/fullDate.js';
-import getRandom from './_source/_utilities/getRandom.js';
 import markdownify from './_source/_utilities/markdownify.js';
 import { IdAttributePlugin } from '@11ty/eleventy';
 
@@ -20,7 +19,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addShortcode('image', image);
   eleventyConfig.addPairedShortcode('setVar', setVar);
   eleventyConfig.addFilter('fullDate', fullDate);
-  eleventyConfig.addFilter('getRandom', getRandom);
   eleventyConfig.addFilter('markdownify', markdownify);
 
   /* --------------------------------------------------------------------------

@@ -1,12 +1,19 @@
 /* ----------------------------------------------------------------------------
-details element that defaults to closed @small and open @medium+
+details element that only looks like a details element @small
 ---------------------------------------------------------------------------- */
 
 export default class SmallDetails extends HTMLElement {
+  constructor() {
+    super();
+    this.handleMediaChange = this.handleMediaChange.bind(this);
+  }
+
+  handleMediaChange(e) {
+    this.update(e.matches);
+  }
+
   listen() {
-    this.mediaQuery.addEventListener('change', (e) => {
-      this.update(e.matches);
-    });
+    this.mediaQuery.addEventListener('change', this.handleMediaChange);
   }
 
   update(matches) {
@@ -22,9 +29,16 @@ export default class SmallDetails extends HTMLElement {
   connectedCallback() {
     this.details = this.querySelector('details');
     this.summary = this.querySelector('summary');
+    if (!this.details || !this.summary) return;
     this.mediaQuery = window.matchMedia('(max-width: 49.999em)');
     this.update(this.mediaQuery.matches);
     this.listen();
+  }
+
+  disconnectedCallback() {
+    if (this.mediaQuery) {
+      this.mediaQuery.removeEventListener('change', this.handleMediaChange);
+    }
   }
 }
 

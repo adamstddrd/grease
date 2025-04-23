@@ -2,6 +2,14 @@
 padding: adjust space inside elements
 ---------------------------------------------------------------------------- */
 
+.py-0 { padding-block: 0; }
+.py-xs { padding-block: var(--space-xs); }
+.py-sm { padding-block: var(--space-sm); }
+.py-md { padding-block: var(--space-md); }
+.py-lg { padding-block: var(--space-lg); }
+.py-xl { padding-block: var(--space-xl); }
+.py-xxl { padding-block: var(--space-xxl); }
+
 .p-0 { padding: 0; }
 .p-xs { padding: var(--space-xs); }
 .p-sm { padding: var(--space-sm); }

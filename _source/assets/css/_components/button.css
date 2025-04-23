@@ -1,85 +1,125 @@
-.button,
-button,
-input[type="submit"] {
-  --font-weight: 600;
+:where(.button, button, input[type="submit"]) {
   --button-text: var(--color-text);
-  --button-bg: oklch(from var(--color-bg) l c h / 0%);
-  --button-border: var(--color-text);
-  --button-icon: var(--color-text);
+  --button-bg: var(--color-bg);
+  --button-border: var(--button-text);
+  --button-icon: var(--button-text);
 
   color: var(--button-text);
   background-color: var(--button-bg);
-  border: var(--border-weight-md) solid var(--button-border);
-  border-radius: var(--border-radius-sm);
+  border: var(--border-width-md) solid var(--button-border);
+  border-radius: var(--border-radius-xl);
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xs);
-  padding-block: var(--space-sm);
-  padding-inline: var(--space-md);
+  gap: var(--space-xxs);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-sm);
   font-size: inherit;
   font-family: inherit;
   text-decoration: none;
-  transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear;
-  line-height: 1;
+  line-height: var(--line-height-sm);
+  text-box: trim-both cap alphabetic;
 
   &:visited {
     color: var(--button-text);
-  }
-
-  @media (--sm) {
-    line-height: inherit;
   }
 
   @media (--hover) {
     &:hover {
       --button-text: var(--color-bg);
       --button-bg: var(--color-text);
+      --button-border: var(--button-bg);
 
+      border-color: var(--button-border);
+      background-color: color-mix(
+        in oklch, 
+        var(--button-bg), 
+        var(--color-bg) 25%
+      );
       cursor: pointer;
     }
   }
 
   & svg {
-    width: 1.5em;
-    height: auto;
+    block-size: 1em;
+    inline-size: auto;
   }
 
-  &.--fill\@sm {
-    @media (--sm) {
-      width: 100%;
+  &.--tactile {
+    &:not(:focus-visible) {
+      outline: var(--border-width-md) solid light-dark(
+        oklch(from var(--neutral) 100% c h / 20%),
+        oklch(from var(--neutral) 0% c h / 20%)
+      );
+      outline-offset: calc(var(--border-width-md) * -2);
     }
+  }
+
+  &.--fill:not(:hover) {
+      color: var(--button-bg);
+      background-color: var(--button-text);
+      border-color: var(--button-text);
   }
 
   &.--primary {
-    --button-text: var(--color-bg);
-    --button-bg: var(--color-text);
-    --button-border: var(--color-text);
+    --button-text: var(--color-accent);
 
-    @media (--hover) {
-      &:hover {
-        --button-bg: oklch(from var(--primary) var(--500));
-        --button-border: oklch(from var(--primary) var(--400));
-      }
+    &:hover {
+      --button-bg: var(--color-accent);
+      --button-text: var(--color-bg);
     }
   }
 
-  &.--text-only {
-    --button-text: var(--color-text);
-    
+  &.--secondary {
+    --button-text: var(--color-link);
+
+    &:hover {
+      --button-bg: var(--color-link);
+      --button-text: var(--color-bg);
+    }
+  }
+
+  &.--simple {
+    padding-inline: 0;
+    border-radius: 0;
     border-color: transparent;
     background-color: transparent;
 
     @media (--hover) {
       &:hover {
+        color: var(--button-border);
         border-block-end-color: var(--button-border);
       }
     }
   }
 
-  &[aria-current] {
-    &:not(:hover) {
-      opacity: 0.5;
+  &.--subtle {
+    border-width: var(--border-width-sm);
+    background-color: var(--color-bg);
+    --button-border: oklch(from var(--color-border) l c h / 50%);
+
+    @media (--hover) {
+      &:hover {
+        color: var(--button-bg);
+        background-color: var(--color-bg-dark);
+      }
     }
+
+    &[aria-current] {
+      background-color: oklch(from currentColor l c h / 10%);
+    }
+  }
+
+  &.--point-left::before {
+    content: "";
+    inline-size: 1em;
+    block-size: 1em;
+    scale: 0.9;
+    background-color: currentColor;
+    clip-path: var(--shape-chevron);
+    rotate: 180deg;
+  }
+
+  &.--point-none::before {
+    content: none;
   }
 }

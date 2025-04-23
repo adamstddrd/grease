@@ -2,16 +2,6 @@ small-details {
   display: contents;
 
   & details {
-    @media (--sm) {
-      &[open] {
-        margin-block-end: var(--space-md);
-
-        & summary::before {
-          transform: rotate(90deg);
-        }
-      }
-    }
-
     @media (--md) {
       &:focus {
         outline: none;
@@ -20,31 +10,18 @@ small-details {
   }
 
   & summary {
-    &::-webkit-details-marker {
-      display: none;
-    }
 
     @media (--sm) {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: var(--space-xs);
-      align-items: center;
-      cursor: pointer;
-
-      &::before {
-        position: relative;
-        content: "";
-        width: 0.75em;
-        height: 0.75em;
-        inset-block-start: -0.075em;
-        background-color: var(--color-text);
-        clip-path: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%);
-      }
+      padding-block: var(--space-sm);
+      border-block-end: var(--border-width-sm) solid var(--color-border);
     }
 
     @media (--md) {
-      list-style: none;
       pointer-events: none;
+
+      &::before {
+        content: none;
+      }
 
       &:focus {
         outline: none;

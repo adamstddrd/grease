@@ -1,17 +1,15 @@
 # Grease
-[Grease](https://grease.aaadaaam.com) combines a trio of ultra-fast tools ([11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), and [Esbuild](https://esbuild.github.io/)) with a modern, declarative CSS architecture that frees you from browser micro-management. It's light enough for small sites, but has everything you need to tackle large projects without getting bogged down in slow builds, dependency hell, and bloated front-ends. Key benefits:
+Grease is a website starter for the modern web. Its goal is simple; give you a rock-solid foundation for building a fast and adaptable website that's enjoyable to build, and easy to maintain.
 
-- **Fast in-browser design.**
-  Fast tools and a custom-property-powered composable CSS architecture makes designing in browser a joy, and scaffolding new pages *fast*.
-- **Zero-config entrypoints.**
-  Import everything into monolithic CSS and JS bundles? Break out page bundles? Inline critical CSS? YES.
-- **No fillers, no additives.**
-  Grease takes a platform-first approach and keeps dependencies to minimum so you can focus on building, not bundling.
+It combines a trio of fast, flexible tools ([11ty](https://www.11ty.dev/), [Lightning CSS](https://lightningcss.dev/), and [Esbuild](https://esbuild.github.io/)) with a simple, micro-management-free CSS architecture, and lightweight patterns that set you up for success. Highlights:
+
+- **Designed for in-browser design.**
+  Fast tools and a straightforward custom-property-powered composable CSS architecture makes designing in browser a joy, and scaffolding new pages *fast*.
 - **Expressive color.**
   Grease includes a comprehensive color system that lets you easily support light & dark mode, custom themes, composable themes, and all of the above.
-- **Fluid, variable type.**
+- **Fluid type.**
   A straightforward fluid type system makes it easy to keep your type game on point across a wide range of devices and screen sizes.
-- **Batteries included.**
-  Production-ready odds & ends come in the box. Sitemaps, canonical URL support, no-index support, metadata, etc.
+- **Flexible bundling.**
+  Import everything into monolithic CSS and JS bundles? Break out page and section bundles? Inline critical CSS? All supported out of the box, zero configuration.
 
 Visit [https://grease.aaadaaam.com](https://grease.aaadaaam.com) for docs and demos.

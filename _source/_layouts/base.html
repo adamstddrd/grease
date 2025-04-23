@@ -5,7 +5,20 @@
     
     <meta charset="utf-8">
 
-    <script>document.documentElement.classList.add('js');</script>
+    <script>
+      document.documentElement.classList.add('js');
+      const theme = localStorage.getItem('theme') || 'default';
+      const mode = localStorage.getItem('mode') || 'system';
+      
+      // Apply theme and mode as classes
+      if (theme !== 'default') {
+        document.documentElement.classList.add(theme);
+      }
+      
+      if (mode !== 'system') {
+        document.documentElement.classList.add(mode);
+      }
+    </script>
 
     <title>{% if title %}{{ title | escape }} | {% endif %}{{ site.title | escape }}</title>
 
@@ -30,40 +43,28 @@
     <link rel="apple-touch-icon" href="/assets/icons/favicon-196x196.png">
 
     <style>
-      @view-transition {
-        navigation: auto;
-      }
-
-      ::view-transition-old(root),
-      ::view-transition-new(root) {
-        animation-duration: 0.1s;
-      }
-
       {% getBundle "css" %}
     </style>
 
     <link rel="stylesheet" href="/assets/css/main.css" media="all">
-
     {%- if stylesheet -%}
-    <link rel="stylesheet" href="/assets/css/{{ stylesheet }}" media="all">
+    {%- for sheet in stylesheet -%}
+    <link rel="stylesheet" href="/assets/css/{{ sheet }}" media="all">
+    {%- endfor -%}
     {%- endif -%}
 
     <script src="/assets/js/app.js" type="module"></script>
-
     {%- if javascript -%}
-    <script src="/assets/js/{{ javascript }}"  type="module"></script>
+    {%- for script in javascript -%}
+    <script src="/assets/js/{{ script }}" type="module"></script>
+    {%- endfor -%}
     {%- endif -%}
-
   </head>
 
   <body {% if class %} class="{{ class }}"{% endif %}>
-
-    <scroll-sentinel></scroll-sentinel>
-
     <animate-on-scroll>
       {{ content }}
     </animate-on-scroll>
-
   </body>
 
 </html>

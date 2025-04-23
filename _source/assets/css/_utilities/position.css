@@ -6,11 +6,26 @@ position: manipulate position across breakpoints
 .absolute { position: absolute; }
 .sticky { position: sticky; }
 
-.layer-1 { z-index: var(--layer-1); }
-.layer-2 { z-index: var(--layer-2); }
-.layer-3 { z-index: var(--layer-3); }
-.layer-4 { z-index: var(--layer-4); }
-.layer-5 { z-index: var(--layer-5); }
+.h-screen { block-size: 100dvh; }
+.w-full { inline-size: 100%; }
+.w-max-content { inline-size: max-content; }
+
+.z-0 { z-index: var(--z-0); }
+.z-1 { z-index: var(--z-1); }
+.z-2 { z-index: var(--z-2); }
+.z-3 { z-index: var(--z-3); }
+.z-4 { z-index: var(--z-4); }
+.z-5 { z-index: var(--z-5); }
+
+.top-0 { inset-block-start: 0; }
+.top-sm { inset-block-start: var(--space-sm); }
+.top-md { inset-block-start: var(--space-md); }
+.top-lg { inset-block-start: var(--space-lg); }
+.top-xl { inset-block-start: var(--space-xl); }
+
+.left-0 { inset-inline-start: 0; }
+.right-0 { inset-inline-end: 0; }
+.bottom-0 { inset-block-end: 0; }
 
 @media (--md) {
   .relative\@md { position: relative; }
@@ -20,24 +35,10 @@ position: manipulate position across breakpoints
     position: sticky !important;
     inset-block-start: var(--space-md);
   }
-
-  .sticky-bottom\@md {
-    position: sticky !important;
-    inset-block-end: 0;
-  }
 }
 
 @media (--sm) {
   .relative\@sm { position: relative; }
   .absolute\@sm { position: absolute; }
-
-  .sticky\@sm { 
-    position: sticky !important;
-    inset-block-start: 0; 
-  }
-
-  .sticky-bottom\@sm { 
-    position: sticky !important;
-    inset-block-end: 0;
-  }
+  .w-full\@sm { inline-size: 100%; }
 }
