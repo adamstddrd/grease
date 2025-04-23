@@ -55,7 +55,6 @@
     z-index: -1;
     opacity: 1;
     rotate: -8deg;
-    filter: blur(0.2rem);
     display: none;
 
     .js & {
