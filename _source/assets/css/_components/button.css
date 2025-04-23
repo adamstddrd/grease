@@ -105,7 +105,7 @@
     }
 
     &[aria-current] {
-      background-color: oklch(from currentColor l c h / 20%);
+      background-color: oklch(from currentColor l c h / 10%);
     }
   }
 

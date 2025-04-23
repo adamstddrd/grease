@@ -8,6 +8,7 @@ position: manipulate position across breakpoints
 
 .h-screen { block-size: 100dvh; }
 .w-full { inline-size: 100%; }
+.w-max-content { inline-size: max-content; }
 
 .z-0 { z-index: var(--z-0); }
 .z-1 { z-index: var(--z-1); }

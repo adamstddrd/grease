@@ -3,7 +3,7 @@
     <summary class="shadow-md button --point-none --fill --primary" aria-label="themes">
       {% render "svg/theme-picker.svg" %}
     </summary>
-    <theme-picker class="absolute right-0">
+    <theme-picker class="absolute right-0 w-max-content">
       {% for group in site.ui %}
         <ul class="border-glint shadow-lg clipped unlisted mt-xs right set-bg radius-md">
           {% for value in group.values %}

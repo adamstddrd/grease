@@ -8,7 +8,7 @@
     },
     {
       "type": "theme",
-      "values": ["default", "subtle", "vivid", "primary", "secondary"]
+      "values": ["default", "low-contrast", "high-contrast", "primary", "secondary"]
     }
   ]
 }
