@@ -4,7 +4,7 @@
   </button>
   <theme-picker id="themes-menu" role="menu" popover class="anchor-right">
     {% for group in site.ui %}
-      <ul class="mb-xs">
+      <ul>
         {% for value in group.values %}
           <li>
             <button class="button --menu --primary" data-type="{{ group.type }}" data-value="{{ value }}">{{ value }}</button>

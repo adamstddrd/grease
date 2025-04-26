@@ -114,7 +114,11 @@
     @media (--hover) {
       &:hover {
         color: var(--button-bg);
-        background-color: var(--color-bg-dark);
+        background-color: color-mix(
+          in oklch, 
+          currentColor, 
+          var(--color-bg) 90%
+        );
       }
     }
   }

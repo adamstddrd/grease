@@ -55,15 +55,13 @@ dialog {
   position-try-fallbacks: flip-block, flip-inline;
   position-try-order: most-block-size;
   background-color: var(--color-bg-dark);
-  border: var(--border-width-sm) solid var(--color-border);
+  border: var(--border-width-sm) solid oklch(from var(--color-border) l c h / 50%);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   font-size: var(--font-size-sm);
 }
 
 [popover] {
-  border: none;
-  background-color: transparent;
   overflow: visible;
 
   &:not(:popover-open) {
@@ -88,6 +86,8 @@ popover-menu {
   display: flex;
   flex-direction: column;
   gap: var(--space-xxs);
+  border: none;
+  background-color: transparent;
 
   &ul,
   & > ul {
@@ -107,7 +107,7 @@ popover-menu {
     position: absolute;
 
     &:not([hidden]) {
-      display: block;
+      display: flex;
     }
 
     &.anchor-right {

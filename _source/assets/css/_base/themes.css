@@ -18,7 +18,10 @@
   --primary: oklch(30% 0.36 250);
   --secondary: oklch(85% 0.36 250);
   --color-text: light-dark(black, white);
-  --color-bg: light-dark(white, black);
+  --color-bg: light-dark(
+    white,
+    oklch(from var(--neutral) 10% c h)
+  );
   --color-bg-dark: light-dark(
     oklch(from var(--neutral) var(--50)),
     oklch(from var(--neutral) var(--800))
