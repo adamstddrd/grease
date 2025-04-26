@@ -58,6 +58,10 @@ body {
   display: contents;
 }
 
+:where(main, header, footer) {
+  container-type: inline-size;
+}
+
 main {
   z-index: 2;
   overflow-y: clip;
@@ -70,20 +74,20 @@ header {
 :where(article, .formatted) {
   max-width: var(--line-length-xl);
 
-  & > :where(h1, h2, h3) {
-    margin-block: var(--space-lg) var(--space-sm);
-  }
-
-  & > :where(p, ul, ol, dl, pre, details, h4, h5, h6) {
-    margin-block: var(--space-sm);
-  }
-
-  & > :where(form, blockquote, img, video, picture) {
-    margin-block: var(--space-md);
+  & > :where(h1, h2) {
+    margin-block: var(--space-lg) 0;
   }
 
   & > :where(blockquote, hr) {
     margin-block: var(--space-lg);
+  }
+
+  & > :where(h3, form, img, video, picture) {
+    margin-block: var(--space-md) 0;
+  }
+
+  & > :where(p, ul, ol, dl, pre, details, h4, h5, h6) {
+    margin-block: var(--space-sm) 0;
   }
 }
 

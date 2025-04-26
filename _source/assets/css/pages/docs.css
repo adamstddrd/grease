@@ -85,14 +85,9 @@
 
   .demo-grid {
     & > div {
-      --color-bg: light-dark(
-        oklch(from var(--neutral) var(--200) / 50%),
-        oklch(from var(--primary) var(--700))
-      );
-
       padding: var(--space-sm);
       color: var(--color-text);
-      background-color: var(--color-bg);
+      background-color: var(--color-bg-dark);
       font-size: var(--font-size-sm);
     }
   }
