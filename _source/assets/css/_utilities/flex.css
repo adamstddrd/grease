@@ -11,6 +11,7 @@ flex: simple sub-layouts
   flex-wrap: wrap;
 }
 
+.gap-xxs { gap: var(--space-xxs); }
 .gap-xs { gap: var(--space-xs); }
 .gap-sm { gap: var(--space-sm); }
 .gap-md { gap: var(--space-md); }
@@ -34,6 +35,7 @@ flex: simple sub-layouts
 
 @media (--sm) {
   .gap-0\@sm { gap: 0; }
+  .gap-xxs\@sm { gap: var(--space-xxs); }
   .gap-xs\@sm { gap: var(--space-xs); }
   .gap-sm\@sm { gap: var(--space-sm); }
   .gap-md\@sm { gap: var(--space-md); }

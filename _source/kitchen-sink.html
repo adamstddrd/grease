@@ -31,6 +31,7 @@ themeList:
   - secondary dark
 demoSections:
   - Typography
+  - Popovers
   - Colors
   - Buttons
   - Forms
@@ -38,24 +39,24 @@ demoSections:
   - Themes
 ---
 
-<header class="sticky top-0 z-5 grid pt-sm pb-sm">
+<header id="header" class="sticky top-0 z-5 grid pt-sm pb-sm">
   <nav class="flex span-12 gap-xs align-items-center justify-between">
     <div class="docs-nav-group flex gap-xs">
-      <a class="button --point-left --subtle --primary radius-xl shadow-md" href="/"><span class="sr-only">back</span></a>
-      <details-menu>
-        <details class="relative">
-          <summary class="button --primary radius-xl shadow-md">On this page</summary>
-          <ul class="absolute unlisted mt-xs flex column gap-xs">
-            {% for item in demoSections %}
-              <li>
-                <a href="#{{ item | slugify }}" class="button --subtle --primary radius-xl shadow-md">
-                  {{ item }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </details>
-      </details-menu>
+      <a class="button --point-left --subtle --primary radius-xl shadow-md set-bg" href="/"><span class="sr-only">back</span></a>
+      <popover-menu>
+        <button popovertarget="on-this-page" class="button --primary radius-xl shadow-md">
+          On this page
+        </button>
+        <ul id="on-this-page" role="menu" popover>
+          {% for item in demoSections %}
+            <li>
+              <a href="#{{ item | slugify }}" class="button --menu --primary">
+                {{ item }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </popover-menu>
     </div>
     {% render "docs/theme-picker.html" site: site %}
     </nav>

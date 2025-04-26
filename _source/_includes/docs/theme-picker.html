@@ -1,18 +1,16 @@
-<details-menu>
-  <details class="relative themes hidden@sm">
-    <summary class="shadow-md button --point-none --fill --primary" aria-label="themes">
-      {% render "svg/theme-picker.svg" %}
-    </summary>
-    <theme-picker class="absolute right-0 w-max-content">
-      {% for group in site.ui %}
-        <ul class="border-glint shadow-lg clipped unlisted mt-xs right set-bg radius-md">
-          {% for value in group.values %}
-            <li>
-              <button class="w-full border-0 button --subtle --primary radius-0" data-type="{{ group.type }}" data-value="{{ value }}">{{ value }}</button>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endfor %}
-    </theme-picker>
-  </details>
-</details-menu>
+<popover-menu class="themes hidden@sm">
+  <button popovertarget="themes-menu" aria-label="Themes" class="shadow-md button --fill --primary">
+    {% render "svg/theme-picker.svg" %}
+  </button>
+  <theme-picker id="themes-menu" role="menu" popover class="anchor-right">
+    {% for group in site.ui %}
+      <ul class="mb-xs">
+        {% for value in group.values %}
+          <li>
+            <button class="button --menu --primary" data-type="{{ group.type }}" data-value="{{ value }}">{{ value }}</button>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </theme-picker>
+</popover-menu>

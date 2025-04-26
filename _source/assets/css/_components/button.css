@@ -23,6 +23,19 @@
     color: var(--button-text);
   }
 
+  &:has(+ :popover-open),
+  &[aria-expanded="true"] {
+    background-color: color-mix(in oklch, var(--color-bg), currentColor 20%);
+  }
+
+  &[aria-current] {
+    background-color: color-mix(
+      in oklch,
+      var(--color-bg),
+      currentColor 20%
+    ) !important;
+  }
+
   @media (--hover) {
     &:hover {
       --button-text: var(--color-bg);
@@ -93,9 +106,10 @@
   }
 
   &.--subtle {
+    --button-border: oklch(from var(--color-border) l c h / 50%);
+
     border-width: var(--border-width-sm);
     background-color: var(--color-bg);
-    --button-border: oklch(from var(--color-border) l c h / 50%);
 
     @media (--hover) {
       &:hover {
@@ -103,23 +117,34 @@
         background-color: var(--color-bg-dark);
       }
     }
+  }
 
-    &[aria-current] {
-      background-color: oklch(from currentColor l c h / 10%);
+  &.--menu {
+    border-width: 0;
+    background-color: transparent;
+    border-radius: var(--border-radius-sm);
+    inline-size: 100%;
+
+    @media (--hover) {
+      &:hover {
+        color: var(--button-bg);
+        background-color: var(--color-bg-dark);
+      }
     }
   }
 
-  &.--point-left::before {
+  &.--point-left::before,
+  &.--point-right::before,
+  &.--point-down::before {
     content: "";
     inline-size: 1em;
     block-size: 1em;
     scale: 0.9;
     background-color: currentColor;
     clip-path: var(--shape-chevron);
-    rotate: 180deg;
   }
 
-  &.--point-none::before {
-    content: none;
-  }
+  &.--point-left::before { rotate: 180deg; }
+  &.--point-down::before { rotate: 90deg; }
+  &.--point-none::before { content: none; }
 }
