@@ -4,9 +4,15 @@
   .docs-nav-group {
     @media (--motion) {
       view-transition-name: nav;
-      height: fit-content;
+      height: 100%;
       width: fit-content;
+      scale: 1;
     }
+  }
+
+  ::view-transition-old(nav),
+  ::view-transition-new(nav) {
+    height: 100%;
   }
 
   ::view-transition-group(nav) {

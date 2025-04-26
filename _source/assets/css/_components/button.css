@@ -25,7 +25,11 @@
 
   &:has(+ :popover-open),
   &[aria-expanded="true"] {
-    background-color: color-mix(in oklch, var(--color-bg), currentColor 20%);
+    background-color: color-mix(
+      in oklch,
+      var(--color-bg),
+      currentColor 20%
+    );
   }
 
   &[aria-current] {
@@ -76,18 +80,22 @@
   &.--primary {
     --button-text: var(--color-accent);
 
-    &:hover {
-      --button-bg: var(--color-accent);
-      --button-text: var(--color-bg);
+    @media (--hover) {
+      &:hover {
+        --button-bg: var(--color-accent);
+        --button-text: var(--color-bg);
+      }
     }
   }
 
   &.--secondary {
     --button-text: var(--color-link);
 
-    &:hover {
-      --button-bg: var(--color-link);
-      --button-text: var(--color-bg);
+    @media (--hover) {
+      &:hover {
+        --button-bg: var(--color-link);
+        --button-text: var(--color-bg);
+      }
     }
   }
 
