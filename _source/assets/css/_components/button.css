@@ -1,12 +1,7 @@
 :where(.button, button, input[type="submit"]) {
-  --button-text: var(--color-text);
-  --button-bg: var(--color-bg);
-  --button-border: var(--button-text);
-  --button-icon: var(--button-text);
-
-  color: var(--button-text);
-  background-color: var(--button-bg);
-  border: var(--border-width-md) solid var(--button-border);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: var(--border-width-md) solid var(--color-text);
   border-radius: var(--border-radius-xl);
   display: inline-flex;
   align-items: center;
@@ -20,7 +15,7 @@
   text-box: trim-both cap alphabetic;
 
   &:visited {
-    color: var(--button-text);
+    color: var(--color-text);
   }
 
   &:has(+ :popover-open),
@@ -42,23 +37,15 @@
 
   @media (--hover) {
     &:hover {
-      --button-text: var(--color-bg);
-      --button-bg: var(--color-text);
-      --button-border: var(--button-bg);
-
-      border-color: var(--button-border);
+      color: var(--color-bg);
+      border-color: var(--color-text);
       background-color: color-mix(
         in oklch, 
-        var(--button-bg), 
+        var(--color-text), 
         var(--color-bg) 25%
       );
       cursor: pointer;
     }
-  }
-
-  & svg {
-    block-size: 1em;
-    inline-size: auto;
   }
 
   &.--tactile {
@@ -72,31 +59,17 @@
   }
 
   &.--fill:not(:hover) {
-      color: var(--button-bg);
-      background-color: var(--button-text);
-      border-color: var(--button-text);
+      color: var(--color-bg);
+      background-color: var(--color-text);
+      border-color: var(--color-text);
   }
 
   &.--primary {
-    --button-text: var(--color-accent);
-
-    @media (--hover) {
-      &:hover {
-        --button-bg: var(--color-accent);
-        --button-text: var(--color-bg);
-      }
-    }
+    --color-text: var(--color-accent);
   }
 
   &.--secondary {
-    --button-text: var(--color-link);
-
-    @media (--hover) {
-      &:hover {
-        --button-bg: var(--color-link);
-        --button-text: var(--color-bg);
-      }
-    }
+    --color-text: var(--color-link);
   }
 
   &.--simple {
@@ -107,21 +80,20 @@
 
     @media (--hover) {
       &:hover {
-        color: var(--button-border);
-        border-block-end-color: var(--button-border);
+        color: var(--color-text);
+        border-block-end-color: var(--color-text);
       }
     }
   }
 
   &.--subtle {
-    --button-border: oklch(from var(--color-border) l c h / 50%);
-
-    border-width: var(--border-width-sm);
     background-color: var(--color-bg);
+    border-color: oklch(from var(--color-border) l c h / 50%);
+    border-width: var(--border-width-sm);
 
     @media (--hover) {
       &:hover {
-        color: var(--button-bg);
+        color: var(--color-text);
         background-color: color-mix(
           in oklch, 
           currentColor, 
@@ -139,7 +111,7 @@
 
     @media (--hover) {
       &:hover {
-        color: var(--button-bg);
+        color: var(--color-text);
         background-color: var(--color-bg-dark);
       }
     }
@@ -159,4 +131,9 @@
   &.--point-left::before { rotate: 180deg; }
   &.--point-down::before { rotate: 90deg; }
   &.--point-none::before { content: none; }
+
+  & svg {
+    block-size: 1em;
+    inline-size: auto;
+  }
 }
