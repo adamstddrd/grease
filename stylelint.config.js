@@ -3,12 +3,16 @@
 export default {
   extends: 'stylelint-config-standard',
   rules: {
-    'property-no-unknown' : null,
     'at-rule-no-unknown' : null,
-    'selector-class-pattern': null,
+    'custom-property-pattern': null,
+    'declaration-property-value-no-unknown': null,
     'import-notation': null,
-    'selector-no-vendor-prefix': null,
-    'value-no-vendor-prefix': null,
+    'no-descending-specificity': null,
+    'property-no-unknown' : null,
     'property-no-vendor-prefix': null,
+    'selector-class-pattern': null,
+    'selector-no-vendor-prefix': null,
+    'selector-pseudo-element-no-unknown': null,
+    'value-no-vendor-prefix': null,
   }
 };

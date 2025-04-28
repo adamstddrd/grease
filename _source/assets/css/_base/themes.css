@@ -1,5 +1,6 @@
 .inverted {
   color-scheme: dark;
+
   @media (--dark) {
     color-scheme: light;
   }
@@ -14,9 +15,9 @@
 }
 
 .high-contrast {
-  --neutral: oklch(30% 0 300);
-  --primary: oklch(30% 0.36 250);
-  --secondary: oklch(85% 0.36 250);
+  --neutral: oklch(30% 0 300deg);
+  --primary: oklch(30% 0.36 250deg);
+  --secondary: oklch(85% 0.36 250deg);
   --color-text: light-dark(black, white);
   --color-bg: light-dark(
     white,
@@ -41,9 +42,9 @@
 }
 
 .low-contrast {
-  --neutral: oklch(30% 0.04 300);
-  --primary: oklch(30% 0.04 300);
-  --secondary: oklch(60% 0.04 200);
+  --neutral: oklch(30% 0.04 300deg);
+  --primary: oklch(30% 0.04 300deg);
+  --secondary: oklch(60% 0.04 200deg);
   --color-text: light-dark(
     oklch(from var(--primary) var(--500)),
     oklch(from var(--primary) var(--300))
@@ -71,9 +72,9 @@
 }
 
 .primary {
-  --neutral: oklch(30% 0.2 300);
-  --primary: oklch(20% 0.2 300);
-  --secondary: oklch(70% 0.2 300);
+  --neutral: oklch(30% 0.2 300deg);
+  --primary: oklch(20% 0.2 300deg);
+  --secondary: oklch(70% 0.2 300deg);
   --color-text: light-dark(
     oklch(from var(--primary) var(--700)),
     oklch(from var(--primary) var(--50))

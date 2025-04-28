@@ -11,7 +11,6 @@
   --100: 94% calc(c/4) h;
   --200: 88% c h;
   --300: 70% c h;
-  --300: 70% c h;
   --400: 60% c h;
   --500: 50% c h;
   --600: 40% c h;
@@ -20,9 +19,9 @@
   --900: 18% calc(c/2) h;
 
   /* source colors */
-  --neutral: oklch(80% 0.01 300);
-  --primary: oklch(30% 0.3 300);
-  --secondary: oklch(70% 0.15 200);
+  --neutral: oklch(80% 0.01 300deg);
+  --primary: oklch(30% 0.3 300deg);
+  --secondary: oklch(70% 0.15 200deg);
 
   /* preset colors */
   --color-text: light-dark(
@@ -71,9 +70,8 @@
   --------------------------------------------------------------------------- */
 
   /* font stacks */
-  --font-family-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-
-  --font-family-code: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-family-main: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif;
+  --font-family-code: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   /* font properties */
   --font-weight-xs: 200;

@@ -1,3 +1,7 @@
+/* ----------------------------------------------------------------------------
+popovers, tooltips, menus, dialogs
+---------------------------------------------------------------------------- */
+
 dialog {
   max-width: var(--line-length-lg);
   margin-block: var(--space-xs);
@@ -44,7 +48,6 @@ dialog {
 
 [role="tooltip"] {
   position: absolute;
-  box-shadow: var(--shadow-md);
   position-visibility: always;
   top: inherit;
   bottom: anchor(top);

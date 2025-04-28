@@ -11,14 +11,14 @@ export default class ThemePicker extends HTMLElement {
   }
 
   saveValue(type, value) {
-    localStorage.setItem(type, value);
+    window.localStorage.setItem(type, value);
     this.updateButtons(type, value);
     this.applyValues();
   }
 
   applyValues() {
-    const theme = localStorage.getItem('theme') || 'default';
-    const mode = localStorage.getItem('mode') || 'system';
+    const theme = window.localStorage.getItem('theme') || 'default';
+    const mode = window.localStorage.getItem('mode') || 'system';
     
     if (this.currentTheme && this.currentTheme !== 'default') {
       this.target.classList.remove(this.currentTheme);
@@ -68,8 +68,8 @@ export default class ThemePicker extends HTMLElement {
 
   connectedCallback() {
     this.target = document.documentElement;
-    this.currentTheme = localStorage.getItem('theme') || 'default';
-    this.currentMode = localStorage.getItem('mode') || 'system';
+    this.currentTheme = window.localStorage.getItem('theme') || 'default';
+    this.currentMode = window.localStorage.getItem('mode') || 'system';
     this.updateButtons('theme', this.currentTheme);
     this.updateButtons('mode', this.currentMode);
     this.applyValues();
@@ -85,4 +85,4 @@ export default class ThemePicker extends HTMLElement {
   }
 }
 
-customElements.define('theme-picker', ThemePicker);
+window.customElements.define('theme-picker', ThemePicker);

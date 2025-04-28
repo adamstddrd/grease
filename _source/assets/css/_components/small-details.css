@@ -10,7 +10,6 @@ small-details {
   }
 
   & summary {
-
     @media (--sm) {
       padding-block: var(--space-sm);
       border-block-end: var(--border-width-sm) solid var(--color-border);

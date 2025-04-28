@@ -23,7 +23,7 @@
     background-color: color-mix(
       in oklch,
       var(--color-bg),
-      currentColor 20%
+      currentcolor 20%
     );
   }
 
@@ -31,7 +31,7 @@
     background-color: color-mix(
       in oklch,
       var(--color-bg),
-      currentColor 20%
+      currentcolor 20%
     ) !important;
   }
 
@@ -96,7 +96,7 @@
         color: var(--color-text);
         background-color: color-mix(
           in oklch, 
-          currentColor, 
+          currentcolor, 
           var(--color-bg) 90%
         );
       }
@@ -124,7 +124,7 @@
     inline-size: 1em;
     block-size: 1em;
     scale: 0.9;
-    background-color: currentColor;
+    background-color: currentcolor;
     clip-path: var(--shape-chevron);
   }
 
