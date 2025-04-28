@@ -3,9 +3,9 @@ custom fonts
 ---------------------------------------------------------------------------- */
 
 @font-face {
-    font-family: Sono;
-    src: url('/assets/fonts/Sono.woff2') format("woff2-variations");
-    font-weight: 200 800;
-    font-style: normal;
-    font-display: swap;
+	font-family: Sono;
+	src: url("/assets/fonts/Sono.woff2") format("woff2-variations");
+	font-weight: 200 800;
+	font-style: normal;
+	font-display: swap;
 }

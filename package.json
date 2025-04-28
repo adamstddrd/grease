@@ -6,18 +6,17 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.2",
+    "@biomejs/biome": "1.9.4",
     "esbuild": "^0.25.2",
-    "eslint": "^9.11.1",
     "lightningcss": "^1.27.0",
-    "sharp": "^0.34.1",
-    "stylelint": "^16.9.0",
-    "stylelint-config-standard": "^38.0.0"
+    "sharp": "^0.34.1"
   },
   "scripts": {
     "start": "eleventy --serve --incremental --quiet",
     "publish:stage": "ELEVENTY_ENV=stage eleventy",
     "publish:prod": "ELEVENTY_ENV=prod eleventy",
-    "lint:css": "stylelint \"_source/**/*.css\" --fix",
-    "lint:js": "eslint \"_source/**/*.js\" --fix"
+    "format": "biome format --write ./_source",
+    "lint": "biome lint --write ./_source",
+    "check": "biome check --write ./_source"
   }
 }

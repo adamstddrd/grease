@@ -2,36 +2,58 @@
 display: manipulate the visual display of elements
 ---------------------------------------------------------------------------- */
 
-.block { display: block; }
-.inline { display: inline; }
-.hidden { display: none; }
-.contents { display: contents; }
-.clipped { overflow: clip; }
+.block {
+	display: block;
+}
+.inline {
+	display: inline;
+}
+.hidden {
+	display: none;
+}
+.contents {
+	display: contents;
+}
+.clipped {
+	overflow: clip;
+}
 
 .sr-only {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  block-size: 1px;
-  inline-size: 1px;
-  overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	block-size: 1px;
+	inline-size: 1px;
+	overflow: hidden;
 }
 
 @media (--sm) {
-  .block\@sm { display: block; }
-  .inline\@sm { display: inline; }
-  .hidden\@sm { display: none; }
+	.block\@sm {
+		display: block;
+	}
+	.inline\@sm {
+		display: inline;
+	}
+	.hidden\@sm {
+		display: none;
+	}
 
-  .sr-only\@sm {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-    block-size: 1px;
-    inline-size: 1px;
-    overflow: hidden;
-  }
+	.sr-only\@sm {
+		clip: rect(1px, 1px, 1px, 1px);
+		position: absolute !important;
+		block-size: 1px;
+		inline-size: 1px;
+		overflow: hidden;
+	}
 }
 
 @media (--md) {
-  .block\@md { display: block; }
-  .inline\@md { display: inline; }
-  .hidden\@md { display: none; }
+	.block\@md {
+		display: block;
+	}
+	.inline\@md {
+		display: inline;
+	}
+	.hidden\@md {
+		display: none;
+	}
 }

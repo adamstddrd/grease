@@ -1,26 +1,60 @@
 /* ----------------------------------------------------------------------------
 modify color on the fly
 ---------------------------------------------------------------------------- */
-.set-text { color: var(--color-text); }
-.set-bg { background-color: var(--color-bg); }
+.set-text {
+	color: var(--color-text);
+}
+.set-bg {
+	background-color: var(--color-bg);
+}
 
 .color {
-  /* pick the property you want to affect... */
-  &.--text { --color-text: var(--property); }
-  &.--bg { --color-bg: var(--property); }
-  &.--border { --color-border: var(--property); }
-  &.--link { --color-link: var(--property); }
-  &.--accent { --color-accent: var(--property); }
-  &.--shadow { --color-shadow: var(--property); }
+	/* pick the property you want to affect... */
+	&.--text {
+		--color-text: var(--property);
+	}
+	&.--bg {
+		--color-bg: var(--property);
+	}
+	&.--border {
+		--color-border: var(--property);
+	}
+	&.--link {
+		--color-link: var(--property);
+	}
+	&.--accent {
+		--color-accent: var(--property);
+	}
+	&.--shadow {
+		--color-shadow: var(--property);
+	}
 
-  /* ... and map it do a different color */
-  &.--use-text { --property: var(--color-text); }
-  &.--use-bg { --property: var(--color-bg); }
-  &.--use-bg-dark { --property: var(--color-bg-dark); }
-  &.--use-border { --property: var(--color-border); }
-  &.--use-link { --property: var(--color-link); }
-  &.--use-accent { --property: var(--color-accent); }
-  &.--use-shadow { --property: var(--color-shadow); }
-  &.--contrast-light { --property: oklch(from var(--color-bg) calc(l/6) c h); }
-  &.--contrast-dark { --property: oklch(from var(--color-bg) calc(l*6) c h); }
+	/* ... and map it do a different color */
+	&.--use-text {
+		--property: var(--color-text);
+	}
+	&.--use-bg {
+		--property: var(--color-bg);
+	}
+	&.--use-bg-dark {
+		--property: var(--color-bg-dark);
+	}
+	&.--use-border {
+		--property: var(--color-border);
+	}
+	&.--use-link {
+		--property: var(--color-link);
+	}
+	&.--use-accent {
+		--property: var(--color-accent);
+	}
+	&.--use-shadow {
+		--property: var(--color-shadow);
+	}
+	&.--contrast-light {
+		--property: oklch(from var(--color-bg) calc(l / 6) c h);
+	}
+	&.--contrast-dark {
+		--property: oklch(from var(--color-bg) calc(l * 6) c h);
+	}
 }
