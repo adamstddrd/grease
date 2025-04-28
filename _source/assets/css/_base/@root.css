@@ -1,169 +1,178 @@
 :root {
-  /* ---------------------------------------------------------------------------
+	/* ---------------------------------------------------------------------------
   color
   --------------------------------------------------------------------------- */
-  color-scheme: light dark;
-  interpolate-size: allow-keywords;
+	color-scheme: light dark;
+	interpolate-size: allow-keywords;
 
-  /* tints & shades */
-  --0: 100% 0 h;
-  --50: 97% calc(c/16) h;
-  --100: 94% calc(c/4) h;
-  --200: 88% c h;
-  --300: 70% c h;
-  --400: 60% c h;
-  --500: 50% c h;
-  --600: 40% c h;
-  --700: 30% c h;
-  --800: 22% calc(c/1.5) h;
-  --900: 18% calc(c/2) h;
+	/* tints & shades */
+	--0: 100% 0 h;
+	--50: 97% calc(c / 16) h;
+	--100: 94% calc(c / 4) h;
+	--200: 88% c h;
+	--300: 70% c h;
+	--400: 60% c h;
+	--500: 50% c h;
+	--600: 40% c h;
+	--700: 30% c h;
+	--800: 22% calc(c / 1.5) h;
+	--900: 18% calc(c / 2) h;
 
-  /* source colors */
-  --neutral: oklch(80% 0.01 300deg);
-  --primary: oklch(30% 0.3 300deg);
-  --secondary: oklch(70% 0.15 200deg);
+	/* source colors */
+	--neutral: oklch(80% 0.01 300deg);
+	--primary: oklch(30% 0.3 300deg);
+	--secondary: oklch(70% 0.15 200deg);
 
-  /* preset colors */
-  --color-text: light-dark(
-    oklch(from var(--neutral) var(--800)),
-    oklch(from var(--neutral) var(--100))
-  );
-  --color-bg: light-dark(
-    white,
-    oklch(from var(--primary) var(--800))
-  );
-  --color-bg-dark: light-dark(
-    oklch(from var(--neutral) var(--50)),
-    oklch(from var(--primary) var(--900))
-  );
-  --color-accent: light-dark(
-    oklch(from var(--primary) var(--500)),
-    oklch(from var(--primary) var(--300))
-  );
-  --color-link: light-dark(
-    oklch(from var(--secondary) var(--500)),
-    oklch(from var(--secondary) var(--200))
-  );
-  --color-border: light-dark(
-    oklch(from var(--neutral) var(--200)),
-    oklch(from var(--primary) var(--600))
-  );
-  --color-shadow: black;
+	/* preset colors */
+	--color-text: light-dark(
+		oklch(from var(--neutral) var(--800)),
+		oklch(from var(--neutral) var(--100))
+	);
+	--color-bg: light-dark(white, oklch(from var(--primary) var(--800)));
+	--color-bg-dark: light-dark(
+		oklch(from var(--neutral) var(--50)),
+		oklch(from var(--primary) var(--900))
+	);
+	--color-accent: light-dark(
+		oklch(from var(--primary) var(--500)),
+		oklch(from var(--primary) var(--300))
+	);
+	--color-link: light-dark(
+		oklch(from var(--secondary) var(--500)),
+		oklch(from var(--secondary) var(--200))
+	);
+	--color-border: light-dark(
+		oklch(from var(--neutral) var(--200)),
+		oklch(from var(--primary) var(--600))
+	);
+	--color-shadow: black;
 
-  /* ---------------------------------------------------------------------------
+	/* ---------------------------------------------------------------------------
   spacing
   --------------------------------------------------------------------------- */
-  --space-scale: 1.666;
-  --space-base: 1.5rem;
-  --space-xxs: calc(var(--space-xs) / var(--space-scale));
-  --space-xs: calc(var(--space-sm) / var(--space-scale));
-  --space-sm: calc(var(--space-base) / var(--space-scale));
-  --space-md: var(--space-base);
-  --space-lg: calc(var(--space-md) * var(--space-scale));
-  --space-xl: calc(var(--space-lg) * var(--space-scale));
-  --space-xxl: calc(var(--space-xl) * var(--space-scale));
-  --space-xxxl: calc(var(--space-xxl) * var(--space-scale));
-  --space-flex: clamp(8rem, 20vw, 16rem);
+	--space-scale: 1.666;
+	--space-base: 1.5rem;
+	--space-xxs: calc(var(--space-xs) / var(--space-scale));
+	--space-xs: calc(var(--space-sm) / var(--space-scale));
+	--space-sm: calc(var(--space-base) / var(--space-scale));
+	--space-md: var(--space-base);
+	--space-lg: calc(var(--space-md) * var(--space-scale));
+	--space-xl: calc(var(--space-lg) * var(--space-scale));
+	--space-xxl: calc(var(--space-xl) * var(--space-scale));
+	--space-xxxl: calc(var(--space-xxl) * var(--space-scale));
+	--space-flex: clamp(8rem, 20vw, 16rem);
 
-  /* ---------------------------------------------------------------------------
+	/* ---------------------------------------------------------------------------
   typography
   --------------------------------------------------------------------------- */
 
-  /* font stacks */
-  --font-family-main: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif;
-  --font-family-code: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+	/* font stacks */
+	--font-family-main:
+		system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif;
+	--font-family-code:
+		ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  /* font properties */
-  --font-weight-xs: 200;
-  --font-weight-sm: 325;
-  --font-weight-md: 400;
-  --font-weight-lg: 500;
-  --font-weight-xl: 700;
-  --font-weight-xxl: 800;
-  --font-weight: var(--font-weight-sm);
+	/* font properties */
+	--font-weight-xs: 200;
+	--font-weight-sm: 325;
+	--font-weight-md: 400;
+	--font-weight-lg: 500;
+	--font-weight-xl: 700;
+	--font-weight-xxl: 800;
+	--font-weight: var(--font-weight-sm);
 
-  /* font size */
-  --font-size-base: max(1.125em, min(calc(0.675em + 0.5vw), 1.875em));
-  --font-size-scale-sm: 1.2;
-  --font-size-scale-lg: 1.333;
-  --font-size-xxxs: calc(var(--font-size-xxs) / var(--font-size-scale-sm));
-  --font-size-xxs: calc(var(--font-size-xs) / var(--font-size-scale-sm));
-  --font-size-xs: calc(var(--font-size-sm) / var(--font-size-scale-sm));
-  --font-size-sm: calc(var(--font-size-md) / var(--font-size-scale-sm));
-  --font-size-md: 1em;
-  --font-size-lg: calc(var(--font-size-md) * var(--font-size-scale-lg));
-  --font-size-xl: calc(var(--font-size-lg) * var(--font-size-scale-lg));
-  --font-size-xxl: calc(var(--font-size-xl) * var(--font-size-scale-lg));
-  --font-size-xxxl: calc(var(--font-size-xxl) * var(--font-size-scale-lg));
-  --font-size-xxxxl: calc(var(--font-size-xxxl) * var(--font-size-scale-lg));
-  --font-size-poster: font-size: clamp(3.5em, 8vw, 7em);
+	/* font size */
+	--font-size-base: max(1.125em, min(calc(0.675em + 0.5vw), 1.875em));
+	--font-size-scale-sm: 1.2;
+	--font-size-scale-lg: 1.333;
+	--font-size-xxxs: calc(var(--font-size-xxs) / var(--font-size-scale-sm));
+	--font-size-xxs: calc(var(--font-size-xs) / var(--font-size-scale-sm));
+	--font-size-xs: calc(var(--font-size-sm) / var(--font-size-scale-sm));
+	--font-size-sm: calc(var(--font-size-md) / var(--font-size-scale-sm));
+	--font-size-md: 1em;
+	--font-size-lg: calc(var(--font-size-md) * var(--font-size-scale-lg));
+	--font-size-xl: calc(var(--font-size-lg) * var(--font-size-scale-lg));
+	--font-size-xxl: calc(var(--font-size-xl) * var(--font-size-scale-lg));
+	--font-size-xxxl: calc(var(--font-size-xxl) * var(--font-size-scale-lg));
+	--font-size-xxxxl: calc(var(--font-size-xxxl) * var(--font-size-scale-lg));
+	--font-size-poster: clamp(3.5em, 8vw, 7em);
 
-  /* line length */
-  --line-length-xs: 24ch;
-  --line-length-sm: 48ch;
-  --line-length-md: 64ch;
-  --line-length-lg: 72ch;
-  --line-length-xl: 80ch;
+	/* line length */
+	--line-length-xs: 24ch;
+	--line-length-sm: 48ch;
+	--line-length-md: 64ch;
+	--line-length-lg: 72ch;
+	--line-length-xl: 80ch;
 
-  /* line height */
-  --line-height-base: 1.1;
-  --line-height-scale: 1.25;
-  --line-height-xs: calc(var(--line-height-sm) / var(--line-height-scale));
-  --line-height-sm: var(--line-height-base);
-  --line-height-md: calc(var(--line-height-sm) * var(--line-height-scale));
-  --line-height-lg: calc(var(--line-height-md) * var(--line-height-scale));
-  --line-height-fluid: calc(0.6rem + 1em);
+	/* line height */
+	--line-height-base: 1.1;
+	--line-height-scale: 1.25;
+	--line-height-xs: calc(var(--line-height-sm) / var(--line-height-scale));
+	--line-height-sm: var(--line-height-base);
+	--line-height-md: calc(var(--line-height-sm) * var(--line-height-scale));
+	--line-height-lg: calc(var(--line-height-md) * var(--line-height-scale));
+	--line-height-fluid: calc(0.6rem + 1em);
 
-  /* letter spacing */
-  --letter-spacing-sm: -0.025em;
-  --letter-spacing-md: 0;
-  --letter-spacing-lg: 0.1em;
-  --letter-spacing-xl: 0.3em;
+	/* letter spacing */
+	--letter-spacing-sm: -0.025em;
+	--letter-spacing-md: 0;
+	--letter-spacing-lg: 0.1em;
+	--letter-spacing-xl: 0.3em;
 
-  /* ---------------------------------------------------------------------------
+	/* ---------------------------------------------------------------------------
   borders
   --------------------------------------------------------------------------- */
 
-  /* border radius */
-  --border-radius-0: 0;
-  --border-radius-sm: 0.2rem;
-  --border-radius-md: 0.4rem;
-  --border-radius-lg: 0.8rem;
-  --border-radius-xl: 1.6rem;
+	/* border radius */
+	--border-radius-0: 0;
+	--border-radius-sm: 0.2rem;
+	--border-radius-md: 0.4rem;
+	--border-radius-lg: 0.8rem;
+	--border-radius-xl: 1.6rem;
 
-  /* border width */
-  --border-width-sm: 0.0625rem;
-  --border-width-md: 0.1rem;
-  --border-width-lg: 0.25rem;
+	/* border width */
+	--border-width-sm: 0.0625rem;
+	--border-width-md: 0.1rem;
+	--border-width-lg: 0.25rem;
 
-  /* ---------------------------------------------------------------------------
+	/* ---------------------------------------------------------------------------
   z-index
   --------------------------------------------------------------------------- */
-  --z-0: 0;
-  --z-1: 1;
-  --z-2: 2;
-  --z-3: 3;
-  --z-4: 4;
-  --z-5: 5;
+	--z-0: 0;
+	--z-1: 1;
+	--z-2: 2;
+	--z-3: 3;
+	--z-4: 4;
+	--z-5: 5;
 
-  /* ---------------------------------------------------------------------------
+	/* ---------------------------------------------------------------------------
   shadows
   --------------------------------------------------------------------------- */
-  --shadow-sm: 0 1px 2px -1px oklch(from var(--color-shadow) l c h / 10%);
-  --shadow-md:
-    0 -1px 3px 0 oklch(from var(--color-shadow) l c h / 2%),
-    0 1px 2px -5px oklch(from var(--color-shadow) l c h / 2%),
-    0 2px 5px -5px oklch(from var(--color-shadow) l c h / 4%),
-    0 4px 12px -5px oklch(from var(--color-shadow) l c h / 5%),
-    0 12px 15px -5px oklch(from var(--color-shadow) l c h / 7%);
-  --shadow-lg:
-    0 5px 5px -2px oklch(from var(--color-shadow) l c h / 6%),
-    0 10px 10px -2px oklch(from var(--color-shadow) l c h / 7%),
-    0 20px 20px -2px oklch(from var(--color-shadow) l c h / 8%),
-    0 40px 40px -2px oklch(from var(--color-shadow) l c h / 9%);
-  
-  /* ---------------------------------------------------------------------------
+	--shadow-sm: 0 1px 2px -1px oklch(from var(--color-shadow) l c h / 10%);
+	--shadow-md:
+		0 -1px 3px 0 oklch(from var(--color-shadow) l c h / 2%),
+		0 1px 2px -5px oklch(from var(--color-shadow) l c h / 2%),
+		0 2px 5px -5px oklch(from var(--color-shadow) l c h / 4%),
+		0 4px 12px -5px oklch(from var(--color-shadow) l c h / 5%),
+		0 12px 15px -5px oklch(from var(--color-shadow) l c h / 7%);
+	--shadow-lg:
+		0 5px 5px -2px oklch(from var(--color-shadow) l c h / 6%),
+		0 10px 10px -2px oklch(from var(--color-shadow) l c h / 7%),
+		0 20px 20px -2px oklch(from var(--color-shadow) l c h / 8%),
+		0 40px 40px -2px oklch(from var(--color-shadow) l c h / 9%);
+
+	/* ---------------------------------------------------------------------------
   shapes
   --------------------------------------------------------------------------- */
-  --shape-chevron: polygon(35% 0, 80% 50%, 35% 100%, 28% 93%, 62% 55%, 66% 50%, 66% 50%, 62% 45%, 28% 7%)
+	--shape-chevron: polygon(
+		35% 0,
+		80% 50%,
+		35% 100%,
+		28% 93%,
+		62% 55%,
+		66% 50%,
+		66% 50%,
+		62% 45%,
+		28% 7%
+	);
 }

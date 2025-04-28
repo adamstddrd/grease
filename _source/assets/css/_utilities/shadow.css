@@ -2,12 +2,24 @@
 shadow: add some depth
 ---------------------------------------------------------------------------- */
 
-.shadow-sm { box-shadow: var(--shadow-sm); }
-.shadow-md { box-shadow: var(--shadow-md); }
-.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-sm {
+	box-shadow: var(--shadow-sm);
+}
+.shadow-md {
+	box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+	box-shadow: var(--shadow-lg);
+}
 
-@media (--md) {  
-  .shadow-sm\@md { box-shadow: var(--shadow-sm); }
-  .shadow-md\@md { box-shadow: var(--shadow-md); }
-  .shadow-lg\@md { box-shadow: var(--shadow-lg); }
+@media (--md) {
+	.shadow-sm\@md {
+		box-shadow: var(--shadow-sm);
+	}
+	.shadow-md\@md {
+		box-shadow: var(--shadow-md);
+	}
+	.shadow-lg\@md {
+		box-shadow: var(--shadow-lg);
+	}
 }

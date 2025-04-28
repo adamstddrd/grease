@@ -1,14 +1,20 @@
 {
-  "title": "Grease",
-  "description": "Grease takes the friction out of building fast, adaptable websites.",
-  "ui": [
-    {
-      "type": "mode",
-      "values": ["system", "dark", "light"]
-    },
-    {
-      "type": "theme",
-      "values": ["default", "low-contrast", "high-contrast", "primary", "secondary"]
-    }
-  ]
+	"title": "Grease",
+	"description": "Grease takes the friction out of building fast, adaptable websites.",
+	"ui": [
+		{
+			"type": "mode",
+			"values": ["system", "dark", "light"]
+		},
+		{
+			"type": "theme",
+			"values": [
+				"default",
+				"low-contrast",
+				"high-contrast",
+				"primary",
+				"secondary"
+			]
+		}
+	]
 }

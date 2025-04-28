@@ -3,193 +3,205 @@ default form styles
 ---------------------------------------------------------------------------- */
 
 form {
-  inline-size: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+	inline-size: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
 }
 
 label {
-  display: block;
-  flex-grow: 1;
-  flex-shrink: 1;
-  font-weight: var(--font-weight-lg);
-  line-height: var(--line-height-lg);
+	display: block;
+	flex-grow: 1;
+	flex-shrink: 1;
+	font-weight: var(--font-weight-lg);
+	line-height: var(--line-height-lg);
 }
 
 textarea {
-  inline-size: 100%;
-  field-sizing: content;
-  min-height: var(--space-xxl);
+	inline-size: 100%;
+	field-sizing: content;
+	min-height: var(--space-xxl);
 }
 
 :where(button, input, select, option, textarea) {
-  color: var(--color-text);
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: var(--line-height-sm);
+	color: var(--color-text);
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: var(--line-height-sm);
 }
 
-:where(input:not([type="range"], [type="button"], [type="submit"], [type="radio"], [type="checkbox"], [type="file"]), select, textarea) {	
-  inline-size: 100%;
+:where(
+		input:not(
+				[type="range"],
+				[type="button"],
+				[type="submit"],
+				[type="radio"],
+				[type="checkbox"],
+				[type="file"]
+			),
+		select,
+		textarea
+	) {
+	inline-size: 100%;
 	background-color: var(--color-bg-dark);
 	border: var(--border-width-md) solid var(--color-border);
-  border-radius: var(--border-radius-sm);
+	border-radius: var(--border-radius-sm);
 	padding: var(--space-sm);
-  font-weight: var(--font-weight);
-  transition: border-color 0.1s ease;
+	font-weight: var(--font-weight);
+	transition: border-color 0.1s ease;
 
-  &::placeholder {
-    color: var(--color-text);
-    opacity: 0.5;
-  }
+	&::placeholder {
+		color: var(--color-text);
+		opacity: 0.5;
+	}
 
-  &:focus,
-  &:focus-within {
-    border-color: var(--color-accent);
-    outline: none;
-  }
+	&:focus,
+	&:focus-within {
+		border-color: var(--color-accent);
+		outline: none;
+	}
 }
 
 select {
-  font-weight: normal;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
-  background-position: right var(--space-sm) center;
-  background-size: var(--space-md) var(--space-md);
+	font-weight: normal;
+	appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
+	background-repeat: no-repeat;
+	background-position: right var(--space-sm) center;
+	background-size: var(--space-md) var(--space-md);
 
-  @supports (appearance: base-select) {
-    appearance: base-select;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    background-image: none;
+	@supports (appearance: base-select) {
+		appearance: base-select;
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		background-image: none;
 
-    &::picker-icon {
-      content: "";
-      display: block;
-      inline-size: 1em;
-      block-size: 0.75em;
-      background-color: var(--color-text);
-      clip-path: var(--shape-chevron);
-      rotate: 90deg;
-    }
+		&::picker-icon {
+			content: "";
+			display: block;
+			inline-size: 1em;
+			block-size: 0.75em;
+			background-color: var(--color-text);
+			clip-path: var(--shape-chevron);
+			rotate: 90deg;
+		}
 
-    &::picker(select) {
-      appearance: base-select;
-      max-block-size: 24rem;
-      max-inline-size: 24rem;
-      position-try-order: normal;
-      margin-block: calc(var(--space-lg) * -1);
-      margin-inline: calc(var(--space-xs) * -1.25);
-      background-color: var(--color-bg-dark);
-      border: var(--border-width-sm) solid var(--color-border);
-      border-radius: var(--border-radius-sm);
-      padding: var(--space-xs);
-      box-shadow: var(--shadow-md);
-    }
+		&::picker(select) {
+			appearance: base-select;
+			max-block-size: 24rem;
+			max-inline-size: 24rem;
+			position-try-order: normal;
+			margin-block: calc(var(--space-lg) * -1);
+			margin-inline: calc(var(--space-xs) * -1.25);
+			background-color: var(--color-bg-dark);
+			border: var(--border-width-sm) solid var(--color-border);
+			border-radius: var(--border-radius-sm);
+			padding: var(--space-xs);
+			box-shadow: var(--shadow-md);
+		}
 
-    & legend {
-      padding: var(--space-xs);
-      font-size: var(--font-size-xs);
-      font-weight: var(--font-weight-lg);
-      color: var(--color-text);
-      text-transform: uppercase;
-      opacity: 0.5;
-    }
+		& legend {
+			padding: var(--space-xs);
+			font-size: var(--font-size-xs);
+			font-weight: var(--font-weight-lg);
+			color: var(--color-text);
+			text-transform: uppercase;
+			opacity: 0.5;
+		}
 
-    & option {
-      display: block;
-      cursor: pointer;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-weight: var(--font-weight);
-      padding: var(--space-xs);
-      border-radius: var(--border-radius-sm);
+		& option {
+			display: block;
+			cursor: pointer;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			font-weight: var(--font-weight);
+			padding: var(--space-xs);
+			border-radius: var(--border-radius-sm);
 
-      &::checkmark {
-        display: none;
-      }
+			&::checkmark {
+				display: none;
+			}
 
-      &[disabled] {
-        opacity: 0.5;
-        pointer-events: none;
-      }
+			&[disabled] {
+				opacity: 0.5;
+				pointer-events: none;
+			}
 
-      &:not([disabled]) {
-        @media (hover: hover) {
-          &:hover {
-            background-color: oklch(from var(--color-text) l c h / 10%);
-          }
-        }
+			&:not([disabled]) {
+				@media (hover: hover) {
+					&:hover {
+						background-color: oklch(from var(--color-text) l c h / 10%);
+					}
+				}
 
-        &:focus {
-          background-color: oklch(from var(--color-text) l c h / 10%);
-        }
+				&:focus {
+					background-color: oklch(from var(--color-text) l c h / 10%);
+				}
 
-        &:focus-visible {
-          outline: none;
-        }
+				&:focus-visible {
+					outline: none;
+				}
 
-        &:checked {
-          color: var(--color-bg);
-          background-color: var(--color-accent);
-        }
-      }
-    }
-  }
+				&:checked {
+					color: var(--color-bg);
+					background-color: var(--color-accent);
+				}
+			}
+		}
+	}
 }
 
 [disabled] {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
-input[type="checkbox"], input[type="radio"] {
-  appearance: none;
-  display: inline-grid;
-  place-content: center;
-  inline-size: 1.2em;
-  block-size: 1.2em;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  color: currentcolor;
-  background-color: var(--color-bg-dark);
-  border: var(--border-width-md) solid var(--color-border);
+input[type="checkbox"],
+input[type="radio"] {
+	appearance: none;
+	display: inline-grid;
+	place-content: center;
+	inline-size: 1.2em;
+	block-size: 1.2em;
+	margin: 0;
+	padding: 0;
+	font: inherit;
+	color: currentcolor;
+	background-color: var(--color-bg-dark);
+	border: var(--border-width-md) solid var(--color-border);
 
-  &:checked::before {
-    scale: 1;
-    box-shadow: inset 1em 1em var(--color-accent);
-  }
+	&:checked::before {
+		scale: 1;
+		box-shadow: inset 1em 1em var(--color-accent);
+	}
 }
 
 input[type="radio"] {
-  border-radius: 50%;
-  translate: 0 0.05em;
+	border-radius: 50%;
+	translate: 0 0.05em;
 
-  &::before {
-    content: "";
-    inline-size: 0.7em;
-    block-size: 0.7em;
-    border-radius: 50%;
-    scale: 0;
-    transition: 100ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--color-text);
-  }
+	&::before {
+		content: "";
+		inline-size: 0.7em;
+		block-size: 0.7em;
+		border-radius: 50%;
+		scale: 0;
+		transition: 100ms transform ease-in-out;
+		box-shadow: inset 1em 1em var(--color-text);
+	}
 }
 
 input[type="checkbox"] {
-  border-radius: var(--border-radius-sm);
+	border-radius: var(--border-radius-sm);
 
-  &::before {
-    content: "";
-    inline-size: 0.65em;
-    block-size: 0.65em;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    scale: 0;
-    box-shadow: inset 1em 1em var(--color-text);
-  }
+	&::before {
+		content: "";
+		inline-size: 0.65em;
+		block-size: 0.65em;
+		clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+		scale: 0;
+		box-shadow: inset 1em 1em var(--color-text);
+	}
 }

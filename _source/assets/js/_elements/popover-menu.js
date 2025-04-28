@@ -3,99 +3,99 @@ Gracefully degrade anchored popover menus
 ---------------------------------------------------------------------------- */
 
 export default class PopoverMenu extends HTMLElement {
-  constructor() {
-    super();
-    this.isOpen = false;
-    this.clickHandler = this.handleClick.bind(this);
-    this.keydownHandler = this.handleKeydown.bind(this);
-  }
+	constructor() {
+		super();
+		this.isOpen = false;
+		this.clickHandler = this.handleClick.bind(this);
+		this.keydownHandler = this.handleKeydown.bind(this);
+	}
 
-  get needsFallback() {
-    return !('anchorName' in document.documentElement.style);
-  }
+	get needsFallback() {
+		return !('anchorName' in document.documentElement.style);
+	}
 
-  handleClick(e) {
-    const target = e.target;
-    const targetButton = target.closest('button');
-    
-    if (targetButton === this.button) {
-      e.preventDefault();
-      this.toggleMenu();
-      return;
-    }
+	handleClick(e) {
+		const target = e.target;
+		const targetButton = target.closest('button');
 
-    if (!this.menu.contains(target)) {
-      this.closeMenu();
-    }
-  }
+		if (targetButton === this.button) {
+			e.preventDefault();
+			this.toggleMenu();
+			return;
+		}
 
-  handleKeydown(e) {
-    if (!this.isOpen) return;
+		if (!this.menu.contains(target)) {
+			this.closeMenu();
+		}
+	}
 
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      this.closeMenu();
-      this.button.focus();
-    }
-  }
+	handleKeydown(e) {
+		if (!this.isOpen) return;
 
-  toggleMenu() {
-    this.isOpen ? this.closeMenu() : this.openMenu();
-  }
+		if (e.key === 'Escape') {
+			e.preventDefault();
+			this.closeMenu();
+			this.button.focus();
+		}
+	}
 
-  openMenu() {
-    if (!this.button || !this.menu) return;
-    
-    this.isOpen = true;
-    this.button.setAttribute('aria-expanded', 'true');
-    this.menu.removeAttribute('hidden');
-  }
+	toggleMenu() {
+		this.isOpen ? this.closeMenu() : this.openMenu();
+	}
 
-  closeMenu() {
-    if (!this.button || !this.menu) return;
-    
-    this.isOpen = false;
-    this.button.setAttribute('aria-expanded', 'false');
-    this.menu.setAttribute('hidden', '');
-  }
+	openMenu() {
+		if (!this.button || !this.menu) return;
 
-  setupFallbackBehavior() {
-    if (this.menu.hasAttribute('popover')) {
-      this.menu.removeAttribute('popover');
-    }
-    
-    if (this.button.hasAttribute('popovertarget')) {
-      this.button.removeAttribute('popovertarget');
-    }
-    
-    this.button.setAttribute('aria-details', this.menu.id);
-    this.button.setAttribute('aria-expanded', 'false');
-    
-    if (!this.menu.hasAttribute('hidden')) {
-      this.menu.setAttribute('hidden', '');
-    }
-    
-    this.menu.style.zIndex = '9999';
-    
-    document.addEventListener('click', this.clickHandler, true);
-    this.addEventListener('keydown', this.keydownHandler);
-  }
+		this.isOpen = true;
+		this.button.setAttribute('aria-expanded', 'true');
+		this.menu.removeAttribute('hidden');
+	}
 
-  connectedCallback() {
-    this.button = this.querySelector('[popovertarget]');
-    this.menu = this.querySelector('[popover]');
-    
-    if (this.needsFallback && this.button && this.menu) {
-      this.setupFallbackBehavior();
-    }
-  }
+	closeMenu() {
+		if (!this.button || !this.menu) return;
 
-  disconnectedCallback() {
-    if (this.needsFallback) {
-      document.removeEventListener('click', this.clickHandler, true);
-      this.removeEventListener('keydown', this.keydownHandler);
-    }
-  }
+		this.isOpen = false;
+		this.button.setAttribute('aria-expanded', 'false');
+		this.menu.setAttribute('hidden', '');
+	}
+
+	setupFallbackBehavior() {
+		if (this.menu.hasAttribute('popover')) {
+			this.menu.removeAttribute('popover');
+		}
+
+		if (this.button.hasAttribute('popovertarget')) {
+			this.button.removeAttribute('popovertarget');
+		}
+
+		this.button.setAttribute('aria-details', this.menu.id);
+		this.button.setAttribute('aria-expanded', 'false');
+
+		if (!this.menu.hasAttribute('hidden')) {
+			this.menu.setAttribute('hidden', '');
+		}
+
+		this.menu.style.zIndex = '9999';
+
+		document.addEventListener('click', this.clickHandler, true);
+		this.addEventListener('keydown', this.keydownHandler);
+	}
+
+	connectedCallback() {
+		this.button = this.querySelector('[popovertarget]');
+		this.menu = this.querySelector('[popover]');
+
+		if (this.needsFallback && this.button && this.menu) {
+			this.setupFallbackBehavior();
+		}
+	}
+
+	disconnectedCallback() {
+		if (this.needsFallback) {
+			document.removeEventListener('click', this.clickHandler, true);
+			this.removeEventListener('keydown', this.keydownHandler);
+		}
+	}
 }
 
 window.customElements.define('popover-menu', PopoverMenu);
