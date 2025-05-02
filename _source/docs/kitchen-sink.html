@@ -18,7 +18,7 @@ permalink: /kitchen-sink/
         <button popovertarget="on-this-page" class="button --primary shadow-md">
           On this page
         </button>
-        <ul id="on-this-page" role="menu" popover>
+        <ul id="on-this-page" popover>
           {% for post in sortedSnippets %}
             <li>
               <a href="#{{ post.data.title | slugify }}" class="button --menu --primary">
