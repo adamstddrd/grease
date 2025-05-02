@@ -3,14 +3,19 @@
     {% render "svg/theme-picker.svg" %}
   </button>
   <theme-picker id="themes-menu" role="menu" popover class="anchor-right">
-    {% for group in site.ui %}
-      <ul>
-        {% for value in group.values %}
-          <li>
-            <button class="button --menu --primary" data-type="{{ group.type }}" data-value="{{ value }}">{{ value }}</button>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endfor %}
+    <ul role="group">
+      {% for item in modes %}
+        <li>
+          <button class="button --menu --primary" data-type="mode" data-value="{{ item }}" role="menuitem">{{ item }}</button>
+        </li>
+      {% endfor %}
+    </ul>
+    <ul role="group">
+      {% for item in themes %}
+        <li>
+          <button class="button --menu --primary" data-type="theme" data-value="{{ item }}" role="menuitem">{{ item }}</button>
+        </li>
+      {% endfor %}
+    </ul>
   </theme-picker>
 </popover-menu>

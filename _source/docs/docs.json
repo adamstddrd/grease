@@ -1,4 +1,31 @@
 {
-	"permalink": false,
-	"tags": ["docs"]
+	"modes": [
+		"system",
+		"dark",
+		"light"
+	],
+	"themes": [
+		"default",
+		"low-contrast",
+		"high-contrast",
+		"primary",
+		"secondary"
+	],
+	"colors": [
+		"primary",
+		"secondary",
+		"neutral"
+	],
+	"colorSteps": [
+		50,
+		100,
+		200,
+		300,
+		400,
+		500,
+		600,
+		700,
+		800,
+		900
+	]
 }

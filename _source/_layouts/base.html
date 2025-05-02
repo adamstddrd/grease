@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" {% if theme %} class="{{ theme }}"{% endif %}>
+<html lang="en"{% if theme %} class="{{ theme }}"{% endif %}>
 
   <head>
     
@@ -10,7 +10,6 @@
       const theme = localStorage.getItem('theme') || 'default';
       const mode = localStorage.getItem('mode') || 'system';
       
-      // Apply theme and mode as classes
       if (theme !== 'default') {
         document.documentElement.classList.add(theme);
       }
@@ -38,9 +37,9 @@
     {%- endif -%}
 
     <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
-    <link rel="mask-icon" href="/assets/icons/favicon.svg" color="#000000">
-    <link rel="apple-touch-icon" href="/assets/icons/favicon-196x196.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
+    <link rel="mask-icon" href="/assets/images/icons/favicon.svg" color="#000000">
+    <link rel="apple-touch-icon" href="/assets/images/icons/favicon-196x196.png">
     <link rel="expect" href="#header" blocking="render" />
 
     <style>

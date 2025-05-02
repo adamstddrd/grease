@@ -1,0 +1,60 @@
+---
+title: Grease
+description: Grease takes the friction out of building fast, adaptable, aesthetic websites.
+layout: base.html
+stylesheet: pages/docs.css
+eleventyImport:
+  collections: ["docs"]
+# noindex: true
+permalink: /
+---
+
+<header id="header" class="grid">
+  <nav class="flex no-wrap justify-between align-items-center">
+    <a class="font-size-xl font-size-lg@md font-weight-xxl uppercase line-height-flush undecorated button --simple  --primary pt-0 pb-0 pb-xs@md" href="/">
+      {% render "svg/grease.svg" %}
+      <span class="sr-only@sm">Grease</span>
+    </a>
+    <div class="inline-flex gap-xs shrink align-items-center">
+      <ul class="docs-nav-group unlisted inline-flex gap-xs shrink align-items-center">
+        <li class="hidden@smm"><a href="/kitchen-sink/" class="button --subtle --primary shadow-md">Kitchen sink</a></li>
+        <li><a href="https://github.com/adamstddrd/grease" class="button --primary shadow-md">On GitHub</a></li>
+      </ul>
+      {% render "docs/theme-picker.html" modes: modes, themes: themes %}
+      </div>
+  </nav>
+</header>
+
+<main class="grid">
+
+  <h1 class="hero">Grease takes the friction out of building fast, adaptable websites.</h1>
+  <random-shapes class="grease-marks bleed" quantity="10" jitter="20"></random-shapes>
+
+  <section id="docs" class="docs-layout">
+    <nav class="sticky@md top-md mb-lg">
+      <small-details>
+        <details>
+          <summary class="font-size-sm font-weight-md uppercase letter-spacing-lg">Using Grease</summary>
+          <ul class="unlisted font-size-sm font-weight-lg mt-sm">
+          {%- for post in collections.docs -%}
+            <li>
+              <a class="button --simple" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
+            </li>
+          {%- endfor -%}
+        </details>
+      </small-details>
+    </nav>
+    <article class="line-length-lg">
+      {%- for post in collections.docs -%}
+        <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
+        {{ post.content }}
+        <hr>
+      {%- endfor -%}
+    </article>
+  </section>
+
+</main>
+
+<footer class="grid">
+  <p class="font-size-sm">By <a href="https://aaadaaam.com">AAADAAAM</a>. Have fun.</p>
+</footer>

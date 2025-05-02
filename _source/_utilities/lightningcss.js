@@ -19,7 +19,6 @@ export default function (eleventyConfig) {
 				filename: inputPath,
 				minify: true,
 				sourceMap: true,
-				include: Features.Nesting,
 				drafts: { customMedia: true },
 				resolver: {
 					resolve(specifier, from) {

@@ -44,6 +44,16 @@ position: manipulate position across breakpoints
 .top-0 {
 	inset-block-start: 0;
 }
+.left-0 {
+	inset-inline-start: 0;
+}
+.right-0 {
+	inset-inline-end: 0;
+}
+.bottom-0 {
+	inset-block-end: 0;
+}
+
 .top-sm {
 	inset-block-start: var(--space-sm);
 }
@@ -57,14 +67,16 @@ position: manipulate position across breakpoints
 	inset-block-start: var(--space-xl);
 }
 
-.left-0 {
-	inset-inline-start: 0;
-}
-.right-0 {
-	inset-inline-end: 0;
-}
-.bottom-0 {
-	inset-block-end: 0;
+@media (--sm) {
+	.relative\@sm {
+		position: relative;
+	}
+	.absolute\@sm {
+		position: absolute;
+	}
+	.w-full\@sm {
+		inline-size: 100%;
+	}
 }
 
 @media (--md) {
@@ -76,19 +88,6 @@ position: manipulate position across breakpoints
 	}
 
 	.sticky\@md {
-		position: sticky !important;
-		inset-block-start: var(--space-md);
-	}
-}
-
-@media (--sm) {
-	.relative\@sm {
-		position: relative;
-	}
-	.absolute\@sm {
-		position: absolute;
-	}
-	.w-full\@sm {
-		inline-size: 100%;
+		position: sticky;
 	}
 }

@@ -1,65 +1,14 @@
 ---
 title: Grease
 description: Grease takes the friction out of building fast, adaptable, aesthetic websites.
-layout: page.html
-stylesheet: pages/docs.css
-eleventyImport:
-  collections: ["docs"]
+layout: base.html
 # noindex: true
 # canonical: https://example.com/page.html
-# theme: low-contrast
+permalink: false
 ---
 
-<section class="grid">
+{% comment %}
+  Build your real homepage here, but make sure you delete the `permalink: false` line above, and in /docs/index.html.
 
-  <header id="header" class="grid z-5 {{ class }}">
-    <nav class="span-12 flex no-wrap justify-between align-items-center">
-      <a class="font-size-xl font-size-lg@md font-weight-xxl uppercase line-height-flush undecorated button --simple  --primary pt-0 pb-0 pb-xs@md" href="/">
-        {% render "svg/grease.svg" %}
-        <span class="sr-only@sm">Grease</span>
-      </a>
-      <div class="inline-flex gap-xs shrink align-items-center">
-        <ul class="docs-nav-group unlisted inline-flex gap-xs shrink align-items-center">
-          <li class="hidden@smm"><a href="/kitchen-sink/" class="button --subtle --primary shadow-md">Kitchen sink</a></li>
-          <li><a href="https://github.com/adamstddrd/grease" class="button --primary shadow-md">On GitHub</a></li>
-        </ul>
-        {% render "docs/theme-picker.html" site: site %}
-      </div>
-    </nav>
-  </header>
-
-  <h1 class="hero span-12">Grease takes the friction out of building fast, adaptable websites.</h1>
-
-  <random-shapes class="grease-marks bleed" quantity="10" jitter="20"></random-shapes>
-
-</section>
-
-<section id="docs" class="docs-layout span-12">
-
-  <nav class="sticky@md mb-lg">
-    <small-details>
-      <details>
-        <summary class="font-size-sm font-weight-md uppercase letter-spacing-lg">Using Grease</summary>
-        <ul class="unlisted font-size-sm font-weight-lg mt-sm">
-        {%- for post in collections.docs -%}
-          <li>
-            <a class="button --simple" href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a>
-          </li>
-        {%- endfor -%}
-      </details>
-    </small-details>
-  </nav>
-
-  <article class="line-length-lg">
-    {%- for post in collections.docs -%}
-      <h2 id="{{ post.data.title | slugify }}">{{ post.data.title }}</h2>
-      {{ post.content }}
-      <hr>
-    {%- endfor -%}
-  </article>
-
-</section>
-
-<footer class="relative span-12 mt-lg pt-md font-size-sm">
-  <p>By <a href="https://aaadaaam.com">AAADAAAM</a>. Have fun.</p>
-</footer>
+  That way, you still have the docs and kitchen sink at /docs while you build out your site. The kitchen sink is a helpful tool for seeing all the changes you make in one place!
+{% endcomment %}

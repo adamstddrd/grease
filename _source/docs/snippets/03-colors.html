@@ -1,6 +1,10 @@
+---
+title: Colors
+---
+
 <section class="grid">
-  {% for color in colorList %}
-    <ul class="demo-chips span-12">
+  {% for color in colors %}
+    <ul class="demo-chips">
       {% for step in colorSteps %}
         <li style="--color-bg: oklch(from var(--{{ color }}) var(--{{ step }}))">
           <span {% if step >= 500 %}class="color --text --contrast-dark"{% else %}class="color --text --contrast-light"{% endif %}>{{ color }} {{ step }}</span>
