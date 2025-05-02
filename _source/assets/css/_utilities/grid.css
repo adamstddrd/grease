@@ -6,12 +6,12 @@ grid: compose pages
 	--col-width-sm: minmax(50vw, 36rem);
 	--col-width-md: 64em;
 	--col-width: calc((var(--col-width-md) - (var(--gap) * 11)) / 12);
-	--default-columns: 3 / span 10;
+	--default-columns: main-start / main-end;
 	--gap: min(4vw, 4em);
 	--gutter-count: calc(var(--col-count) - 1);
 
 	display: grid;
-	grid-template-columns: 1fr var(--col-width-sm) 1fr;
+	grid-template-columns: 1fr [main-start] var(--col-width-sm) [main-end] 1fr;
 	align-items: start;
 	column-gap: var(--gap);
 	position: relative;
@@ -21,7 +21,7 @@ grid: compose pages
 	}
 
 	@media (--md) {
-		grid-template-columns: 1fr repeat(12, minmax(0, var(--col-width))) 1fr;
+		grid-template-columns: 1fr [main-start] repeat(12, minmax(0, var(--col-width))) [main-end] 1fr;
 
 		:where(&) > *:not([class="grid"]) {
 			grid-column: var(--default-columns);

@@ -1,0 +1,41 @@
+---
+title: Kitchen sink
+description: All of the default elements in Grease.
+layout: base.html
+stylesheet: pages/docs.css
+eleventyImport:
+  collections: ["snippets"]
+# noindex: true
+permalink: /kitchen-sink/
+---
+{% assign sortedSnippets = collections.snippets | sort: "fileSlug" %}
+
+<header id="header" class="sticky top-0 grid">
+  <nav class="flex gap-xs align-items-center justify-between">
+    <div class="docs-nav-group flex gap-xs">
+      <a class="button --point-left --subtle --primary shadow-md" href="/"><span class="sr-only">back</span></a>
+      <popover-menu>
+        <button popovertarget="on-this-page" class="button --primary shadow-md">
+          On this page
+        </button>
+        <ul id="on-this-page" role="menu" popover>
+          {% for post in sortedSnippets %}
+            <li>
+              <a href="#{{ post.data.title | slugify }}" class="button --menu --primary">
+                {{ post.data.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </popover-menu>
+    </div>
+    {% render "docs/theme-picker.html" modes: modes, themes: themes %}
+    </nav>
+</header>
+
+<main class="grid">
+  {% for post in sortedSnippets %}
+    <h2 class="mt-xl pt-md mb-md border-top">{{ post.data.title }}</h2>
+    {{ post.content }}
+  {% endfor %}
+</main>

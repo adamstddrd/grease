@@ -1,0 +1,14 @@
+---
+title: Themes
+---
+
+{% for theme in themes %}
+  {% for mode in modes %}
+    {% if mode != "system" %}
+      <section class="grid set-bg py-lg {{ theme }} {{ mode }}">
+        <p class="mb-md"><strong>{{ theme }} {{ mode }}</strong> - Sphinx of <code>black quartz</code> <a href="#">judge my vow</a>.</p>
+        {% render 'docs/forms.html' %}
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
