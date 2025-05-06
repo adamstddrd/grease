@@ -1,4 +1,4 @@
-@import "../_base/@media.css";
+@import "../assets/css/_base/@media.css";
 
 @layer components {
 	.docs-nav-group {

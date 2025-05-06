@@ -49,14 +49,14 @@
     <link rel="stylesheet" href="/assets/css/main.css" media="all">
     {%- if stylesheet -%}
     {%- for sheet in stylesheet -%}
-    <link rel="stylesheet" href="/assets/css/{{ sheet }}" media="all">
+    <link rel="stylesheet" href="{{ sheet }}" media="all">
     {%- endfor -%}
     {%- endif -%}
 
     <script src="/assets/js/app.js" type="module"></script>
     {%- if javascript -%}
     {%- for script in javascript -%}
-    <script src="/assets/js/{{ script }}" type="module"></script>
+    <script src="{{ script }}" type="module"></script>
     {%- endfor -%}
     {%- endif -%}
   </head>

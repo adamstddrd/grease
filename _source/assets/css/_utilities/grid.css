@@ -21,7 +21,10 @@ grid: compose pages
 	}
 
 	@media (--md) {
-		grid-template-columns: 1fr [main-start] repeat(12, minmax(0, var(--col-width))) [main-end] 1fr;
+		grid-template-columns: 1fr [main-start] repeat(
+				12,
+				minmax(0, var(--col-width))
+			) [main-end] 1fr;
 
 		:where(&) > *:not([class="grid"]) {
 			grid-column: var(--default-columns);

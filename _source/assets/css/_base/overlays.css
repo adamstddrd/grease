@@ -89,8 +89,10 @@ popover-menu {
 		gap: var(--space-xxs);
 		border: none;
 		background-color: transparent;
-	
-		&:is(ul), & > ul, & > [role="group"] {
+
+		&:is(ul),
+		& > ul,
+		& > [role="group"] {
 			display: flex;
 			flex-direction: column;
 			gap: var(--space-xxs);
@@ -103,24 +105,24 @@ popover-menu {
 			box-shadow: var(--shadow-lg);
 			list-style: none;
 		}
-	
+
 		&:not([popover]) {
 			position: absolute;
-	
+
 			&:not([hidden]) {
 				display: flex;
 			}
-	
+
 			&.anchor-right {
 				inset-inline-end: 0;
 			}
 		}
-	
+
 		&[popover] {
 			position-visibility: anchors-visible;
 			position-area: y-end span-x-end;
 			position-try-fallbacks: y-end span-x-start, flip-block, flip-inline;
-	
+
 			&.anchor-right {
 				position-area: y-end span-x-start;
 				position-try-fallbacks: y-end span-x-end, flip-block, flip-inline;
