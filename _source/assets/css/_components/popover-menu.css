@@ -15,6 +15,7 @@ popover-menu {
 		margin-block: var(--space-xs);
 		border: none;
 		background-color: transparent;
+		overflow: visible;
 
 		&:not([popover]) {
 			position: absolute;

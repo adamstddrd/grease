@@ -18,11 +18,6 @@
 		color: var(--color-text);
 	}
 
-	&:has(+ :popover-open),
-	&[aria-expanded="true"] {
-		background-color: color-mix(in oklch, var(--color-bg), currentcolor 20%);
-	}
-
 	&[aria-current] {
 		background-color: color-mix(in oklch, var(--color-bg), currentcolor 20%) !important;
 	}
