@@ -97,6 +97,7 @@
 		background-color: transparent;
 		border-radius: var(--border-radius-sm);
 		inline-size: 100%;
+		padding-inline: var(--space-xs);
 
 		@media (--hover) {
 			&:hover {

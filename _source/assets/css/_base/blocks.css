@@ -1,0 +1,114 @@
+:where(*, *::before, *::after) {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	&::selection {
+		color: var(--color-bg);
+		background-color: color-mix(
+			in oklch,
+			var(--color-text),
+			var(--color-bg) 20%
+		);
+	}
+
+	&:focus-visible {
+		outline: var(--border-width-md) var(--color-accent) solid;
+		outline-offset: var(--border-width-md);
+	}
+}
+
+@media (--motion) {
+	@view-transition {
+		navigation: auto;
+	}
+
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 0.1s;
+	}
+}
+
+html {
+	min-block-size: 100dvh;
+	scroll-padding-top: var(--space-xl);
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	accent-color: var(--color-accent);
+	overflow-x: clip;
+	font-weight: var(--font-weight);
+
+	@media (--motion) {
+		scroll-behavior: smooth;
+	}
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	min-block-size: 100dvh;
+	overflow-x: clip;
+	font-family: var(--font-family-main);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-fluid);
+}
+
+:where(animate-on-scroll, details-menu) {
+	display: contents;
+}
+
+:where(main, header, footer) {
+	container-type: inline-size;
+}
+
+main {
+	z-index: var(--z-1);
+}
+
+:where(header, footer) {
+	padding-block: var(--space-sm);
+	z-index: var(--z-2);
+}
+
+hr {
+	inline-size: 100%;
+	margin-block: var(--space-lg);
+	border: 0;
+	border-block-start: var(--border-width-sm) solid var(--color-border);
+}
+
+:where(img, embed, object, svg, video) {
+	max-inline-size: 100%;
+	block-size: auto;
+	line-height: var(--line-height-fluid);
+}
+
+:where(details) {
+	& > summary {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: var(--space-xs);
+		align-items: center;
+		cursor: pointer;
+		color: var(--color-text);
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		&::before {
+			position: relative;
+			content: "";
+			inline-size: 1em;
+			block-size: 1em;
+			scale: 0.9;
+			background-color: currentcolor;
+			clip-path: var(--shape-chevron);
+		}
+	}
+
+	&[open] > summary::before {
+		transform: rotate(90deg);
+	}
+}

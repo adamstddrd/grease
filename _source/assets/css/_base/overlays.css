@@ -1,9 +1,5 @@
-/* ----------------------------------------------------------------------------
-popovers, tooltips, menus, dialogs
----------------------------------------------------------------------------- */
-
 dialog {
-	max-width: var(--line-length-lg);
+	width: min(var(--line-length-lg), 90vw);
 	margin-block: var(--space-xs);
 	margin-inline: auto;
 	padding-block: var(--space-md);
@@ -46,87 +42,17 @@ dialog {
 
 [role="tooltip"] {
 	position: absolute;
+	inset: inherit;
 	position-visibility: always;
-	top: inherit;
-	bottom: anchor(top);
-	left: anchor(left);
+	position-try-fallbacks: flip-block, y-start span-x-end, y-end span-x-end, y-start span-x-start, y-end span-x-start;
+	position-area: y-start span-all;
 	padding-block: var(--space-xs);
 	padding-inline: var(--space-sm);
 	margin-block: var(--space-xs);
-	position-try-fallbacks: flip-block, flip-inline;
-	position-try-order: most-block-size;
+	font-size: var(--font-size-sm);
 	background-color: var(--color-bg-dark);
 	border: var(--border-width-sm) solid
 		oklch(from var(--color-border) l c h / 50%);
 	border-radius: var(--border-radius-lg);
 	box-shadow: var(--shadow-lg);
-	font-size: var(--font-size-sm);
-}
-
-[popover] {
-	overflow: visible;
-
-	&:not(:popover-open) {
-		display: none !important;
-	}
-}
-
-popover-menu {
-	position: relative;
-
-	& [hidden] {
-		display: none !important;
-	}
-
-	& > :last-child {
-		margin-block: var(--space-xs);
-		margin-inline: calc(var(--space-xxs) * -1);
-		inline-size: max-content;
-		max-inline-size: 24ch;
-		min-inline-size: 16ch;
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-xxs);
-		border: none;
-		background-color: transparent;
-
-		&:is(ul),
-		& > ul,
-		& > [role="group"] {
-			display: flex;
-			flex-direction: column;
-			gap: var(--space-xxs);
-			padding-block: var(--space-xxs);
-			padding-inline: var(--space-xxs);
-			border-radius: var(--border-radius-md);
-			background-color: var(--color-bg);
-			border: var(--border-width-sm) solid
-				oklch(from var(--color-border) l c h / 50%);
-			box-shadow: var(--shadow-lg);
-			list-style: none;
-		}
-
-		&:not([popover]) {
-			position: absolute;
-
-			&:not([hidden]) {
-				display: flex;
-			}
-
-			&.anchor-right {
-				inset-inline-end: 0;
-			}
-		}
-
-		&[popover] {
-			position-visibility: anchors-visible;
-			position-area: y-end span-x-end;
-			position-try-fallbacks: y-end span-x-start, flip-block, flip-inline;
-
-			&.anchor-right {
-				position-area: y-end span-x-start;
-				position-try-fallbacks: y-end span-x-end, flip-block, flip-inline;
-			}
-		}
-	}
 }
