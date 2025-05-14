@@ -44,7 +44,8 @@ dialog {
 	position: absolute;
 	inset: inherit;
 	position-visibility: always;
-	position-try-fallbacks: flip-block, y-start span-x-end, y-end span-x-end, y-start span-x-start, y-end span-x-start;
+	position-try-fallbacks: flip-block, y-start span-x-end, y-end span-x-end,
+		y-start span-x-start, y-end span-x-start;
 	position-area: y-start span-all;
 	padding-block: var(--space-xs);
 	padding-inline: var(--space-sm);
