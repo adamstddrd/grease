@@ -1,9 +1,9 @@
 popover-menu {
 	position: relative;
 
-  & :is([hidden], [popover]:not(:popover-open)) {
-    display: none !important;
-  }
+	& :is([hidden], [popover]:not(:popover-open)) {
+		display: none !important;
+	}
 
 	& > :last-child {
 		display: flex;

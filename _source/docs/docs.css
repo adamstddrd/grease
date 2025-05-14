@@ -1,8 +1,8 @@
 @import "../assets/css/_base/@media.css";
 
 @layer components {
-	.docs-nav-group {
-		@media (--motion) {
+	@media (--motion) {
+		.docs-nav-group {
 			view-transition-name: nav;
 			height: 100%;
 			width: fit-content;
@@ -31,8 +31,8 @@
 		z-index: var(--z-2);
 	}
 
-	.docs-layout {
-		@media (--md) {
+	@media (--md) {
+		.docs-layout {
 			display: grid;
 			grid-template-columns: 1fr auto;
 			grid-auto-flow: dense;
@@ -41,14 +41,14 @@
 			position: relative;
 			z-index: var(--z-2);
 
-			> nav {
+			& > article > :first-child {
+				margin-block-start: 0;
+			}
+
+			& > nav {
 				grid-column: 2;
 				padding-inline-start: var(--space-lg);
 				border-inline-start: var(--border-width-sm) solid var(--color-border);
-			}
-
-			> article > :first-child {
-				margin-block-start: 0;
 			}
 		}
 	}

@@ -16,19 +16,15 @@ grid: compose pages
 	column-gap: var(--gap);
 	position: relative;
 
-	:where(&) > *:not([class="grid"]) {
-		grid-column: 2;
-	}
-
 	@media (--md) {
 		grid-template-columns: 1fr [main-start] repeat(
 				12,
 				minmax(0, var(--col-width))
 			) [main-end] 1fr;
+	}
 
-		:where(&) > *:not([class="grid"]) {
-			grid-column: var(--default-columns);
-		}
+	:where(&) > *:not([class="grid"]) {
+		grid-column: var(--default-columns);
 	}
 
 	& > .grid {
