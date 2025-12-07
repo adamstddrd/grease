@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**"]
+		"includes": ["**", "!**/*.html"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -37,8 +37,14 @@
 			}
 		}
 	},
+	"css": {
+		"formatter": {
+			"enabled": true
+		}
+	},
 	"javascript": {
 		"formatter": {
+			"enabled": true,
 			"quoteStyle": "single"
 		}
 	},

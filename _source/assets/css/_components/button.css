@@ -19,7 +19,11 @@
 	}
 
 	&[aria-current] {
-		background-color: color-mix(in oklch, var(--color-bg), currentcolor 20%) !important;
+		background-color: color-mix(
+			in oklch,
+			var(--color-bg),
+			currentcolor 20%
+		) !important;
 	}
 
 	@media (--hover) {
@@ -82,7 +86,11 @@
 		@media (--hover) {
 			&:hover {
 				color: var(--color-text);
-				background-color: color-mix(in oklch, currentcolor, var(--color-bg) 90%);
+				background-color: color-mix(
+					in oklch,
+					currentcolor,
+					var(--color-bg) 90%
+				);
 			}
 		}
 	}

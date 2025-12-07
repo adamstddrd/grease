@@ -96,7 +96,9 @@ mark {
 	color: var(--color-link);
 	text-decoration-thickness: var(--border-width-md);
 	text-underline-offset: 0.15rem;
-	transition: text-decoration-thickness 0.1s ease, color 0.1s ease;
+	transition:
+		text-decoration-thickness 0.1s ease,
+		color 0.1s ease;
 }
 
 @media (--hover) {

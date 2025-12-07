@@ -2,7 +2,7 @@ import path from 'node:path';
 /* ----------------------------------------------------------------------------
 process CSS with LightningCSS
 ---------------------------------------------------------------------------- */
-import { Features, bundleAsync } from 'lightningcss';
+import { bundleAsync, Features } from 'lightningcss';
 
 export default function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats('css');

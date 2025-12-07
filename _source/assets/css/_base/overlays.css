@@ -10,8 +10,11 @@ dialog {
 	border: var(--border-width-sm) solid
 		oklch(from var(--color-border) l c h / 50%);
 	box-shadow: var(--shadow-lg);
-	transition: opacity 0.1s, scale 0.1s, overlay 0.1s allow-discrete, display
-		0.1s allow-discrete;
+	transition:
+		opacity 0.1s,
+		scale 0.1s,
+		overlay 0.1s allow-discrete,
+		display 0.1s allow-discrete;
 	opacity: 0;
 	scale: 0.9;
 	position: fixed;
@@ -44,8 +47,12 @@ dialog {
 	position: absolute;
 	inset: inherit;
 	position-visibility: always;
-	position-try-fallbacks: flip-block, y-start span-x-end, y-end span-x-end,
-		y-start span-x-start, y-end span-x-start;
+	position-try-fallbacks:
+		flip-block,
+		y-start span-x-end,
+		y-end span-x-end,
+		y-start span-x-start,
+		y-end span-x-start;
 	position-area: y-start span-all;
 	padding-block: var(--space-xs);
 	padding-inline: var(--space-sm);
