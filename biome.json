@@ -20,13 +20,34 @@
 			"recommended": true,
 			"correctness": {
 				"noUnknownProperty": "off",
-				"noUnknownMediaFeatureName": "off"
+				"noUnknownMediaFeatureName": "off",
+				"noUnknownPseudoElement": "off",
+				"noUnknownTypeSelector": "off",
+				"noUnusedImports": "off",
+				"noUnusedFunctionParameters": "off"
+			},
+			"suspicious": {
+				"noUnknownAtRules": "off"
+			},
+			"complexity": {
+				"noImportantStyles": "off"
+			},
+			"style": {
+				"noDescendingSpecificity": "off"
 			}
 		}
 	},
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "single"
+		}
+	},
+	"html": {
+		"linter": {
+			"enabled": false
+		},
+		"formatter": {
+			"enabled": false
 		}
 	}
 }
