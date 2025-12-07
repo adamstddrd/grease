@@ -7,7 +7,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.2",
     "@biomejs/biome": "^2.3.2",
-    "esbuild": "^0.25.2",
+    "esbuild": "^0.27.1",
     "lightningcss": "^1.27.0",
     "sharp": "^0.34.1"
   },
