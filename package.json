@@ -1,22 +1,21 @@
 {
-  "name": "grease",
-  "version": "3.0.0",
-  "private": true,
-  "type": "module",
-  "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-img": "^6.0.2",
-    "@biomejs/biome": "^2.3.2",
-    "esbuild": "^0.27.1",
-    "lightningcss": "^1.27.0",
-    "sharp": "^0.34.1"
-  },
-  "scripts": {
-    "start": "eleventy --serve --incremental --quiet",
-    "publish:stage": "ELEVENTY_ENV=stage eleventy",
-    "publish:prod": "ELEVENTY_ENV=prod eleventy",
-    "format": "biome format --write ./_source",
-    "lint": "biome lint --write ./_source",
-    "check": "biome check --write ./_source"
-  }
+	"name": "grease",
+	"version": "3.0.0",
+	"private": true,
+	"type": "module",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.5",
+		"@11ty/eleventy-img": "^6.0.4",
+		"@biomejs/biome": "^2.4.15",
+		"esbuild": "^0.28.0",
+		"lightningcss": "^1.32.0"
+	},
+	"scripts": {
+		"start": "eleventy --serve --incremental --quiet",
+		"publish:stage": "ELEVENTY_ENV=stage eleventy",
+		"publish:prod": "ELEVENTY_ENV=prod eleventy",
+		"format": "biome format --write ./_source",
+		"lint": "biome lint --write ./_source",
+		"check": "biome check --write ./_source"
+	}
 }
