@@ -1,5 +1,5 @@
 ---
-title: Popovers
+title: Overlays
 ---
 
 <div class="flex gap-xs">
@@ -9,14 +9,23 @@ title: Popovers
     <p>I'm just a lil guy, useful for tooltips.</p>
   </div>
 
-  <button popovertarget="popover-2" class="button" type="button">Dialog</button>
+  <button popovertarget="popover-2" class="button" type="button">Popover</button>
   <dialog popover id="popover-2">
-    <h2>Title</h2>
-    <p>It's a popover! Quisque laoreet tincidunt massa, non pulvinar eros euismod sit amet. Maecenas non lorem vitae lorem condimentum posuere. Maecenas ac lectus elit. Nullam feugiat scelerisque interdum. Nullam volutpat tincidunt viverra. Suspendisse egestas venenatis orci. Nunc vehicula ut dolor aliquet finibus.</p>
+    <h2>Popover</h2>
+    <p>The popover dialog features light-dismiss by default, and does not trap focus.</p>
+  </dialog>
+
+  <button commandfor="modal-1" command="show-modal" class="button" type="button">Modal</button>
+  <dialog modal id="modal-1">
+    <h2>Modal</h2>
+    <p>Unlike popover variant, the modal dialog traps focus and does not light-dismiss by default. You can add <code>closedby="any"</code> to the modal to add light-dismiss, but no full browser support yet.</p>
+    <p>
+	    <button commandfor="modal-1" command="close" class="button --subtle" type="button">Close</button>
+    </p>
   </dialog>
 
   <popover-menu>
-    <button popovertarget="popmenu-1" class="button">Popover menu</button>
+    <button popovertarget="popmenu-1" class="button">Menu - anchor left</button>
     <ul id="popmenu-1" class="unlisted" popover>
       <li>
         <button class="button --menu">
@@ -37,7 +46,7 @@ title: Popovers
   </popover-menu>
 
   <popover-menu>
-    <button popovertarget="popmenu-2" class="button">Right-anchored popover menu</button>
+    <button popovertarget="popmenu-2" class="button">Menu - achor right</button>
     <ul id="popmenu-2" popover class="unlisted anchor-right">
       <li>
         <button class="button --menu">
@@ -56,5 +65,5 @@ title: Popovers
       </li>
     </ul>
   </popover-menu>
-  
+
 </div>

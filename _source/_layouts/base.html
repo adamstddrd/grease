@@ -2,18 +2,18 @@
 <html lang="en"{% if theme %} class="{{ theme }}"{% endif %}>
 
   <head>
-    
+
     <meta charset="utf-8">
 
     <script>
       document.documentElement.classList.add('js');
       const theme = localStorage.getItem('theme') || 'default';
       const mode = localStorage.getItem('mode') || 'system';
-      
+
       if (theme !== 'default') {
         document.documentElement.classList.add(theme);
       }
-      
+
       if (mode !== 'system') {
         document.documentElement.classList.add(mode);
       }
@@ -62,9 +62,7 @@
   </head>
 
   <body {% if class %} class="{{ class }}"{% endif %}>
-    <animate-on-scroll>
-      {{ content }}
-    </animate-on-scroll>
+    {{ content }}
   </body>
 
 </html>

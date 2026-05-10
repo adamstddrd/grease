@@ -28,17 +28,17 @@ textarea {
 }
 
 :where(
-		input:not(
-				[type="range"],
-				[type="button"],
-				[type="submit"],
-				[type="radio"],
-				[type="checkbox"],
-				[type="file"]
-			),
-		select,
-		textarea
-	) {
+	input:not(
+		[type="range"],
+		[type="button"],
+		[type="submit"],
+		[type="radio"],
+		[type="checkbox"],
+		[type="file"]
+	),
+	select,
+	textarea
+) {
 	inline-size: 100%;
 	background-color: var(--color-bg-dark);
 	border: var(--border-width-md) solid var(--color-border);
