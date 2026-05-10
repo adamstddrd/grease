@@ -33,7 +33,7 @@ permalink: /kitchen-sink/
     </nav>
 </header>
 
-<main class="grid">
+<main class="grid" animate-children>
   {% for post in sortedSnippets %}
     <h2 class="mt-xl pt-md mb-md border-top">{{ post.data.title }}</h2>
     {{ post.content }}
